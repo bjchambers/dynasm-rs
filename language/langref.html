@@ -22,7 +22,22 @@
   <p class="location">
       <a href="./index.html">dynasm-rs</a>
   </p>
+  <div class = "block modules">
+  <h3>Components</h3>
+    <ul>
+      <li>
+        <a href="../language/index.html">Syntax</a>
+      </li>
+      <li>
+        <a href="../plugin/dynasm/index.html">Plugin (dynasm)</a>
+      </li>
+      <li>
+        <a href="../runtime/dynasmrt/index.html">Runtime (dynasmrt)</a>
+      </li>
+    </ul>
+  </div>
   <div class = "block crate">
+  <h3>Syntax</h3>
     <ul>
       <li>
         <a href="./index.html">Home</a>
@@ -42,29 +57,9 @@
 <section id="main" class="content mod docblock">
 
     <h1 class="title">Language Reference</h1>
-    <nav id="TOC"><ul>
-<li><a href="#lexical-structure-definition">1 Lexical structure definition</a><ul>
-<li><a href="#base-units">1.1 Base units</a><ul></ul></li>
-<li><a href="#entry-point">1.2 Entry point</a><ul></ul></li>
-<li><a href="#directives">1.3 Directives</a><ul></ul></li>
-<li><a href="#labels">1.4 Labels</a><ul></ul></li>
-<li><a href="#instructions">1.5 Instructions</a><ul></ul></li>
-<li><a href="#arguments">1.6 Arguments</a><ul></ul></li></ul></li>
-<li><a href="#reference">2 Reference</a><ul>
-<li><a href="#directives-1">2.1 Directives</a><ul></ul></li>
-<li><a href="#labels-1">2.2 Labels</a><ul>
-<li><a href="#local-labels">2.2.1 Local labels</a><ul></ul></li>
-<li><a href="#global-labels">2.2.2 Global labels</a><ul></ul></li>
-<li><a href="#dynamic-labels">2.2.3 Dynamic labels</a><ul></ul></li></ul></li>
-<li><a href="#instructions-1">2.3 Instructions</a><ul>
-<li><a href="#operands">2.3.1 Operands</a><ul>
-<li><a href="#register">2.3.1.1 Register</a><ul></ul></li>
-<li><a href="#jump-targets">2.3.1.2 Jump targets</a><ul></ul></li>
-<li><a href="#memory-references">2.3.1.3 Memory references</a><ul></ul></li>
-<li><a href="#type-mapped-references">2.3.1.4 Type mapped references</a><ul></ul></li>
-<li><a href="#immediates">2.3.1.5 Immediates</a><ul></ul></li></ul></li></ul></li></ul></li></ul></nav>
-<h1 id='lexical-structure-definition' class='section-header'><a href='#lexical-structure-definition'>1 Lexical structure definition</a></h1>
-<h2 id='base-units' class='section-header'><a href='#base-units'>1.1 Base units</a></h2>
+    
+<h1 id='lexical-structure-definition' class='section-header'><a href='#lexical-structure-definition'>Lexical structure definition</a></h1>
+<h2 id='base-units' class='section-header'><a href='#base-units'>Base units</a></h2>
 <p>The following syntax units used in dynasm syntax are defined by the <a href="https://doc.rust-lang.org/grammar.html">rust grammar</a> itself:</p>
 
 <ul>
@@ -83,7 +78,7 @@
 <li><code>size : &quot;BYTE&quot; | &quot;WORD&quot; | &quot;DWORD&quot; | &quot;AWORD&quot; | &quot;QWORD&quot; | &quot;OWORD&quot; | &quot;HWORD&quot;</code></li>
 </ul>
 
-<h2 id='entry-point' class='section-header'><a href='#entry-point'>1.2 Entry point</a></h2>
+<h2 id='entry-point' class='section-header'><a href='#entry-point'>Entry point</a></h2>
 <p>The entry point of dynasm-rs is the dynasm! macro. It is structured as following</p>
 
 <p><code>dynasm : &quot;dynasm&quot; &quot;!&quot; &quot;(&quot; ident (&quot;;&quot; line)* &quot;)&quot; ;</code></p>
@@ -92,18 +87,18 @@
 
 <p><code>line : directive | label | instruction ;</code></p>
 
-<h2 id='directives' class='section-header'><a href='#directives'>1.3 Directives</a></h2>
+<h2 id='directives' class='section-header'><a href='#directives'>Directives</a></h2>
 <p>Directives are special commands given to the assembler that do not correspond to instructions directly.</p>
 
 <p><code>directive : &quot;.&quot; ident (arg (&quot;,&quot; arg)* )? ;</code></p>
 
-<h2 id='labels' class='section-header'><a href='#labels'>1.4 Labels</a></h2>
+<h2 id='labels' class='section-header'><a href='#labels'>Labels</a></h2>
 <p><code>label : ident &quot;:&quot; | &quot;-&gt;&quot; ident &quot;:&quot; | &quot;=&gt;&quot; expr ;</code></p>
 
-<h2 id='instructions' class='section-header'><a href='#instructions'>1.5 Instructions</a></h2>
+<h2 id='instructions' class='section-header'><a href='#instructions'>Instructions</a></h2>
 <p><code>instruction : prefix* ident (arg (&quot;,&quot; arg)* )? ;</code></p>
 
-<h2 id='arguments' class='section-header'><a href='#arguments'>1.6 Arguments</a></h2>
+<h2 id='arguments' class='section-header'><a href='#arguments'>Arguments</a></h2>
 <p><code>arg : register | (size? ( memoryref | labelref | typemap | expr ));</code></p>
 
 <p><code>memoryref : &quot;[&quot; (regref | labelref) &quot;]&quot; ;</code></p>
@@ -120,8 +115,8 @@
 
 <p><code>dynamic_reg = dynamic_reg_family &quot;(&quot; expr &quot;)&quot; ;</code></p>
 
-<h1 id='reference' class='section-header'><a href='#reference'>2 Reference</a></h1>
-<h2 id='directives-1' class='section-header'><a href='#directives-1'>2.1 Directives</a></h2>
+<h1 id='reference' class='section-header'><a href='#reference'>Reference</a></h1>
+<h2 id='directives-1' class='section-header'><a href='#directives-1'>Directives</a></h2>
 <p>Dynasm-rs currently supports the following directives:</p>
 
 <p>Table 1: dynasm-rs directives</p>
@@ -169,7 +164,7 @@
 </tbody>
 </table>
 
-<h2 id='labels-1' class='section-header'><a href='#labels-1'>2.2 Labels</a></h2>
+<h2 id='labels-1' class='section-header'><a href='#labels-1'>Labels</a></h2>
 <p>In order to describe flow control effectively, dynasm-rs supports labels. However, since the assembly templates can be combined in a variety of ways at the mercy of the program using dynasm-rs, the semantics of these labels are somewhat different from how labels work in a static assembler.</p>
 
 <p>Dynasm-rs distinguishes between three different types of labels: global, local and dynamic labels. Their syntax is as follows:</p>
@@ -204,22 +199,22 @@
 </tbody>
 </table>
 
-<h3 id='local-labels' class='section-header'><a href='#local-labels'>2.2.1 Local labels</a></h3>
+<h3 id='local-labels' class='section-header'><a href='#local-labels'>Local labels</a></h3>
 <p>On first sight, local label definitions are similar to how labels are normally used in static assemblers. The trick with local labels is however in how they can be referenced. Local labels referenced with the <code>&gt;label</code> syntax will be resolved to the first definition of this label after this piece of code, while local labels referenced with the <code>&lt;label</code> will be resolved to the last definition of this label before the reference site. Any valid rust identifier can be used as a local label name, and local labels can be defined multiple times.</p>
 
-<h3 id='global-labels' class='section-header'><a href='#global-labels'>2.2.2 Global labels</a></h3>
+<h3 id='global-labels' class='section-header'><a href='#global-labels'>Global labels</a></h3>
 <p>Global labels can only be defined once, and all references to a global label will be resolved to this label. Any valid rust identifier can be used as a local label name.</p>
 
-<h3 id='dynamic-labels' class='section-header'><a href='#dynamic-labels'>2.2.3 Dynamic labels</a></h3>
+<h3 id='dynamic-labels' class='section-header'><a href='#dynamic-labels'>Dynamic labels</a></h3>
 <p>Dynamic labels are similar to global labels in that they can be defined only once, but instead of a name, they are identified by an expression that evaluates into an usize. This expression is evaluated at the point where the label is defined or referenced, and the labels will be resolved at only at commit time.</p>
 
-<h2 id='instructions-1' class='section-header'><a href='#instructions-1'>2.3 Instructions</a></h2>
+<h2 id='instructions-1' class='section-header'><a href='#instructions-1'>Instructions</a></h2>
 <p>The language used by dynasm-rs is a nasm-dialect. The largest difference is that instead of prefixing memory operands with segment registers, segment register overrides are prefixed to the entire instruction. Furthermore, it is currently not possible to override the size of the displacement used in memory operands.</p>
 
 <p>This results in the following syntax for instructions. First, zero or more prefixes can be listed (these prefixes can be found in table ???). The instruction mnemnonic is then mentioned, followed by zero or more comma seperated operands.</p>
 
-<h3 id='operands' class='section-header'><a href='#operands'>2.3.1 Operands</a></h3>
-<h4 id='register' class='section-header'><a href='#register'>2.3.1.1 Register</a></h4>
+<h3 id='operands' class='section-header'><a href='#operands'>Operands</a></h3>
+<h4 id='register' class='section-header'><a href='#register'>Register</a></h4>
 <p>There are two ways to reference registers in dynasm-rs, either via their static name, or via dynamic register references. Dynamic register references allow the exact register choice to be postponed to the runtime. Note that this does prevent optimizations to register-specific forms. However, the expression inside a dynamic register reference may be evaluted multiple times by dynasm-rs.</p>
 
 <p>The following table lists all available static registers, their dynamic family name and their encoding when they are used dynamically.</p>
@@ -522,10 +517,10 @@
 </tbody>
 </table>
 
-<h4 id='jump-targets' class='section-header'><a href='#jump-targets'>2.3.1.2 Jump targets</a></h4>
+<h4 id='jump-targets' class='section-header'><a href='#jump-targets'>Jump targets</a></h4>
 <p>All flow control instructions have a jump target as argument. A jump target can be either an immediate specifying a relative offset to the end of the current instruction or a label reference. For many instructions, the size of the offset to be encoded is variable, and by default dynasm-rs will pick the largest size possible. This can be overridden using a size prefix on the operand.</p>
 
-<h4 id='memory-references' class='section-header'><a href='#memory-references'>2.3.1.3 Memory references</a></h4>
+<h4 id='memory-references' class='section-header'><a href='#memory-references'>Memory references</a></h4>
 <p>Many x64 instructions can taken an indirect memory reference as operand. Such an operand is denoted as an expression containing registers surrounded by square brackets. Note that, unlike the original dynasm, dynasm-rs is insensitive to the order of the different operands in the expression and can perform rudimentary arithmetric to encode forms like <code>[rax * 5]</code>. However, due to the limitations of x64 assembly, there are of course limitations on what can be encoded. These limitations are detected at compile time, but several of them cannot be checked when dynamic registers are used. The size of the dereferenced value can be determined by a size prefix.</p>
 
 <p>The following are several examples of what can be encoded</p>
@@ -572,7 +567,7 @@
 </tbody>
 </table>
 
-<h4 id='type-mapped-references' class='section-header'><a href='#type-mapped-references'>2.3.1.4 Type mapped references</a></h4>
+<h4 id='type-mapped-references' class='section-header'><a href='#type-mapped-references'>Type mapped references</a></h4>
 <p>To ease interoperation with rust structures, dynasm-rs supports the following syntax for accessing members of pointers to structs and struct arrays. In this syntax, the scale and displacement in a normal memory reference are derived from the size of the type and the offset of the member in the type. Due to the limitations of procedural macros, invalid scales will unfortunately only panic at runtime. Note that dynasm-rs is unable to infer the size of the attribute and it should therefore be determined by a size prefix.</p>
 
 <p>The syntax for type maps is as follows</p>
@@ -603,7 +598,7 @@
 </tbody>
 </table>
 
-<h4 id='immediates' class='section-header'><a href='#immediates'>2.3.1.5 Immediates</a></h4>
+<h4 id='immediates' class='section-header'><a href='#immediates'>Immediates</a></h4>
 <p>Any operand which does not match the previously discussed forms will be interpreted as an immediate argument. This operand will be evaluated as an expression at runtime and the resulting value will be encoded. The size of the encoded value can be determined by a size prefix.</p>
 
     <script type="text/javascript">

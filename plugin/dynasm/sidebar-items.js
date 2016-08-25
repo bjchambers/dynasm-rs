@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["registrar",""]]});
+initSidebarItems({"fn":[["registrar",""]],"mod":[["compiler",""],["debug",""],["parser",""],["serialize",""],["x64data",""]]});

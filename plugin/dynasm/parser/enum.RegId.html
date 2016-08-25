@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RegId` enum in crate `dynasm`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RegId">
+
+    <title>dynasm::parser::RegId - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>dynasm</a>::<wbr><a href='index.html'>parser</a></p><script>window.sidebarCurrent = {name: 'RegId', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>dynasm</a>::<wbr><a href='index.html'>parser</a>::<wbr><a class='enum' href=''>RegId</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-294' class='srclink' href='../../src/dynasm/src/parser.rs.html#86-128' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum RegId {
+    RAX,
+    RCX,
+    RDX,
+    RBX,
+    RSP,
+    RBP,
+    RSI,
+    RDI,
+    R8,
+    R9,
+    R10,
+    R11,
+    R12,
+    R13,
+    R14,
+    R15,
+    RIP,
+    AH,
+    CH,
+    DH,
+    BH,
+    ST0,
+    ST1,
+    ST2,
+    ST3,
+    ST4,
+    ST5,
+    ST6,
+    ST7,
+    MMX0,
+    MMX1,
+    MMX2,
+    MMX3,
+    MMX4,
+    MMX5,
+    MMX6,
+    MMX7,
+    XMM0,
+    XMM1,
+    XMM2,
+    XMM3,
+    XMM4,
+    XMM5,
+    XMM6,
+    XMM7,
+    XMM8,
+    XMM9,
+    XMM10,
+    XMM11,
+    XMM12,
+    XMM13,
+    XMM14,
+    XMM15,
+    ES,
+    CS,
+    SS,
+    DS,
+    FS,
+    GS,
+    CR0,
+    CR1,
+    CR2,
+    CR3,
+    CR4,
+    CR5,
+    CR6,
+    CR7,
+    CR8,
+    CR9,
+    CR10,
+    CR11,
+    CR12,
+    CR13,
+    CR14,
+    CR15,
+    DR0,
+    DR1,
+    DR2,
+    DR3,
+    DR4,
+    DR5,
+    DR6,
+    DR7,
+    DR8,
+    DR9,
+    DR10,
+    DR11,
+    DR12,
+    DR13,
+    DR14,
+    DR15,
+}</pre><h2 class='variants'>Variants</h2>
+<span id='variant.RAX' class='variant'><span id='RAX.v' class='invisible'><code>RAX</code></span></span><span id='variant.RCX' class='variant'><span id='RCX.v' class='invisible'><code>RCX</code></span></span><span id='variant.RDX' class='variant'><span id='RDX.v' class='invisible'><code>RDX</code></span></span><span id='variant.RBX' class='variant'><span id='RBX.v' class='invisible'><code>RBX</code></span></span><span id='variant.RSP' class='variant'><span id='RSP.v' class='invisible'><code>RSP</code></span></span><span id='variant.RBP' class='variant'><span id='RBP.v' class='invisible'><code>RBP</code></span></span><span id='variant.RSI' class='variant'><span id='RSI.v' class='invisible'><code>RSI</code></span></span><span id='variant.RDI' class='variant'><span id='RDI.v' class='invisible'><code>RDI</code></span></span><span id='variant.R8' class='variant'><span id='R8.v' class='invisible'><code>R8</code></span></span><span id='variant.R9' class='variant'><span id='R9.v' class='invisible'><code>R9</code></span></span><span id='variant.R10' class='variant'><span id='R10.v' class='invisible'><code>R10</code></span></span><span id='variant.R11' class='variant'><span id='R11.v' class='invisible'><code>R11</code></span></span><span id='variant.R12' class='variant'><span id='R12.v' class='invisible'><code>R12</code></span></span><span id='variant.R13' class='variant'><span id='R13.v' class='invisible'><code>R13</code></span></span><span id='variant.R14' class='variant'><span id='R14.v' class='invisible'><code>R14</code></span></span><span id='variant.R15' class='variant'><span id='R15.v' class='invisible'><code>R15</code></span></span><span id='variant.RIP' class='variant'><span id='RIP.v' class='invisible'><code>RIP</code></span></span><span id='variant.AH' class='variant'><span id='AH.v' class='invisible'><code>AH</code></span></span><span id='variant.CH' class='variant'><span id='CH.v' class='invisible'><code>CH</code></span></span><span id='variant.DH' class='variant'><span id='DH.v' class='invisible'><code>DH</code></span></span><span id='variant.BH' class='variant'><span id='BH.v' class='invisible'><code>BH</code></span></span><span id='variant.ST0' class='variant'><span id='ST0.v' class='invisible'><code>ST0</code></span></span><span id='variant.ST1' class='variant'><span id='ST1.v' class='invisible'><code>ST1</code></span></span><span id='variant.ST2' class='variant'><span id='ST2.v' class='invisible'><code>ST2</code></span></span><span id='variant.ST3' class='variant'><span id='ST3.v' class='invisible'><code>ST3</code></span></span><span id='variant.ST4' class='variant'><span id='ST4.v' class='invisible'><code>ST4</code></span></span><span id='variant.ST5' class='variant'><span id='ST5.v' class='invisible'><code>ST5</code></span></span><span id='variant.ST6' class='variant'><span id='ST6.v' class='invisible'><code>ST6</code></span></span><span id='variant.ST7' class='variant'><span id='ST7.v' class='invisible'><code>ST7</code></span></span><span id='variant.MMX0' class='variant'><span id='MMX0.v' class='invisible'><code>MMX0</code></span></span><span id='variant.MMX1' class='variant'><span id='MMX1.v' class='invisible'><code>MMX1</code></span></span><span id='variant.MMX2' class='variant'><span id='MMX2.v' class='invisible'><code>MMX2</code></span></span><span id='variant.MMX3' class='variant'><span id='MMX3.v' class='invisible'><code>MMX3</code></span></span><span id='variant.MMX4' class='variant'><span id='MMX4.v' class='invisible'><code>MMX4</code></span></span><span id='variant.MMX5' class='variant'><span id='MMX5.v' class='invisible'><code>MMX5</code></span></span><span id='variant.MMX6' class='variant'><span id='MMX6.v' class='invisible'><code>MMX6</code></span></span><span id='variant.MMX7' class='variant'><span id='MMX7.v' class='invisible'><code>MMX7</code></span></span><span id='variant.XMM0' class='variant'><span id='XMM0.v' class='invisible'><code>XMM0</code></span></span><span id='variant.XMM1' class='variant'><span id='XMM1.v' class='invisible'><code>XMM1</code></span></span><span id='variant.XMM2' class='variant'><span id='XMM2.v' class='invisible'><code>XMM2</code></span></span><span id='variant.XMM3' class='variant'><span id='XMM3.v' class='invisible'><code>XMM3</code></span></span><span id='variant.XMM4' class='variant'><span id='XMM4.v' class='invisible'><code>XMM4</code></span></span><span id='variant.XMM5' class='variant'><span id='XMM5.v' class='invisible'><code>XMM5</code></span></span><span id='variant.XMM6' class='variant'><span id='XMM6.v' class='invisible'><code>XMM6</code></span></span><span id='variant.XMM7' class='variant'><span id='XMM7.v' class='invisible'><code>XMM7</code></span></span><span id='variant.XMM8' class='variant'><span id='XMM8.v' class='invisible'><code>XMM8</code></span></span><span id='variant.XMM9' class='variant'><span id='XMM9.v' class='invisible'><code>XMM9</code></span></span><span id='variant.XMM10' class='variant'><span id='XMM10.v' class='invisible'><code>XMM10</code></span></span><span id='variant.XMM11' class='variant'><span id='XMM11.v' class='invisible'><code>XMM11</code></span></span><span id='variant.XMM12' class='variant'><span id='XMM12.v' class='invisible'><code>XMM12</code></span></span><span id='variant.XMM13' class='variant'><span id='XMM13.v' class='invisible'><code>XMM13</code></span></span><span id='variant.XMM14' class='variant'><span id='XMM14.v' class='invisible'><code>XMM14</code></span></span><span id='variant.XMM15' class='variant'><span id='XMM15.v' class='invisible'><code>XMM15</code></span></span><span id='variant.ES' class='variant'><span id='ES.v' class='invisible'><code>ES</code></span></span><span id='variant.CS' class='variant'><span id='CS.v' class='invisible'><code>CS</code></span></span><span id='variant.SS' class='variant'><span id='SS.v' class='invisible'><code>SS</code></span></span><span id='variant.DS' class='variant'><span id='DS.v' class='invisible'><code>DS</code></span></span><span id='variant.FS' class='variant'><span id='FS.v' class='invisible'><code>FS</code></span></span><span id='variant.GS' class='variant'><span id='GS.v' class='invisible'><code>GS</code></span></span><span id='variant.CR0' class='variant'><span id='CR0.v' class='invisible'><code>CR0</code></span></span><span id='variant.CR1' class='variant'><span id='CR1.v' class='invisible'><code>CR1</code></span></span><span id='variant.CR2' class='variant'><span id='CR2.v' class='invisible'><code>CR2</code></span></span><span id='variant.CR3' class='variant'><span id='CR3.v' class='invisible'><code>CR3</code></span></span><span id='variant.CR4' class='variant'><span id='CR4.v' class='invisible'><code>CR4</code></span></span><span id='variant.CR5' class='variant'><span id='CR5.v' class='invisible'><code>CR5</code></span></span><span id='variant.CR6' class='variant'><span id='CR6.v' class='invisible'><code>CR6</code></span></span><span id='variant.CR7' class='variant'><span id='CR7.v' class='invisible'><code>CR7</code></span></span><span id='variant.CR8' class='variant'><span id='CR8.v' class='invisible'><code>CR8</code></span></span><span id='variant.CR9' class='variant'><span id='CR9.v' class='invisible'><code>CR9</code></span></span><span id='variant.CR10' class='variant'><span id='CR10.v' class='invisible'><code>CR10</code></span></span><span id='variant.CR11' class='variant'><span id='CR11.v' class='invisible'><code>CR11</code></span></span><span id='variant.CR12' class='variant'><span id='CR12.v' class='invisible'><code>CR12</code></span></span><span id='variant.CR13' class='variant'><span id='CR13.v' class='invisible'><code>CR13</code></span></span><span id='variant.CR14' class='variant'><span id='CR14.v' class='invisible'><code>CR14</code></span></span><span id='variant.CR15' class='variant'><span id='CR15.v' class='invisible'><code>CR15</code></span></span><span id='variant.DR0' class='variant'><span id='DR0.v' class='invisible'><code>DR0</code></span></span><span id='variant.DR1' class='variant'><span id='DR1.v' class='invisible'><code>DR1</code></span></span><span id='variant.DR2' class='variant'><span id='DR2.v' class='invisible'><code>DR2</code></span></span><span id='variant.DR3' class='variant'><span id='DR3.v' class='invisible'><code>DR3</code></span></span><span id='variant.DR4' class='variant'><span id='DR4.v' class='invisible'><code>DR4</code></span></span><span id='variant.DR5' class='variant'><span id='DR5.v' class='invisible'><code>DR5</code></span></span><span id='variant.DR6' class='variant'><span id='DR6.v' class='invisible'><code>DR6</code></span></span><span id='variant.DR7' class='variant'><span id='DR7.v' class='invisible'><code>DR7</code></span></span><span id='variant.DR8' class='variant'><span id='DR8.v' class='invisible'><code>DR8</code></span></span><span id='variant.DR9' class='variant'><span id='DR9.v' class='invisible'><code>DR9</code></span></span><span id='variant.DR10' class='variant'><span id='DR10.v' class='invisible'><code>DR10</code></span></span><span id='variant.DR11' class='variant'><span id='DR11.v' class='invisible'><code>DR11</code></span></span><span id='variant.DR12' class='variant'><span id='DR12.v' class='invisible'><code>DR12</code></span></span><span id='variant.DR13' class='variant'><span id='DR13.v' class='invisible'><code>DR13</code></span></span><span id='variant.DR14' class='variant'><span id='DR14.v' class='invisible'><code>DR14</code></span></span><span id='variant.DR15' class='variant'><span id='DR15.v' class='invisible'><code>DR15</code></span></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='enum' href='../../dynasm/parser/enum.RegId.html' title='dynasm::parser::RegId'>RegId</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-642' class='srclink' href='../../src/dynasm/src/parser.rs.html#247-288' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.code' class='method'><span id='code.v' class='invisible'><code>fn <a href='#method.code' class='fnname'>code</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code></span></h4>
+<h4 id='method.family' class='method'><span id='family.v' class='invisible'><code>fn <a href='#method.family' class='fnname'>family</a>(&amp;self) -&gt; <a class='enum' href='../../dynasm/parser/enum.RegFamily.html' title='dynasm::parser::RegFamily'>RegFamily</a></code></span></h4>
+<h4 id='method.from_number' class='method'><span id='from_number.v' class='invisible'><code>fn <a href='#method.from_number' class='fnname'>from_number</a>(id: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>) -&gt; <a class='enum' href='../../dynasm/parser/enum.RegId.html' title='dynasm::parser::RegId'>RegId</a></code></span></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='enum' href='../../dynasm/parser/enum.RegId.html' title='dynasm::parser::RegId'>RegId</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-181' class='srclink' href='../../src/dynasm/src/parser.rs.html#85' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../dynasm/parser/enum.RegId.html' title='dynasm::parser::RegId'>RegId</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-182' class='srclink' href='../../src/dynasm/src/parser.rs.html#85' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../dynasm/parser/enum.RegId.html' title='dynasm::parser::RegId'>RegId</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html' title='core::hash::Hash'>Hash</a> for <a class='enum' href='../../dynasm/parser/enum.RegId.html' title='dynasm::parser::RegId'>RegId</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-185' class='srclink' href='../../src/dynasm/src/parser.rs.html#85' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.hash' class='method'><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html' title='core::hash::Hasher'>Hasher</a>&gt;(&amp;self, __arg_0: &amp;mut __H)</code></span></h4>
+<div class='docblock'><p>Feeds this value into the state given, updating the hasher as necessary.</p>
+</div><h4 id='method.hash_slice' class='method'><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[Self]</a>, state: &amp;mut H) <span class='where'>where H: <a class='trait' href='https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html' title='core::hash::Hasher'>Hasher</a></span></code><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the state provided.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../dynasm/parser/enum.RegId.html' title='dynasm::parser::RegId'>RegId</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-190' class='srclink' href='../../src/dynasm/src/parser.rs.html#85' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../dynasm/parser/enum.RegId.html' title='dynasm::parser::RegId'>RegId</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-193' class='srclink' href='../../src/dynasm/src/parser.rs.html#85' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../dynasm/parser/enum.RegId.html' title='dynasm::parser::RegId'>RegId</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../dynasm/parser/enum.RegId.html' title='dynasm::parser::RegId'>RegId</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-199' class='srclink' href='../../src/dynasm/src/parser.rs.html#85' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "dynasm";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
