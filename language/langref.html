@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <title>Language Reference</title>
+
+    <link rel="stylesheet" type="text/css" href="./formatting.css">
+
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    <nav class="sidebar">
+  <p class="location">
+      <a href="./index.html">dynasm-rs</a>
+  </p>
+  <div class = "block crate">
+    <ul>
+      <li>
+        <a href="./index.html">Home</a>
+      </li>
+      <li>
+        <a href="./tutorial.html">Tutorial</a>
+      </li>
+      <li>
+        <a href="./langref.html">Language reference</a>
+      </li>
+      <li>
+        <a href="./instructionref.html">Instruction reference</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<section id="main" class="content mod docblock">
+
+    <h1 class="title">Language Reference</h1>
+    <nav id="TOC"><ul>
+<li><a href="#lexical-structure-definition">1 Lexical structure definition</a><ul>
+<li><a href="#base-units">1.1 Base units</a><ul></ul></li>
+<li><a href="#entry-point">1.2 Entry point</a><ul></ul></li>
+<li><a href="#directives">1.3 Directives</a><ul></ul></li>
+<li><a href="#labels">1.4 Labels</a><ul></ul></li>
+<li><a href="#instructions">1.5 Instructions</a><ul></ul></li>
+<li><a href="#arguments">1.6 Arguments</a><ul></ul></li></ul></li>
+<li><a href="#reference">2 Reference</a><ul>
+<li><a href="#directives-1">2.1 Directives</a><ul></ul></li>
+<li><a href="#labels-1">2.2 Labels</a><ul>
+<li><a href="#local-labels">2.2.1 Local labels</a><ul></ul></li>
+<li><a href="#global-labels">2.2.2 Global labels</a><ul></ul></li>
+<li><a href="#dynamic-labels">2.2.3 Dynamic labels</a><ul></ul></li></ul></li>
+<li><a href="#instructions-1">2.3 Instructions</a><ul>
+<li><a href="#operands">2.3.1 Operands</a><ul>
+<li><a href="#register">2.3.1.1 Register</a><ul></ul></li>
+<li><a href="#jump-targets">2.3.1.2 Jump targets</a><ul></ul></li>
+<li><a href="#memory-references">2.3.1.3 Memory references</a><ul></ul></li>
+<li><a href="#type-mapped-references">2.3.1.4 Type mapped references</a><ul></ul></li>
+<li><a href="#immediates">2.3.1.5 Immediates</a><ul></ul></li></ul></li></ul></li></ul></li></ul></nav>
+<h1 id='lexical-structure-definition' class='section-header'><a href='#lexical-structure-definition'>1 Lexical structure definition</a></h1>
+<h2 id='base-units' class='section-header'><a href='#base-units'>1.1 Base units</a></h2>
+<p>The following syntax units used in dynasm syntax are defined by the <a href="https://doc.rust-lang.org/grammar.html">rust grammar</a> itself:</p>
+
+<ul>
+<li><code>num_lit</code></li>
+<li><code>ident</code></li>
+<li><code>expr_path</code></li>
+<li><code>expr</code></li>
+</ul>
+
+<p>Dynasm-rs defines the following base syntax units:</p>
+
+<ul>
+<li><code>prefix : &quot;cs&quot; | &quot;ds&quot; | &quot;es&quot; | &quot;fs&quot; | &quot;gs&quot; | &quot;ss&quot; | &quot;lock&quot; | &quot;rep&quot; | &quot;repne&quot; | &quot;repe&quot; | &quot;repnz&quot; | &quot;repz&quot; ;</code></li>
+<li><code>static_reg</code> matches any valid register name as seen in table 3</li>
+<li><code>dynamic_reg_family</code> matches any valid register family from table 3</li>
+<li><code>size : &quot;BYTE&quot; | &quot;WORD&quot; | &quot;DWORD&quot; | &quot;AWORD&quot; | &quot;QWORD&quot; | &quot;OWORD&quot; | &quot;HWORD&quot;</code></li>
+</ul>
+
+<h2 id='entry-point' class='section-header'><a href='#entry-point'>1.2 Entry point</a></h2>
+<p>The entry point of dynasm-rs is the dynasm! macro. It is structured as following</p>
+
+<p><code>dynasm : &quot;dynasm&quot; &quot;!&quot; &quot;(&quot; ident (&quot;;&quot; line)* &quot;)&quot; ;</code></p>
+
+<p>Where line can be one of the following:</p>
+
+<p><code>line : directive | label | instruction ;</code></p>
+
+<h2 id='directives' class='section-header'><a href='#directives'>1.3 Directives</a></h2>
+<p>Directives are special commands given to the assembler that do not correspond to instructions directly.</p>
+
+<p><code>directive : &quot;.&quot; ident (arg (&quot;,&quot; arg)* )? ;</code></p>
+
+<h2 id='labels' class='section-header'><a href='#labels'>1.4 Labels</a></h2>
+<p><code>label : ident &quot;:&quot; | &quot;-&gt;&quot; ident &quot;:&quot; | &quot;=&gt;&quot; expr ;</code></p>
+
+<h2 id='instructions' class='section-header'><a href='#instructions'>1.5 Instructions</a></h2>
+<p><code>instruction : prefix* ident (arg (&quot;,&quot; arg)* )? ;</code></p>
+
+<h2 id='arguments' class='section-header'><a href='#arguments'>1.6 Arguments</a></h2>
+<p><code>arg : register | (size? ( memoryref | labelref | typemap | expr ));</code></p>
+
+<p><code>memoryref : &quot;[&quot; (regref | labelref) &quot;]&quot; ;</code></p>
+
+<p><code>regref : regrefitem (&quot;+&quot; regrefitem)* ;</code></p>
+
+<p><code>regrefitem : (register &quot;*&quot; num_lit | num_lit &quot;*&quot; register | register | expr) ;</code></p>
+
+<p><code>labelref : (&quot;&gt;&quot; ident | &quot;&lt;&quot; ident | &quot;-&gt;&quot; ident | &quot;=&gt;&quot; expr) ;</code></p>
+
+<p><code>typemap : register &quot;=&gt;&quot; expr_path (&quot;.&quot; ident | &quot;[&quot; register &quot;]&quot; (&quot;.&quot; ident)?) ;</code></p>
+
+<p><code>register = static_reg | dynamic_reg ;</code></p>
+
+<p><code>dynamic_reg = dynamic_reg_family &quot;(&quot; expr &quot;)&quot; ;</code></p>
+
+<h1 id='reference' class='section-header'><a href='#reference'>2 Reference</a></h1>
+<h2 id='directives-1' class='section-header'><a href='#directives-1'>2.1 Directives</a></h2>
+<p>Dynasm-rs currently supports the following directives:</p>
+
+<p>Table 1: dynasm-rs directives</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Argument format</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>.align</code></td>
+<td>An expression of type usize</td>
+<td>Pushes NOPs until the assembling head has reached the desired alignment.</td>
+</tr>
+<tr>
+<td><code>.byte</code></td>
+<td>One or more expressions of the type <code>i8</code></td>
+<td>Pushes the values into the assembling buffer.</td>
+</tr>
+<tr>
+<td><code>.word</code></td>
+<td>One or more expressions of the type <code>i16</code></td>
+<td>Pushes the values into the assembling buffer.</td>
+</tr>
+<tr>
+<td><code>.dword</code></td>
+<td>One or more expressions of the type <code>i32</code></td>
+<td>Pushes the values into the assembling buffer.</td>
+</tr>
+<tr>
+<td><code>.qword</code></td>
+<td>One or more expressions of the type <code>i64</code></td>
+<td>Pushes the values into the assembling buffer.</td>
+</tr>
+<tr>
+<td><code>.bytes</code></td>
+<td>An expression of that implements <code>IntoIterator&lt;Item=u8&gt;</code> or <code>IntoIterator&lt;Item=&amp;u8&gt;</code></td>
+<td>extends the assembling buffer with the iterator.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id='labels-1' class='section-header'><a href='#labels-1'>2.2 Labels</a></h2>
+<p>In order to describe flow control effectively, dynasm-rs supports labels. However, since the assembly templates can be combined in a variety of ways at the mercy of the program using dynasm-rs, the semantics of these labels are somewhat different from how labels work in a static assembler.</p>
+
+<p>Dynasm-rs distinguishes between three different types of labels: global, local and dynamic labels. Their syntax is as follows:</p>
+
+<p>Table 2: dynasm-rs label types</p>
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Definition</th>
+<th>Reference</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Local</td>
+<td><code>label:</code></td>
+<td><code>&gt;label</code> or <code>&lt;label</code></td>
+</tr>
+<tr>
+<td>GLobal</td>
+<td><code>-&gt;label:</code></td>
+<td><code>-&gt;label</code></td>
+</tr>
+<tr>
+<td>Dynamic</td>
+<td><code>=&gt;expr</code></td>
+<td><code>=&gt;expr</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id='local-labels' class='section-header'><a href='#local-labels'>2.2.1 Local labels</a></h3>
+<p>On first sight, local label definitions are similar to how labels are normally used in static assemblers. The trick with local labels is however in how they can be referenced. Local labels referenced with the <code>&gt;label</code> syntax will be resolved to the first definition of this label after this piece of code, while local labels referenced with the <code>&lt;label</code> will be resolved to the last definition of this label before the reference site. Any valid rust identifier can be used as a local label name, and local labels can be defined multiple times.</p>
+
+<h3 id='global-labels' class='section-header'><a href='#global-labels'>2.2.2 Global labels</a></h3>
+<p>Global labels can only be defined once, and all references to a global label will be resolved to this label. Any valid rust identifier can be used as a local label name.</p>
+
+<h3 id='dynamic-labels' class='section-header'><a href='#dynamic-labels'>2.2.3 Dynamic labels</a></h3>
+<p>Dynamic labels are similar to global labels in that they can be defined only once, but instead of a name, they are identified by an expression that evaluates into an usize. This expression is evaluated at the point where the label is defined or referenced, and the labels will be resolved at only at commit time.</p>
+
+<h2 id='instructions-1' class='section-header'><a href='#instructions-1'>2.3 Instructions</a></h2>
+<p>The language used by dynasm-rs is a nasm-dialect. The largest difference is that instead of prefixing memory operands with segment registers, segment register overrides are prefixed to the entire instruction. Furthermore, it is currently not possible to override the size of the displacement used in memory operands.</p>
+
+<p>This results in the following syntax for instructions. First, zero or more prefixes can be listed (these prefixes can be found in table ???). The instruction mnemnonic is then mentioned, followed by zero or more comma seperated operands.</p>
+
+<h3 id='operands' class='section-header'><a href='#operands'>2.3.1 Operands</a></h3>
+<h4 id='register' class='section-header'><a href='#register'>2.3.1.1 Register</a></h4>
+<p>There are two ways to reference registers in dynasm-rs, either via their static name, or via dynamic register references. Dynamic register references allow the exact register choice to be postponed to the runtime. Note that this does prevent optimizations to register-specific forms. However, the expression inside a dynamic register reference may be evaluted multiple times by dynasm-rs.</p>
+
+<p>The following table lists all available static registers, their dynamic family name and their encoding when they are used dynamically.</p>
+
+<p>Table 3: dynasm-rs registers</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: right">Family</th>
+<th style="text-align: left">8-bit</th>
+<th style="text-align: left">8-bit high</th>
+<th style="text-align: left">16-bit</th>
+<th style="text-align: left">32-bit</th>
+<th style="text-align: left">64-bit</th>
+<th style="text-align: left">RIP</th>
+<th style="text-align: left">Floating Point</th>
+<th style="text-align: left">MMX</th>
+<th style="text-align: left">128-bit</th>
+<th style="text-align: left">256-bit</th>
+<th style="text-align: left">Segment</th>
+<th style="text-align: left">Control</th>
+<th style="text-align: left">Debug</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: right">Dynamic Encoding</td>
+<td style="text-align: left"><code>Rb</code></td>
+<td style="text-align: left"><code>Rh</code></td>
+<td style="text-align: left"><code>Rw</code></td>
+<td style="text-align: left"><code>Rd</code></td>
+<td style="text-align: left"><code>Rq</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>Rf</code></td>
+<td style="text-align: left"><code>Rm</code></td>
+<td style="text-align: left"><code>Rx</code></td>
+<td style="text-align: left"><code>Ry</code></td>
+<td style="text-align: left"><code>Rs</code></td>
+<td style="text-align: left"><code>RC</code></td>
+<td style="text-align: left"><code>RD</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>0</code></td>
+<td style="text-align: left"><code>al</code>/<code>r0b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>ax</code>/<code>r0w</code></td>
+<td style="text-align: left"><code>eax</code>/<code>r0d</code></td>
+<td style="text-align: left"><code>rax</code>/<code>r0</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>st0</code></td>
+<td style="text-align: left"><code>mmx0</code></td>
+<td style="text-align: left"><code>xmm0</code></td>
+<td style="text-align: left"><code>ymm0</code></td>
+<td style="text-align: left"><code>es</code></td>
+<td style="text-align: left"><code>cr0</code></td>
+<td style="text-align: left"><code>dr0</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>1</code></td>
+<td style="text-align: left"><code>cl</code>/<code>r1b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cx</code>/<code>r1w</code></td>
+<td style="text-align: left"><code>ecx</code>/<code>r1d</code></td>
+<td style="text-align: left"><code>rcx</code>/<code>r1</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>st1</code></td>
+<td style="text-align: left"><code>mmx1</code></td>
+<td style="text-align: left"><code>xmm1</code></td>
+<td style="text-align: left"><code>ymm1</code></td>
+<td style="text-align: left"><code>cs</code></td>
+<td style="text-align: left"><code>cr1</code></td>
+<td style="text-align: left"><code>dr1</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>2</code></td>
+<td style="text-align: left"><code>dl</code>/<code>r2b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>dx</code>/<code>r2w</code></td>
+<td style="text-align: left"><code>edx</code>/<code>r2d</code></td>
+<td style="text-align: left"><code>rdx</code>/<code>r2</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>st2</code></td>
+<td style="text-align: left"><code>mmx2</code></td>
+<td style="text-align: left"><code>xmm2</code></td>
+<td style="text-align: left"><code>ymm2</code></td>
+<td style="text-align: left"><code>ss</code></td>
+<td style="text-align: left"><code>cr2</code></td>
+<td style="text-align: left"><code>dr2</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>3</code></td>
+<td style="text-align: left"><code>bl</code>/<code>r3b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>bx</code>/<code>r3w</code></td>
+<td style="text-align: left"><code>ebx</code>/<code>r3d</code></td>
+<td style="text-align: left"><code>rbx</code>/<code>r3</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>st3</code></td>
+<td style="text-align: left"><code>mmx3</code></td>
+<td style="text-align: left"><code>xmm3</code></td>
+<td style="text-align: left"><code>ymm3</code></td>
+<td style="text-align: left"><code>ds</code></td>
+<td style="text-align: left"><code>cr3</code></td>
+<td style="text-align: left"><code>dr3</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>4</code></td>
+<td style="text-align: left"><code>spl</code>/<code>r4b</code></td>
+<td style="text-align: left"><code>ah</code></td>
+<td style="text-align: left"><code>sx</code>/<code>r4w</code></td>
+<td style="text-align: left"><code>esx</code>/<code>r4d</code></td>
+<td style="text-align: left"><code>rsx</code>/<code>r4</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>st4</code></td>
+<td style="text-align: left"><code>mmx4</code></td>
+<td style="text-align: left"><code>xmm4</code></td>
+<td style="text-align: left"><code>ymm4</code></td>
+<td style="text-align: left"><code>fs</code></td>
+<td style="text-align: left"><code>cr4</code></td>
+<td style="text-align: left"><code>dr4</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>5</code></td>
+<td style="text-align: left"><code>bpl</code>/<code>r5b</code></td>
+<td style="text-align: left"><code>ch</code></td>
+<td style="text-align: left"><code>bp</code>/<code>r5w</code></td>
+<td style="text-align: left"><code>ebp</code>/<code>r5d</code></td>
+<td style="text-align: left"><code>rbp</code>/<code>r5</code></td>
+<td style="text-align: left"><code>rip</code></td>
+<td style="text-align: left"><code>st5</code></td>
+<td style="text-align: left"><code>mmx5</code></td>
+<td style="text-align: left"><code>xmm5</code></td>
+<td style="text-align: left"><code>ymm5</code></td>
+<td style="text-align: left"><code>gs</code></td>
+<td style="text-align: left"><code>cr5</code></td>
+<td style="text-align: left"><code>dr5</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>6</code></td>
+<td style="text-align: left"><code>sil</code>/<code>r6b</code></td>
+<td style="text-align: left"><code>dh</code></td>
+<td style="text-align: left"><code>si</code>/<code>r6w</code></td>
+<td style="text-align: left"><code>esi</code>/<code>r6d</code></td>
+<td style="text-align: left"><code>rsi</code>/<code>r6</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>st6</code></td>
+<td style="text-align: left"><code>mmx6</code></td>
+<td style="text-align: left"><code>xmm6</code></td>
+<td style="text-align: left"><code>ymm6</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cr6</code></td>
+<td style="text-align: left"><code>dr6</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>7</code></td>
+<td style="text-align: left"><code>dil</code>/<code>r7b</code></td>
+<td style="text-align: left"><code>bh</code></td>
+<td style="text-align: left"><code>di</code>/<code>r7w</code></td>
+<td style="text-align: left"><code>edi</code>/<code>r7d</code></td>
+<td style="text-align: left"><code>rdi</code>/<code>r7</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>st7</code></td>
+<td style="text-align: left"><code>mmx7</code></td>
+<td style="text-align: left"><code>xmm7</code></td>
+<td style="text-align: left"><code>ymm7</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cr7</code></td>
+<td style="text-align: left"><code>dr7</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>8</code></td>
+<td style="text-align: left"><code>r8b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>r8w</code></td>
+<td style="text-align: left"><code>r8d</code></td>
+<td style="text-align: left"><code>r8</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>xmm8</code></td>
+<td style="text-align: left"><code>ymm8</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cr8</code></td>
+<td style="text-align: left"><code>dr8</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>9</code></td>
+<td style="text-align: left"><code>r9b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>r9w</code></td>
+<td style="text-align: left"><code>r9d</code></td>
+<td style="text-align: left"><code>r9</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>xmm9</code></td>
+<td style="text-align: left"><code>ymm9</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cr9</code></td>
+<td style="text-align: left"><code>dr9</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>10</code></td>
+<td style="text-align: left"><code>r10b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>r10w</code></td>
+<td style="text-align: left"><code>r10d</code></td>
+<td style="text-align: left"><code>r10</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>xmm10</code></td>
+<td style="text-align: left"><code>ymm10</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cr10</code></td>
+<td style="text-align: left"><code>dr10</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>11</code></td>
+<td style="text-align: left"><code>r11b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>r11w</code></td>
+<td style="text-align: left"><code>r11d</code></td>
+<td style="text-align: left"><code>r11</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>xmm11</code></td>
+<td style="text-align: left"><code>ymm11</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cr11</code></td>
+<td style="text-align: left"><code>dr11</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>12</code></td>
+<td style="text-align: left"><code>r12b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>r12w</code></td>
+<td style="text-align: left"><code>r12d</code></td>
+<td style="text-align: left"><code>r12</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>xmm12</code></td>
+<td style="text-align: left"><code>ymm12</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cr12</code></td>
+<td style="text-align: left"><code>dr12</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>13</code></td>
+<td style="text-align: left"><code>r13b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>r13w</code></td>
+<td style="text-align: left"><code>r13d</code></td>
+<td style="text-align: left"><code>r13</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>xmm13</code></td>
+<td style="text-align: left"><code>ymm13</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cr13</code></td>
+<td style="text-align: left"><code>dr13</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>14</code></td>
+<td style="text-align: left"><code>r14b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>r14w</code></td>
+<td style="text-align: left"><code>r14d</code></td>
+<td style="text-align: left"><code>r14</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>xmm14</code></td>
+<td style="text-align: left"><code>ymm14</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cr14</code></td>
+<td style="text-align: left"><code>dr14</code></td>
+</tr>
+<tr>
+<td style="text-align: right"><code>15</code></td>
+<td style="text-align: left"><code>r15b</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>r15w</code></td>
+<td style="text-align: left"><code>r15d</code></td>
+<td style="text-align: left"><code>r15</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>xmm15</code></td>
+<td style="text-align: left"><code>ymm15</code></td>
+<td style="text-align: left"></td>
+<td style="text-align: left"><code>cr15</code></td>
+<td style="text-align: left"><code>dr15</code></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id='jump-targets' class='section-header'><a href='#jump-targets'>2.3.1.2 Jump targets</a></h4>
+<p>All flow control instructions have a jump target as argument. A jump target can be either an immediate specifying a relative offset to the end of the current instruction or a label reference. For many instructions, the size of the offset to be encoded is variable, and by default dynasm-rs will pick the largest size possible. This can be overridden using a size prefix on the operand.</p>
+
+<h4 id='memory-references' class='section-header'><a href='#memory-references'>2.3.1.3 Memory references</a></h4>
+<p>Many x64 instructions can taken an indirect memory reference as operand. Such an operand is denoted as an expression containing registers surrounded by square brackets. Note that, unlike the original dynasm, dynasm-rs is insensitive to the order of the different operands in the expression and can perform rudimentary arithmetric to encode forms like <code>[rax * 5]</code>. However, due to the limitations of x64 assembly, there are of course limitations on what can be encoded. These limitations are detected at compile time, but several of them cannot be checked when dynamic registers are used. The size of the dereferenced value can be determined by a size prefix.</p>
+
+<p>The following are several examples of what can be encoded</p>
+
+<p>Table 4: dynasm-rs memory reference formats</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">Syntax</th>
+<th style="text-align: left">Explanation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left"><code>[expr]</code></td>
+<td style="text-align: left">An arbitrary expression will be encoded as an immediate</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>[rax]</code></td>
+<td style="text-align: left">A register can be dereferenced. This can either be a 32-bit or a 64-bit register.</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>[rax * 4]</code></td>
+<td style="text-align: left">A scaled register can be dereferenced. Possible scales are 8, 4, 2 and 1, although 3, 5 and 9 can also be encoded when it is the only used register.</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>[rax * 4 + rbx + expr]</code></td>
+<td style="text-align: left">The previously mentioned forms can all be combined. Order is not important.</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>[xmm * 4 + rbx + expr]</code></td>
+<td style="text-align: left">When VSIB addressing is allowed, an xmm or ymm register can be used as index.</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>[rip + expr]</code></td>
+<td style="text-align: left">Addresses relative to the instruction pointer at the end of the instruction can also be used, but in this case no scale can be encoded.</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>[-&gt;label]</code></td>
+<td style="text-align: left">Label references can also be dereferenced. This goes for all label types.</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id='type-mapped-references' class='section-header'><a href='#type-mapped-references'>2.3.1.4 Type mapped references</a></h4>
+<p>To ease interoperation with rust structures, dynasm-rs supports the following syntax for accessing members of pointers to structs and struct arrays. In this syntax, the scale and displacement in a normal memory reference are derived from the size of the type and the offset of the member in the type. Due to the limitations of procedural macros, invalid scales will unfortunately only panic at runtime. Note that dynasm-rs is unable to infer the size of the attribute and it should therefore be determined by a size prefix.</p>
+
+<p>The syntax for type maps is as follows</p>
+
+<p>Table 5: dynasm-rs type map formats</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">Syntax</th>
+<th style="text-align: left">Equivalent expression</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left"><code>rax =&gt; Type.attr</code></td>
+<td style="text-align: left"><code>(rax as *mut Type).attr</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><code>rax =&gt; Type[rbx]</code></td>
+<td style="text-align: left"><code>(rax as *mut [Type])[rbx]</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><code>rax =&gt; Type[rbx].attr</code></td>
+<td style="text-align: left"><code>(rax as *mut [Type])[rbx].attr</code></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id='immediates' class='section-header'><a href='#immediates'>2.3.1.5 Immediates</a></h4>
+<p>Any operand which does not match the previously discussed forms will be interpreted as an immediate argument. This operand will be evaluated as an expression at runtime and the resulting value will be encoded. The size of the encoded value can be determined by a size prefix.</p>
+
+    <script type="text/javascript">
+        window.playgroundUrl = "";
+    </script>
+    </section>
+
+</body>
+</html>

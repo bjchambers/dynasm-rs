@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <title>Home</title>
+
+    <link rel="stylesheet" type="text/css" href="./formatting.css">
+
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    <nav class="sidebar">
+  <p class="location">
+      <a href="./index.html">dynasm-rs</a>
+  </p>
+  <div class = "block crate">
+    <ul>
+      <li>
+        <a href="./index.html">Home</a>
+      </li>
+      <li>
+        <a href="./tutorial.html">Tutorial</a>
+      </li>
+      <li>
+        <a href="./langref.html">Language reference</a>
+      </li>
+      <li>
+        <a href="./instructionref.html">Instruction reference</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<section id="main" class="content mod docblock">
+
+    <h1 class="title">Home</h1>
+    <nav id="TOC"><ul>
+<li><a href="#documentation">1 Documentation</a><ul></ul></li></ul></nav><p>In the search for faster interpreters, Just-In-Time compilation is often a useful tool.
+This compiler extension attempts to make the writing of such programs easier and faster.</p>
+
+<p>At its core, dynasm-rs is an assembler compiler. It reads assembly templates which it then
+compiles into code that when executed will result in the proper machine code being emitted.</p>
+
+<p>Dynasm is split up into two parts. The first is the compiler extension that performs the
+translation of assembly templates into rust code, the second part is a
+<a href="../runtime/dynasmrt/index.html">small runtime</a> that handles the generation of the wanted
+machine code.</p>
+
+<p>For now dynasm-rs only supports the x64 instruction set.</p>
+
+<p>Dynasm-rs is inspired by the LuaJIT DynASM project for C and C++.</p>
+
+<h1 id='documentation' class='section-header'><a href='#documentation'>1 Documentation</a></h1>
+<p>The documentation of dynasm-rs is split up into several parts. To get started, you&#39;re advised
+to read through the <a href="./tutorial.html">tutorial</a>. After this, you can read through the
+<a href="./langref.html">language reference</a> to learn about the syntax used by dynasm-rs. You can
+also read through the <a href="../runtime/dynasmrt/index.html">runtime documentation</a> to learn about the
+runtime API. The <a href="./instructionref.html">instruction reference</a> lists all assembly mnemnonics
+and formats supported by dynasm-rs. Finally, documentation on the
+<a href="../plugin/dynasm/index.html">internals on dynasm-rs</a> can be referenced.</p>
+
+    <script type="text/javascript">
+        window.playgroundUrl = "";
+    </script>
+    </section>
+
+</body>
+</html>
