@@ -55,7 +55,7 @@
 <div class='docblock'><p>A structure wrapping some executable memory. It dereferences into a &amp;[u8] slice.</p>
 </div><div class='impl-items'><h4 id='method.ptr' class='method'><span id='ptr.v' class='invisible'><code>fn <a href='#method.ptr' class='fnname'>ptr</a>(&amp;self, offset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code></span></h4>
 <div class='docblock'><p>Obtain a pointer into the executable memory from an offset into it.
-When an offset returned from DynAsmApi::offset is used, the resulting pointer
+When an offset returned from DynasmApi::offset is used, the resulting pointer
 will point to the start of the first instruction after the offset call,
 which can then be jumped or called to divert control flow into the executable
 buffer. Note that if this buffer is accessed through an Executor, these pointers

@@ -460,18 +460,18 @@
 <span class='doccomment'>/// this allows it to be used as an easy shorthand for passing pointers as dynasm immediate arguments.</span>
 <span class='attribute'>#[<span class='ident'>macro_export</span>]</span>
 <span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>Pointer</span> {
-    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>e</span>:<span class='ident'>expr</span>) <span class='op'>=&gt;</span> {<span class='kw-2'>&amp;</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>e</span> <span class='kw'>as</span> <span class='op'>*</span><span class='kw'>const</span> _ <span class='kw'>as</span> _};
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>e</span>:<span class='ident'>expr</span>) <span class='op'>=&gt;</span> {<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>e</span> <span class='kw'>as</span> <span class='op'>*</span><span class='kw'>const</span> _ <span class='kw'>as</span> _};
 }
 
 <span class='doccomment'>/// Preforms the same action as the Pointer! macro, but casts to a *mut pointer.</span>
 <span class='attribute'>#[<span class='ident'>macro_export</span>]</span>
 <span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>MutPointer</span> {
-    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>e</span>:<span class='ident'>expr</span>) <span class='op'>=&gt;</span> {<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>e</span> <span class='kw'>as</span> <span class='op'>*</span><span class='kw-2'>mut</span> _ <span class='kw'>as</span> _};
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>e</span>:<span class='ident'>expr</span>) <span class='op'>=&gt;</span> {<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>e</span> <span class='kw'>as</span> <span class='op'>*</span><span class='kw-2'>mut</span> _ <span class='kw'>as</span> _};
 }
 
 <span class='doccomment'>/// This trait represents the interface that must be implemented to allow</span>
 <span class='doccomment'>/// the dynasm preprocessor to assemble into a datastructure.</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>DynAsmApi</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> : <span class='ident'>Extend</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;</span> <span class='op'>+</span> <span class='ident'>Extend</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>u8</span><span class='op'>&gt;</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>DynasmApi</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> : <span class='ident'>Extend</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;</span> <span class='op'>+</span> <span class='ident'>Extend</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>u8</span><span class='op'>&gt;</span> {
     <span class='doccomment'>/// Report the current offset into the assembling target</span>
     <span class='kw'>fn</span> <span class='ident'>offset</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>usize</span>;
     <span class='doccomment'>/// Push a byte into the assembling target</span>
@@ -592,7 +592,7 @@
     }
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>DynAsmApi</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>Assembler</span> {
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>DynasmApi</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='kw'>for</span> <span class='ident'>Assembler</span> {
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>offset</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>usize</span> {
         <span class='self'>self</span>.<span class='ident'>ops</span>.<span class='ident'>len</span>() <span class='op'>+</span> <span class='self'>self</span>.<span class='ident'>asmoffset</span>
@@ -827,7 +827,7 @@
 <span class='doccomment'>/// A structure wrapping some executable memory. It dereferences into a &amp;[u8] slice.</span>
 <span class='kw'>impl</span> <span class='ident'>ExecutableBuffer</span> {
     <span class='doccomment'>/// Obtain a pointer into the executable memory from an offset into it.</span>
-    <span class='doccomment'>/// When an offset returned from DynAsmApi::offset is used, the resulting pointer</span>
+    <span class='doccomment'>/// When an offset returned from DynasmApi::offset is used, the resulting pointer</span>
     <span class='doccomment'>/// will point to the start of the first instruction after the offset call,</span>
     <span class='doccomment'>/// which can then be jumped or called to divert control flow into the executable</span>
     <span class='doccomment'>/// buffer. Note that if this buffer is accessed through an Executor, these pointers</span>

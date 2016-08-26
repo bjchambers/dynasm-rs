@@ -1870,8 +1870,12 @@
 <span id="1826">1826</span>
 <span id="1827">1827</span>
 <span id="1828">1828</span>
+<span id="1829">1829</span>
+<span id="1830">1830</span>
+<span id="1831">1831</span>
+<span id="1832">1832</span>
 </pre><pre class='rust '>
-<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>collections</span>::<span class='ident'>HashMap</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>collections</span>::{<span class='ident'>HashMap</span>, <span class='ident'>hash_map</span>};
 
 <span class='kw'>use</span> <span class='ident'>compiler</span>::<span class='ident'>Opdata</span>;
 
@@ -1945,6 +1949,10 @@
     <span class='kw'>pub</span> <span class='kw'>const</span> <span class='kw'>fn</span> <span class='ident'>make_flag</span>(<span class='ident'>bits</span>: <span class='ident'>u32</span>) <span class='op'>-&gt;</span> <span class='ident'>Flags</span> {
         <span class='ident'>Flags</span> {<span class='ident'>bits</span>: <span class='ident'>bits</span>}
     }
+}
+
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mnemnonics</span>() <span class='op'>-&gt;</span> <span class='ident'>hash_map</span>::<span class='ident'>Keys</span><span class='op'>&lt;</span><span class='lifetime'>&#39;static</span>, <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span>, <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> [<span class='ident'>Opdata</span>]<span class='op'>&gt;</span> {
+    <span class='ident'>OPMAP</span>.<span class='ident'>keys</span>()
 }
 
 <span class='comment'>// workaround until bitflags can be used in const</span>
@@ -2024,7 +2032,7 @@
                     <span class='string'>b&quot;v*ib&quot;</span>,     [<span class='number'>0x0F</span>, <span class='number'>0xBA</span>      ], <span class='number'>5</span>, <span class='ident'>AUTO_SIZE</span> <span class='op'>|</span> <span class='ident'>LOCK</span>;
 ] <span class='string'>&quot;bzhi&quot;</span>        <span class='op'>=</span> [ <span class='string'>b&quot;r*v*r*&quot;</span>,   [   <span class='number'>2</span>, <span class='number'>0xF5</span>      ], <span class='ident'>X</span>, <span class='ident'>AUTO_REXW</span> <span class='op'>|</span> <span class='ident'>VEX_OP</span>;
 ] <span class='string'>&quot;call&quot;</span>        <span class='op'>=</span> [ <span class='string'>b&quot;o*&quot;</span>,       [<span class='number'>0xE8</span>            ], <span class='ident'>X</span>, <span class='ident'>AUTO_SIZE</span>;
-                    <span class='string'>b&quot;r*&quot;</span>,       [<span class='number'>0xFF</span>            ], <span class='number'>2</span>, <span class='ident'>AUTO_SIZE</span>;
+                    <span class='string'>b&quot;r*&quot;</span>,       [<span class='number'>0xFF</span>            ], <span class='number'>2</span>, <span class='ident'>AUTO_NO32</span>;
 ] <span class='string'>&quot;cbw&quot;</span>         <span class='op'>=</span> [ <span class='string'>b&quot;&quot;</span>,         [<span class='number'>0x98</span>            ], <span class='ident'>X</span>, <span class='ident'>WORD_SIZE</span>;
 ] <span class='string'>&quot;cwde&quot;</span>        <span class='op'>=</span> [ <span class='string'>b&quot;&quot;</span>,         [<span class='number'>0x98</span>            ], <span class='ident'>X</span>;
 ] <span class='string'>&quot;cdqe&quot;</span>        <span class='op'>=</span> [ <span class='string'>b&quot;&quot;</span>,         [<span class='number'>0x98</span>            ], <span class='ident'>X</span>, <span class='ident'>WITH_REXW</span>;
