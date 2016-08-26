@@ -117,7 +117,7 @@
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>plugin</span>)]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>plugin</span>(<span class='ident'>dynasm</span>)]</span></pre>
 
-<p>To use the dynasm! procedural macro, first the dynasm plugin has to be loaded. As plugins are currently unstable, the plugin feature first needs to be enabled. This currently requires a nightly version of rustc.</p>
+<p>To use the <code>dynasm!</code> procedural macro, first the dynasm plugin has to be loaded. As plugins are currently unstable, the plugin feature first needs to be enabled. This currently requires a nightly version of rustc.</p>
 
 <pre class='rust rust-example-rendered'>
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
@@ -202,6 +202,63 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 );</pre>
 
 <p>And finally we can call this function, asserting that it returns true to ensure that it managed to print the encoded message!</p>
+
+<p>And for the people interested in the behind-the-scenes, here&#39;s what the <code>dynasm!</code> macros expand to:</p>
+
+<pre class='rust rust-example-rendered'>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>plugin</span>)]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>plugin</span>(<span class='ident'>dynasm</span>)]</span>
+
+<span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>dynasmrt</span>;
+
+<span class='kw'>use</span> <span class='ident'>dynasmrt</span>::<span class='ident'>DynasmApi</span>;
+
+<span class='kw'>use</span> <span class='ident'>std</span>::{<span class='ident'>io</span>, <span class='ident'>slice</span>, <span class='ident'>mem</span>};
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>Write</span>;
+
+<span class='kw'>fn</span> <span class='ident'>main</span>() {
+    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>ops</span> <span class='op'>=</span> <span class='ident'>dynasmrt</span>::<span class='ident'>Assembler</span>::<span class='ident'>new</span>();
+    <span class='kw'>let</span> <span class='ident'>string</span> <span class='op'>=</span> <span class='string'>&quot;Hello World!&quot;</span>;
+
+<span class='comment'>// dynasm!(</span>
+    <span class='ident'>ops</span>.<span class='ident'>global_label</span>(<span class='string'>&quot;hello&quot;</span>);
+    <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='ident'>string</span>.<span class='ident'>as_bytes</span>());
+<span class='comment'>// )</span>
+
+    <span class='kw'>let</span> <span class='ident'>hello</span> <span class='op'>=</span> <span class='ident'>ops</span>.<span class='ident'>offset</span>();
+<span class='comment'>// dynasm!(</span>
+    <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='string'>b&quot;H\x8d\r\x00\x00\x00\x00&quot;</span>);
+    <span class='ident'>ops</span>.<span class='ident'>global_reloc</span>(<span class='string'>&quot;hello&quot;</span>, <span class='number'>4u8</span>);
+    <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='string'>b&quot;1\xd2\xb2&quot;</span>);
+    <span class='ident'>ops</span>.<span class='ident'>push_8</span>(<span class='ident'>string</span>.<span class='ident'>len</span>() <span class='kw'>as</span> _);
+    <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='string'>b&quot;H\xb8&quot;</span>);
+    <span class='ident'>ops</span>.<span class='ident'>push_64</span>(<span class='ident'>print</span> <span class='kw'>as</span> _);
+    <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='string'>b&quot;H\x83\xec&quot;</span>);
+    <span class='ident'>ops</span>.<span class='ident'>push_8</span>(<span class='number'>40</span>);
+    <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='string'>b&quot;\xff\xd0H\x83\xc4&quot;</span>);
+    <span class='ident'>ops</span>.<span class='ident'>push_8</span>(<span class='number'>40</span>);
+    <span class='ident'>ops</span>.<span class='ident'>push</span>(<span class='string'>b&#39;\xc3&#39;</span>);
+<span class='comment'>// )</span>
+
+    <span class='kw'>let</span> <span class='ident'>buf</span> <span class='op'>=</span> <span class='ident'>ops</span>.<span class='ident'>finalize</span>().<span class='ident'>unwrap</span>();
+
+    <span class='kw'>let</span> <span class='ident'>hello_fn</span>: <span class='kw'>extern</span> <span class='string'>&quot;win64&quot;</span> <span class='kw'>fn</span>() <span class='op'>-&gt;</span> <span class='ident'>bool</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
+        <span class='ident'>mem</span>::<span class='ident'>transmute</span>(<span class='ident'>buf</span>.<span class='ident'>ptr</span>(<span class='ident'>hello</span>))
+    };
+
+    <span class='macro'>assert</span><span class='macro'>!</span>(
+        <span class='ident'>hello_fn</span>()
+    );
+}
+
+<span class='kw'>pub</span> <span class='kw'>extern</span> <span class='string'>&quot;win64&quot;</span> <span class='kw'>fn</span> <span class='ident'>print</span>(<span class='ident'>buffer</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span>, <span class='ident'>length</span>: <span class='ident'>u64</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
+    <span class='ident'>io</span>::<span class='ident'>stdout</span>().<span class='ident'>write_all</span>(<span class='kw'>unsafe</span> {
+        <span class='ident'>slice</span>::<span class='ident'>from_raw_parts</span>(<span class='ident'>buffer</span>, <span class='ident'>length</span> <span class='kw'>as</span> <span class='ident'>usize</span>)
+    }).<span class='ident'>is_ok</span>()
+}</pre>
+
+<p>As you can see, the encoding has been determined fully at compile time, and the assembly has been reduced to a series of push and extend calls.</p>
 
 <h1 id='advanced-usage' class='section-header'><a href='#advanced-usage'>Advanced usage</a></h1>
 <p>Coming soon.</p>

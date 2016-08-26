@@ -81,6 +81,24 @@ runtime API. The <a href="./instructionref.html">instruction reference</a> lists
 and formats supported by dynasm-rs. Finally, documentation on the
 <a href="../plugin/dynasm/index.html">internals on dynasm-rs</a> can be referenced.</p>
 
+<h1 id='differences-from-luajit-dynasm' class='section-header'><a href='#differences-from-luajit-dynasm'>Differences from LuaJit Dynasm</a></h1>
+<p>The following list summarizes some of the larger differences between LuaJIT dynasm and dynasm-rs.</p>
+
+<ul>
+<li>LuaJIT dynasm uses full program analysis, allowing it to compile local and global labels down to
+enums. Dynasm-rs however uses Hashmaps keyed by static strings, meaning label resolution in dynasm-rs
+can be a bit slower.</li>
+<li>LuaJIT uses the <code>mov64</code> mnemnonic to encode 64-bit displacement mov. Dynasm-rs uses the <code>movabs</code>
+mnemnonic with a 64-bit immediate parameter to encode this.</li>
+<li>Dynasm-rs does not (directly) support stand-alone files.</li>
+<li>Dynasm-rs is not sensitive to the order of parameters inside a memory reference.</li>
+<li>LuaJIT local labels are integer literals. Dynasm-rs local labels are identifiers.</li>
+<li>The syntax used for type maps is significantly different. In LuaJit dynasm it is <code>Type:reg-&gt;attr</code>
+in dynasm-rs it is <code>reg =&gt; Type.attr</code>.</li>
+<li>LuaJIT dynasm uses a special preprocessor which detects lines starting with pipes (<code>|</code>) as dynasm
+instructions, dynasm-rs uses the <code>dynasm!</code> procedural macro with lines starting with semicolons (<code>;</code>).</li>
+</ul>
+
     <script type="text/javascript">
         window.playgroundUrl = "";
     </script>

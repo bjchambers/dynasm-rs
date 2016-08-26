@@ -2217,13 +2217,13 @@
                     <span class='string'>b&quot;dqrq&quot;</span>,     [<span class='number'>0x0F</span>, <span class='number'>0x23</span>      ], <span class='ident'>X</span>;
                     <span class='string'>b&quot;rddd&quot;</span>,     [<span class='number'>0x0F</span>, <span class='number'>0x21</span>      ], <span class='ident'>X</span>;
                     <span class='string'>b&quot;rqdq&quot;</span>,     [<span class='number'>0x0F</span>, <span class='number'>0x21</span>      ], <span class='ident'>X</span>;
-] <span class='string'>&quot;movabs&quot;</span>      <span class='op'>=</span> [ <span class='string'>b&quot;Abib&quot;</span>,     [<span class='number'>0xA0</span>            ], <span class='ident'>X</span>; <span class='comment'>// special syntax for 64-bit disp only mov</span>
-                    <span class='string'>b&quot;Awiw&quot;</span>,     [<span class='number'>0xA1</span>            ], <span class='ident'>X</span>, <span class='ident'>WORD_SIZE</span>;
-                    <span class='string'>b&quot;Adid&quot;</span>,     [<span class='number'>0xA1</span>            ], <span class='ident'>X</span>;
+] <span class='string'>&quot;movabs&quot;</span>      <span class='op'>=</span> [ <span class='string'>b&quot;Abiq&quot;</span>,     [<span class='number'>0xA0</span>            ], <span class='ident'>X</span>; <span class='comment'>// special syntax for 64-bit disp only mov</span>
+                    <span class='string'>b&quot;Awiq&quot;</span>,     [<span class='number'>0xA1</span>            ], <span class='ident'>X</span>, <span class='ident'>WORD_SIZE</span>;
+                    <span class='string'>b&quot;Adiq&quot;</span>,     [<span class='number'>0xA1</span>            ], <span class='ident'>X</span>;
                     <span class='string'>b&quot;Aqiq&quot;</span>,     [<span class='number'>0xA1</span>            ], <span class='ident'>X</span>, <span class='ident'>WITH_REXW</span>;
-                    <span class='string'>b&quot;ibAb&quot;</span>,     [<span class='number'>0xA2</span>            ], <span class='ident'>X</span>;
-                    <span class='string'>b&quot;iwAw&quot;</span>,     [<span class='number'>0xA3</span>            ], <span class='ident'>X</span>, <span class='ident'>WORD_SIZE</span>;
-                    <span class='string'>b&quot;idAd&quot;</span>,     [<span class='number'>0xA3</span>            ], <span class='ident'>X</span>;
+                    <span class='string'>b&quot;iqAb&quot;</span>,     [<span class='number'>0xA2</span>            ], <span class='ident'>X</span>;
+                    <span class='string'>b&quot;iqAw&quot;</span>,     [<span class='number'>0xA3</span>            ], <span class='ident'>X</span>, <span class='ident'>WORD_SIZE</span>;
+                    <span class='string'>b&quot;iqAd&quot;</span>,     [<span class='number'>0xA3</span>            ], <span class='ident'>X</span>;
                     <span class='string'>b&quot;iqAq&quot;</span>,     [<span class='number'>0xA3</span>            ], <span class='ident'>X</span>, <span class='ident'>WITH_REXW</span>;
 ] <span class='string'>&quot;movbe&quot;</span>       <span class='op'>=</span> [ <span class='string'>b&quot;r*m*&quot;</span>,     [<span class='number'>0x0F</span>, <span class='number'>0x38</span>, <span class='number'>0xF0</span>], <span class='ident'>X</span>, <span class='ident'>AUTO_SIZE</span>;
                     <span class='string'>b&quot;m*r*&quot;</span>,     [<span class='number'>0x0F</span>, <span class='number'>0x38</span>, <span class='number'>0xF1</span>], <span class='ident'>X</span>, <span class='ident'>AUTO_SIZE</span>;

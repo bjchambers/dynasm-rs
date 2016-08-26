@@ -206,7 +206,7 @@
 <p>Global labels can only be defined once, and all references to a global label will be resolved to this label. Any valid rust identifier can be used as a local label name.</p>
 
 <h3 id='dynamic-labels' class='section-header'><a href='#dynamic-labels'>Dynamic labels</a></h3>
-<p>Dynamic labels are similar to global labels in that they can be defined only once, but instead of a name, they are identified by an expression that evaluates into an usize. This expression is evaluated at the point where the label is defined or referenced, and the labels will be resolved at only at commit time.</p>
+<p>Dynamic labels are similar to global labels in that they can be defined only once, but instead of a name, they are identified by an expression. New dynamic labels can be created at runtime by the assembler. This expression is evaluated at the point where the label is defined or referenced, and the labels will be resolved at only at commit time.</p>
 
 <h2 id='instructions-1' class='section-header'><a href='#instructions-1'>Instructions</a></h2>
 <p>The language used by dynasm-rs is a nasm-dialect. The largest difference is that instead of prefixing memory operands with segment registers, segment register overrides are prefixed to the entire instruction. Furthermore, it is currently not possible to override the size of the displacement used in memory operands.</p>
