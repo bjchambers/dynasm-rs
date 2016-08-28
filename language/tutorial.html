@@ -231,13 +231,13 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
     <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='string'>b&quot;H\x8d\r\x00\x00\x00\x00&quot;</span>);
     <span class='ident'>ops</span>.<span class='ident'>global_reloc</span>(<span class='string'>&quot;hello&quot;</span>, <span class='number'>4u8</span>);
     <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='string'>b&quot;1\xd2\xb2&quot;</span>);
-    <span class='ident'>ops</span>.<span class='ident'>push_8</span>(<span class='ident'>string</span>.<span class='ident'>len</span>() <span class='kw'>as</span> _);
+    <span class='ident'>ops</span>.<span class='ident'>push_i8</span>(<span class='ident'>string</span>.<span class='ident'>len</span>() <span class='kw'>as</span> _);
     <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='string'>b&quot;H\xb8&quot;</span>);
-    <span class='ident'>ops</span>.<span class='ident'>push_64</span>(<span class='ident'>print</span> <span class='kw'>as</span> _);
+    <span class='ident'>ops</span>.<span class='ident'>push_i64</span>(<span class='ident'>print</span> <span class='kw'>as</span> _);
     <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='string'>b&quot;H\x83\xec&quot;</span>);
-    <span class='ident'>ops</span>.<span class='ident'>push_8</span>(<span class='number'>40</span>);
+    <span class='ident'>ops</span>.<span class='ident'>push_i8</span>(<span class='number'>40</span>);
     <span class='ident'>ops</span>.<span class='ident'>extend</span>(<span class='string'>b&quot;\xff\xd0H\x83\xc4&quot;</span>);
-    <span class='ident'>ops</span>.<span class='ident'>push_8</span>(<span class='number'>40</span>);
+    <span class='ident'>ops</span>.<span class='ident'>push_i8</span>(<span class='number'>40</span>);
     <span class='ident'>ops</span>.<span class='ident'>push</span>(<span class='string'>b&#39;\xc3&#39;</span>);
 <span class='comment'>// )</span>
 

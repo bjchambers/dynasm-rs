@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["registrar",""]],"mod":[["compiler",""],["debug",""],["parser",""],["serialize",""],["x64data",""]]});
+initSidebarItems({"fn":[["crate_local_data",""],["registrar",""]],"mod":[["compiler",""],["debug",""],["parser",""],["serialize",""],["x64data",""]],"struct":[["CrateLocalData",""],["DYNASM_STORAGE",""],["DynasmData",""]]});

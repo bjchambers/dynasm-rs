@@ -1302,6 +1302,38 @@
 <span id="1258">1258</span>
 <span id="1259">1259</span>
 <span id="1260">1260</span>
+<span id="1261">1261</span>
+<span id="1262">1262</span>
+<span id="1263">1263</span>
+<span id="1264">1264</span>
+<span id="1265">1265</span>
+<span id="1266">1266</span>
+<span id="1267">1267</span>
+<span id="1268">1268</span>
+<span id="1269">1269</span>
+<span id="1270">1270</span>
+<span id="1271">1271</span>
+<span id="1272">1272</span>
+<span id="1273">1273</span>
+<span id="1274">1274</span>
+<span id="1275">1275</span>
+<span id="1276">1276</span>
+<span id="1277">1277</span>
+<span id="1278">1278</span>
+<span id="1279">1279</span>
+<span id="1280">1280</span>
+<span id="1281">1281</span>
+<span id="1282">1282</span>
+<span id="1283">1283</span>
+<span id="1284">1284</span>
+<span id="1285">1285</span>
+<span id="1286">1286</span>
+<span id="1287">1287</span>
+<span id="1288">1288</span>
+<span id="1289">1289</span>
+<span id="1290">1290</span>
+<span id="1291">1291</span>
+<span id="1292">1292</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>syntax</span>::<span class='ident'>ext</span>::<span class='ident'>base</span>::<span class='ident'>ExtCtxt</span>;
 <span class='kw'>use</span> <span class='ident'>syntax</span>::<span class='ident'>ext</span>::<span class='ident'>build</span>::<span class='ident'>AstBuilder</span>;
@@ -1318,6 +1350,7 @@
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>::<span class='ident'>swap</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>slice</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>iter</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>collections</span>::<span class='ident'>hash_map</span>::<span class='ident'>Entry</span>;
 
 <span class='comment'>/*
  * Compilation output
@@ -1456,6 +1489,37 @@
                 },
                 _ <span class='op'>=&gt;</span> <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;this directive only uses immediate arguments&quot;</span>)))
             }
+            <span class='prelude-val'>Ok</span>(())
+        },
+        <span class='string'>&quot;alias&quot;</span> <span class='op'>=&gt;</span> {
+            <span class='kw'>if</span> <span class='ident'>args</span>.<span class='ident'>len</span>() <span class='op'>!=</span> <span class='number'>2</span> {
+                <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;Invalid amount of arguments&quot;</span>)));
+            }
+
+            <span class='kw'>let</span> <span class='ident'>reg</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>args</span>.<span class='ident'>pop</span>().<span class='ident'>unwrap</span>() {
+                <span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='ident'>Spanned</span> {<span class='ident'>node</span>: <span class='ident'>Register</span> {<span class='ident'>kind</span>: <span class='ident'>RegKind</span>::<span class='ident'>Static</span>(<span class='ident'>id</span>), <span class='ident'>size</span>}, ..}) <span class='op'>=&gt;</span> (<span class='ident'>id</span>, <span class='ident'>size</span>),
+                _ <span class='op'>=&gt;</span> {
+                    <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;The second argument to alias should be a static register&quot;</span>)));
+                }
+            };
+
+            <span class='kw'>let</span> <span class='ident'>alias</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>args</span>.<span class='ident'>pop</span>().<span class='ident'>unwrap</span>() {
+                <span class='ident'>Arg</span>::<span class='ident'>Immediate</span>(<span class='ident'>expr</span>, _) <span class='op'>=&gt;</span> <span class='ident'>parser</span>::<span class='ident'>as_simple_name</span>(<span class='kw-2'>&amp;</span><span class='op'>*</span><span class='ident'>expr</span>),
+                _ <span class='op'>=&gt;</span> <span class='prelude-val'>None</span>
+            };
+
+            <span class='kw'>let</span> <span class='ident'>alias</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>alias</span>) <span class='op'>=</span> <span class='ident'>alias</span> {
+                <span class='ident'>alias</span>.<span class='ident'>node</span>.<span class='ident'>name</span>
+            } <span class='kw'>else</span> {
+                <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;The first argument to alias should be a non-keyword immediate&quot;</span>)));
+            };
+
+            <span class='kw'>let</span> <span class='ident'>global_data</span> <span class='op'>=</span> <span class='kw'>super</span>::<span class='ident'>crate_local_data</span>(<span class='ident'>ecx</span>);
+            <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>lock</span> <span class='op'>=</span> <span class='ident'>global_data</span>.<span class='ident'>write</span>();
+            <span class='kw'>match</span> <span class='ident'>lock</span>.<span class='ident'>aliases</span>.<span class='ident'>entry</span>(<span class='ident'>alias</span>) {
+                <span class='ident'>Entry</span>::<span class='ident'>Occupied</span>(_) <span class='op'>=&gt;</span> <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;Duplicate alias definition, alias &#39;{}&#39; was earlier defined&quot;</span>, <span class='ident'>alias</span>.<span class='ident'>as_str</span>()))),
+                <span class='ident'>Entry</span>::<span class='ident'>Vacant</span>(<span class='ident'>v</span>) <span class='op'>=&gt;</span> <span class='ident'>v</span>.<span class='ident'>insert</span>(<span class='ident'>reg</span>)
+            };
             <span class='prelude-val'>Ok</span>(())
         },
         <span class='ident'>d</span> <span class='op'>=&gt;</span> {

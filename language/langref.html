@@ -73,7 +73,7 @@
 
 <ul>
 <li><code>prefix : &quot;cs&quot; | &quot;ds&quot; | &quot;es&quot; | &quot;fs&quot; | &quot;gs&quot; | &quot;ss&quot; | &quot;lock&quot; | &quot;rep&quot; | &quot;repne&quot; | &quot;repe&quot; | &quot;repnz&quot; | &quot;repz&quot; ;</code></li>
-<li><code>static_reg</code> matches any valid register name as seen in table 3</li>
+<li><code>static_reg</code> matches any valid register name as seen in table 3, or any previously defined alias</li>
 <li><code>dynamic_reg_family</code> matches any valid register family from table 3</li>
 <li><code>size : &quot;BYTE&quot; | &quot;WORD&quot; | &quot;DWORD&quot; | &quot;AWORD&quot; | &quot;QWORD&quot; | &quot;OWORD&quot; | &quot;HWORD&quot;</code></li>
 </ul>
@@ -132,6 +132,11 @@
 
 <tbody>
 <tr>
+<td><code>.alias</code></td>
+<td>An name followed by a register</td>
+<td>defines the name as an alias for the wanted register.</td>
+</tr>
+<tr>
 <td><code>.align</code></td>
 <td>An expression of type usize</td>
 <td>Pushes NOPs until the assembling head has reached the desired alignment.</td>
@@ -163,6 +168,9 @@
 </tr>
 </tbody>
 </table>
+
+<h2 id='aliases' class='section-header'><a href='#aliases'>Aliases</a></h2>
+<p>Dynasm-rs allows the user to define aliases for registers using the <code>.alias name, register</code> directive. These aliases can then be used at places where registers are allowed to be used. Note that aliases are only usable after the end of the <code>dynasm!</code> block in which they were defined, and their scoping is crate-global. They are defined in lexical parsing order.</p>
 
 <h2 id='labels-1' class='section-header'><a href='#labels-1'>Labels</a></h2>
 <p>In order to describe flow control effectively, dynasm-rs supports labels. However, since the assembly templates can be combined in a variety of ways at the mercy of the program using dynasm-rs, the semantics of these labels are somewhat different from how labels work in a static assembler.</p>

@@ -54,11 +54,12 @@
 compilation as well as multithreaded execution with simultaneous compilation.
 Its implementation ensures that no memory is writeable and executable at the
 same time.</p>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../dynasmrt/struct.Assembler.html' title='dynasmrt::Assembler'>Assembler</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-224' class='srclink' href='../src/dynasmrt/src/lib.rs.html#244-384' title='goto source code'>[src]</a></span></h3>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../dynasmrt/struct.Assembler.html' title='dynasmrt::Assembler'>Assembler</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-224' class='srclink' href='../src/dynasmrt/src/lib.rs.html#244-385' title='goto source code'>[src]</a></span></h3>
 <div class='impl-items'><h4 id='method.new' class='method'><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='struct' href='../dynasmrt/struct.Assembler.html' title='dynasmrt::Assembler'>Assembler</a></code></span></h4>
 <div class='docblock'><p>Create a new <code>Assembler</code> instance</p>
 </div><h4 id='method.new_dynamic_label' class='method'><span id='new_dynamic_label.v' class='invisible'><code>fn <a href='#method.new_dynamic_label' class='fnname'>new_dynamic_label</a>(&amp;mut self) -&gt; <a class='struct' href='../dynasmrt/struct.DynamicLabel.html' title='dynasmrt::DynamicLabel'>DynamicLabel</a></code></span></h4>
-<h4 id='method.commit' class='method'><span id='commit.v' class='invisible'><code>fn <a href='#method.commit' class='fnname'>commit</a>(&amp;mut self)</code></span></h4>
+<div class='docblock'><p>Create a new dynamic label that can be referenced and defined.</p>
+</div><h4 id='method.commit' class='method'><span id='commit.v' class='invisible'><code>fn <a href='#method.commit' class='fnname'>commit</a>(&amp;mut self)</code></span></h4>
 <div class='docblock'><p>Commit the assembled code from a temporary buffer to the executable buffer.
 This method requires write access to the execution buffer and therefore
 has to obtain a lock on the datastructure. When this method is called, all
@@ -102,13 +103,13 @@ calls.</p>
 <div class='docblock'><p>Record a relocation spot for a forward reference to a local label</p>
 </div><h4 id='method.backward_reloc' class='method'><span id='backward_reloc.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#tymethod.backward_reloc' class='fnname'>backward_reloc</a>(&amp;mut self, name: &amp;'static <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>)</code></span></h4>
 <div class='docblock'><p>Record a relocation spot for a backward reference to a local label</p>
-</div><h4 id='method.push_8' class='method'><span id='push_8.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_8' class='fnname'>push_8</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a>)</code></span></h4>
+</div><h4 id='method.push_i8' class='method'><span id='push_i8.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_i8' class='fnname'>push_i8</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a>)</code></span></h4>
 <div class='docblock'><p>Push a signed byte into the assembling target</p>
-</div><h4 id='method.push_16' class='method'><span id='push_16.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_16' class='fnname'>push_16</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i16.html'>i16</a>)</code></span></h4>
+</div><h4 id='method.push_i16' class='method'><span id='push_i16.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_i16' class='fnname'>push_i16</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i16.html'>i16</a>)</code></span></h4>
 <div class='docblock'><p>Push a signed word into the assembling target</p>
-</div><h4 id='method.push_32' class='method'><span id='push_32.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_32' class='fnname'>push_32</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>)</code></span></h4>
+</div><h4 id='method.push_i32' class='method'><span id='push_i32.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_i32' class='fnname'>push_i32</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>)</code></span></h4>
 <div class='docblock'><p>Push a signed doubleword into the assembling target</p>
-</div><h4 id='method.push_64' class='method'><span id='push_64.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_64' class='fnname'>push_64</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>)</code></span></h4>
+</div><h4 id='method.push_i64' class='method'><span id='push_i64.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_i64' class='fnname'>push_i64</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>)</code></span></h4>
 <div class='docblock'><p>Push a signed quadword into the assembling target</p>
 </div><h4 id='method.runtime_error' class='method'><span id='runtime_error.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.runtime_error' class='fnname'>runtime_error</a>(&amp;self, msg: &amp;'static <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; !</code></span></h4>
 <div class='docblock'><p>This function is called in when a runtime error has to be generated. It panics.</p>
