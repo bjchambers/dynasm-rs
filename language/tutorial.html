@@ -261,12 +261,839 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 <p>As you can see, the encoding has been determined fully at compile time, and the assembly has been reduced to a series of push and extend calls.</p>
 
 <h1 id='advanced-usage' class='section-header'><a href='#advanced-usage'>Advanced usage</a></h1>
-<p>Coming soon.</p>
+<p>To demonstrate some of the more advanced usage, we&#39;ll show how to rewrite a rust brainfsck interpreter to a jit compiler. The starting point is the following interpreter that can also be found <a href="https://github.com/CensoredUsername/dynasm-rs/tree/master/doc/examples/bf-interpreter">here</a>:</p>
+
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::{<span class='ident'>Read</span>, <span class='ident'>BufRead</span>, <span class='ident'>Write</span>, <span class='ident'>stdin</span>, <span class='ident'>stdout</span>, <span class='ident'>BufReader</span>, <span class='ident'>BufWriter</span>};
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>env</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fs</span>::<span class='ident'>File</span>;
+
+<span class='kw'>const</span> <span class='ident'>TAPE_SIZE</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>30000</span>;
+
+<span class='kw'>struct</span> <span class='ident'>Interpreter</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='ident'>input</span>: <span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>BufRead</span> <span class='op'>+</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>,
+    <span class='kw'>pub</span> <span class='ident'>output</span>: <span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>Write</span> <span class='op'>+</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>,
+    <span class='kw'>pub</span> <span class='ident'>loops</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>usize</span><span class='op'>&gt;</span>,
+    <span class='kw'>pub</span> <span class='ident'>tape</span>: [<span class='ident'>u8</span>; <span class='ident'>TAPE_SIZE</span>],
+    <span class='kw'>pub</span> <span class='ident'>tape_index</span>: <span class='ident'>usize</span>,
+    <span class='kw'>pub</span> <span class='ident'>pos</span>: <span class='ident'>usize</span>
+}
+
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>Interpreter</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+    <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>input</span>: <span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>BufRead</span> <span class='op'>+</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>, <span class='ident'>output</span>: <span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>Write</span> <span class='op'>+</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span> <span class='ident'>Interpreter</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+        <span class='ident'>Interpreter</span> {
+            <span class='ident'>input</span>: <span class='ident'>input</span>,
+            <span class='ident'>output</span>: <span class='ident'>output</span>,
+            <span class='ident'>loops</span>: <span class='ident'>Vec</span>::<span class='ident'>new</span>(),
+            <span class='ident'>tape</span>: [<span class='number'>0</span>; <span class='ident'>TAPE_SIZE</span>],
+            <span class='ident'>tape_index</span>: <span class='number'>0</span>,
+            <span class='ident'>pos</span>: <span class='number'>0</span>
+        }
+    }
+
+    <span class='kw'>fn</span> <span class='ident'>run</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>program</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>u8</span>]) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span><span class='op'>&gt;</span> {
+        <span class='kw'>while</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>&amp;</span><span class='ident'>c</span>) <span class='op'>=</span> <span class='ident'>program</span>.<span class='ident'>get</span>(<span class='self'>self</span>.<span class='ident'>pos</span>) {
+            <span class='self'>self</span>.<span class='ident'>pos</span> <span class='op'>+=</span> <span class='number'>1</span>;
+
+            <span class='kw'>match</span> <span class='ident'>c</span> {
+                <span class='string'>b&#39;&lt;&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>let</span> <span class='ident'>amount</span> <span class='op'>=</span> <span class='ident'>count_leading_chars</span>(<span class='kw-2'>&amp;</span><span class='ident'>program</span>[<span class='self'>self</span>.<span class='ident'>pos</span>..], <span class='string'>b&#39;&lt;&#39;</span>);
+                    <span class='self'>self</span>.<span class='ident'>pos</span> <span class='op'>+=</span> <span class='ident'>amount</span>;
+
+                    <span class='self'>self</span>.<span class='ident'>tape_index</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>tape_index</span>.<span class='ident'>wrapping_sub</span>(<span class='ident'>amount</span> <span class='op'>+</span> <span class='number'>1</span>);
+                    <span class='kw'>while</span> <span class='self'>self</span>.<span class='ident'>tape_index</span> <span class='op'>&gt;=</span> <span class='ident'>TAPE_SIZE</span> {
+                        <span class='self'>self</span>.<span class='ident'>tape_index</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>tape_index</span>.<span class='ident'>wrapping_add</span>(<span class='ident'>TAPE_SIZE</span>);
+                    }
+                },
+                <span class='string'>b&#39;&gt;&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>let</span> <span class='ident'>amount</span> <span class='op'>=</span> <span class='ident'>count_leading_chars</span>(<span class='kw-2'>&amp;</span><span class='ident'>program</span>[<span class='self'>self</span>.<span class='ident'>pos</span>..], <span class='string'>b&#39;&gt;&#39;</span>);
+                    <span class='self'>self</span>.<span class='ident'>pos</span> <span class='op'>+=</span> <span class='ident'>amount</span>;
+
+                    <span class='self'>self</span>.<span class='ident'>tape_index</span> <span class='op'>+=</span> <span class='ident'>amount</span> <span class='op'>+</span> <span class='number'>1</span>;
+                    <span class='kw'>while</span> <span class='self'>self</span>.<span class='ident'>tape_index</span> <span class='op'>&gt;=</span> <span class='ident'>TAPE_SIZE</span> {
+                        <span class='self'>self</span>.<span class='ident'>tape_index</span> <span class='op'>-=</span> <span class='ident'>TAPE_SIZE</span>;
+                    }
+                },
+                <span class='string'>b&#39;+&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>let</span> <span class='ident'>amount</span> <span class='op'>=</span> <span class='ident'>count_leading_chars</span>(<span class='kw-2'>&amp;</span><span class='ident'>program</span>[<span class='self'>self</span>.<span class='ident'>pos</span>..], <span class='string'>b&#39;+&#39;</span>);
+                    <span class='self'>self</span>.<span class='ident'>pos</span> <span class='op'>+=</span> <span class='ident'>amount</span>;
+                    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>a</span>) <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>tape</span>[<span class='self'>self</span>.<span class='ident'>tape_index</span>].<span class='ident'>checked_add</span>(<span class='ident'>amount</span> <span class='kw'>as</span> <span class='ident'>u8</span> <span class='op'>+</span> <span class='number'>1</span>) {
+                        <span class='self'>self</span>.<span class='ident'>tape</span>[<span class='self'>self</span>.<span class='ident'>tape_index</span>] <span class='op'>=</span> <span class='ident'>a</span>;
+                    } <span class='kw'>else</span> {
+                        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;An overflow occurred&quot;</span>);
+                    }
+                },
+                <span class='string'>b&#39;-&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>let</span> <span class='ident'>amount</span> <span class='op'>=</span> <span class='ident'>count_leading_chars</span>(<span class='kw-2'>&amp;</span><span class='ident'>program</span>[<span class='self'>self</span>.<span class='ident'>pos</span>..], <span class='string'>b&#39;-&#39;</span>);
+                    <span class='self'>self</span>.<span class='ident'>pos</span> <span class='op'>+=</span> <span class='ident'>amount</span>;
+                    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>a</span>) <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>tape</span>[<span class='self'>self</span>.<span class='ident'>tape_index</span>].<span class='ident'>checked_sub</span>(<span class='ident'>amount</span> <span class='kw'>as</span> <span class='ident'>u8</span> <span class='op'>+</span> <span class='number'>1</span>) {
+                        <span class='self'>self</span>.<span class='ident'>tape</span>[<span class='self'>self</span>.<span class='ident'>tape_index</span>] <span class='op'>=</span> <span class='ident'>a</span>;
+                    } <span class='kw'>else</span> {
+                        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;An overflow occurred&quot;</span>);
+                    }
+                },
+                <span class='string'>b&#39;,&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>let</span> <span class='ident'>err</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>output</span>.<span class='ident'>flush</span>().<span class='ident'>is_err</span>();
+                    <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>input</span>.<span class='ident'>read_exact</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>.<span class='ident'>tape</span>[<span class='self'>self</span>.<span class='ident'>tape_index</span>..<span class='self'>self</span>.<span class='ident'>tape_index</span> <span class='op'>+</span> <span class='number'>1</span>]).<span class='ident'>is_err</span>() <span class='op'>||</span> <span class='ident'>err</span> {
+                        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;IO error&quot;</span>);
+                    }
+                },
+                <span class='string'>b&#39;.&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>output</span>.<span class='ident'>write_all</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>tape</span>[<span class='self'>self</span>.<span class='ident'>tape_index</span>..<span class='self'>self</span>.<span class='ident'>tape_index</span> <span class='op'>+</span> <span class='number'>1</span>]).<span class='ident'>is_err</span>() {
+                        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;IO error&quot;</span>);
+                    }
+                },
+                <span class='string'>b&#39;[&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>tape</span>[<span class='self'>self</span>.<span class='ident'>tape_index</span>] <span class='op'>==</span> <span class='number'>0</span> {
+                        <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>nesting</span> <span class='op'>=</span> <span class='number'>1</span>;
+                        <span class='kw'>let</span> <span class='ident'>amount</span> <span class='op'>=</span> <span class='ident'>program</span>[<span class='self'>self</span>.<span class='ident'>pos</span>..].<span class='ident'>iter</span>().<span class='ident'>take_while</span>(<span class='op'>|</span><span class='ident'>x</span><span class='op'>|</span> <span class='kw'>match</span> <span class='op'>*</span><span class='op'>*</span><span class='ident'>x</span> {
+                            <span class='string'>b&#39;[&#39;</span> <span class='op'>=&gt;</span> {<span class='ident'>nesting</span> <span class='op'>+=</span> <span class='number'>1</span>; <span class='bool-val'>true</span>},
+                            <span class='string'>b&#39;]&#39;</span> <span class='op'>=&gt;</span> {<span class='ident'>nesting</span> <span class='op'>-=</span> <span class='number'>1</span>; <span class='ident'>nesting</span> <span class='op'>!=</span> <span class='number'>0</span>},
+                            _ <span class='op'>=&gt;</span> <span class='bool-val'>true</span>
+                        }).<span class='ident'>count</span>() <span class='op'>+</span> <span class='number'>1</span>;
+                        <span class='kw'>if</span> <span class='ident'>nesting</span> <span class='op'>!=</span> <span class='number'>0</span> {
+                            <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;[ without matching ]&quot;</span>);
+                        }
+                        <span class='self'>self</span>.<span class='ident'>pos</span> <span class='op'>+=</span> <span class='ident'>amount</span>;
+                    } <span class='kw'>else</span> {
+                        <span class='self'>self</span>.<span class='ident'>loops</span>.<span class='ident'>push</span>(<span class='self'>self</span>.<span class='ident'>pos</span>);
+                    }
+                },
+                <span class='string'>b&#39;]&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>tape</span>[<span class='self'>self</span>.<span class='ident'>tape_index</span>] <span class='op'>==</span> <span class='number'>0</span> {
+                        <span class='self'>self</span>.<span class='ident'>loops</span>.<span class='ident'>pop</span>();
+                    } <span class='kw'>else</span> <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>&amp;</span><span class='ident'>loc</span>) <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>loops</span>.<span class='ident'>last</span>() {
+                        <span class='self'>self</span>.<span class='ident'>pos</span> <span class='op'>=</span> <span class='ident'>loc</span>;
+                    } <span class='kw'>else</span> {
+                        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;] without matching [&quot;</span>);
+                    }
+                },
+                _ <span class='op'>=&gt;</span> ()
+            }
+        }
+
+        <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>loops</span>.<span class='ident'>len</span>() <span class='op'>!=</span> <span class='number'>0</span> {
+            <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;[ without matching ]&quot;</span>);
+        }
+        <span class='prelude-val'>Ok</span>(())
+    }
+}
+
+<span class='kw'>fn</span> <span class='ident'>count_leading_chars</span>(<span class='ident'>program</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>u8</span>], <span class='ident'>c</span>: <span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>usize</span> {
+    <span class='ident'>program</span>.<span class='ident'>iter</span>().<span class='ident'>take_while</span>(<span class='op'>|</span><span class='ident'>x</span><span class='op'>|</span> <span class='op'>*</span><span class='op'>*</span><span class='ident'>x</span> <span class='op'>==</span> <span class='ident'>c</span>).<span class='ident'>count</span>()
+}
+
+<span class='kw'>fn</span> <span class='ident'>main</span>() {
+    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>args</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span>_<span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>env</span>::<span class='ident'>args</span>().<span class='ident'>collect</span>();
+    <span class='kw'>if</span> <span class='ident'>args</span>.<span class='ident'>len</span>() <span class='op'>!=</span> <span class='number'>2</span> {
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Expected 1 argument, got {}&quot;</span>, <span class='ident'>args</span>.<span class='ident'>len</span>());
+        <span class='kw'>return</span>;
+    }
+    <span class='kw'>let</span> <span class='ident'>path</span> <span class='op'>=</span> <span class='ident'>args</span>.<span class='ident'>pop</span>().<span class='ident'>unwrap</span>();
+
+    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>f</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Ok</span>(<span class='ident'>f</span>) <span class='op'>=</span> <span class='ident'>File</span>::<span class='ident'>open</span>(<span class='kw-2'>&amp;</span><span class='ident'>path</span>) { <span class='ident'>f</span> } <span class='kw'>else</span> {
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Could not open file {}&quot;</span>, <span class='ident'>path</span>);
+        <span class='kw'>return</span>;
+    };
+
+    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>buf</span> <span class='op'>=</span> <span class='ident'>Vec</span>::<span class='ident'>new</span>();
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Err</span>(_) <span class='op'>=</span> <span class='ident'>f</span>.<span class='ident'>read_to_end</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>buf</span>) {
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Failed to read from file&quot;</span>);
+        <span class='kw'>return</span>;
+    }
+
+    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>interp</span> <span class='op'>=</span> <span class='ident'>Interpreter</span>::<span class='ident'>new</span>(
+        <span class='ident'>Box</span>::<span class='ident'>new</span>(<span class='ident'>BufReader</span>::<span class='ident'>new</span>(<span class='ident'>stdin</span>())), 
+        <span class='ident'>Box</span>::<span class='ident'>new</span>(<span class='ident'>BufWriter</span>::<span class='ident'>new</span>(<span class='ident'>stdout</span>()))
+    );
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Err</span>(<span class='ident'>e</span>) <span class='op'>=</span> <span class='ident'>interp</span>.<span class='ident'>run</span>(<span class='kw-2'>&amp;</span><span class='ident'>buf</span>) {
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;{}&quot;</span>, <span class='ident'>e</span>);
+    }
+}</pre>
+
+<h2 id='basics' class='section-header'><a href='#basics'>Basics</a></h2>
+<p>To kickstart this process, we&#39;ll first add the <code>dynasm</code> plugin and <code>dynasmrt</code> crate to our project, and <code>use</code> the <code>DynasmApi</code> trait:</p>
+
+<pre><code class="language-diffnew">+ #![feature(plugin)]
++ #![plugin(dynasm)]
++ 
++ #[macro_use]
++ extern crate dynasmrt;
++ use dynasmrt::DynasmApi;
+</code></pre>
+
+<p>Then, we&#39;ll define the following aliases to make the code more readable. As this code is specific to <code>x86_64</code> we&#39;ll add a <code>cfg</code> attribute here so the code will fail to compile on other architectures. Note that <code>ops</code> is purely a placeholder here for the parser, it isn&#39;t actually used.</p>
+
+<pre><code class="language-diffnew">+ #[cfg(target_arch = &quot;x86_64&quot;)]
++ dynasm!(ops
++     ; .alias a_state, rcx
++     ; .alias a_current, rdx
++     ; .alias a_begin, r8
++     ; .alias a_end, r9
++     ; .alias retval, rax
++ );
+</code></pre>
+
+<p>We can now define several utility macros to handle common operations in the code.</p>
+
+<pre><code class="language-diffnew">+ macro_rules! prologue {
++     ($ops:ident) =&gt; {{
++         let start = $ops.offset();
++         dynasm!($ops
++             ; sub rsp, 0x28
++             ; mov [rsp + 0x30], rcx
++             ; mov [rsp + 0x40], r8
++             ; mov [rsp + 0x48], r9
++         );
++         start
++     }};
++ }
++ 
++ macro_rules! epilogue {
++     ($ops:ident, $e:expr) =&gt; {dynasm!($ops
++         ; mov retval, $e
++         ; add rsp, 0x28
++         ; ret
++     );};
++ }
++ 
++ macro_rules! call_extern {
++     ($ops:ident, $addr:expr) =&gt; {dynasm!($ops
++         ; mov [rsp + 0x38], rdx
++         ; mov rax, QWORD $addr as _
++         ; call rax
++         ; mov rcx, [rsp + 0x30]
++         ; mov rdx, [rsp + 0x38]
++         ; mov r8,  [rsp + 0x40]
++         ; mov r9,  [rsp + 0x48]
++     );};
++ }
+</code></pre>
+
+<h2 id='state' class='section-header'><a href='#state'>State</a></h2>
+<p>Looking at the state of the interpreter, it contains a lot of fields that the jit compiler doesn&#39;t need. We therefore reduce the state and we define a second struct which will hold the compiled machine code:</p>
+
+<pre><code class="language-diffold">- struct Interpreter&lt;&#39;a&gt; {
+-     pub input: Box&lt;BufRead + &#39;a&gt;,
+-     pub output: Box&lt;Write + &#39;a&gt;,
+-     pub loops: Vec&lt;usize&gt;,
+-     pub tape: [u8; TAPE_SIZE],
+-     pub tape_index: usize,
+-     pub pos: usize
+- }
+</code></pre>
+
+<pre><code class="language-diffnew">+ struct State&lt;&#39;a&gt; {
++     pub input: Box&lt;BufRead + &#39;a&gt;,
++     pub output: Box&lt;Write + &#39;a&gt;,
++     tape: [u8; TAPE_SIZE]
++ }
++ 
++ struct Program {
++     code: dynasmrt::ExecutableBuffer,
++     start: dynasmrt::AssemblyOffset,
++ }
+</code></pre>
+
+<h2 id='compiler' class='section-header'><a href='#compiler'>Compiler</a></h2>
+<p>With the state defined, we can now start adapting the <code>Interpreter::run</code> method into <code>Program::compile</code>, starting with initalization code. We initialize an assembler and a <code>Vec</code> to hold the loops stack. As we will only parse through the code once, replace the slice indexing by an iterator that allows us to look ahead, courtesy of the <code>itertools</code> crate. We get the starting offset and emit the function prologue and finally we start iterating through the program:
+```diffold
+- impl&lt;&#39;a&gt; Interpreter&lt;&#39;a&gt; {
+-     fn new(input: Box<BufRead + 'a>, output: Box<Write + 'a>) -&gt; Interpreter&lt;&#39;a&gt; {
+-         Interpreter {
+-             input: input,
+-             output: output,
+-             loops: Vec::new(),
+-             tape: [0; TAPE_SIZE],
+-             tape_index: 0,
+-             pos: 0
+-         }</p>
+
+<h2 id='------' class='section-header'><a href='#------'>-     }</a></h2>
+<ul>
+<li>    fn run(&amp;mut self, program: &amp;[u8]) -&gt; Result&lt;(), &amp;&#39;static str&gt; {</li>
+<li>        while let Some(&amp;c) = program.get(self.pos) {</li>
+<li>            self.pos += 1;
+<code></code>diffnew</li>
+<li>impl Program {</li>
+<li>    fn compile(program: &amp;[u8]) -&gt; Result<Program, &'static str> {</li>
+<li>        let mut ops = dynasmrt::Assembler::new();</li>
+<li>        let mut loops = Vec::new();</li>
+<li>        let mut code = program.iter().cloned().multipeek();</li>
+<li></li>
+<li>        let start = prologue!(ops);</li>
+<li>        while let Some(c) = code.next() {
+```</li>
+</ul>
+
+<h3 id='tape-movement' class='section-header'><a href='#tape-movement'>Tape movement</a></h3>
+<p>We can now replace the the tape movement by an optimized assembly version. Note the local label used to implement tape wraparound:</p>
+
+<pre><code class="language-diffold">- let amount = count_leading_chars(&amp;program[self.pos..], b&#39;&lt;&#39;);
+- self.pos += amount;
+- 
+- self.tape_index = self.tape_index.wrapping_sub(amount + 1);
+- while self.tape_index &gt;= TAPE_SIZE {
+-     self.tape_index = self.tape_index.wrapping_add(TAPE_SIZE);
+- }
+</code></pre>
+
+<pre><code class="language-diffnew">+ let amount = code.take_while_ref(|x| *x == b&#39;&lt;&#39;).count() + 1;
++ dynasm!(ops
++     ; sub a_current, (amount % TAPE_SIZE) as _
++     ; cmp a_current, a_begin
++     ; jae &gt;wrap
++     ; add a_current, TAPE_SIZE as _
++     ;wrap:
++ );
+</code></pre>
+
+<pre><code class="language-diffold">- let amount = count_leading_chars(&amp;program[self.pos..], b&#39;&gt;&#39;);
+- self.pos += amount;
+- self.tape_index += amount + 1;
+- while self.tape_index &gt;= TAPE_SIZE {
+-     self.tape_index -= TAPE_SIZE;
+- }
+</code></pre>
+
+<pre><code class="language-diffnew">+ let amount = code.take_while_ref(|x| *x == b&#39;&gt;&#39;).count() + 1;
++ dynasm!(ops
++     ; add a_current, (amount % TAPE_SIZE) as _
++     ; cmp a_current, a_end
++     ; jb &gt;wrap
++     ; sub a_current, TAPE_SIZE as _
++     ;wrap:
++ );
+</code></pre>
+
+<h3 id='arithmetric' class='section-header'><a href='#arithmetric'>Arithmetric</a></h3>
+<p>The <code>+</code> and <code>-</code> instructions have by far the most simple implementations. Note that when an overflow occurs at runtime, we jump to the <code>-&gt;overflow:</code> global label (Note: overflow is somewhat ill-defined in brainfsck, but in the spirit of rust I decided that everything that can be checked should be checked):</p>
+
+<pre><code class="language-diffold">- let amount = count_leading_chars(&amp;program[self.pos..], b&#39;+&#39;);
+- self.pos += amount;
+- if let Some(a) = self.tape[self.tape_index].checked_add(amount as u8 + 1) {
+-     self.tape[self.tape_index] = a;
+- } else {
+-     return Err(&quot;An overflow occurred&quot;);
+- }
+</code></pre>
+
+<pre><code class="language-diffnew">+ let amount = code.take_while_ref(|x| *x == b&#39;+&#39;).count() + 1;
++ if amount &gt; u8::MAX as usize {
++     return Err(&quot;An overflow occurred&quot;);
++ }
++ dynasm!(ops
++     ; add BYTE [a_current], amount as _
++     ; jo -&gt;overflow
++ );
+</code></pre>
+
+<pre><code class="language-diffold">- let amount = count_leading_chars(&amp;program[self.pos..], b&#39;-&#39;);
+- self.pos += amount;
+- if let Some(a) = self.tape[self.tape_index].checked_sub(amount as u8 + 1) {
+-     self.tape[self.tape_index] = a;
+- } else {
+-     return Err(&quot;An overflow occurred&quot;);
+- }
+</code></pre>
+
+<pre><code class="language-diffnew">+ let amount = code.take_while_ref(|x| *x == b&#39;-&#39;).count() + 1;
++ if amount &gt; u8::MAX as usize {
++     return Err(&quot;An overflow occurred&quot;);
++ }
++ dynasm!(ops
++     ; sub BYTE [a_current], amount as _
++     ; jo -&gt;overflow
++ );
+</code></pre>
+
+<h3 id='io' class='section-header'><a href='#io'>I/O</a></h3>
+<p>As the input and output fields of state are implemented as trait objects, we need to handle the virtual call to them in rust code. Therefore, we first define the following wrapper methods on <code>State</code>:</p>
+
+<pre><code class="language-diffnew">impl&lt;&#39;a&gt; State&lt;&#39;a&gt; {
+    unsafe extern &quot;win64&quot; fn getchar(state: *mut State, cell: *mut u8) -&gt; u8 {
+        let state = &amp;mut *state;
+        let err = state.output.flush().is_err();
+        (state.input.read_exact(slice::from_raw_parts_mut(cell, 1)).is_err() || err) as u8
+    }
+
+    unsafe extern &quot;win64&quot; fn putchar(state: *mut State, cell: *mut u8) -&gt; u8 {
+        let state = &amp;mut *state;
+        state.output.write_all(slice::from_raw_parts(cell, 1)).is_err() as u8
+    }
+</code></pre>
+
+<p>We can then simply call these methods directly from the compiled code. If the I/O functions failed, we jump to the <code>-&gt;io_failure</code> global label:</p>
+
+<pre><code class="language-diffold">- let err = self.output.flush().is_err();
+- if self.input.read_exact(&amp;mut self.tape[self.tape_index..self.tape_index + 1]).is_err() || err {
+-     return Err(&quot;IO error&quot;);
+- }
+</code></pre>
+
+<pre><code class="language-diffnew">+ call_extern!(ops, State::getchar);
++ dynasm!(ops
++     ; cmp al, 0
++     ; jnz -&gt;io_failure
++ );
+</code></pre>
+
+<pre><code class="language-diffold">- if self.output.write_all(&amp;self.tape[self.tape_index..self.tape_index + 1]).is_err() {
+-     return Err(&quot;IO error&quot;);
+- }
+</code></pre>
+
+<pre><code class="language-diffnew">+ call_extern!(ops, State::putchar);
++ dynasm!(ops
++     ; cmp al, 0
++     ; jnz -&gt;io_failure
++ );
+</code></pre>
+
+<h3 id='loops' class='section-header'><a href='#loops'>Loops</a></h3>
+<p>The <code>[</code> and <code>]</code> commands have the most complex implementation. When a <code>[</code> is encountered, we need to declare two dynamic labels. One to jump to after the <code>]</code> when the current tape value is 0 and another to jump from the <code>]</code> to just after the <code>[</code> when the current tape value is not 0. Additionally, we special case the sequence <code>[-]</code> which is often used to set the current tape value to 0 and emit optimized machine code for it.</p>
+
+<pre><code class="language-diffold">- if self.tape[self.tape_index] == 0 {
+-     let mut nesting = 1;
+-     let amount = program[self.pos..].iter().take_while(|x| match **x {
+-         b&#39;[&#39; =&gt; {nesting += 1; true},
+-         b&#39;]&#39; =&gt; {nesting -= 1; nesting != 0},
+-         _ =&gt; true
+-     }).count() + 1;
+-     if nesting != 0 {
+-         return Err(&quot;[ without matching ]&quot;);
+-     }
+-     self.pos += amount;
+- } else {
+-     self.loops.push(self.pos);
+- }
+</code></pre>
+
+<pre><code class="language-diffnew">+ let first = code.peek() == Some(&amp;b&#39;-&#39;);
++ if first &amp;&amp; code.peek() == Some(&amp;b&#39;]&#39;) {
++     code.next();
++     code.next();
++     dynasm!(ops
++         ; mov BYTE [a_current], 0
++     );
++ } else {
++     let backward_label = ops.new_dynamic_label();
++     let forward_label  = ops.new_dynamic_label();
++     loops.push((backward_label, forward_label));
++     dynasm!(ops
++         ; cmp BYTE [a_current], 0
++         ; jz =&gt;forward_label
++         ;=&gt;backward_label
++     );
++ }
+</code></pre>
+
+<pre><code class="language-diffold">- if self.tape[self.tape_index] == 0 {
+-     self.loops.pop();
+- } else if let Some(&amp;loc) = self.loops.last() {
+-     self.pos = loc;
+- } else {
+-     return Err(&quot;] without matching [&quot;);
+- }
+</code></pre>
+
+<pre><code class="language-diffnew">+ if let Some((backward_label, forward_label)) = loops.pop() {
++     dynasm!(ops
++         ; cmp BYTE [a_current], 0
++         ; jnz =&gt;backward_label
++         ;=&gt;forward_label
++     );
++ } else {
++     return Err(&quot;] without matching [&quot;);
++ },
+</code></pre>
+
+<h3 id='epilogue' class='section-header'><a href='#epilogue'>Epilogue</a></h3>
+<p>With the end of the parsing reached, we must now handle the return and possible error conditions. This is done by returning 0 if the executionw as successful, or an error code when an error happened at runtime.</p>
+
+<pre><code class="language-diffnew">+ epilogue!(ops, 0);
++ 
++ dynasm!(ops
++     ;-&gt;overflow:
++ );
++ epilogue!(ops, 1);
++ 
++ dynasm!(ops
++     ;-&gt;io_failure:
++ );
++ epilogue!(ops, 2);
+</code></pre>
+
+<p>Now we can finalize the assembler and construct a Program from the resulting buffer:</p>
+
+<pre><code class="language-diffold">- Ok(())
+</code></pre>
+
+<pre><code class="language-diffnew">+ let code = ops.finalize().unwrap();
++ Ok(Program {
++     code: code,
++     start: start
++ })
+</code></pre>
+
+<h2 id='calling-the-compiled-code' class='section-header'><a href='#calling-the-compiled-code'>Calling the compiled code</a></h2>
+<p>First, we add an initializer method to <code>State</code>:</p>
+
+<pre><code class="language-diffnew">+ fn new(input: Box&lt;BufRead + &#39;a&gt;, output: Box&lt;Write + &#39;a&gt;) -&gt; State&lt;&#39;a&gt; {
++     State {
++         input: input,
++         output: output,
++         tape: [0; TAPE_SIZE]
++     }
++ }
+</code></pre>
+
+<p>Then, we add a <code>run</code> method on <code>Program</code>. This method does the following:</p>
+
+<ul>
+<li>Transmute a pointer to the start of our compiled data to a function. This is the one unsafe {} block always needed when using Dynasm-rs, but it is probably the most dangerous one you&#39;ll ever find.</li>
+<li>Create the input arguments to the function from a <code>State</code>. Since the &quot;win64&quot; calling convention is used these arguments will end up in the wanted registers <code>rcx</code>, <code>rdx</code>, <code>r8</code> and <code>r9</code> as specified by the aliases from the beginning.</li>
+<li>Run the function.</li>
+<li>Return a <code>Result</code> based on the error code returned by the function.</li>
+</ul>
+
+<pre><code class="language-diffnew">+ fn run(self, state: &amp;mut State) -&gt; Result&lt;(), &amp;&#39;static str&gt; {
++     let f: extern &quot;win64&quot; fn(*mut State, *mut u8, *mut u8, *const u8) -&gt; u8 = unsafe {
++         mem::transmute(self.code.ptr(self.start))
++     };
++     let start = state.tape.as_mut_ptr();
++     let end = unsafe { start.offset(TAPE_SIZE as isize) };
++     let res = f(state, start, start, end);
++     if res == 0 {
++         Ok(())
++     } else if res == 1 {
++         Err(&quot;An overflow occurred&quot;)
++     } else if res == 2 {
++         Err(&quot;IO error&quot;)
++     } else {
++         panic!(&quot;Unknown error code&quot;);
++     }
++ }
+</code></pre>
+
+<p>And finally, we can edit the <code>main</code> function to use the JIT:</p>
+
+<pre><code class="language-diffold">- let mut interp = Interpreter::new(
+-     Box::new(BufReader::new(stdin())), 
+-     Box::new(BufWriter::new(stdout()))
+- );
+- if let Err(e) = interp.run(&amp;buf) {
+-     println!(&quot;{}&quot;, e);
+- }
+</code></pre>
+
+<pre><code class="language-diffnew">+ let mut state = State::new(
++     Box::new(BufReader::new(stdin())), 
++     Box::new(BufWriter::new(stdout()))
++ );
++ let program = match Program::compile(&amp;buf) {
++     Ok(p) =&gt; p,
++     Err(e) =&gt; {
++         println!(&quot;{}&quot;, e);
++         return;
++     }
++ };
++ if let Err(e) = program.run(&amp;mut state) {
++     println!(&quot;{}&quot;, e);
++     return;
++ }
+</code></pre>
+
+<h2 id='result' class='section-header'><a href='#result'>Result</a></h2>
+<p>With these changes, adding the necessary <code>use</code> statements and removing unused functions, you should end up with the following code (you can also find this example <a href="https://github.com/CensoredUsername/dynasm-rs/tree/master/doc/examples/bf-interpreter">here</a>):</p>
+
+<pre class='rust rust-example-rendered'>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>plugin</span>)]</span>
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>plugin</span>(<span class='ident'>dynasm</span>)]</span>
+
+<span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>dynasmrt</span>;
+<span class='kw'>use</span> <span class='ident'>dynasmrt</span>::<span class='ident'>DynasmApi</span>;
+
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>itertools</span>;
+<span class='kw'>use</span> <span class='ident'>itertools</span>::<span class='ident'>Itertools</span>;
+
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::{<span class='ident'>Read</span>, <span class='ident'>BufRead</span>, <span class='ident'>Write</span>, <span class='ident'>stdin</span>, <span class='ident'>stdout</span>, <span class='ident'>BufReader</span>, <span class='ident'>BufWriter</span>};
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>env</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fs</span>::<span class='ident'>File</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>slice</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>u8</span>;
+
+<span class='kw'>const</span> <span class='ident'>TAPE_SIZE</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>30000</span>;
+
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span> <span class='op'>=</span> <span class='string'>&quot;x86_64&quot;</span>)]</span>
+<span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+    ; .<span class='ident'>alias</span> <span class='ident'>a_state</span>, <span class='ident'>rcx</span>
+    ; .<span class='ident'>alias</span> <span class='ident'>a_current</span>, <span class='ident'>rdx</span>
+    ; .<span class='ident'>alias</span> <span class='ident'>a_begin</span>, <span class='ident'>r8</span>
+    ; .<span class='ident'>alias</span> <span class='ident'>a_end</span>, <span class='ident'>r9</span>
+    ; .<span class='ident'>alias</span> <span class='ident'>retval</span>, <span class='ident'>rax</span>
+);
+
+<span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>prologue</span> {
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>ops</span>:<span class='ident'>ident</span>) <span class='op'>=&gt;</span> {{
+        <span class='kw'>let</span> <span class='ident'>start</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>ops</span>.<span class='ident'>offset</span>();
+        <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>ops</span>
+            ; <span class='ident'>sub</span> <span class='ident'>rsp</span>, <span class='number'>0x28</span>
+            ; <span class='ident'>mov</span> [<span class='ident'>rsp</span> <span class='op'>+</span> <span class='number'>0x30</span>], <span class='ident'>rcx</span>
+            ; <span class='ident'>mov</span> [<span class='ident'>rsp</span> <span class='op'>+</span> <span class='number'>0x40</span>], <span class='ident'>r8</span>
+            ; <span class='ident'>mov</span> [<span class='ident'>rsp</span> <span class='op'>+</span> <span class='number'>0x48</span>], <span class='ident'>r9</span>
+        );
+        <span class='ident'>start</span>
+    }};
+}
+
+<span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>epilogue</span> {
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>ops</span>:<span class='ident'>ident</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>e</span>:<span class='ident'>expr</span>) <span class='op'>=&gt;</span> {<span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>ops</span>
+        ; <span class='ident'>mov</span> <span class='ident'>retval</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>e</span>
+        ; <span class='ident'>add</span> <span class='ident'>rsp</span>, <span class='number'>0x28</span>
+        ; <span class='ident'>ret</span>
+    );};
+}
+
+<span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>call_extern</span> {
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>ops</span>:<span class='ident'>ident</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>addr</span>:<span class='ident'>expr</span>) <span class='op'>=&gt;</span> {<span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>ops</span>
+        ; <span class='ident'>mov</span> [<span class='ident'>rsp</span> <span class='op'>+</span> <span class='number'>0x38</span>], <span class='ident'>rdx</span>
+        ; <span class='ident'>mov</span> <span class='ident'>rax</span>, <span class='ident'>QWORD</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>addr</span> <span class='kw'>as</span> _
+        ; <span class='ident'>call</span> <span class='ident'>rax</span>
+        ; <span class='ident'>mov</span> <span class='ident'>rcx</span>, [<span class='ident'>rsp</span> <span class='op'>+</span> <span class='number'>0x30</span>]
+        ; <span class='ident'>mov</span> <span class='ident'>rdx</span>, [<span class='ident'>rsp</span> <span class='op'>+</span> <span class='number'>0x38</span>]
+        ; <span class='ident'>mov</span> <span class='ident'>r8</span>,  [<span class='ident'>rsp</span> <span class='op'>+</span> <span class='number'>0x40</span>]
+        ; <span class='ident'>mov</span> <span class='ident'>r9</span>,  [<span class='ident'>rsp</span> <span class='op'>+</span> <span class='number'>0x48</span>]
+    );};
+}
+
+<span class='kw'>struct</span> <span class='ident'>State</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='ident'>input</span>: <span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>BufRead</span> <span class='op'>+</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>,
+    <span class='kw'>pub</span> <span class='ident'>output</span>: <span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>Write</span> <span class='op'>+</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>,
+    <span class='ident'>tape</span>: [<span class='ident'>u8</span>; <span class='ident'>TAPE_SIZE</span>]
+}
+
+<span class='kw'>struct</span> <span class='ident'>Program</span> {
+    <span class='ident'>code</span>: <span class='ident'>dynasmrt</span>::<span class='ident'>ExecutableBuffer</span>,
+    <span class='ident'>start</span>: <span class='ident'>dynasmrt</span>::<span class='ident'>AssemblyOffset</span>,
+}
+
+
+<span class='kw'>impl</span> <span class='ident'>Program</span> {
+    <span class='kw'>fn</span> <span class='ident'>compile</span>(<span class='ident'>program</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>u8</span>]) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Program</span>, <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span><span class='op'>&gt;</span> {
+        <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>ops</span> <span class='op'>=</span> <span class='ident'>dynasmrt</span>::<span class='ident'>Assembler</span>::<span class='ident'>new</span>();
+        <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>loops</span> <span class='op'>=</span> <span class='ident'>Vec</span>::<span class='ident'>new</span>();
+        <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>code</span> <span class='op'>=</span> <span class='ident'>program</span>.<span class='ident'>iter</span>().<span class='ident'>cloned</span>().<span class='ident'>multipeek</span>();
+
+        <span class='kw'>let</span> <span class='ident'>start</span> <span class='op'>=</span> <span class='macro'>prologue</span><span class='macro'>!</span>(<span class='ident'>ops</span>);
+
+        <span class='kw'>while</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>c</span>) <span class='op'>=</span> <span class='ident'>code</span>.<span class='ident'>next</span>() {
+            <span class='kw'>match</span> <span class='ident'>c</span> {
+                <span class='string'>b&#39;&lt;&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>let</span> <span class='ident'>amount</span> <span class='op'>=</span> <span class='ident'>code</span>.<span class='ident'>take_while_ref</span>(<span class='op'>|</span><span class='ident'>x</span><span class='op'>|</span> <span class='op'>*</span><span class='ident'>x</span> <span class='op'>==</span> <span class='string'>b&#39;&lt;&#39;</span>).<span class='ident'>count</span>() <span class='op'>+</span> <span class='number'>1</span>;
+                    <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                        ; <span class='ident'>sub</span> <span class='ident'>a_current</span>, (<span class='ident'>amount</span> <span class='op'>%</span> <span class='ident'>TAPE_SIZE</span>) <span class='kw'>as</span> _
+                        ; <span class='ident'>cmp</span> <span class='ident'>a_current</span>, <span class='ident'>a_begin</span>
+                        ; <span class='ident'>jae</span> <span class='op'>&gt;</span><span class='ident'>wrap</span>
+                        ; <span class='ident'>add</span> <span class='ident'>a_current</span>, <span class='ident'>TAPE_SIZE</span> <span class='kw'>as</span> _
+                        ;<span class='ident'>wrap</span>:
+                    );
+                },
+                <span class='string'>b&#39;&gt;&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>let</span> <span class='ident'>amount</span> <span class='op'>=</span> <span class='ident'>code</span>.<span class='ident'>take_while_ref</span>(<span class='op'>|</span><span class='ident'>x</span><span class='op'>|</span> <span class='op'>*</span><span class='ident'>x</span> <span class='op'>==</span> <span class='string'>b&#39;&gt;&#39;</span>).<span class='ident'>count</span>() <span class='op'>+</span> <span class='number'>1</span>;
+                    <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                        ; <span class='ident'>add</span> <span class='ident'>a_current</span>, (<span class='ident'>amount</span> <span class='op'>%</span> <span class='ident'>TAPE_SIZE</span>) <span class='kw'>as</span> _
+                        ; <span class='ident'>cmp</span> <span class='ident'>a_current</span>, <span class='ident'>a_end</span>
+                        ; <span class='ident'>jb</span> <span class='op'>&gt;</span><span class='ident'>wrap</span>
+                        ; <span class='ident'>sub</span> <span class='ident'>a_current</span>, <span class='ident'>TAPE_SIZE</span> <span class='kw'>as</span> _
+                        ;<span class='ident'>wrap</span>:
+                    );
+                },
+                <span class='string'>b&#39;+&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>let</span> <span class='ident'>amount</span> <span class='op'>=</span> <span class='ident'>code</span>.<span class='ident'>take_while_ref</span>(<span class='op'>|</span><span class='ident'>x</span><span class='op'>|</span> <span class='op'>*</span><span class='ident'>x</span> <span class='op'>==</span> <span class='string'>b&#39;+&#39;</span>).<span class='ident'>count</span>() <span class='op'>+</span> <span class='number'>1</span>;
+                    <span class='kw'>if</span> <span class='ident'>amount</span> <span class='op'>&gt;</span> <span class='ident'>u8</span>::<span class='ident'>MAX</span> <span class='kw'>as</span> <span class='ident'>usize</span> {
+                        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;An overflow occurred&quot;</span>);
+                    }
+                    <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                        ; <span class='ident'>add</span> <span class='ident'>BYTE</span> [<span class='ident'>a_current</span>], <span class='ident'>amount</span> <span class='kw'>as</span> _
+                        ; <span class='ident'>jo</span> <span class='op'>-&gt;</span><span class='ident'>overflow</span>
+                    );
+                },
+                <span class='string'>b&#39;-&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>let</span> <span class='ident'>amount</span> <span class='op'>=</span> <span class='ident'>code</span>.<span class='ident'>take_while_ref</span>(<span class='op'>|</span><span class='ident'>x</span><span class='op'>|</span> <span class='op'>*</span><span class='ident'>x</span> <span class='op'>==</span> <span class='string'>b&#39;-&#39;</span>).<span class='ident'>count</span>() <span class='op'>+</span> <span class='number'>1</span>;
+                    <span class='kw'>if</span> <span class='ident'>amount</span> <span class='op'>&gt;</span> <span class='ident'>u8</span>::<span class='ident'>MAX</span> <span class='kw'>as</span> <span class='ident'>usize</span> {
+                        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;An overflow occurred&quot;</span>);
+                    }
+                    <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                        ; <span class='ident'>sub</span> <span class='ident'>BYTE</span> [<span class='ident'>a_current</span>], <span class='ident'>amount</span> <span class='kw'>as</span> _
+                        ; <span class='ident'>jo</span> <span class='op'>-&gt;</span><span class='ident'>overflow</span>
+                    );
+                },
+                <span class='string'>b&#39;,&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='macro'>call_extern</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='ident'>State</span>::<span class='ident'>getchar</span>);
+                    <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                        ; <span class='ident'>cmp</span> <span class='ident'>al</span>, <span class='number'>0</span>
+                        ; <span class='ident'>jnz</span> <span class='op'>-&gt;</span><span class='ident'>io_failure</span>
+                    );
+                },
+                <span class='string'>b&#39;.&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='macro'>call_extern</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='ident'>State</span>::<span class='ident'>putchar</span>);
+                    <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                        ; <span class='ident'>cmp</span> <span class='ident'>al</span>, <span class='number'>0</span>
+                        ; <span class='ident'>jnz</span> <span class='op'>-&gt;</span><span class='ident'>io_failure</span>
+                    );
+                },
+                <span class='string'>b&#39;[&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>let</span> <span class='ident'>first</span> <span class='op'>=</span> <span class='ident'>code</span>.<span class='ident'>peek</span>() <span class='op'>==</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>&amp;</span><span class='string'>b&#39;-&#39;</span>);
+                    <span class='kw'>if</span> <span class='ident'>first</span> <span class='op'>&amp;&amp;</span> <span class='ident'>code</span>.<span class='ident'>peek</span>() <span class='op'>==</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>&amp;</span><span class='string'>b&#39;]&#39;</span>) {
+                        <span class='ident'>code</span>.<span class='ident'>next</span>();
+                        <span class='ident'>code</span>.<span class='ident'>next</span>();
+                        <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                            ; <span class='ident'>mov</span> <span class='ident'>BYTE</span> [<span class='ident'>a_current</span>], <span class='number'>0</span>
+                        );
+                    } <span class='kw'>else</span> {
+                        <span class='kw'>let</span> <span class='ident'>backward_label</span> <span class='op'>=</span> <span class='ident'>ops</span>.<span class='ident'>new_dynamic_label</span>();
+                        <span class='kw'>let</span> <span class='ident'>forward_label</span>  <span class='op'>=</span> <span class='ident'>ops</span>.<span class='ident'>new_dynamic_label</span>();
+                        <span class='ident'>loops</span>.<span class='ident'>push</span>((<span class='ident'>backward_label</span>, <span class='ident'>forward_label</span>));
+                        <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                            ; <span class='ident'>cmp</span> <span class='ident'>BYTE</span> [<span class='ident'>a_current</span>], <span class='number'>0</span>
+                            ; <span class='ident'>jz</span> <span class='op'>=&gt;</span><span class='ident'>forward_label</span>
+                            ;<span class='op'>=&gt;</span><span class='ident'>backward_label</span>
+                        );
+                    }
+                },
+                <span class='string'>b&#39;]&#39;</span> <span class='op'>=&gt;</span> {
+                    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>((<span class='ident'>backward_label</span>, <span class='ident'>forward_label</span>)) <span class='op'>=</span> <span class='ident'>loops</span>.<span class='ident'>pop</span>() {
+                        <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                            ; <span class='ident'>cmp</span> <span class='ident'>BYTE</span> [<span class='ident'>a_current</span>], <span class='number'>0</span>
+                            ; <span class='ident'>jnz</span> <span class='op'>=&gt;</span><span class='ident'>backward_label</span>
+                            ;<span class='op'>=&gt;</span><span class='ident'>forward_label</span>
+                        );
+                    } <span class='kw'>else</span> {
+                        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;] without matching [&quot;</span>);
+                    }
+                },
+                _ <span class='op'>=&gt;</span> ()
+            }
+        }
+        <span class='kw'>if</span> <span class='ident'>loops</span>.<span class='ident'>len</span>() <span class='op'>!=</span> <span class='number'>0</span> {
+            <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;[ without matching ]&quot;</span>);
+        }
+
+        <span class='macro'>epilogue</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='number'>0</span>);
+
+        <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+            ;<span class='op'>-&gt;</span><span class='ident'>overflow</span>:
+        );
+        <span class='macro'>epilogue</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='number'>1</span>);
+
+        <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+            ;<span class='op'>-&gt;</span><span class='ident'>io_failure</span>:
+        );
+        <span class='macro'>epilogue</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='number'>2</span>);
+
+        <span class='kw'>let</span> <span class='ident'>code</span> <span class='op'>=</span> <span class='ident'>ops</span>.<span class='ident'>finalize</span>().<span class='ident'>unwrap</span>();
+        <span class='prelude-val'>Ok</span>(<span class='ident'>Program</span> {
+            <span class='ident'>code</span>: <span class='ident'>code</span>,
+            <span class='ident'>start</span>: <span class='ident'>start</span>
+        })
+    }
+
+    <span class='kw'>fn</span> <span class='ident'>run</span>(<span class='self'>self</span>, <span class='ident'>state</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>State</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span><span class='op'>&gt;</span> {
+        <span class='kw'>let</span> <span class='ident'>f</span>: <span class='kw'>extern</span> <span class='string'>&quot;win64&quot;</span> <span class='kw'>fn</span>(<span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>State</span>, <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>u8</span>, <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>u8</span>, <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>u8</span> <span class='op'>=</span> <span class='kw'>unsafe</span> {
+            <span class='ident'>mem</span>::<span class='ident'>transmute</span>(<span class='self'>self</span>.<span class='ident'>code</span>.<span class='ident'>ptr</span>(<span class='self'>self</span>.<span class='ident'>start</span>))
+        };
+        <span class='kw'>let</span> <span class='ident'>start</span> <span class='op'>=</span> <span class='ident'>state</span>.<span class='ident'>tape</span>.<span class='ident'>as_mut_ptr</span>();
+        <span class='kw'>let</span> <span class='ident'>end</span> <span class='op'>=</span> <span class='kw'>unsafe</span> { <span class='ident'>start</span>.<span class='ident'>offset</span>(<span class='ident'>TAPE_SIZE</span> <span class='kw'>as</span> <span class='ident'>isize</span>) };
+        <span class='kw'>let</span> <span class='ident'>res</span> <span class='op'>=</span> <span class='ident'>f</span>(<span class='ident'>state</span>, <span class='ident'>start</span>, <span class='ident'>start</span>, <span class='ident'>end</span>);
+        <span class='kw'>if</span> <span class='ident'>res</span> <span class='op'>==</span> <span class='number'>0</span> {
+            <span class='prelude-val'>Ok</span>(())
+        } <span class='kw'>else</span> <span class='kw'>if</span> <span class='ident'>res</span> <span class='op'>==</span> <span class='number'>1</span> {
+            <span class='prelude-val'>Err</span>(<span class='string'>&quot;An overflow occurred&quot;</span>)
+        } <span class='kw'>else</span> <span class='kw'>if</span> <span class='ident'>res</span> <span class='op'>==</span> <span class='number'>2</span> {
+            <span class='prelude-val'>Err</span>(<span class='string'>&quot;IO error&quot;</span>)
+        } <span class='kw'>else</span> {
+            <span class='macro'>panic</span><span class='macro'>!</span>(<span class='string'>&quot;Unknown error code&quot;</span>);
+        }
+    }   
+}
+
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>State</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+    <span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;win64&quot;</span> <span class='kw'>fn</span> <span class='ident'>getchar</span>(<span class='ident'>state</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>State</span>, <span class='ident'>cell</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>u8</span> {
+        <span class='kw'>let</span> <span class='ident'>state</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='ident'>state</span>;
+        <span class='kw'>let</span> <span class='ident'>err</span> <span class='op'>=</span> <span class='ident'>state</span>.<span class='ident'>output</span>.<span class='ident'>flush</span>().<span class='ident'>is_err</span>();
+        (<span class='ident'>state</span>.<span class='ident'>input</span>.<span class='ident'>read_exact</span>(<span class='ident'>slice</span>::<span class='ident'>from_raw_parts_mut</span>(<span class='ident'>cell</span>, <span class='number'>1</span>)).<span class='ident'>is_err</span>() <span class='op'>||</span> <span class='ident'>err</span>) <span class='kw'>as</span> <span class='ident'>u8</span>
+    }
+
+    <span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;win64&quot;</span> <span class='kw'>fn</span> <span class='ident'>putchar</span>(<span class='ident'>state</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>State</span>, <span class='ident'>cell</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>u8</span>) <span class='op'>-&gt;</span> <span class='ident'>u8</span> {
+        <span class='kw'>let</span> <span class='ident'>state</span> <span class='op'>=</span> <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='ident'>state</span>;
+        <span class='ident'>state</span>.<span class='ident'>output</span>.<span class='ident'>write_all</span>(<span class='ident'>slice</span>::<span class='ident'>from_raw_parts</span>(<span class='ident'>cell</span>, <span class='number'>1</span>)).<span class='ident'>is_err</span>() <span class='kw'>as</span> <span class='ident'>u8</span>
+    }
+
+    <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>input</span>: <span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>BufRead</span> <span class='op'>+</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>, <span class='ident'>output</span>: <span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>Write</span> <span class='op'>+</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span> <span class='ident'>State</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+        <span class='ident'>State</span> {
+            <span class='ident'>input</span>: <span class='ident'>input</span>,
+            <span class='ident'>output</span>: <span class='ident'>output</span>,
+            <span class='ident'>tape</span>: [<span class='number'>0</span>; <span class='ident'>TAPE_SIZE</span>]
+        }
+    }
+}
+
+
+<span class='kw'>fn</span> <span class='ident'>main</span>() {
+    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>args</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span>_<span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>env</span>::<span class='ident'>args</span>().<span class='ident'>collect</span>();
+    <span class='kw'>if</span> <span class='ident'>args</span>.<span class='ident'>len</span>() <span class='op'>!=</span> <span class='number'>2</span> {
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Expected 1 argument, got {}&quot;</span>, <span class='ident'>args</span>.<span class='ident'>len</span>());
+        <span class='kw'>return</span>;
+    }
+    <span class='kw'>let</span> <span class='ident'>path</span> <span class='op'>=</span> <span class='ident'>args</span>.<span class='ident'>pop</span>().<span class='ident'>unwrap</span>();
+
+    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>f</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Ok</span>(<span class='ident'>f</span>) <span class='op'>=</span> <span class='ident'>File</span>::<span class='ident'>open</span>(<span class='kw-2'>&amp;</span><span class='ident'>path</span>) { <span class='ident'>f</span> } <span class='kw'>else</span> {
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Could not open file {}&quot;</span>, <span class='ident'>path</span>);
+        <span class='kw'>return</span>;
+    };
+
+    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>buf</span> <span class='op'>=</span> <span class='ident'>Vec</span>::<span class='ident'>new</span>();
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Err</span>(_) <span class='op'>=</span> <span class='ident'>f</span>.<span class='ident'>read_to_end</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>buf</span>) {
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Failed to read from file&quot;</span>);
+        <span class='kw'>return</span>;
+    }
+
+    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>state</span> <span class='op'>=</span> <span class='ident'>State</span>::<span class='ident'>new</span>(
+        <span class='ident'>Box</span>::<span class='ident'>new</span>(<span class='ident'>BufReader</span>::<span class='ident'>new</span>(<span class='ident'>stdin</span>())), 
+        <span class='ident'>Box</span>::<span class='ident'>new</span>(<span class='ident'>BufWriter</span>::<span class='ident'>new</span>(<span class='ident'>stdout</span>()))
+    );
+    <span class='kw'>let</span> <span class='ident'>program</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>Program</span>::<span class='ident'>compile</span>(<span class='kw-2'>&amp;</span><span class='ident'>buf</span>) {
+        <span class='prelude-val'>Ok</span>(<span class='ident'>p</span>) <span class='op'>=&gt;</span> <span class='ident'>p</span>,
+        <span class='prelude-val'>Err</span>(<span class='ident'>e</span>) <span class='op'>=&gt;</span> {
+            <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;{}&quot;</span>, <span class='ident'>e</span>);
+            <span class='kw'>return</span>;
+        }
+    };
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Err</span>(<span class='ident'>e</span>) <span class='op'>=</span> <span class='ident'>program</span>.<span class='ident'>run</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>state</span>) {
+        <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;{}&quot;</span>, <span class='ident'>e</span>);
+        <span class='kw'>return</span>;
+    }
+}</pre>
 
     <script type="text/javascript">
         window.playgroundUrl = "";
     </script>
     </section>
+<script src="../plugin/jquery.js"></script>
+<script type="text/javascript">
+// make diffs look better, I can't do this in css for some reason and I don't want to hack it into rustdocs
+var next = $('pre').has('code.language-diffold').next().has('code.language-diffnew');
+var prev = next.prev();
+console.log(next);
+console.log(prev);
+next.css("margin-top", 0);
+next.css("padding-top", 0);
+prev.css("margin-bottom", 0);
+prev.css("padding-bottom", 0);
+</script>
 
 </body>
 </html>
