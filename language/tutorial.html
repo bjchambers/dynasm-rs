@@ -496,10 +496,10 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 </code></pre>
 
 <h2 id='compiler' class='section-header'><a href='#compiler'>Compiler</a></h2>
-<p>With the state defined, we can now start adapting the <code>Interpreter::run</code> method into <code>Program::compile</code>, starting with initalization code. We initialize an assembler and a <code>Vec</code> to hold the loops stack. As we will only parse through the code once, replace the slice indexing by an iterator that allows us to look ahead, courtesy of the <code>itertools</code> crate. We get the starting offset and emit the function prologue and finally we start iterating through the program:
-```diffold
-- impl&lt;&#39;a&gt; Interpreter&lt;&#39;a&gt; {
--     fn new(input: Box<BufRead + 'a>, output: Box<Write + 'a>) -&gt; Interpreter&lt;&#39;a&gt; {
+<p>With the state defined, we can now start adapting the <code>Interpreter::run</code> method into <code>Program::compile</code>, starting with initalization code. We initialize an assembler and a <code>Vec</code> to hold the loops stack. As we will only parse through the code once, replace the slice indexing by an iterator that allows us to look ahead, courtesy of the <code>itertools</code> crate. We get the starting offset and emit the function prologue and finally we start iterating through the program:</p>
+
+<pre><code class="language-diffold">- impl&lt;&#39;a&gt; Interpreter&lt;&#39;a&gt; {
+-     fn new(input: Box&lt;BufRead + &#39;a&gt;, output: Box&lt;Write + &#39;a&gt;) -&gt; Interpreter&lt;&#39;a&gt; {
 -         Interpreter {
 -             input: input,
 -             output: output,
@@ -507,24 +507,23 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 -             tape: [0; TAPE_SIZE],
 -             tape_index: 0,
 -             pos: 0
--         }</p>
+-         }
+-     }
+- 
+-     fn run(&amp;mut self, program: &amp;[u8]) -&gt; Result&lt;(), &amp;&#39;static str&gt; {
+-         while let Some(&amp;c) = program.get(self.pos) {
+-             self.pos += 1;
+</code></pre>
 
-<h2 id='------' class='section-header'><a href='#------'>-     }</a></h2>
-<ul>
-<li>    fn run(&amp;mut self, program: &amp;[u8]) -&gt; Result&lt;(), &amp;&#39;static str&gt; {</li>
-<li>        while let Some(&amp;c) = program.get(self.pos) {</li>
-<li>            self.pos += 1;
-<code></code>diffnew</li>
-<li>impl Program {</li>
-<li>    fn compile(program: &amp;[u8]) -&gt; Result<Program, &'static str> {</li>
-<li>        let mut ops = dynasmrt::Assembler::new();</li>
-<li>        let mut loops = Vec::new();</li>
-<li>        let mut code = program.iter().cloned().multipeek();</li>
-<li></li>
-<li>        let start = prologue!(ops);</li>
-<li>        while let Some(c) = code.next() {
-```</li>
-</ul>
+<pre><code class="language-diffnew">+ impl Program {
++     fn compile(program: &amp;[u8]) -&gt; Result&lt;Program, &amp;&#39;static str&gt; {
++         let mut ops = dynasmrt::Assembler::new();
++         let mut loops = Vec::new();
++         let mut code = program.iter().cloned().multipeek();
++ 
++         let start = prologue!(ops);
++         while let Some(c) = code.next() {
+</code></pre>
 
 <h3 id='tape-movement' class='section-header'><a href='#tape-movement'>Tape movement</a></h3>
 <p>We can now replace the the tape movement by an optimized assembly version. Note the local label used to implement tape wraparound:</p>
@@ -751,8 +750,8 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 <p>Then, we add a <code>run</code> method on <code>Program</code>. This method does the following:</p>
 
 <ul>
-<li>Transmute a pointer to the start of our compiled data to a function. This is the one unsafe {} block always needed when using Dynasm-rs, but it is probably the most dangerous one you&#39;ll ever find.</li>
-<li>Create the input arguments to the function from a <code>State</code>. Since the &quot;win64&quot; calling convention is used these arguments will end up in the wanted registers <code>rcx</code>, <code>rdx</code>, <code>r8</code> and <code>r9</code> as specified by the aliases from the beginning.</li>
+<li>Transmute a pointer to the start of our compiled data to a function. This is the one <code>unsafe</code> block always needed when using Dynasm-rs, but it is probably the most dangerous one you&#39;ll ever find.</li>
+<li>Create the input arguments to the function from a <code>State</code>. Since the <code>&quot;win64&quot;</code> calling convention is used these arguments will end up in the registers <code>rcx</code>, <code>rdx</code>, <code>r8</code> and <code>r9</code>.</li>
 <li>Run the function.</li>
 <li>Return a <code>Result</code> based on the error code returned by the function.</li>
 </ul>
@@ -805,7 +804,7 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 </code></pre>
 
 <h2 id='result' class='section-header'><a href='#result'>Result</a></h2>
-<p>With these changes, adding the necessary <code>use</code> statements and removing unused functions, you should end up with the following code (you can also find this example <a href="https://github.com/CensoredUsername/dynasm-rs/tree/master/doc/examples/bf-interpreter">here</a>):</p>
+<p>With these changes, adding the necessary <code>use</code> statements and removing unused functions, you should end up with the following code (you can also find this example <a href="https://github.com/CensoredUsername/dynasm-rs/tree/master/doc/examples/bf-jit">here</a>):</p>
 
 <pre class='rust rust-example-rendered'>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>plugin</span>)]</span>
