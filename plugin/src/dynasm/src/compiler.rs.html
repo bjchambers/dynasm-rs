@@ -1333,7 +1333,6 @@
 <span id="1289">1289</span>
 <span id="1290">1290</span>
 <span id="1291">1291</span>
-<span id="1292">1292</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>syntax</span>::<span class='ident'>ext</span>::<span class='ident'>base</span>::<span class='ident'>ExtCtxt</span>;
 <span class='kw'>use</span> <span class='ident'>syntax</span>::<span class='ident'>ext</span>::<span class='ident'>build</span>::<span class='ident'>AstBuilder</span>;
@@ -1424,7 +1423,7 @@
 <span class='kw'>const</span> <span class='ident'>MOD_DISP8</span>:  <span class='ident'>u8</span> <span class='op'>=</span> <span class='number'>0b01</span>;
 <span class='kw'>const</span> <span class='ident'>MOD_DISP32</span>: <span class='ident'>u8</span> <span class='op'>=</span> <span class='number'>0b10</span>;
 
-<span class='comment'>/* 
+<span class='comment'>/*
  * Implmementation
  */</span>
 
@@ -1480,26 +1479,26 @@
         <span class='string'>&quot;bytes&quot;</span> <span class='op'>=&gt;</span> <span class='ident'>directive_iter</span>(<span class='ident'>ecx</span>, <span class='ident'>buffer</span>, <span class='ident'>args</span>),
         <span class='string'>&quot;align&quot;</span> <span class='op'>=&gt;</span> {
             <span class='kw'>if</span> <span class='ident'>args</span>.<span class='ident'>len</span>() <span class='op'>!=</span> <span class='number'>1</span> {
-                <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;Invalid amount of arguments&quot;</span>)));
+                <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;Invalid amount of arguments&quot;</span>.<span class='ident'>into</span>()));
             }
 
             <span class='kw'>match</span> <span class='ident'>args</span>.<span class='ident'>pop</span>().<span class='ident'>unwrap</span>() {
                 <span class='ident'>Arg</span>::<span class='ident'>Immediate</span>(<span class='ident'>expr</span>, _) <span class='op'>=&gt;</span> {
                     <span class='ident'>buffer</span>.<span class='ident'>push</span>(<span class='ident'>Stmt</span>::<span class='ident'>Align</span>(<span class='ident'>expr</span>));
                 },
-                _ <span class='op'>=&gt;</span> <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;this directive only uses immediate arguments&quot;</span>)))
+                _ <span class='op'>=&gt;</span> <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;this directive only uses immediate arguments&quot;</span>.<span class='ident'>into</span>()))
             }
             <span class='prelude-val'>Ok</span>(())
         },
         <span class='string'>&quot;alias&quot;</span> <span class='op'>=&gt;</span> {
             <span class='kw'>if</span> <span class='ident'>args</span>.<span class='ident'>len</span>() <span class='op'>!=</span> <span class='number'>2</span> {
-                <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;Invalid amount of arguments&quot;</span>)));
+                <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;Invalid amount of arguments&quot;</span>.<span class='ident'>into</span>()));
             }
 
             <span class='kw'>let</span> <span class='ident'>reg</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>args</span>.<span class='ident'>pop</span>().<span class='ident'>unwrap</span>() {
                 <span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='ident'>Spanned</span> {<span class='ident'>node</span>: <span class='ident'>Register</span> {<span class='ident'>kind</span>: <span class='ident'>RegKind</span>::<span class='ident'>Static</span>(<span class='ident'>id</span>), <span class='ident'>size</span>}, ..}) <span class='op'>=&gt;</span> (<span class='ident'>id</span>, <span class='ident'>size</span>),
                 _ <span class='op'>=&gt;</span> {
-                    <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;The second argument to alias should be a static register&quot;</span>)));
+                    <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;The second argument to alias should be a static register&quot;</span>.<span class='ident'>into</span>()));
                 }
             };
 
@@ -1511,7 +1510,7 @@
             <span class='kw'>let</span> <span class='ident'>alias</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>alias</span>) <span class='op'>=</span> <span class='ident'>alias</span> {
                 <span class='ident'>alias</span>.<span class='ident'>node</span>.<span class='ident'>name</span>
             } <span class='kw'>else</span> {
-                <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;The first argument to alias should be a non-keyword immediate&quot;</span>)));
+                <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;The first argument to alias should be a non-keyword immediate&quot;</span>.<span class='ident'>into</span>()));
             };
 
             <span class='kw'>let</span> <span class='ident'>global_data</span> <span class='op'>=</span> <span class='kw'>super</span>::<span class='ident'>crate_local_data</span>(<span class='ident'>ecx</span>);
@@ -1530,8 +1529,8 @@
 }
 
 <span class='kw'>fn</span> <span class='ident'>directive_const</span>(<span class='ident'>ecx</span>: <span class='kw-2'>&amp;</span><span class='ident'>ExtCtxt</span>, <span class='ident'>buffer</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>StmtBuffer</span>, <span class='ident'>args</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Arg</span><span class='op'>&gt;</span>, <span class='ident'>size</span>: <span class='ident'>Size</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;&gt;</span> {
-    <span class='kw'>if</span> <span class='ident'>args</span>.<span class='ident'>len</span>() <span class='op'>==</span> <span class='number'>0</span> {
-        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;this directive requires at least one argument&quot;</span>)));
+    <span class='kw'>if</span> <span class='ident'>args</span>.<span class='ident'>is_empty</span>() {
+        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;this directive requires at least one argument&quot;</span>.<span class='ident'>into</span>()));
     }
 
     <span class='kw'>for</span> <span class='ident'>arg</span> <span class='kw'>in</span> <span class='ident'>args</span> {
@@ -1543,7 +1542,7 @@
                 }
                 <span class='ident'>buffer</span>.<span class='ident'>push</span>(<span class='ident'>Stmt</span>::<span class='ident'>Var</span>(<span class='ident'>expr</span>, <span class='ident'>size</span>));
             },
-            _ <span class='op'>=&gt;</span> <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;this directive only uses immediate arguments&quot;</span>)))
+            _ <span class='op'>=&gt;</span> <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;this directive only uses immediate arguments&quot;</span>.<span class='ident'>into</span>()))
         }
     }
 
@@ -1552,13 +1551,13 @@
 
 <span class='kw'>fn</span> <span class='ident'>directive_iter</span>(<span class='ident'>_ecx</span>: <span class='kw-2'>&amp;</span><span class='ident'>ExtCtxt</span>, <span class='ident'>buffer</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>StmtBuffer</span>, <span class='kw-2'>mut</span> <span class='ident'>args</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Arg</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;&gt;</span> {
     <span class='kw'>if</span> <span class='ident'>args</span>.<span class='ident'>len</span>() <span class='op'>!=</span> <span class='number'>1</span> {
-        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;Wrong amount of arguments for this directive&quot;</span>)))
+        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;Wrong amount of arguments for this directive&quot;</span>.<span class='ident'>into</span>()))
     }
 
     <span class='kw'>if</span> <span class='kw'>let</span> <span class='ident'>Arg</span>::<span class='ident'>Immediate</span>(<span class='ident'>expr</span>, <span class='prelude-val'>None</span>) <span class='op'>=</span> <span class='ident'>args</span>.<span class='ident'>pop</span>().<span class='ident'>unwrap</span>() {
         <span class='ident'>buffer</span>.<span class='ident'>push</span>(<span class='ident'>Stmt</span>::<span class='ident'>Extend</span>(<span class='ident'>expr</span>));
     } <span class='kw'>else</span> {
-        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;wrong argument size&quot;</span>)));
+        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;wrong argument size&quot;</span>.<span class='ident'>into</span>()));
     }
     <span class='prelude-val'>Ok</span>(())
 }
@@ -1824,7 +1823,7 @@
         }
         <span class='comment'>// if immediates are present, the register argument will be merged into the</span>
         <span class='comment'>// first immediate byte.</span>
-        <span class='kw'>if</span> <span class='ident'>args</span>.<span class='ident'>len</span>() <span class='op'>!=</span> <span class='number'>0</span> {
+        <span class='kw'>if</span> <span class='op'>!</span><span class='ident'>args</span>.<span class='ident'>is_empty</span>() {
             <span class='kw'>if</span> <span class='kw'>let</span> <span class='ident'>Arg</span>::<span class='ident'>Immediate</span>(<span class='ident'>expr</span>, <span class='prelude-val'>Some</span>(<span class='ident'>Size</span>::<span class='ident'>BYTE</span>)) <span class='op'>=</span> <span class='ident'>args</span>.<span class='ident'>remove</span>(<span class='number'>0</span>) {
                 <span class='ident'>byte</span> <span class='op'>=</span> <span class='ident'>or_mask_shift_expr</span>(<span class='ident'>ecx</span>, <span class='ident'>byte</span>, <span class='ident'>expr</span>, <span class='number'>0xF</span>, <span class='number'>0</span>);
             } <span class='kw'>else</span> {
@@ -1892,7 +1891,7 @@
 
     <span class='kw'>let</span> <span class='ident'>addr_size</span> <span class='op'>=</span> <span class='ident'>addr_size</span>.<span class='ident'>unwrap_or</span>(<span class='ident'>Size</span>::<span class='ident'>QWORD</span>);
     <span class='kw'>if</span> <span class='ident'>addr_size</span> <span class='op'>!=</span> <span class='ident'>Size</span>::<span class='ident'>DWORD</span> <span class='op'>&amp;&amp;</span> <span class='ident'>addr_size</span> <span class='op'>!=</span> <span class='ident'>Size</span>::<span class='ident'>QWORD</span> {
-        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;Impossible address size&quot;</span>)));
+        <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;Impossible address size&quot;</span>.<span class='ident'>into</span>()));
     }
     <span class='prelude-val'>Ok</span>(<span class='ident'>addr_size</span> <span class='op'>!=</span> <span class='ident'>Size</span>::<span class='ident'>QWORD</span>)
 }
@@ -2008,9 +2007,8 @@
     };
 
     <span class='kw'>for</span> <span class='ident'>format</span> <span class='kw'>in</span> <span class='ident'>data</span> {
-        <span class='kw'>match</span> <span class='ident'>match_format_string</span>(<span class='ident'>format</span>.<span class='ident'>args</span>, <span class='ident'>args</span>) {
-            <span class='prelude-val'>Ok</span>(_) <span class='op'>=&gt;</span> <span class='kw'>return</span> <span class='prelude-val'>Ok</span>(<span class='ident'>format</span>),
-            <span class='prelude-val'>Err</span>(_) <span class='op'>=&gt;</span> ()
+        <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Ok</span>(_) <span class='op'>=</span> <span class='ident'>match_format_string</span>(<span class='ident'>format</span>.<span class='ident'>args</span>, <span class='ident'>args</span>) {
+            <span class='kw'>return</span> <span class='prelude-val'>Ok</span>(<span class='ident'>format</span>)
         }
     }
 
@@ -2058,8 +2056,8 @@
 
             <span class='kw'>let</span> <span class='ident'>size</span> <span class='op'>=</span> <span class='kw'>match</span> (<span class='ident'>code</span>, <span class='ident'>arg</span>) {
                 <span class='comment'>// immediates</span>
-                (<span class='string'>b&#39;i&#39;</span>, <span class='kw-2'>&amp;</span><span class='ident'>Arg</span>::<span class='ident'>Immediate</span>(_, <span class='ident'>size</span>))  <span class='op'>=&gt;</span> <span class='ident'>size</span>,
-                (<span class='string'>b&#39;o&#39;</span>, <span class='kw-2'>&amp;</span><span class='ident'>Arg</span>::<span class='ident'>Immediate</span>(_, <span class='ident'>size</span>))  <span class='op'>=&gt;</span> <span class='ident'>size</span>,
+                (<span class='string'>b&#39;i&#39;</span>, <span class='kw-2'>&amp;</span><span class='ident'>Arg</span>::<span class='ident'>Immediate</span>(_, <span class='ident'>size</span>))  <span class='op'>|</span>
+                (<span class='string'>b&#39;o&#39;</span>, <span class='kw-2'>&amp;</span><span class='ident'>Arg</span>::<span class='ident'>Immediate</span>(_, <span class='ident'>size</span>))  <span class='op'>|</span>
                 (<span class='string'>b&#39;o&#39;</span>, <span class='kw-2'>&amp;</span><span class='ident'>Arg</span>::<span class='ident'>JumpTarget</span>(_, <span class='ident'>size</span>)) <span class='op'>=&gt;</span> <span class='ident'>size</span>,
 
                 <span class='comment'>// specific legacy regs</span>
@@ -2172,7 +2170,7 @@
                     (<span class='string'>b&#39;p&#39;</span>, _) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>Size</span>::<span class='ident'>PWORD</span>),
                     (<span class='string'>b&#39;o&#39;</span>, _) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>Size</span>::<span class='ident'>OWORD</span>),
                     (<span class='string'>b&#39;h&#39;</span>, _) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>Size</span>::<span class='ident'>HWORD</span>),
-                    (<span class='string'>b&#39;*&#39;</span>, _) <span class='op'>=&gt;</span> <span class='prelude-val'>None</span>,
+                    (<span class='string'>b&#39;*&#39;</span>, _) <span class='op'>|</span>
                     (<span class='string'>b&#39;!&#39;</span>, _) <span class='op'>=&gt;</span> <span class='prelude-val'>None</span>,
                     _ <span class='op'>=&gt;</span> <span class='macro'>unreachable</span><span class='macro'>!</span>()
                 },
@@ -2268,7 +2266,7 @@
             <span class='ident'>Arg</span>::<span class='ident'>Indirect</span>(<span class='ident'>MemoryRef</span> {<span class='kw-2'>mut</span> <span class='ident'>size</span>, <span class='kw-2'>ref</span> <span class='ident'>index</span>, ..}) <span class='op'>=&gt;</span> {
                 <span class='ident'>has_args</span> <span class='op'>=</span> <span class='bool-val'>true</span>;
                 <span class='comment'>// for vsib addressing we&#39;re interested in the size of the address vector</span>
-                <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>reg</span>) <span class='op'>=</span> <span class='ident'>index</span> {
+                <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>reg</span>) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>index</span> {
                     <span class='kw'>if</span> <span class='ident'>reg</span>.<span class='ident'>kind</span>.<span class='ident'>family</span>() <span class='op'>==</span> <span class='ident'>RegFamily</span>::<span class='ident'>XMM</span> {
                         <span class='ident'>size</span> <span class='op'>=</span> <span class='prelude-val'>Some</span>(<span class='ident'>reg</span>.<span class='ident'>size</span>());
                     }
@@ -2329,10 +2327,10 @@
                     }
                 },
                 <span class='ident'>Arg</span>::<span class='ident'>Indirect</span>(<span class='ident'>MemoryRef</span> {<span class='kw-2'>ref</span> <span class='ident'>base</span>, <span class='kw-2'>ref</span> <span class='ident'>index</span>, ..}) <span class='op'>=&gt;</span> {
-                    <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>reg</span>) <span class='op'>=</span> <span class='ident'>base</span> {
+                    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>reg</span>) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>base</span> {
                         <span class='ident'>requires_rex</span> <span class='op'>=</span> <span class='ident'>requires_rex</span> <span class='op'>||</span> <span class='ident'>reg</span>.<span class='ident'>kind</span>.<span class='ident'>is_extended</span>();
                     }
-                    <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>reg</span>) <span class='op'>=</span> <span class='ident'>index</span> {
+                    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>reg</span>) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>index</span> {
                         <span class='ident'>requires_rex</span> <span class='op'>=</span> <span class='ident'>requires_rex</span> <span class='op'>||</span> <span class='ident'>reg</span>.<span class='ident'>kind</span>.<span class='ident'>is_extended</span>();
                     }
                 },
@@ -2466,17 +2464,17 @@
     <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>index_k</span> <span class='op'>=</span> <span class='ident'>RegKind</span>::<span class='ident'>from_number</span>(<span class='number'>0</span>);
     <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>base_k</span>  <span class='op'>=</span> <span class='ident'>RegKind</span>::<span class='ident'>from_number</span>(<span class='number'>0</span>);
 
-    <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='kw-2'>ref</span> <span class='ident'>reg</span>)) <span class='op'>=</span> <span class='ident'>reg</span> {
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='kw-2'>ref</span> <span class='ident'>reg</span>)) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>reg</span> {
         <span class='ident'>reg_k</span> <span class='op'>=</span> <span class='ident'>reg</span>.<span class='ident'>node</span>.<span class='ident'>kind</span>.<span class='ident'>clone</span>();
     }
-    <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='kw-2'>ref</span> <span class='ident'>rm</span>)) <span class='op'>=</span> <span class='ident'>rm</span> {
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='kw-2'>ref</span> <span class='ident'>rm</span>)) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>rm</span> {
         <span class='ident'>base_k</span> <span class='op'>=</span> <span class='ident'>rm</span>.<span class='ident'>node</span>.<span class='ident'>kind</span>.<span class='ident'>clone</span>();
     }
-    <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Indirect</span>(<span class='ident'>MemoryRef</span> {<span class='kw-2'>ref</span> <span class='ident'>base</span>, <span class='kw-2'>ref</span> <span class='ident'>index</span>, ..} )) <span class='op'>=</span> <span class='ident'>rm</span> {
-        <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>base</span>) <span class='op'>=</span> <span class='ident'>base</span> {
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Indirect</span>(<span class='ident'>MemoryRef</span> {<span class='kw-2'>ref</span> <span class='ident'>base</span>, <span class='kw-2'>ref</span> <span class='ident'>index</span>, ..} )) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>rm</span> {
+        <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>base</span>) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>base</span> {
             <span class='ident'>base_k</span> <span class='op'>=</span> <span class='ident'>base</span>.<span class='ident'>kind</span>.<span class='ident'>clone</span>();
         }
-        <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>index</span>) <span class='op'>=</span> <span class='ident'>index</span> {
+        <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>index</span>) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>index</span> {
             <span class='ident'>index_k</span> <span class='op'>=</span> <span class='ident'>index</span>.<span class='ident'>kind</span>.<span class='ident'>clone</span>();
         }
     }
@@ -2511,21 +2509,21 @@
     <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>base_k</span>  <span class='op'>=</span> <span class='ident'>RegKind</span>::<span class='ident'>from_number</span>(<span class='number'>0</span>);
     <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>vvvv_k</span>  <span class='op'>=</span> <span class='ident'>RegKind</span>::<span class='ident'>from_number</span>(<span class='number'>0</span>);
 
-    <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='kw-2'>ref</span> <span class='ident'>reg</span>)) <span class='op'>=</span> <span class='ident'>reg</span> {
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='kw-2'>ref</span> <span class='ident'>reg</span>)) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>reg</span> {
         <span class='ident'>reg_k</span> <span class='op'>=</span> <span class='ident'>reg</span>.<span class='ident'>node</span>.<span class='ident'>kind</span>.<span class='ident'>clone</span>();
     }
-    <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='kw-2'>ref</span> <span class='ident'>rm</span>)) <span class='op'>=</span> <span class='ident'>rm</span> {
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='kw-2'>ref</span> <span class='ident'>rm</span>)) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>rm</span> {
         <span class='ident'>base_k</span> <span class='op'>=</span> <span class='ident'>rm</span>.<span class='ident'>node</span>.<span class='ident'>kind</span>.<span class='ident'>clone</span>();
     }
-    <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Indirect</span>(<span class='ident'>MemoryRef</span> {<span class='kw-2'>ref</span> <span class='ident'>base</span>, <span class='kw-2'>ref</span> <span class='ident'>index</span>, ..} )) <span class='op'>=</span> <span class='ident'>rm</span> {
-        <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>base</span>) <span class='op'>=</span> <span class='ident'>base</span> {
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Indirect</span>(<span class='ident'>MemoryRef</span> {<span class='kw-2'>ref</span> <span class='ident'>base</span>, <span class='kw-2'>ref</span> <span class='ident'>index</span>, ..} )) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>rm</span> {
+        <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>base</span>) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>base</span> {
             <span class='ident'>base_k</span> <span class='op'>=</span> <span class='ident'>base</span>.<span class='ident'>kind</span>.<span class='ident'>clone</span>();
         }
-        <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>index</span>) <span class='op'>=</span> <span class='ident'>index</span> {
+        <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>index</span>) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>index</span> {
             <span class='ident'>index_k</span> <span class='op'>=</span> <span class='ident'>index</span>.<span class='ident'>kind</span>.<span class='ident'>clone</span>();
         }
     }
-    <span class='kw'>if</span> <span class='kw'>let</span> <span class='kw-2'>&amp;</span><span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='kw-2'>ref</span> <span class='ident'>vvvv</span>)) <span class='op'>=</span> <span class='ident'>vvvv</span> {
+    <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='ident'>Arg</span>::<span class='ident'>Direct</span>(<span class='kw-2'>ref</span> <span class='ident'>vvvv</span>)) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>vvvv</span> {
         <span class='ident'>vvvv_k</span> <span class='op'>=</span> <span class='ident'>vvvv</span>.<span class='ident'>node</span>.<span class='ident'>kind</span>.<span class='ident'>clone</span>();
     }
 

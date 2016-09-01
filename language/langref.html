@@ -101,6 +101,8 @@
 <h2 id='arguments' class='section-header'><a href='#arguments'>Arguments</a></h2>
 <p><code>arg : register | (size? ( memoryref | labelref | typemap | expr ));</code></p>
 
+<p><code>typemap : register &quot;=&gt;&quot; expr_path (&quot;.&quot; ident | &quot;[&quot; regrefitem &quot;]&quot; (&quot;.&quot; ident)?) ;</code></p>
+
 <p><code>memoryref : &quot;[&quot; (regref | labelref) &quot;]&quot; ;</code></p>
 
 <p><code>regref : regrefitem (&quot;+&quot; regrefitem)* ;</code></p>
@@ -108,8 +110,6 @@
 <p><code>regrefitem : (register &quot;*&quot; num_lit | num_lit &quot;*&quot; register | register | expr) ;</code></p>
 
 <p><code>labelref : (&quot;&gt;&quot; ident | &quot;&lt;&quot; ident | &quot;-&gt;&quot; ident | &quot;=&gt;&quot; expr) ;</code></p>
-
-<p><code>typemap : register &quot;=&gt;&quot; expr_path (&quot;.&quot; ident | &quot;[&quot; register &quot;]&quot; (&quot;.&quot; ident)?) ;</code></p>
 
 <p><code>register = static_reg | dynamic_reg ;</code></p>
 

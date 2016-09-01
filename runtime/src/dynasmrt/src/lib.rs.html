@@ -461,6 +461,52 @@
 <span id="417">417</span>
 <span id="418">418</span>
 <span id="419">419</span>
+<span id="420">420</span>
+<span id="421">421</span>
+<span id="422">422</span>
+<span id="423">423</span>
+<span id="424">424</span>
+<span id="425">425</span>
+<span id="426">426</span>
+<span id="427">427</span>
+<span id="428">428</span>
+<span id="429">429</span>
+<span id="430">430</span>
+<span id="431">431</span>
+<span id="432">432</span>
+<span id="433">433</span>
+<span id="434">434</span>
+<span id="435">435</span>
+<span id="436">436</span>
+<span id="437">437</span>
+<span id="438">438</span>
+<span id="439">439</span>
+<span id="440">440</span>
+<span id="441">441</span>
+<span id="442">442</span>
+<span id="443">443</span>
+<span id="444">444</span>
+<span id="445">445</span>
+<span id="446">446</span>
+<span id="447">447</span>
+<span id="448">448</span>
+<span id="449">449</span>
+<span id="450">450</span>
+<span id="451">451</span>
+<span id="452">452</span>
+<span id="453">453</span>
+<span id="454">454</span>
+<span id="455">455</span>
+<span id="456">456</span>
+<span id="457">457</span>
+<span id="458">458</span>
+<span id="459">459</span>
+<span id="460">460</span>
+<span id="461">461</span>
+<span id="462">462</span>
+<span id="463">463</span>
+<span id="464">464</span>
+<span id="465">465</span>
 </pre><pre class='rust '>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>memmap</span>;
 
@@ -470,6 +516,7 @@
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>iter</span>::<span class='ident'>Extend</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>cmp</span>;
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ops</span>::<span class='ident'>Range</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>sync</span>::{<span class='ident'>Arc</span>, <span class='ident'>RwLock</span>, <span class='ident'>RwLockReadGuard</span>};
 
 <span class='kw'>use</span> <span class='ident'>memmap</span>::{<span class='ident'>Mmap</span>, <span class='ident'>Protection</span>};
@@ -489,11 +536,11 @@
 
 <span class='doccomment'>/// A struct representing an offset into the assembling buffer of a `DynasmApi` struct.</span>
 <span class='doccomment'>/// The wrapped `usize` is the offset from the start of the assembling buffer in bytes.</span>
-<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>, <span class='ident'>Clone</span>, <span class='ident'>Copy</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>, <span class='ident'>Clone</span>, <span class='ident'>Copy</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialOrd</span>, <span class='ident'>Ord</span>, <span class='ident'>Hash</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>AssemblyOffset</span>(<span class='kw'>pub</span> <span class='ident'>usize</span>);
 
 <span class='doccomment'>/// A dynamic label</span>
-<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>, <span class='ident'>Clone</span>, <span class='ident'>Copy</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>, <span class='ident'>Clone</span>, <span class='ident'>Copy</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Eq</span>, <span class='ident'>Hash</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>DynamicLabel</span>(<span class='ident'>usize</span>);
 
 <span class='doccomment'>/// This trait represents the interface that must be implemented to allow</span>
@@ -573,7 +620,7 @@
     <span class='comment'>// label name -&gt; target loc</span>
     <span class='ident'>global_labels</span>: <span class='ident'>HashMap</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span>, <span class='ident'>usize</span><span class='op'>&gt;</span>,
     <span class='comment'>// end of patch location -&gt; name</span>
-    <span class='ident'>global_relocs</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span>(<span class='ident'>PatchLoc</span>, <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span>)<span class='op'>&gt;</span>, 
+    <span class='ident'>global_relocs</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span>(<span class='ident'>PatchLoc</span>, <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span>)<span class='op'>&gt;</span>,
 
     <span class='comment'>// label id -&gt; target loc</span>
     <span class='ident'>dynamic_labels</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>usize</span><span class='op'>&gt;&gt;</span>,
@@ -733,6 +780,39 @@
         <span class='ident'>DynamicLabel</span>(<span class='ident'>id</span>)
     }
 
+    <span class='doccomment'>/// Allows previously assembled code to be overwritten. The first argument</span>
+    <span class='doccomment'>/// is a range of `AssemblyOffset`s that determines the safe range of values</span>
+    <span class='doccomment'>/// to overwrite. The second argument is a closure which will be passed a &amp;mut</span>
+    <span class='doccomment'>/// Assembler to do the actual overwriting. If the range is invalid (it should</span>
+    <span class='doccomment'>/// only cover already assembled values and the end should be larger than the</span>
+    <span class='doccomment'>/// start) it will panic. Additionally, if code within the closure assembles</span>
+    <span class='doccomment'>/// to a total size larger than the given range, it will also panic.</span>
+    <span class='doccomment'>/// aside from that you can do everything you can do normally within the</span>
+    <span class='doccomment'>/// closure.</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>alter</span><span class='op'>&lt;</span><span class='ident'>F</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>loc</span>: <span class='ident'>Range</span><span class='op'>&lt;</span><span class='ident'>AssemblyOffset</span><span class='op'>&gt;</span>, <span class='ident'>f</span>: <span class='ident'>F</span>) <span class='kw'>where</span> <span class='ident'>F</span>: <span class='ident'>FnOnce</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>Self</span>) <span class='op'>-&gt;</span> () {
+        <span class='comment'>// commit the assembling buffer to empty it so we can retarget it</span>
+        <span class='self'>self</span>.<span class='ident'>commit</span>();
+        <span class='kw'>let</span> <span class='ident'>actual_asmoffset</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>asmoffset</span>;
+        <span class='kw'>if</span> <span class='ident'>loc</span>.<span class='ident'>start</span>.<span class='number'>0</span> <span class='op'>&gt;</span> <span class='ident'>actual_asmoffset</span> <span class='op'>||</span> <span class='ident'>loc</span>.<span class='ident'>end</span>.<span class='number'>0</span> <span class='op'>&gt;</span> <span class='ident'>actual_asmoffset</span> <span class='op'>||</span> <span class='ident'>loc</span>.<span class='ident'>start</span>.<span class='number'>0</span> <span class='op'>&gt;</span> <span class='ident'>loc</span>.<span class='ident'>end</span>.<span class='number'>0</span> {
+            <span class='macro'>panic</span><span class='macro'>!</span>(<span class='string'>&quot;Given alteration range lies outside the currently filled assembling buffer&quot;</span>);
+        }
+        <span class='comment'>// for x86 support: invalidate all known relocs in this area here</span>
+
+        <span class='comment'>// move the start index of the assembling buffer to the fixup location</span>
+        <span class='self'>self</span>.<span class='ident'>commit</span>();
+        <span class='self'>self</span>.<span class='ident'>asmoffset</span> <span class='op'>=</span> <span class='ident'>loc</span>.<span class='ident'>start</span>.<span class='number'>0</span>;
+
+        <span class='comment'>// execute fixups</span>
+        <span class='ident'>f</span>(<span class='self'>self</span>);
+
+        <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>asmoffset</span> <span class='op'>&gt;</span> <span class='ident'>loc</span>.<span class='ident'>end</span>.<span class='number'>0</span> {
+            <span class='macro'>panic</span><span class='macro'>!</span>(<span class='string'>&quot;Overran the given range&quot;</span>);
+        }
+        <span class='comment'>// commit fixups and restore asmoffset to the end of the buffer</span>
+        <span class='self'>self</span>.<span class='ident'>commit</span>();
+        <span class='self'>self</span>.<span class='ident'>asmoffset</span> <span class='op'>=</span> <span class='ident'>actual_asmoffset</span>;
+    }
+
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>patch_loc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>loc</span>: <span class='ident'>PatchLoc</span>, <span class='ident'>target</span>: <span class='ident'>usize</span>) {
         <span class='kw'>let</span> <span class='ident'>buf_loc</span> <span class='op'>=</span> <span class='ident'>loc</span>.<span class='number'>0</span> <span class='op'>-</span> <span class='self'>self</span>.<span class='ident'>asmoffset</span>;
@@ -779,30 +859,40 @@
     <span class='doccomment'>/// has to obtain a lock on the datastructure. When this method is called, all</span>
     <span class='doccomment'>/// labels will be resolved, and the result can no longer be changed.</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>commit</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) {
+        <span class='comment'>// This is where the part overridden by the current assembling buffer starts.</span>
+        <span class='comment'>// This is guaranteed to be in the actual backing buffer.</span>
+        <span class='kw'>let</span> <span class='ident'>buf_start</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>asmoffset</span>;
+        <span class='comment'>// and this is where it ends. This is not guaranteed to be in the actual mmap</span>
+        <span class='kw'>let</span> <span class='ident'>buf_end</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>offset</span>().<span class='number'>0</span>;
+        <span class='comment'>// is there any work to do?</span>
+        <span class='kw'>if</span> <span class='ident'>buf_start</span> <span class='op'>==</span> <span class='ident'>buf_end</span> {
+            <span class='kw'>return</span>
+        }
         <span class='comment'>// finalize all relocs in the newest part.</span>
         <span class='self'>self</span>.<span class='ident'>encode_relocs</span>();
-        <span class='comment'>// length of the initialized part of the execbuffer before</span>
-        <span class='kw'>let</span> <span class='ident'>old_len</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>asmoffset</span>;
-        <span class='comment'>// length of the initialized part of the execbuffer afterwards</span>
-        <span class='kw'>let</span> <span class='ident'>new_len</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>offset</span>().<span class='number'>0</span>;
 
+        <span class='kw'>let</span> <span class='ident'>same</span>    <span class='op'>=</span>          ..<span class='ident'>buf_start</span>;
+        <span class='kw'>let</span> <span class='ident'>changed</span> <span class='op'>=</span> <span class='ident'>buf_start</span>..<span class='ident'>buf_end</span>;
 
-        <span class='kw'>if</span> <span class='ident'>new_len</span> <span class='op'>&gt;</span> <span class='self'>self</span>.<span class='ident'>map_len</span> {
+        <span class='comment'>// The reason we don&#39;t have to copy the part after buf_end here is because we will only</span>
+        <span class='comment'>// enter the resize branch if all data past buf_start has been overwritten if we&#39;re in an</span>
+        <span class='comment'>// alter invocation</span>
+        <span class='kw'>if</span> <span class='ident'>buf_end</span> <span class='op'>&gt;</span> <span class='self'>self</span>.<span class='ident'>map_len</span> {
             <span class='comment'>// create a new buffer of the necessary size max(current_buf_len * 2, wanted_len)</span>
-            <span class='kw'>let</span> <span class='ident'>map_len</span> <span class='op'>=</span> <span class='ident'>cmp</span>::<span class='ident'>max</span>(<span class='ident'>new_len</span>, <span class='self'>self</span>.<span class='ident'>map_len</span> <span class='op'>*</span> <span class='number'>2</span>);
+            <span class='kw'>let</span> <span class='ident'>map_len</span> <span class='op'>=</span> <span class='ident'>cmp</span>::<span class='ident'>max</span>(<span class='ident'>buf_end</span>, <span class='self'>self</span>.<span class='ident'>map_len</span> <span class='op'>*</span> <span class='number'>2</span>);
             <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>new_buf</span> <span class='op'>=</span> <span class='ident'>Mmap</span>::<span class='ident'>anonymous</span>(<span class='ident'>map_len</span>, <span class='ident'>Protection</span>::<span class='ident'>ReadWrite</span>).<span class='ident'>unwrap</span>();
             <span class='self'>self</span>.<span class='ident'>map_len</span> <span class='op'>=</span> <span class='ident'>new_buf</span>.<span class='ident'>len</span>();
 
             <span class='comment'>// copy over from the old buffer and the asm buffer (unsafe is completely safe due to use of anonymous mappings)</span>
             <span class='kw'>unsafe</span> {
-                <span class='ident'>new_buf</span>.<span class='ident'>as_mut_slice</span>()[..<span class='ident'>old_len</span>].<span class='ident'>copy_from_slice</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>execbuffer</span>.<span class='ident'>read</span>().<span class='ident'>unwrap</span>().<span class='ident'>buffer</span>.<span class='ident'>as_slice</span>()[..<span class='ident'>old_len</span>]);
-                <span class='ident'>new_buf</span>.<span class='ident'>as_mut_slice</span>()[<span class='ident'>old_len</span>..<span class='ident'>new_len</span>].<span class='ident'>copy_from_slice</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>ops</span>[..]);
+                <span class='ident'>new_buf</span>.<span class='ident'>as_mut_slice</span>()[<span class='ident'>same</span>].<span class='ident'>copy_from_slice</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>execbuffer</span>.<span class='ident'>read</span>().<span class='ident'>unwrap</span>().<span class='ident'>buffer</span>.<span class='ident'>as_slice</span>()[<span class='ident'>same</span>]);
+                <span class='ident'>new_buf</span>.<span class='ident'>as_mut_slice</span>()[<span class='ident'>changed</span>].<span class='ident'>copy_from_slice</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>ops</span>);
             }
             <span class='ident'>new_buf</span>.<span class='ident'>set_protection</span>(<span class='ident'>Protection</span>::<span class='ident'>ReadExecute</span>).<span class='ident'>unwrap</span>();
 
             <span class='comment'>// swap the buffers and the initialized length</span>
             <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>data</span> <span class='op'>=</span> <span class='ident'>ExecutableBuffer</span> {
-                <span class='ident'>length</span>: <span class='ident'>new_len</span>,
+                <span class='ident'>length</span>: <span class='ident'>buf_end</span>,
                 <span class='ident'>buffer</span>: <span class='ident'>new_buf</span>
             };
             <span class='ident'>mem</span>::<span class='ident'>swap</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>data</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>.<span class='ident'>execbuffer</span>.<span class='ident'>write</span>().<span class='ident'>unwrap</span>());
@@ -812,15 +902,17 @@
             <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>data</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>execbuffer</span>.<span class='ident'>write</span>().<span class='ident'>unwrap</span>();
             <span class='ident'>data</span>.<span class='ident'>buffer</span>.<span class='ident'>set_protection</span>(<span class='ident'>Protection</span>::<span class='ident'>ReadWrite</span>).<span class='ident'>unwrap</span>();
             <span class='kw'>unsafe</span> {
-                <span class='ident'>data</span>.<span class='ident'>buffer</span>.<span class='ident'>as_mut_slice</span>()[<span class='ident'>old_len</span>..<span class='ident'>new_len</span>].<span class='ident'>copy_from_slice</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>ops</span>[..]);
+                <span class='ident'>data</span>.<span class='ident'>buffer</span>.<span class='ident'>as_mut_slice</span>()[<span class='ident'>changed</span>].<span class='ident'>copy_from_slice</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>ops</span>);
             }
             <span class='ident'>data</span>.<span class='ident'>buffer</span>.<span class='ident'>set_protection</span>(<span class='ident'>Protection</span>::<span class='ident'>ReadExecute</span>).<span class='ident'>unwrap</span>();
-            <span class='comment'>// update the length of the initialized part of the buffer</span>
-            <span class='ident'>data</span>.<span class='ident'>length</span> <span class='op'>=</span> <span class='ident'>new_len</span>;
+            <span class='comment'>// update the length of the initialized part of the buffer, if this commit adds length</span>
+            <span class='kw'>if</span> <span class='ident'>buf_end</span> <span class='op'>&gt;</span> <span class='ident'>data</span>.<span class='ident'>length</span> {
+                <span class='ident'>data</span>.<span class='ident'>length</span> <span class='op'>=</span> <span class='ident'>buf_end</span>;
+            }
         }
-        <span class='comment'>// empty the assemblng buffer and update the assembling offset</span>
+        <span class='comment'>// empty the assembling buffer and update the assembling offset</span>
         <span class='self'>self</span>.<span class='ident'>ops</span>.<span class='ident'>clear</span>();
-        <span class='self'>self</span>.<span class='ident'>asmoffset</span> <span class='op'>=</span> <span class='ident'>new_len</span>;
+        <span class='self'>self</span>.<span class='ident'>asmoffset</span> <span class='op'>=</span> <span class='ident'>buf_end</span>;
     }
 
     <span class='doccomment'>/// Consumes the assembler to return the internal ExecutableBuffer. This</span>
@@ -848,14 +940,14 @@
     }
 }
 
-<span class='doccomment'>/// A read-only lockable refernce to the internal ExecutableBuffer of an Assembler.</span>
+<span class='doccomment'>/// A read-only lockable reference to the internal `ExecutableBuffer` of an Assembler.</span>
 <span class='doccomment'>/// To gain access to this buffer, it must be locked.</span>
 <span class='kw'>impl</span> <span class='ident'>Executor</span> {
     <span class='doccomment'>/// Gain read-access to the internal `ExecutableBuffer`. While the returned guard</span>
     <span class='doccomment'>/// is alive, it can be used to read and execute from the `ExecutableBuffer`.</span>
     <span class='doccomment'>/// Any pointers created to the `Executablebuffer` should no longer be used when</span>
     <span class='doccomment'>/// the guard is dropped.</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>lock</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>RwLockReadGuard</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>ExecutableBuffer</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>lock</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>RwLockReadGuard</span><span class='op'>&lt;</span><span class='ident'>ExecutableBuffer</span><span class='op'>&gt;</span> {
         <span class='self'>self</span>.<span class='ident'>execbuffer</span>.<span class='ident'>read</span>().<span class='ident'>unwrap</span>()
     }
 }
@@ -867,9 +959,9 @@
     <span class='doccomment'>/// will point to the start of the first instruction after the offset call,</span>
     <span class='doccomment'>/// which can then be jumped or called to divert control flow into the executable</span>
     <span class='doccomment'>/// buffer. Note that if this buffer is accessed through an Executor, these pointers</span>
-    <span class='doccomment'>/// will only be valid as long as its lock is held. When no locks are held, </span>
+    <span class='doccomment'>/// will only be valid as long as its lock is held. When no locks are held,</span>
     <span class='doccomment'>/// The assembler is free to relocate the executable buffer when it requires</span>
-    <span class='doccomment'>/// more memory than available. </span>
+    <span class='doccomment'>/// more memory than available.</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>ptr</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>offset</span>: <span class='ident'>AssemblyOffset</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span> {
         <span class='kw-2'>&amp;</span><span class='self'>self</span>[<span class='ident'>offset</span>.<span class='number'>0</span>] <span class='kw'>as</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span>
     }

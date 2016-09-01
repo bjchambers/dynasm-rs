@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["encoded_size",""],["offset_of",""],["or_mask_shift_expr",""],["serialize",""],["size_of",""]]});
+initSidebarItems({"fn":[["add_exprs",""],["encoded_size",""],["offset_of",""],["or_mask_shift_expr",""],["serialize",""],["size_of",""],["size_of_scale_expr",""]]});
