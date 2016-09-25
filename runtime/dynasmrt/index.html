@@ -47,14 +47,14 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-0' class='srclink' href='../src/dynasmrt/src/lib.rs.html#1-465' title='goto source code'>[src]</a></span></h1>
+               </span><a id='src-0' class='srclink' href='../src/dynasmrt/src/lib.rs.html#1-709' title='goto source code'>[src]</a></span></h1>
 <h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class='macro' href='macro.MutPointer.html'
                                   title='dynasmrt::MutPointer'>MutPointer</a></td>
                            <td class='docblock short'>
-                                <p>Preforms the same action as the Pointer! macro, but casts to a *mut pointer.</p>
+                                <p>Preforms the same action as the <code>Pointer!</code> macro, but casts to a *mut pointer.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -77,10 +77,22 @@ same time.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
+                           <td><a class='struct' href='struct.AssemblyModifier.html'
+                                  title='dynasmrt::AssemblyModifier'>AssemblyModifier</a></td>
+                           <td class='docblock short'>
+                                <p>This struct is a wrapper around an <code>Assembler</code> normally created using the
+<code>Assembler.alter</code> method. Instead of writing to a temporary assembling buffer,
+this struct assembles directly into an executable buffer. The <code>goto</code> method can
+be used to set the assembling offset in the <code>ExecutableBuffer</code> of the assembler
+(this offset is initialized to 0) after which the data at this location can be
+overwritten by assembling into this struct.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
                            <td><a class='struct' href='struct.AssemblyOffset.html'
                                   title='dynasmrt::AssemblyOffset'>AssemblyOffset</a></td>
                            <td class='docblock short'>
-                                <p>A struct representing an offset into the assembling buffer of a <code>DynasmApi</code> struct.
+                                <p>A struct representing an offset into the assembling buffer of a <code>DynasmLabelApi</code> struct.
 The wrapped <code>usize</code> is the offset from the start of the assembling buffer in bytes.</p>
                            </td>
                        </tr>
@@ -105,6 +117,17 @@ The wrapped <code>usize</code> is the offset from the start of the assembling bu
                                 <p>A read-only shared reference to the executable buffer inside an Assembler. By
 locking it the internal <code>ExecutableBuffer</code> can be accessed and executed.</p>
                            </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.UncommittedModifier.html'
+                                  title='dynasmrt::UncommittedModifier'>UncommittedModifier</a></td>
+                           <td class='docblock short'>
+                                <p>This struct is a wrapper around an <code>Assembler</code> normally created using the
+<code>Assembler.alter_uncommitted</code> method. It allows the user to edit parts
+of the assembling buffer that cannot be determined easily or efficiently
+in advance. Due to limitations of the label resolution algorithms, this
+assembler does not allow labels to be used.</p>
+                           </td>
                        </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
 <table>
                        <tr class=' module-item'>
@@ -113,6 +136,13 @@ locking it the internal <code>ExecutableBuffer</code> can be accessed and execut
                            <td class='docblock short'>
                                 <p>This trait represents the interface that must be implemented to allow
 the dynasm preprocessor to assemble into a datastructure.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.DynasmLabelApi.html'
+                                  title='dynasmrt::DynasmLabelApi'>DynasmLabelApi</a></td>
+                           <td class='docblock short'>
+                                <p>This trait extends DynasmApi to not only allow assembling, but also labels and various directives</p>
                            </td>
                        </tr></table></section>
     <section id='search' class="content hidden"></section>

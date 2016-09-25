@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `UncommittedModifier` struct in crate `dynasmrt`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, UncommittedModifier">
+
+    <title>dynasmrt::UncommittedModifier - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>dynasmrt</a></p><script>window.sidebarCurrent = {name: 'UncommittedModifier', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>dynasmrt</a>::<wbr><a class='struct' href=''>UncommittedModifier</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-500' class='srclink' href='../src/dynasmrt/src/lib.rs.html#651-654' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct UncommittedModifier&lt;'a&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>This struct is a wrapper around an <code>Assembler</code> normally created using the
+<code>Assembler.alter_uncommitted</code> method. It allows the user to edit parts
+of the assembling buffer that cannot be determined easily or efficiently
+in advance. Due to limitations of the label resolution algorithms, this
+assembler does not allow labels to be used.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='struct' href='../dynasmrt/struct.UncommittedModifier.html' title='dynasmrt::UncommittedModifier'>UncommittedModifier</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-504' class='srclink' href='../src/dynasmrt/src/lib.rs.html#656-680' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.goto' class='method'><span id='goto.v' class='invisible'><code>fn <a href='#method.goto' class='fnname'>goto</a>(&amp;mut self, offset: <a class='struct' href='../dynasmrt/struct.AssemblyOffset.html' title='dynasmrt::AssemblyOffset'>AssemblyOffset</a>)</code></span></h4>
+<div class='docblock'><p>Sets the current modification offset to the given value</p>
+</div><h4 id='method.check' class='method'><span id='check.v' class='invisible'><code>fn <a href='#method.check' class='fnname'>check</a>(&amp;mut self, offset: <a class='struct' href='../dynasmrt/struct.AssemblyOffset.html' title='dynasmrt::AssemblyOffset'>AssemblyOffset</a>)</code></span></h4>
+<div class='docblock'><p>Checks that the current modification offset is not larger than the specified offset.
+If this is violated, it panics.</p>
+</div><h4 id='method.check_exact' class='method'><span id='check_exact.v' class='invisible'><code>fn <a href='#method.check_exact' class='fnname'>check_exact</a>(&amp;mut self, offset: <a class='struct' href='../dynasmrt/struct.AssemblyOffset.html' title='dynasmrt::AssemblyOffset'>AssemblyOffset</a>)</code></span></h4>
+<div class='docblock'><p>Checks that the current modification offset is exactly the specified offset.
+If this is violated, it panics.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a,&nbsp;'b&gt; <a class='trait' href='../dynasmrt/trait.DynasmApi.html' title='dynasmrt::DynasmApi'>DynasmApi</a>&lt;'b&gt; for <a class='struct' href='../dynasmrt/struct.UncommittedModifier.html' title='dynasmrt::UncommittedModifier'>UncommittedModifier</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-517' class='srclink' href='../src/dynasmrt/src/lib.rs.html#682-693' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.offset' class='method'><span id='offset.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#tymethod.offset' class='fnname'>offset</a>(&amp;self) -&gt; <a class='struct' href='../dynasmrt/struct.AssemblyOffset.html' title='dynasmrt::AssemblyOffset'>AssemblyOffset</a></code></span></h4>
+<div class='docblock'><p>Report the current offset into the assembling target</p>
+</div><h4 id='method.push' class='method'><span id='push.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#tymethod.push' class='fnname'>push</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>)</code></span></h4>
+<div class='docblock'><p>Push a byte into the assembling target</p>
+</div><h4 id='method.push_i8' class='method'><span id='push_i8.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_i8' class='fnname'>push_i8</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a>)</code></span></h4>
+<div class='docblock'><p>Push a signed byte into the assembling target</p>
+</div><h4 id='method.push_i16' class='method'><span id='push_i16.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_i16' class='fnname'>push_i16</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i16.html'>i16</a>)</code></span></h4>
+<div class='docblock'><p>Push a signed word into the assembling target</p>
+</div><h4 id='method.push_i32' class='method'><span id='push_i32.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_i32' class='fnname'>push_i32</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>)</code></span></h4>
+<div class='docblock'><p>Push a signed doubleword into the assembling target</p>
+</div><h4 id='method.push_i64' class='method'><span id='push_i64.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.push_i64' class='fnname'>push_i64</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>)</code></span></h4>
+<div class='docblock'><p>Push a signed quadword into the assembling target</p>
+</div><h4 id='method.runtime_error' class='method'><span id='runtime_error.v' class='invisible'><code>fn <a href='../dynasmrt/trait.DynasmApi.html#method.runtime_error' class='fnname'>runtime_error</a>(&amp;self, msg: &amp;'static <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; !</code></span></h4>
+<div class='docblock'><p>This function is called in when a runtime error has to be generated. It panics.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.Extend.html' title='core::iter::traits::Extend'>Extend</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt; for <a class='struct' href='../dynasmrt/struct.UncommittedModifier.html' title='dynasmrt::UncommittedModifier'>UncommittedModifier</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-525' class='srclink' href='../src/dynasmrt/src/lib.rs.html#695-702' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.extend' class='method'><span id='extend.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.Extend.html#tymethod.extend' class='fnname'>extend</a>&lt;T&gt;(&amp;mut self, iter: T) <span class='where'>where T: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;</span></code></span></h4>
+<div class='docblock'><p>Extends a collection with the contents of an iterator. <a href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.Extend.html#tymethod.extend">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a,&nbsp;'b&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.Extend.html' title='core::iter::traits::Extend'>Extend</a>&lt;&amp;'b <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt; for <a class='struct' href='../dynasmrt/struct.UncommittedModifier.html' title='dynasmrt::UncommittedModifier'>UncommittedModifier</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-532' class='srclink' href='../src/dynasmrt/src/lib.rs.html#704-709' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.extend-1' class='method'><span id='extend.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.Extend.html#tymethod.extend' class='fnname'>extend</a>&lt;T&gt;(&amp;mut self, iter: T) <span class='where'>where T: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=&amp;'b <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;</span></code></span></h4>
+<div class='docblock'><p>Extends a collection with the contents of an iterator. <a href="https://doc.rust-lang.org/nightly/core/iter/traits/trait.Extend.html#tymethod.extend">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "dynasmrt";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

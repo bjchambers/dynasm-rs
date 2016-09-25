@@ -68,7 +68,7 @@
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>dynasmrt</span>;
 
-<span class='kw'>use</span> <span class='ident'>dynasmrt</span>::<span class='ident'>DynasmApi</span>;
+<span class='kw'>use</span> <span class='ident'>dynasmrt</span>::{<span class='ident'>DynasmApi</span>, <span class='ident'>DynasmLabelApi</span>};
 
 <span class='kw'>use</span> <span class='ident'>std</span>::{<span class='ident'>io</span>, <span class='ident'>slice</span>, <span class='ident'>mem</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>Write</span>;
@@ -123,15 +123,15 @@
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>dynasmrt</span>;
 
-<span class='kw'>use</span> <span class='ident'>dynasmrt</span>::<span class='ident'>DynasmApi</span>;</pre>
+<span class='kw'>use</span> <span class='ident'>dynasmrt</span>::{<span class='ident'>DynasmApi</span>, <span class='ident'>DynasmLabelApi</span>};</pre>
 
 <p>We then link to the dynasm runtime crate. Although they are not used here, it also contains various utility macros which we load here.
-Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the interface used by the <code>dynasm!</code> procedural macro to produce assembled code.</p>
+Furthermore, the <code>DynasmApi</code> and <code>DynasmLabelApi</code> traits are loaded. These traits defines the interfaces used by the <code>dynasm!</code> procedural macro to produce assembled code.</p>
 
 <pre class='rust rust-example-rendered'>
 <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>ops</span> <span class='op'>=</span> <span class='ident'>dynasmrt</span>::<span class='ident'>Assembler</span>::<span class='ident'>new</span>();</pre>
 
-<p>Of course, the machine code that will be generated will need to live somewhere. <code>dynasmrt::Assembler</code> is a struct that implements the <code>DynasmApi</code> trait, provides storage for the generated machine code, handles memory permissions and provides various utilities for dynamically assembling code. It even allows assembling code in one thread while several other threads execute said code. For this example though, we will use it in the most simple usecase, just assembling everything in advance and then executing it.</p>
+<p>Of course, the machine code that will be generated will need to live somewhere. <code>dynasmrt::Assembler</code> is a struct that implements the <code>DynasmApi</code> and <code>DynasmLabelApi</code> traits, provides storage for the generated machine code, handles memory permissions and provides various utilities for dynamically assembling code. It even allows assembling code in one thread while several other threads execute said code. For this example though, we will use it in the most simple use case, just assembling everything in advance and then executing it.</p>
 
 <pre class='rust rust-example-rendered'>
 <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
@@ -212,7 +212,7 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>dynasmrt</span>;
 
-<span class='kw'>use</span> <span class='ident'>dynasmrt</span>::<span class='ident'>DynasmApi</span>;
+<span class='kw'>use</span> <span class='ident'>dynasmrt</span>::{<span class='ident'>DynasmApi</span>, <span class='ident'>DynasmLabelApi</span>};
 
 <span class='kw'>use</span> <span class='ident'>std</span>::{<span class='ident'>io</span>, <span class='ident'>slice</span>, <span class='ident'>mem</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>Write</span>;
@@ -412,14 +412,14 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 }</pre>
 
 <h2 id='basics' class='section-header'><a href='#basics'>Basics</a></h2>
-<p>To kickstart this process, we&#39;ll first add the <code>dynasm</code> plugin and <code>dynasmrt</code> crate to our project, and <code>use</code> the <code>DynasmApi</code> trait:</p>
+<p>To kickstart this process, we&#39;ll first add the <code>dynasm</code> plugin and <code>dynasmrt</code> crate to our project, and <code>use</code> the <code>DynasmApi</code> and <code>DynasmLabelApi</code> traits:</p>
 
 <pre><code class="language-diffnew">+ #![feature(plugin)]
 + #![plugin(dynasm)]
 + 
 + #[macro_use]
 + extern crate dynasmrt;
-+ use dynasmrt::DynasmApi;
+use dynasmrt::{DynasmApi, DynasmLabelApi};
 </code></pre>
 
 <p>Then, we&#39;ll define the following aliases to make the code more readable. As this code is specific to <code>x86_64</code> we&#39;ll add a <code>cfg</code> attribute here so the code will fail to compile on other architectures. Note that <code>ops</code> is purely a placeholder here for the parser, it isn&#39;t actually used.</p>
@@ -630,8 +630,8 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 - }
 </code></pre>
 
-<pre><code class="language-diffnew">+ call_extern!(ops, State::getchar);
-+ dynasm!(ops
+<pre><code class="language-diffnew">+ dynasm!(ops
++     ;; call_extern!(ops, State::getchar)
 +     ; cmp al, 0
 +     ; jnz -&gt;io_failure
 + );
@@ -642,8 +642,8 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 - }
 </code></pre>
 
-<pre><code class="language-diffnew">+ call_extern!(ops, State::putchar);
-+ dynasm!(ops
+<pre><code class="language-diffnew">+ dynasm!(ops
++     ;; call_extern!(ops, State::putchar)
 +     ; cmp al, 0
 +     ; jnz -&gt;io_failure
 + );
@@ -710,17 +710,13 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 <h3 id='epilogue' class='section-header'><a href='#epilogue'>Epilogue</a></h3>
 <p>With the end of the parsing reached, we must now handle the return and possible error conditions. This is done by returning 0 if the executionw as successful, or an error code when an error happened at runtime.</p>
 
-<pre><code class="language-diffnew">+ epilogue!(ops, 0);
-+ 
-+ dynasm!(ops
+<pre><code class="language-diffnew">+ dynasm!(ops
++     ;; epilogue!(ops, 0)
 +     ;-&gt;overflow:
-+ );
-+ epilogue!(ops, 1);
-+ 
-+ dynasm!(ops
++     ;; epilogue!(ops, 1)
 +     ;-&gt;io_failure:
++     ;; epilogue!(ops, 2)
 + );
-+ epilogue!(ops, 2);
 </code></pre>
 
 <p>Now we can finalize the assembler and construct a Program from the resulting buffer:</p>
@@ -812,7 +808,7 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
 
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>dynasmrt</span>;
-<span class='kw'>use</span> <span class='ident'>dynasmrt</span>::<span class='ident'>DynasmApi</span>;
+<span class='kw'>use</span> <span class='ident'>dynasmrt</span>::{<span class='ident'>DynasmApi</span>, <span class='ident'>DynasmLabelApi</span>};
 
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>itertools</span>;
 <span class='kw'>use</span> <span class='ident'>itertools</span>::<span class='ident'>Itertools</span>;
@@ -931,15 +927,15 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
                     );
                 },
                 <span class='string'>b&#39;,&#39;</span> <span class='op'>=&gt;</span> {
-                    <span class='macro'>call_extern</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='ident'>State</span>::<span class='ident'>getchar</span>);
                     <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                        ;; <span class='macro'>call_extern</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='ident'>State</span>::<span class='ident'>getchar</span>)
                         ; <span class='ident'>cmp</span> <span class='ident'>al</span>, <span class='number'>0</span>
                         ; <span class='ident'>jnz</span> <span class='op'>-&gt;</span><span class='ident'>io_failure</span>
                     );
                 },
                 <span class='string'>b&#39;.&#39;</span> <span class='op'>=&gt;</span> {
-                    <span class='macro'>call_extern</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='ident'>State</span>::<span class='ident'>putchar</span>);
                     <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+                        ;; <span class='macro'>call_extern</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='ident'>State</span>::<span class='ident'>putchar</span>)
                         ; <span class='ident'>cmp</span> <span class='ident'>al</span>, <span class='number'>0</span>
                         ; <span class='ident'>jnz</span> <span class='op'>-&gt;</span><span class='ident'>io_failure</span>
                     );
@@ -981,17 +977,13 @@ Furthermore, the <code>DynasmApi</code> trait is loaded. This trait defines the 
             <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='string'>&quot;[ without matching ]&quot;</span>);
         }
 
-        <span class='macro'>epilogue</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='number'>0</span>);
-
         <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+            ;; <span class='macro'>epilogue</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='number'>0</span>)
             ;<span class='op'>-&gt;</span><span class='ident'>overflow</span>:
-        );
-        <span class='macro'>epilogue</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='number'>1</span>);
-
-        <span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+            ;; <span class='macro'>epilogue</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='number'>1</span>)
             ;<span class='op'>-&gt;</span><span class='ident'>io_failure</span>:
+            ;; <span class='macro'>epilogue</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='number'>2</span>)
         );
-        <span class='macro'>epilogue</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='number'>2</span>);
 
         <span class='kw'>let</span> <span class='ident'>code</span> <span class='op'>=</span> <span class='ident'>ops</span>.<span class='ident'>finalize</span>().<span class='ident'>unwrap</span>();
         <span class='prelude-val'>Ok</span>(<span class='ident'>Program</span> {

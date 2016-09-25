@@ -67,6 +67,7 @@
 <li><code>ident</code></li>
 <li><code>expr_path</code></li>
 <li><code>expr</code></li>
+<li><code>stmt</code></li>
 </ul>
 
 <p>Dynasm-rs defines the following base syntax units:</p>
@@ -85,7 +86,7 @@
 
 <p>Where line can be one of the following:</p>
 
-<p><code>line : directive | label | instruction ;</code></p>
+<p><code>line : (&quot;;&quot; stmt) | directive | label | instruction ;</code></p>
 
 <h2 id='directives' class='section-header'><a href='#directives'>Directives</a></h2>
 <p>Directives are special commands given to the assembler that do not correspond to instructions directly.</p>
@@ -185,7 +186,7 @@
     )};
 }</pre>
 
-<p>An important thing to notice here is which matchers are used for which parts of dynasm! syntax. The following table lists the correct matchers to be used for expanding to dynasm syntax elements. Note that <code>$a:expr</code> means that anything that parses to an expression like <code>$a:ident</code> and just raw token trees are allowed.</p>
+<p>An important thing to notice here is which matchers are used for which parts of <code>dynasm!</code> syntax. The following table lists the correct matchers to be used for expanding to dynasm syntax elements. Note that <code>$a:expr</code> means that anything that parses to an expression like <code>$a:ident</code> and just raw token trees are allowed.</p>
 
 <p>Table 2: dynasm-rs macro expansion rules</p>
 
@@ -200,7 +201,7 @@
 <tbody>
 <tr>
 <td style="text-align: left">Assembling buffer</td>
-<td style="text-align: left"><code>$ops:ident</code></td>
+<td style="text-align: left"><code>$ops:expr</code></td>
 </tr>
 <tr>
 <td style="text-align: left">Register reference</td>
@@ -232,6 +233,24 @@
 </tr>
 </tbody>
 </table>
+
+<h2 id='statements' class='section-header'><a href='#statements'>statements</a></h2>
+<p>To make code that uses a lot of macros less verbose, dynasm-rs allows bare rust statements to be inserted inside <code>dynasm!</code> invocations. This can be done by using a double semicolon instead of a single semicolon at the start of the line as displayed in the following equivalent examples:</p>
+
+<pre class='rust rust-example-rendered'>
+<span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+    ; <span class='ident'>mov</span> <span class='ident'>rcx</span>, <span class='ident'>rax</span>
+);
+<span class='macro'>call_extern</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='ident'>extern_func</span>);
+<span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+    ; <span class='ident'>mov</span> <span class='ident'>rcx</span>, <span class='ident'>rax</span>
+);
+
+<span class='macro'>dynasm</span><span class='macro'>!</span>(<span class='ident'>ops</span>
+    ; <span class='ident'>mov</span> <span class='ident'>rcx</span>, <span class='ident'>rax</span>
+    ;; <span class='macro'>call_extern</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='ident'>extern_func</span>)
+    ; <span class='ident'>mov</span> <span class='ident'>rcx</span>, <span class='ident'>rax</span>
+);</pre>
 
 <h2 id='labels-1' class='section-header'><a href='#labels-1'>Labels</a></h2>
 <p>In order to describe flow control effectively, dynasm-rs supports labels. However, since the assembly templates can be combined in a variety of ways at the mercy of the program using dynasm-rs, the semantics of these labels are somewhat different from how labels work in a static assembler.</p>
@@ -639,7 +658,7 @@
 <h4 id='type-mapped-references' class='section-header'><a href='#type-mapped-references'>Type mapped references</a></h4>
 <p>To ease interoperation with rust structures, dynasm-rs supports the following syntax for accessing members of pointers to structs and struct arrays. In this syntax, the scale and displacement in a normal memory reference are derived from the size of the type and the offset of the member in the type. Due to the limitations of procedural macros, invalid scales will unfortunately only panic at runtime. Note that dynasm-rs is unable to infer the size of the attribute and it should therefore be determined by a size prefix.</p>
 
-<p>The syntax for type maps is as follows</p>
+<p>The syntax for type maps is as follows:</p>
 
 <p>Table 6: dynasm-rs type map formats</p>
 
@@ -657,12 +676,16 @@
 <td style="text-align: left"><code>(rax as *mut Type).attr</code></td>
 </tr>
 <tr>
+<td style="text-align: left"><code>rax =&gt; Type[expr]</code></td>
+<td style="text-align: left"><code>(rax as *mut [Type])[expr]</code></td>
+</tr>
+<tr>
 <td style="text-align: left"><code>rax =&gt; Type[rbx]</code></td>
 <td style="text-align: left"><code>(rax as *mut [Type])[rbx]</code></td>
 </tr>
 <tr>
-<td style="text-align: left"><code>rax =&gt; Type[rbx].attr</code></td>
-<td style="text-align: left"><code>(rax as *mut [Type])[rbx].attr</code></td>
+<td style="text-align: left"><code>rax =&gt; Type[rbx + expr].attr</code></td>
+<td style="text-align: left"><code>(rax as *mut [Type])[rbx + expr].attr</code></td>
 </tr>
 </tbody>
 </table>
