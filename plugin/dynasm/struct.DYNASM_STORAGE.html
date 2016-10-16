@@ -48,9 +48,7 @@
                        [<span class='inner'>&#x2212;</span>]
                    </a>
                </span></span></h1>
-<pre class='rust struct'>pub struct DYNASM_STORAGE {
-    // some fields omitted
-}</pre><h2 id='deref-methods'>Methods from <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>__Deref</a>&lt;Target=<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/syntax/ast/struct.Ident.html' title='syntax::ast::Ident'>Ident</a>,&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='../dynasm/struct.DynasmData.html' title='dynasm::DynasmData'>DynasmData</a>&gt;&gt;&gt;&gt;</h2><div class='impl-items'></div><div class='impl-items'><h4 id='method.read' class='method'><span id='read.v' class='invisible'><code>fn <a href='#method.read' class='fnname'>read</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLockReadGuard.html' title='std::sync::rwlock::RwLockReadGuard'>RwLockReadGuard</a>&lt;T&gt;,&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sys_common/poison/struct.PoisonError.html' title='std::sys_common::poison::PoisonError'>PoisonError</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLockReadGuard.html' title='std::sync::rwlock::RwLockReadGuard'>RwLockReadGuard</a>&lt;T&gt;&gt;&gt;</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<pre class='rust struct'>pub struct DYNASM_STORAGE { /* fields omitted */ }</pre><h2 id='deref-methods'>Methods from <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>__Deref</a>&lt;Target=<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/syntax/ast/struct.Ident.html' title='syntax::ast::Ident'>Ident</a>,&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='../dynasm/struct.DynasmData.html' title='dynasm::DynasmData'>DynasmData</a>&gt;&gt;&gt;&gt;</h2><div class='impl-items'></div><div class='impl-items'><h4 id='method.read' class='method'><span id='read.v' class='invisible'><code>fn <a href='#method.read' class='fnname'>read</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLockReadGuard.html' title='std::sync::rwlock::RwLockReadGuard'>RwLockReadGuard</a>&lt;T&gt;,&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sys_common/poison/struct.PoisonError.html' title='std::sys_common::poison::PoisonError'>PoisonError</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLockReadGuard.html' title='std::sync::rwlock::RwLockReadGuard'>RwLockReadGuard</a>&lt;T&gt;&gt;&gt;</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Locks this rwlock with shared read access, blocking the current thread
 until it can be acquired.</p>
 
@@ -129,17 +127,6 @@ without additional synchronization.</p>
 is poisoned whenever a writer panics while holding an exclusive lock. An
 error will only be returned if the lock would have otherwise been
 acquired.</p>
-</div><h4 id='method.get_mut' class='method'><span id='get_mut.v' class='invisible'><code>fn <a href='#method.get_mut' class='fnname'>get_mut</a>(&amp;mut self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;&amp;mut T,&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sys_common/poison/struct.PoisonError.html' title='std::sys_common::poison::PoisonError'>PoisonError</a>&lt;&amp;mut T&gt;&gt;</code><div class='since' title='Stable since Rust version 1.6.0'>1.6.0</div></span></h4>
-<div class='docblock'><p>Returns a mutable reference to the underlying data.</p>
-
-<p>Since this call borrows the <code>RwLock</code> mutably, no actual locking needs to
-take place---the mutable borrow statically guarantees no locks exist.</p>
-
-<h1 id='errors-5' class='section-header'><a href='#errors-5'>Errors</a></h1>
-<p>This function will return an error if the RwLock is poisoned. An RwLock
-is poisoned whenever a writer panics while holding an exclusive lock. An
-error will only be returned if the lock would have otherwise been
-acquired.</p>
 </div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>__Deref</a> for <a class='struct' href='../dynasm/struct.DYNASM_STORAGE.html' title='dynasm::DYNASM_STORAGE'>DYNASM_STORAGE</a></code></span><span class='out-of-band'></span></h3>
 <div class='impl-items'><h4 id='associatedtype.Target' class='type'><span id='Target.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#associatedtype.Target' class='type'>Target</a> = <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/syntax/ast/struct.Ident.html' title='syntax::ast::Ident'>Ident</a>,&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='../dynasm/struct.DynasmData.html' title='dynasm::DynasmData'>DynasmData</a>&gt;&gt;&gt;</code></span></h4>
 <div class='docblock'><p>The resulting type after dereferencing</p>
@@ -205,7 +192,7 @@ acquired.</p>
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
-    
+    <script src="../extra.js"></script>
     <script defer src="../search-index.js"></script>
 </body>
 </html>

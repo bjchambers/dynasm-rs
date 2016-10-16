@@ -492,7 +492,7 @@
         <span class='comment'>// let temp: path = ::std::mem::uninitialized();</span>
         <span class='ident'>ecx</span>.<span class='ident'>stmt_let_typed</span>(<span class='ident'>span</span>, <span class='bool-val'>false</span>, <span class='ident'>temp</span>, <span class='ident'>ecx</span>.<span class='ident'>ty_path</span>(<span class='ident'>path</span>),
             <span class='ident'>ecx</span>.<span class='ident'>expr_call_global</span>(<span class='ident'>span</span>, <span class='ident'>uninitialized</span>, <span class='ident'>Vec</span>::<span class='ident'>new</span>())
-        ).<span class='ident'>unwrap</span>(),
+        ),
         <span class='comment'>// let rv = &amp;temp.attr as *const _ as usize - &amp;temp as *const _ as usize;</span>
         <span class='ident'>ecx</span>.<span class='ident'>stmt_let</span>(<span class='ident'>span</span>,
             <span class='bool-val'>false</span>,
@@ -616,7 +616,7 @@
     </script>
     <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
-    
+    <script src="../../../extra.js"></script>
     <script defer src="../../../search-index.js"></script>
 </body>
 </html>

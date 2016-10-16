@@ -184,7 +184,7 @@
         ; <span class='ident'>imul</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg1</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg2</span>
         ; <span class='ident'>add</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>accumulator</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg1</span>
     )};
-}</pre>
+}<a class='test-arrow' target='_blank' href=''>Run</a></pre>
 
 <p>An important thing to notice here is which matchers are used for which parts of <code>dynasm!</code> syntax. The following table lists the correct matchers to be used for expanding to dynasm syntax elements. Note that <code>$a:expr</code> means that anything that parses to an expression like <code>$a:ident</code> and just raw token trees are allowed.</p>
 
@@ -250,7 +250,7 @@
     ; <span class='ident'>mov</span> <span class='ident'>rcx</span>, <span class='ident'>rax</span>
     ;; <span class='macro'>call_extern</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='ident'>extern_func</span>)
     ; <span class='ident'>mov</span> <span class='ident'>rcx</span>, <span class='ident'>rax</span>
-);</pre>
+);<a class='test-arrow' target='_blank' href=''>Run</a></pre>
 
 <h2 id='labels-1' class='section-header'><a href='#labels-1'>Labels</a></h2>
 <p>In order to describe flow control effectively, dynasm-rs supports labels. However, since the assembly templates can be combined in a variety of ways at the mercy of the program using dynasm-rs, the semantics of these labels are somewhat different from how labels work in a static assembler.</p>
