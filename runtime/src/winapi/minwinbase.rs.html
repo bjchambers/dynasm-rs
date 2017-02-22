@@ -9,6 +9,7 @@
 
     <title>minwinbase.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -304,8 +305,8 @@
     <span class='ident'>lpSecurityDescriptor</span>: ::<span class='ident'>LPVOID</span>,
     <span class='ident'>bInheritHandle</span>: ::<span class='ident'>BOOL</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSECURITY_ATTRIBUTES</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SECURITY_ATTRIBUTES</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSECURITY_ATTRIBUTES</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SECURITY_ATTRIBUTES</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSECURITY_ATTRIBUTES</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SECURITY_ATTRIBUTES</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSECURITY_ATTRIBUTES</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SECURITY_ATTRIBUTES</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>OVERLAPPED</span> {
     <span class='ident'>Internal</span>: ::<span class='ident'>ULONG_PTR</span>,
     <span class='ident'>InternalHigh</span>: ::<span class='ident'>ULONG_PTR</span>,
@@ -314,14 +315,14 @@
     <span class='ident'>hEvent</span>: ::<span class='ident'>HANDLE</span>,
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>OVERLAPPED</span>, <span class='ident'>Offset</span>, <span class='ident'>Pointer</span>, <span class='ident'>Pointer_mut</span>, ::<span class='ident'>PVOID</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOVERLAPPED</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OVERLAPPED</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOVERLAPPED</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OVERLAPPED</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>OVERLAPPED_ENTRY</span> {
     <span class='ident'>lpCompletionKey</span>: ::<span class='ident'>ULONG_PTR</span>,
     <span class='ident'>lpOverlapped</span>: <span class='ident'>LPOVERLAPPED</span>,
     <span class='ident'>Internal</span>: ::<span class='ident'>ULONG_PTR</span>,
     <span class='ident'>dwNumberOfBytesTransferred</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOVERLAPPED_ENTRY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OVERLAPPED_ENTRY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOVERLAPPED_ENTRY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OVERLAPPED_ENTRY</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>SYSTEMTIME</span> {
     <span class='ident'>wYear</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>wMonth</span>: ::<span class='ident'>WORD</span>,
@@ -332,8 +333,8 @@
     <span class='ident'>wSecond</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>wMilliseconds</span>: ::<span class='ident'>WORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSYSTEMTIME</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SYSTEMTIME</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSYSTEMTIME</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SYSTEMTIME</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSYSTEMTIME</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SYSTEMTIME</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSYSTEMTIME</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SYSTEMTIME</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>WIN32_FIND_DATAA</span> {
     <span class='ident'>dwFileAttributes</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>ftCreationTime</span>: ::<span class='ident'>FILETIME</span>,
@@ -346,8 +347,8 @@
     <span class='ident'>cFileName</span>: [::<span class='ident'>CHAR</span>; ::<span class='ident'>MAX_PATH</span>],
     <span class='ident'>cAlternateFileName</span>: [::<span class='ident'>CHAR</span>; <span class='number'>14</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWIN32_FIND_DATAA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WIN32_FIND_DATAA</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWIN32_FIND_DATAA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WIN32_FIND_DATAA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWIN32_FIND_DATAA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WIN32_FIND_DATAA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWIN32_FIND_DATAA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WIN32_FIND_DATAA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>WIN32_FIND_DATAW</span> {
     <span class='ident'>dwFileAttributes</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>ftCreationTime</span>: ::<span class='ident'>FILETIME</span>,
@@ -360,8 +361,8 @@
     <span class='ident'>cFileName</span>: [::<span class='ident'>WCHAR</span>; ::<span class='ident'>MAX_PATH</span>],
     <span class='ident'>cAlternateFileName</span>: [::<span class='ident'>WCHAR</span>; <span class='number'>14</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWIN32_FIND_DATAW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WIN32_FIND_DATAW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWIN32_FIND_DATAW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WIN32_FIND_DATAW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWIN32_FIND_DATAW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WIN32_FIND_DATAW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWIN32_FIND_DATAW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WIN32_FIND_DATAW</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>FINDEX_INFO_LEVELS</span> {
     <span class='ident'>FindExInfoStandard</span>,
     <span class='ident'>FindExInfoBasic</span>,
@@ -403,7 +404,7 @@
     <span class='ident'>FileIdExtdDirectoryRestartInfo</span>,
     <span class='ident'>MaximumFileInfoByHandleClass</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFILE_INFO_BY_HANDLE_CLASS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>FILE_INFO_BY_HANDLE_CLASS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFILE_INFO_BY_HANDLE_CLASS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>FILE_INFO_BY_HANDLE_CLASS</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRITICAL_SECTION</span> <span class='op'>=</span> ::<span class='ident'>RTL_CRITICAL_SECTION</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRITICAL_SECTION</span> <span class='op'>=</span> ::<span class='ident'>PRTL_CRITICAL_SECTION</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCRITICAL_SECTION</span> <span class='op'>=</span> ::<span class='ident'>PRTL_CRITICAL_SECTION</span>;
@@ -434,8 +435,8 @@
     <span class='ident'>Region</span>: <span class='ident'>PROCESS_HEAP_ENTRY_Region</span>,
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>PROCESS_HEAP_ENTRY</span>, <span class='ident'>Region</span>, <span class='ident'>Block</span>, <span class='ident'>Block_mut</span>, <span class='ident'>PROCESS_HEAP_ENTRY_Block</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPPROCESS_HEAP_ENTRY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESS_HEAP_ENTRY</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPROCESS_HEAP_ENTRY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESS_HEAP_ENTRY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPPROCESS_HEAP_ENTRY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESS_HEAP_ENTRY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPROCESS_HEAP_ENTRY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESS_HEAP_ENTRY</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>PROCESS_HEAP_REGION</span>: ::<span class='ident'>WORD</span> <span class='op'>=</span> <span class='number'>0x0001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>PROCESS_HEAP_UNCOMMITTED_RANGE</span>: ::<span class='ident'>WORD</span> <span class='op'>=</span> <span class='number'>0x0002</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>PROCESS_HEAP_ENTRY_BUSY</span>: ::<span class='ident'>WORD</span> <span class='op'>=</span> <span class='number'>0x0004</span>;
@@ -451,7 +452,7 @@
     <span class='ident'>LocalizedReasonModule</span>: ::<span class='ident'>HMODULE</span>,
     <span class='ident'>LocalizedReasonId</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>ReasonStringCount</span>: ::<span class='ident'>ULONG</span>,
-    <span class='ident'>ReasonStrings</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPWSTR</span>,
+    <span class='ident'>ReasonStrings</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPWSTR</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>REASON_CONTEXT</span> {
     <span class='ident'>Version</span>: ::<span class='ident'>ULONG</span>,
@@ -459,7 +460,7 @@
     <span class='ident'>Reason</span>: <span class='ident'>REASON_CONTEXT_Detailed</span>,
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>REASON_CONTEXT</span>, <span class='ident'>Reason</span>, <span class='ident'>SimpleReasonString</span>, <span class='ident'>SimpleReasonString_mut</span>, ::<span class='ident'>LPWSTR</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PREASON_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>REASON_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PREASON_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>REASON_CONTEXT</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>EXCEPTION_DEBUG_EVENT</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CREATE_THREAD_DEBUG_EVENT</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CREATE_PROCESS_DEBUG_EVENT</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>3</span>;
@@ -473,13 +474,13 @@
     <span class='ident'>ExceptionRecord</span>: ::<span class='ident'>EXCEPTION_RECORD</span>,
     <span class='ident'>dwFirstChance</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPEXCEPTION_DEBUG_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>EXCEPTION_DEBUG_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPEXCEPTION_DEBUG_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>EXCEPTION_DEBUG_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>CREATE_THREAD_DEBUG_INFO</span> {
     <span class='ident'>hThread</span>: ::<span class='ident'>HANDLE</span>,
     <span class='ident'>lpThreadLocalBase</span>: ::<span class='ident'>LPVOID</span>,
     <span class='ident'>lpStartAddress</span>: <span class='ident'>LPTHREAD_START_ROUTINE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCREATE_THREAD_DEBUG_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CREATE_THREAD_DEBUG_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCREATE_THREAD_DEBUG_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CREATE_THREAD_DEBUG_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>CREATE_PROCESS_DEBUG_INFO</span> {
     <span class='ident'>hFile</span>: ::<span class='ident'>HANDLE</span>,
     <span class='ident'>hProcess</span>: ::<span class='ident'>HANDLE</span>,
@@ -492,15 +493,15 @@
     <span class='ident'>lpImageName</span>: ::<span class='ident'>LPVOID</span>,
     <span class='ident'>fUnicode</span>: ::<span class='ident'>WORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCREATE_PROCESS_DEBUG_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CREATE_PROCESS_DEBUG_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCREATE_PROCESS_DEBUG_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CREATE_PROCESS_DEBUG_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>EXIT_THREAD_DEBUG_INFO</span> {
     <span class='ident'>dwExitCode</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPEXIT_THREAD_DEBUG_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>EXIT_THREAD_DEBUG_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPEXIT_THREAD_DEBUG_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>EXIT_THREAD_DEBUG_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>EXIT_PROCESS_DEBUG_INFO</span> {
     <span class='ident'>dwExitCode</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPEXIT_PROCESS_DEBUG_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>EXIT_PROCESS_DEBUG_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPEXIT_PROCESS_DEBUG_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>EXIT_PROCESS_DEBUG_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>LOAD_DLL_DEBUG_INFO</span> {
     <span class='ident'>hFile</span>: ::<span class='ident'>HANDLE</span>,
     <span class='ident'>lpBaseOfDll</span>: ::<span class='ident'>LPVOID</span>,
@@ -509,22 +510,22 @@
     <span class='ident'>lpImageName</span>: ::<span class='ident'>LPVOID</span>,
     <span class='ident'>fUnicode</span>: ::<span class='ident'>WORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPLOAD_DLL_DEBUG_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LOAD_DLL_DEBUG_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPLOAD_DLL_DEBUG_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LOAD_DLL_DEBUG_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>UNLOAD_DLL_DEBUG_INFO</span> {
     <span class='ident'>lpBaseOfDll</span>: ::<span class='ident'>LPVOID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPUNLOAD_DLL_DEBUG_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>UNLOAD_DLL_DEBUG_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPUNLOAD_DLL_DEBUG_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>UNLOAD_DLL_DEBUG_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>OUTPUT_DEBUG_STRING_INFO</span> {
     <span class='ident'>lpDebugStringData</span>: ::<span class='ident'>LPSTR</span>,
     <span class='ident'>fUnicode</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>nDebugStringLength</span>: ::<span class='ident'>WORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOUTPUT_DEBUG_STRING_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OUTPUT_DEBUG_STRING_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOUTPUT_DEBUG_STRING_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OUTPUT_DEBUG_STRING_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>RIP_INFO</span> {
     <span class='ident'>dwError</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwType</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPRIP_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>RIP_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPRIP_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>RIP_INFO</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>DEBUG_EVENT</span> {
     <span class='ident'>dwDebugEventCode</span>: ::<span class='ident'>DWORD</span>,
@@ -548,7 +549,7 @@
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>DEBUG_EVENT</span>, <span class='ident'>u</span>, <span class='ident'>UnloadDll</span>, <span class='ident'>UnloadDll_mut</span>, <span class='ident'>UNLOAD_DLL_DEBUG_INFO</span>);
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>DEBUG_EVENT</span>, <span class='ident'>u</span>, <span class='ident'>DebugString</span>, <span class='ident'>DebugString_mut</span>, <span class='ident'>OUTPUT_DEBUG_STRING_INFO</span>);
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>DEBUG_EVENT</span>, <span class='ident'>u</span>, <span class='ident'>RipInfo</span>, <span class='ident'>RipInfo_mut</span>, <span class='ident'>RIP_INFO</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDEBUG_EVENT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DEBUG_EVENT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDEBUG_EVENT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DEBUG_EVENT</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -606,11 +607,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

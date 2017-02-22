@@ -9,6 +9,7 @@
 
     <title>winapi::d3d12::D3D12_RESOURCE_DESC - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,54 +48,55 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-57893' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct D3D12_RESOURCE_DESC {
-    pub Dimension: <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DIMENSION.html' title='winapi::d3d12::D3D12_RESOURCE_DIMENSION'>D3D12_RESOURCE_DIMENSION</a>,
-    pub Alignment: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='winapi::basetsd::UINT64'>UINT64</a>,
-    pub Width: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='winapi::basetsd::UINT64'>UINT64</a>,
-    pub Height: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub DepthOrArraySize: <a class='type' href='../../winapi/basetsd/type.UINT16.html' title='winapi::basetsd::UINT16'>UINT16</a>,
-    pub MipLevels: <a class='type' href='../../winapi/basetsd/type.UINT16.html' title='winapi::basetsd::UINT16'>UINT16</a>,
-    pub Format: <a class='struct' href='../../winapi/dxgiformat/struct.DXGI_FORMAT.html' title='winapi::dxgiformat::DXGI_FORMAT'>DXGI_FORMAT</a>,
-    pub SampleDesc: <a class='struct' href='../../winapi/dxgitype/struct.DXGI_SAMPLE_DESC.html' title='winapi::dxgitype::DXGI_SAMPLE_DESC'>DXGI_SAMPLE_DESC</a>,
-    pub Layout: <a class='struct' href='../../winapi/d3d12/struct.D3D12_TEXTURE_LAYOUT.html' title='winapi::d3d12::D3D12_TEXTURE_LAYOUT'>D3D12_TEXTURE_LAYOUT</a>,
-    pub Flags: <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_FLAGS.html' title='winapi::d3d12::D3D12_RESOURCE_FLAGS'>D3D12_RESOURCE_FLAGS</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct D3D12_RESOURCE_DESC {
+    pub Dimension: <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DIMENSION.html' title='struct winapi::d3d12::D3D12_RESOURCE_DIMENSION'>D3D12_RESOURCE_DIMENSION</a>,
+    pub Alignment: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='type winapi::basetsd::UINT64'>UINT64</a>,
+    pub Width: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='type winapi::basetsd::UINT64'>UINT64</a>,
+    pub Height: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub DepthOrArraySize: <a class='type' href='../../winapi/basetsd/type.UINT16.html' title='type winapi::basetsd::UINT16'>UINT16</a>,
+    pub MipLevels: <a class='type' href='../../winapi/basetsd/type.UINT16.html' title='type winapi::basetsd::UINT16'>UINT16</a>,
+    pub Format: <a class='struct' href='../../winapi/dxgiformat/struct.DXGI_FORMAT.html' title='struct winapi::dxgiformat::DXGI_FORMAT'>DXGI_FORMAT</a>,
+    pub SampleDesc: <a class='struct' href='../../winapi/dxgitype/struct.DXGI_SAMPLE_DESC.html' title='struct winapi::dxgitype::DXGI_SAMPLE_DESC'>DXGI_SAMPLE_DESC</a>,
+    pub Layout: <a class='struct' href='../../winapi/d3d12/struct.D3D12_TEXTURE_LAYOUT.html' title='struct winapi::d3d12::D3D12_TEXTURE_LAYOUT'>D3D12_TEXTURE_LAYOUT</a>,
+    pub Flags: <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_FLAGS.html' title='struct winapi::d3d12::D3D12_RESOURCE_FLAGS'>D3D12_RESOURCE_FLAGS</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.Dimension' class='structfield'>
                            <span id='Dimension.v' class='invisible'>
-                           <code>Dimension: <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DIMENSION.html' title='winapi::d3d12::D3D12_RESOURCE_DIMENSION'>D3D12_RESOURCE_DIMENSION</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Alignment' class='structfield'>
+                           <code>Dimension: <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DIMENSION.html' title='struct winapi::d3d12::D3D12_RESOURCE_DIMENSION'>D3D12_RESOURCE_DIMENSION</a></code>
+                           </span></span><span id='structfield.Alignment' class='structfield'>
                            <span id='Alignment.v' class='invisible'>
-                           <code>Alignment: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='winapi::basetsd::UINT64'>UINT64</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Width' class='structfield'>
+                           <code>Alignment: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='type winapi::basetsd::UINT64'>UINT64</a></code>
+                           </span></span><span id='structfield.Width' class='structfield'>
                            <span id='Width.v' class='invisible'>
-                           <code>Width: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='winapi::basetsd::UINT64'>UINT64</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Height' class='structfield'>
+                           <code>Width: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='type winapi::basetsd::UINT64'>UINT64</a></code>
+                           </span></span><span id='structfield.Height' class='structfield'>
                            <span id='Height.v' class='invisible'>
-                           <code>Height: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DepthOrArraySize' class='structfield'>
+                           <code>Height: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.DepthOrArraySize' class='structfield'>
                            <span id='DepthOrArraySize.v' class='invisible'>
-                           <code>DepthOrArraySize: <a class='type' href='../../winapi/basetsd/type.UINT16.html' title='winapi::basetsd::UINT16'>UINT16</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MipLevels' class='structfield'>
+                           <code>DepthOrArraySize: <a class='type' href='../../winapi/basetsd/type.UINT16.html' title='type winapi::basetsd::UINT16'>UINT16</a></code>
+                           </span></span><span id='structfield.MipLevels' class='structfield'>
                            <span id='MipLevels.v' class='invisible'>
-                           <code>MipLevels: <a class='type' href='../../winapi/basetsd/type.UINT16.html' title='winapi::basetsd::UINT16'>UINT16</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Format' class='structfield'>
+                           <code>MipLevels: <a class='type' href='../../winapi/basetsd/type.UINT16.html' title='type winapi::basetsd::UINT16'>UINT16</a></code>
+                           </span></span><span id='structfield.Format' class='structfield'>
                            <span id='Format.v' class='invisible'>
-                           <code>Format: <a class='struct' href='../../winapi/dxgiformat/struct.DXGI_FORMAT.html' title='winapi::dxgiformat::DXGI_FORMAT'>DXGI_FORMAT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SampleDesc' class='structfield'>
+                           <code>Format: <a class='struct' href='../../winapi/dxgiformat/struct.DXGI_FORMAT.html' title='struct winapi::dxgiformat::DXGI_FORMAT'>DXGI_FORMAT</a></code>
+                           </span></span><span id='structfield.SampleDesc' class='structfield'>
                            <span id='SampleDesc.v' class='invisible'>
-                           <code>SampleDesc: <a class='struct' href='../../winapi/dxgitype/struct.DXGI_SAMPLE_DESC.html' title='winapi::dxgitype::DXGI_SAMPLE_DESC'>DXGI_SAMPLE_DESC</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Layout' class='structfield'>
+                           <code>SampleDesc: <a class='struct' href='../../winapi/dxgitype/struct.DXGI_SAMPLE_DESC.html' title='struct winapi::dxgitype::DXGI_SAMPLE_DESC'>DXGI_SAMPLE_DESC</a></code>
+                           </span></span><span id='structfield.Layout' class='structfield'>
                            <span id='Layout.v' class='invisible'>
-                           <code>Layout: <a class='struct' href='../../winapi/d3d12/struct.D3D12_TEXTURE_LAYOUT.html' title='winapi::d3d12::D3D12_TEXTURE_LAYOUT'>D3D12_TEXTURE_LAYOUT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Flags' class='structfield'>
+                           <code>Layout: <a class='struct' href='../../winapi/d3d12/struct.D3D12_TEXTURE_LAYOUT.html' title='struct winapi::d3d12::D3D12_TEXTURE_LAYOUT'>D3D12_TEXTURE_LAYOUT</a></code>
+                           </span></span><span id='structfield.Flags' class='structfield'>
                            <span id='Flags.v' class='invisible'>
-                           <code>Flags: <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_FLAGS.html' title='winapi::d3d12::D3D12_RESOURCE_FLAGS'>D3D12_RESOURCE_FLAGS</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DESC.html' title='winapi::d3d12::D3D12_RESOURCE_DESC'>D3D12_RESOURCE_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-57904' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>Flags: <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_FLAGS.html' title='struct winapi::d3d12::D3D12_RESOURCE_FLAGS'>D3D12_RESOURCE_FLAGS</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DESC.html' title='struct winapi::d3d12::D3D12_RESOURCE_DESC'>D3D12_RESOURCE_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DESC.html' title='winapi::d3d12::D3D12_RESOURCE_DESC'>D3D12_RESOURCE_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-57889' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DESC.html' title='winapi::d3d12::D3D12_RESOURCE_DESC'>D3D12_RESOURCE_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-57890' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DESC.html' title='winapi::d3d12::D3D12_RESOURCE_DESC'>D3D12_RESOURCE_DESC</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DESC.html' title='struct winapi::d3d12::D3D12_RESOURCE_DESC'>D3D12_RESOURCE_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DESC.html' title='struct winapi::d3d12::D3D12_RESOURCE_DESC'>D3D12_RESOURCE_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/d3d12/struct.D3D12_RESOURCE_DESC.html' title='struct winapi::d3d12::D3D12_RESOURCE_DESC'>D3D12_RESOURCE_DESC</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -154,11 +156,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>winapi::d2d1::ID2D1GeometryGroupVtbl - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,25 +48,26 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-35454' class='srclink' href='../../src/winapi/macros.rs.html#139-145' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct ID2D1GeometryGroupVtbl {
-    pub parent: <a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryVtbl.html' title='winapi::d2d1::ID2D1GeometryVtbl'>ID2D1GeometryVtbl</a>,
-    pub GetFillMode: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>) -&gt; <a class='struct' href='../../winapi/d2d1/struct.D2D1_FILL_MODE.html' title='winapi::d2d1::D2D1_FILL_MODE'>D2D1_FILL_MODE</a>,
-    pub GetSourceGeometryCount: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>) -&gt; <a class='type' href='../../winapi/basetsd/type.UINT32.html' title='winapi::basetsd::UINT32'>UINT32</a>,
-    pub GetSourceGeometries: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>, geometries: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1Geometry.html' title='winapi::d2d1::ID2D1Geometry'>ID2D1Geometry</a>, geometriesCount: <a class='type' href='../../winapi/basetsd/type.UINT32.html' title='winapi::basetsd::UINT32'>UINT32</a>),
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#139-145' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct ID2D1GeometryGroupVtbl {
+    pub parent: <a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryVtbl.html' title='struct winapi::d2d1::ID2D1GeometryVtbl'>ID2D1GeometryVtbl</a>,
+    pub GetFillMode: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='struct winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>) -&gt; <a class='struct' href='../../winapi/d2d1/struct.D2D1_FILL_MODE.html' title='struct winapi::d2d1::D2D1_FILL_MODE'>D2D1_FILL_MODE</a>,
+    pub GetSourceGeometryCount: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='struct winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>) -&gt; <a class='type' href='../../winapi/basetsd/type.UINT32.html' title='type winapi::basetsd::UINT32'>UINT32</a>,
+    pub GetSourceGeometries: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='struct winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1Geometry.html' title='struct winapi::d2d1::ID2D1Geometry'>ID2D1Geometry</a>, _: <a class='type' href='../../winapi/basetsd/type.UINT32.html' title='type winapi::basetsd::UINT32'>UINT32</a>),
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.parent' class='structfield'>
                            <span id='parent.v' class='invisible'>
-                           <code>parent: <a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryVtbl.html' title='winapi::d2d1::ID2D1GeometryVtbl'>ID2D1GeometryVtbl</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.GetFillMode' class='structfield'>
+                           <code>parent: <a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryVtbl.html' title='struct winapi::d2d1::ID2D1GeometryVtbl'>ID2D1GeometryVtbl</a></code>
+                           </span></span><span id='structfield.GetFillMode' class='structfield'>
                            <span id='GetFillMode.v' class='invisible'>
-                           <code>GetFillMode: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>) -&gt; <a class='struct' href='../../winapi/d2d1/struct.D2D1_FILL_MODE.html' title='winapi::d2d1::D2D1_FILL_MODE'>D2D1_FILL_MODE</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.GetSourceGeometryCount' class='structfield'>
+                           <code>GetFillMode: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='struct winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>) -&gt; <a class='struct' href='../../winapi/d2d1/struct.D2D1_FILL_MODE.html' title='struct winapi::d2d1::D2D1_FILL_MODE'>D2D1_FILL_MODE</a></code>
+                           </span></span><span id='structfield.GetSourceGeometryCount' class='structfield'>
                            <span id='GetSourceGeometryCount.v' class='invisible'>
-                           <code>GetSourceGeometryCount: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>) -&gt; <a class='type' href='../../winapi/basetsd/type.UINT32.html' title='winapi::basetsd::UINT32'>UINT32</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.GetSourceGeometries' class='structfield'>
+                           <code>GetSourceGeometryCount: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='struct winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>) -&gt; <a class='type' href='../../winapi/basetsd/type.UINT32.html' title='type winapi::basetsd::UINT32'>UINT32</a></code>
+                           </span></span><span id='structfield.GetSourceGeometries' class='structfield'>
                            <span id='GetSourceGeometries.v' class='invisible'>
-                           <code>GetSourceGeometries: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>, geometries: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1Geometry.html' title='winapi::d2d1::ID2D1Geometry'>ID2D1Geometry</a>, geometriesCount: <a class='type' href='../../winapi/basetsd/type.UINT32.html' title='winapi::basetsd::UINT32'>UINT32</a>)</code>
-                           </span></span><span class='stab '></span></section>
+                           <code>GetSourceGeometries: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1GeometryGroup.html' title='struct winapi::d2d1::ID2D1GeometryGroup'>ID2D1GeometryGroup</a>, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d2d1/struct.ID2D1Geometry.html' title='struct winapi::d2d1::ID2D1Geometry'>ID2D1Geometry</a>, _: <a class='type' href='../../winapi/basetsd/type.UINT32.html' title='type winapi::basetsd::UINT32'>UINT32</a>)</code>
+                           </span></span></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -121,11 +123,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

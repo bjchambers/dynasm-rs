@@ -9,6 +9,7 @@
 
     <title>winapi::winnt::WOW64_CONTEXT - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,119 +48,120 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-119797' class='srclink' href='../../src/winapi/macros.rs.html#256-258' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct WOW64_CONTEXT {
-    pub ContextFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Dr0: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Dr1: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Dr2: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Dr3: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Dr4: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Dr5: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Dr6: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Dr7: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub FloatSave: <a class='struct' href='../../winapi/winnt/struct.WOW64_FLOATING_SAVE_AREA.html' title='winapi::winnt::WOW64_FLOATING_SAVE_AREA'>WOW64_FLOATING_SAVE_AREA</a>,
-    pub SegGs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SegFs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SegEs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SegDs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Edi: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Esi: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Ebx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Edx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Ecx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Eax: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Ebp: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Eip: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SegCs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub EFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Esp: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SegSs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub ExtendedRegisters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/minwindef/type.BYTE.html' title='winapi::minwindef::BYTE'>BYTE</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 512]</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#256-258' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct WOW64_CONTEXT {
+    pub ContextFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Dr0: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Dr1: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Dr2: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Dr3: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Dr4: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Dr5: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Dr6: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Dr7: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub FloatSave: <a class='struct' href='../../winapi/winnt/struct.WOW64_FLOATING_SAVE_AREA.html' title='struct winapi::winnt::WOW64_FLOATING_SAVE_AREA'>WOW64_FLOATING_SAVE_AREA</a>,
+    pub SegGs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SegFs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SegEs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SegDs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Edi: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Esi: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Ebx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Edx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Ecx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Eax: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Ebp: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Eip: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SegCs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub EFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Esp: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SegSs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub ExtendedRegisters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/minwindef/type.BYTE.html' title='type winapi::minwindef::BYTE'>BYTE</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 512]</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.ContextFlags' class='structfield'>
                            <span id='ContextFlags.v' class='invisible'>
-                           <code>ContextFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Dr0' class='structfield'>
+                           <code>ContextFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Dr0' class='structfield'>
                            <span id='Dr0.v' class='invisible'>
-                           <code>Dr0: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Dr1' class='structfield'>
+                           <code>Dr0: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Dr1' class='structfield'>
                            <span id='Dr1.v' class='invisible'>
-                           <code>Dr1: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Dr2' class='structfield'>
+                           <code>Dr1: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Dr2' class='structfield'>
                            <span id='Dr2.v' class='invisible'>
-                           <code>Dr2: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Dr3' class='structfield'>
+                           <code>Dr2: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Dr3' class='structfield'>
                            <span id='Dr3.v' class='invisible'>
-                           <code>Dr3: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Dr4' class='structfield'>
+                           <code>Dr3: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Dr4' class='structfield'>
                            <span id='Dr4.v' class='invisible'>
-                           <code>Dr4: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Dr5' class='structfield'>
+                           <code>Dr4: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Dr5' class='structfield'>
                            <span id='Dr5.v' class='invisible'>
-                           <code>Dr5: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Dr6' class='structfield'>
+                           <code>Dr5: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Dr6' class='structfield'>
                            <span id='Dr6.v' class='invisible'>
-                           <code>Dr6: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Dr7' class='structfield'>
+                           <code>Dr6: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Dr7' class='structfield'>
                            <span id='Dr7.v' class='invisible'>
-                           <code>Dr7: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.FloatSave' class='structfield'>
+                           <code>Dr7: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.FloatSave' class='structfield'>
                            <span id='FloatSave.v' class='invisible'>
-                           <code>FloatSave: <a class='struct' href='../../winapi/winnt/struct.WOW64_FLOATING_SAVE_AREA.html' title='winapi::winnt::WOW64_FLOATING_SAVE_AREA'>WOW64_FLOATING_SAVE_AREA</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SegGs' class='structfield'>
+                           <code>FloatSave: <a class='struct' href='../../winapi/winnt/struct.WOW64_FLOATING_SAVE_AREA.html' title='struct winapi::winnt::WOW64_FLOATING_SAVE_AREA'>WOW64_FLOATING_SAVE_AREA</a></code>
+                           </span></span><span id='structfield.SegGs' class='structfield'>
                            <span id='SegGs.v' class='invisible'>
-                           <code>SegGs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SegFs' class='structfield'>
+                           <code>SegGs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SegFs' class='structfield'>
                            <span id='SegFs.v' class='invisible'>
-                           <code>SegFs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SegEs' class='structfield'>
+                           <code>SegFs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SegEs' class='structfield'>
                            <span id='SegEs.v' class='invisible'>
-                           <code>SegEs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SegDs' class='structfield'>
+                           <code>SegEs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SegDs' class='structfield'>
                            <span id='SegDs.v' class='invisible'>
-                           <code>SegDs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Edi' class='structfield'>
+                           <code>SegDs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Edi' class='structfield'>
                            <span id='Edi.v' class='invisible'>
-                           <code>Edi: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Esi' class='structfield'>
+                           <code>Edi: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Esi' class='structfield'>
                            <span id='Esi.v' class='invisible'>
-                           <code>Esi: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Ebx' class='structfield'>
+                           <code>Esi: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Ebx' class='structfield'>
                            <span id='Ebx.v' class='invisible'>
-                           <code>Ebx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Edx' class='structfield'>
+                           <code>Ebx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Edx' class='structfield'>
                            <span id='Edx.v' class='invisible'>
-                           <code>Edx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Ecx' class='structfield'>
+                           <code>Edx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Ecx' class='structfield'>
                            <span id='Ecx.v' class='invisible'>
-                           <code>Ecx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Eax' class='structfield'>
+                           <code>Ecx: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Eax' class='structfield'>
                            <span id='Eax.v' class='invisible'>
-                           <code>Eax: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Ebp' class='structfield'>
+                           <code>Eax: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Ebp' class='structfield'>
                            <span id='Ebp.v' class='invisible'>
-                           <code>Ebp: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Eip' class='structfield'>
+                           <code>Ebp: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Eip' class='structfield'>
                            <span id='Eip.v' class='invisible'>
-                           <code>Eip: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SegCs' class='structfield'>
+                           <code>Eip: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SegCs' class='structfield'>
                            <span id='SegCs.v' class='invisible'>
-                           <code>SegCs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.EFlags' class='structfield'>
+                           <code>SegCs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.EFlags' class='structfield'>
                            <span id='EFlags.v' class='invisible'>
-                           <code>EFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Esp' class='structfield'>
+                           <code>EFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Esp' class='structfield'>
                            <span id='Esp.v' class='invisible'>
-                           <code>Esp: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SegSs' class='structfield'>
+                           <code>Esp: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SegSs' class='structfield'>
                            <span id='SegSs.v' class='invisible'>
-                           <code>SegSs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ExtendedRegisters' class='structfield'>
+                           <code>SegSs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.ExtendedRegisters' class='structfield'>
                            <span id='ExtendedRegisters.v' class='invisible'>
-                           <code>ExtendedRegisters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/minwindef/type.BYTE.html' title='winapi::minwindef::BYTE'>BYTE</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 512]</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/winnt/struct.WOW64_CONTEXT.html' title='winapi::winnt::WOW64_CONTEXT'>WOW64_CONTEXT</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-119826' class='srclink' href='../../src/winapi/macros.rs.html#259' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/winnt/struct.WOW64_CONTEXT.html' title='winapi::winnt::WOW64_CONTEXT'>WOW64_CONTEXT</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-119827' class='srclink' href='../../src/winapi/macros.rs.html#260' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/winnt/struct.WOW64_CONTEXT.html' title='winapi::winnt::WOW64_CONTEXT'>WOW64_CONTEXT</a></code></span></h4>
+                           <code>ExtendedRegisters: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/minwindef/type.BYTE.html' title='type winapi::minwindef::BYTE'>BYTE</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 512]</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/winnt/struct.WOW64_CONTEXT.html' title='struct winapi::winnt::WOW64_CONTEXT'>WOW64_CONTEXT</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#259' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/winnt/struct.WOW64_CONTEXT.html' title='struct winapi::winnt::WOW64_CONTEXT'>WOW64_CONTEXT</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#260' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/winnt/struct.WOW64_CONTEXT.html' title='struct winapi::winnt::WOW64_CONTEXT'>WOW64_CONTEXT</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -219,11 +221,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>winapi::winnt::IMAGE_OPTIONAL_HEADER64 - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,134 +48,135 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-118145' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct IMAGE_OPTIONAL_HEADER64 {
-    pub Magic: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub MajorLinkerVersion: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='winapi::minwindef::BYTE'>BYTE</a>,
-    pub MinorLinkerVersion: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='winapi::minwindef::BYTE'>BYTE</a>,
-    pub SizeOfCode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SizeOfInitializedData: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SizeOfUninitializedData: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub AddressOfEntryPoint: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub BaseOfCode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub ImageBase: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='winapi::winnt::ULONGLONG'>ULONGLONG</a>,
-    pub SectionAlignment: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub FileAlignment: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub MajorOperatingSystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub MinorOperatingSystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub MajorImageVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub MinorImageVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub MajorSubsystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub MinorSubsystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub Win32VersionValue: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SizeOfImage: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SizeOfHeaders: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub CheckSum: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub Subsystem: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub DllCharacteristics: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub SizeOfStackReserve: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='winapi::winnt::ULONGLONG'>ULONGLONG</a>,
-    pub SizeOfStackCommit: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='winapi::winnt::ULONGLONG'>ULONGLONG</a>,
-    pub SizeOfHeapReserve: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='winapi::winnt::ULONGLONG'>ULONGLONG</a>,
-    pub SizeOfHeapCommit: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='winapi::winnt::ULONGLONG'>ULONGLONG</a>,
-    pub LoaderFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub NumberOfRvaAndSizes: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub DataDirectory: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='struct' href='../../winapi/winnt/struct.IMAGE_DATA_DIRECTORY.html' title='winapi::winnt::IMAGE_DATA_DIRECTORY'>IMAGE_DATA_DIRECTORY</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 16]</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct IMAGE_OPTIONAL_HEADER64 {
+    pub Magic: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub MajorLinkerVersion: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='type winapi::minwindef::BYTE'>BYTE</a>,
+    pub MinorLinkerVersion: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='type winapi::minwindef::BYTE'>BYTE</a>,
+    pub SizeOfCode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SizeOfInitializedData: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SizeOfUninitializedData: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub AddressOfEntryPoint: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub BaseOfCode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub ImageBase: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='type winapi::winnt::ULONGLONG'>ULONGLONG</a>,
+    pub SectionAlignment: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub FileAlignment: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub MajorOperatingSystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub MinorOperatingSystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub MajorImageVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub MinorImageVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub MajorSubsystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub MinorSubsystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub Win32VersionValue: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SizeOfImage: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SizeOfHeaders: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub CheckSum: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub Subsystem: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub DllCharacteristics: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub SizeOfStackReserve: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='type winapi::winnt::ULONGLONG'>ULONGLONG</a>,
+    pub SizeOfStackCommit: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='type winapi::winnt::ULONGLONG'>ULONGLONG</a>,
+    pub SizeOfHeapReserve: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='type winapi::winnt::ULONGLONG'>ULONGLONG</a>,
+    pub SizeOfHeapCommit: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='type winapi::winnt::ULONGLONG'>ULONGLONG</a>,
+    pub LoaderFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub NumberOfRvaAndSizes: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub DataDirectory: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='struct' href='../../winapi/winnt/struct.IMAGE_DATA_DIRECTORY.html' title='struct winapi::winnt::IMAGE_DATA_DIRECTORY'>IMAGE_DATA_DIRECTORY</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 16]</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.Magic' class='structfield'>
                            <span id='Magic.v' class='invisible'>
-                           <code>Magic: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MajorLinkerVersion' class='structfield'>
+                           <code>Magic: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.MajorLinkerVersion' class='structfield'>
                            <span id='MajorLinkerVersion.v' class='invisible'>
-                           <code>MajorLinkerVersion: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='winapi::minwindef::BYTE'>BYTE</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MinorLinkerVersion' class='structfield'>
+                           <code>MajorLinkerVersion: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='type winapi::minwindef::BYTE'>BYTE</a></code>
+                           </span></span><span id='structfield.MinorLinkerVersion' class='structfield'>
                            <span id='MinorLinkerVersion.v' class='invisible'>
-                           <code>MinorLinkerVersion: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='winapi::minwindef::BYTE'>BYTE</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SizeOfCode' class='structfield'>
+                           <code>MinorLinkerVersion: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='type winapi::minwindef::BYTE'>BYTE</a></code>
+                           </span></span><span id='structfield.SizeOfCode' class='structfield'>
                            <span id='SizeOfCode.v' class='invisible'>
-                           <code>SizeOfCode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SizeOfInitializedData' class='structfield'>
+                           <code>SizeOfCode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SizeOfInitializedData' class='structfield'>
                            <span id='SizeOfInitializedData.v' class='invisible'>
-                           <code>SizeOfInitializedData: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SizeOfUninitializedData' class='structfield'>
+                           <code>SizeOfInitializedData: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SizeOfUninitializedData' class='structfield'>
                            <span id='SizeOfUninitializedData.v' class='invisible'>
-                           <code>SizeOfUninitializedData: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.AddressOfEntryPoint' class='structfield'>
+                           <code>SizeOfUninitializedData: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.AddressOfEntryPoint' class='structfield'>
                            <span id='AddressOfEntryPoint.v' class='invisible'>
-                           <code>AddressOfEntryPoint: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.BaseOfCode' class='structfield'>
+                           <code>AddressOfEntryPoint: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.BaseOfCode' class='structfield'>
                            <span id='BaseOfCode.v' class='invisible'>
-                           <code>BaseOfCode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ImageBase' class='structfield'>
+                           <code>BaseOfCode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.ImageBase' class='structfield'>
                            <span id='ImageBase.v' class='invisible'>
-                           <code>ImageBase: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='winapi::winnt::ULONGLONG'>ULONGLONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SectionAlignment' class='structfield'>
+                           <code>ImageBase: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='type winapi::winnt::ULONGLONG'>ULONGLONG</a></code>
+                           </span></span><span id='structfield.SectionAlignment' class='structfield'>
                            <span id='SectionAlignment.v' class='invisible'>
-                           <code>SectionAlignment: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.FileAlignment' class='structfield'>
+                           <code>SectionAlignment: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.FileAlignment' class='structfield'>
                            <span id='FileAlignment.v' class='invisible'>
-                           <code>FileAlignment: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MajorOperatingSystemVersion' class='structfield'>
+                           <code>FileAlignment: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.MajorOperatingSystemVersion' class='structfield'>
                            <span id='MajorOperatingSystemVersion.v' class='invisible'>
-                           <code>MajorOperatingSystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MinorOperatingSystemVersion' class='structfield'>
+                           <code>MajorOperatingSystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.MinorOperatingSystemVersion' class='structfield'>
                            <span id='MinorOperatingSystemVersion.v' class='invisible'>
-                           <code>MinorOperatingSystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MajorImageVersion' class='structfield'>
+                           <code>MinorOperatingSystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.MajorImageVersion' class='structfield'>
                            <span id='MajorImageVersion.v' class='invisible'>
-                           <code>MajorImageVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MinorImageVersion' class='structfield'>
+                           <code>MajorImageVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.MinorImageVersion' class='structfield'>
                            <span id='MinorImageVersion.v' class='invisible'>
-                           <code>MinorImageVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MajorSubsystemVersion' class='structfield'>
+                           <code>MinorImageVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.MajorSubsystemVersion' class='structfield'>
                            <span id='MajorSubsystemVersion.v' class='invisible'>
-                           <code>MajorSubsystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MinorSubsystemVersion' class='structfield'>
+                           <code>MajorSubsystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.MinorSubsystemVersion' class='structfield'>
                            <span id='MinorSubsystemVersion.v' class='invisible'>
-                           <code>MinorSubsystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Win32VersionValue' class='structfield'>
+                           <code>MinorSubsystemVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.Win32VersionValue' class='structfield'>
                            <span id='Win32VersionValue.v' class='invisible'>
-                           <code>Win32VersionValue: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SizeOfImage' class='structfield'>
+                           <code>Win32VersionValue: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SizeOfImage' class='structfield'>
                            <span id='SizeOfImage.v' class='invisible'>
-                           <code>SizeOfImage: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SizeOfHeaders' class='structfield'>
+                           <code>SizeOfImage: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SizeOfHeaders' class='structfield'>
                            <span id='SizeOfHeaders.v' class='invisible'>
-                           <code>SizeOfHeaders: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.CheckSum' class='structfield'>
+                           <code>SizeOfHeaders: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.CheckSum' class='structfield'>
                            <span id='CheckSum.v' class='invisible'>
-                           <code>CheckSum: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Subsystem' class='structfield'>
+                           <code>CheckSum: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.Subsystem' class='structfield'>
                            <span id='Subsystem.v' class='invisible'>
-                           <code>Subsystem: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DllCharacteristics' class='structfield'>
+                           <code>Subsystem: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.DllCharacteristics' class='structfield'>
                            <span id='DllCharacteristics.v' class='invisible'>
-                           <code>DllCharacteristics: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SizeOfStackReserve' class='structfield'>
+                           <code>DllCharacteristics: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.SizeOfStackReserve' class='structfield'>
                            <span id='SizeOfStackReserve.v' class='invisible'>
-                           <code>SizeOfStackReserve: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='winapi::winnt::ULONGLONG'>ULONGLONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SizeOfStackCommit' class='structfield'>
+                           <code>SizeOfStackReserve: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='type winapi::winnt::ULONGLONG'>ULONGLONG</a></code>
+                           </span></span><span id='structfield.SizeOfStackCommit' class='structfield'>
                            <span id='SizeOfStackCommit.v' class='invisible'>
-                           <code>SizeOfStackCommit: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='winapi::winnt::ULONGLONG'>ULONGLONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SizeOfHeapReserve' class='structfield'>
+                           <code>SizeOfStackCommit: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='type winapi::winnt::ULONGLONG'>ULONGLONG</a></code>
+                           </span></span><span id='structfield.SizeOfHeapReserve' class='structfield'>
                            <span id='SizeOfHeapReserve.v' class='invisible'>
-                           <code>SizeOfHeapReserve: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='winapi::winnt::ULONGLONG'>ULONGLONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SizeOfHeapCommit' class='structfield'>
+                           <code>SizeOfHeapReserve: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='type winapi::winnt::ULONGLONG'>ULONGLONG</a></code>
+                           </span></span><span id='structfield.SizeOfHeapCommit' class='structfield'>
                            <span id='SizeOfHeapCommit.v' class='invisible'>
-                           <code>SizeOfHeapCommit: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='winapi::winnt::ULONGLONG'>ULONGLONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.LoaderFlags' class='structfield'>
+                           <code>SizeOfHeapCommit: <a class='type' href='../../winapi/winnt/type.ULONGLONG.html' title='type winapi::winnt::ULONGLONG'>ULONGLONG</a></code>
+                           </span></span><span id='structfield.LoaderFlags' class='structfield'>
                            <span id='LoaderFlags.v' class='invisible'>
-                           <code>LoaderFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.NumberOfRvaAndSizes' class='structfield'>
+                           <code>LoaderFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.NumberOfRvaAndSizes' class='structfield'>
                            <span id='NumberOfRvaAndSizes.v' class='invisible'>
-                           <code>NumberOfRvaAndSizes: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DataDirectory' class='structfield'>
+                           <code>NumberOfRvaAndSizes: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.DataDirectory' class='structfield'>
                            <span id='DataDirectory.v' class='invisible'>
-                           <code>DataDirectory: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='struct' href='../../winapi/winnt/struct.IMAGE_DATA_DIRECTORY.html' title='winapi::winnt::IMAGE_DATA_DIRECTORY'>IMAGE_DATA_DIRECTORY</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 16]</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/winnt/struct.IMAGE_OPTIONAL_HEADER64.html' title='winapi::winnt::IMAGE_OPTIONAL_HEADER64'>IMAGE_OPTIONAL_HEADER64</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-118177' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>DataDirectory: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='struct' href='../../winapi/winnt/struct.IMAGE_DATA_DIRECTORY.html' title='struct winapi::winnt::IMAGE_DATA_DIRECTORY'>IMAGE_DATA_DIRECTORY</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 16]</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/winnt/struct.IMAGE_OPTIONAL_HEADER64.html' title='struct winapi::winnt::IMAGE_OPTIONAL_HEADER64'>IMAGE_OPTIONAL_HEADER64</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/winnt/struct.IMAGE_OPTIONAL_HEADER64.html' title='winapi::winnt::IMAGE_OPTIONAL_HEADER64'>IMAGE_OPTIONAL_HEADER64</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-118141' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/winnt/struct.IMAGE_OPTIONAL_HEADER64.html' title='winapi::winnt::IMAGE_OPTIONAL_HEADER64'>IMAGE_OPTIONAL_HEADER64</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-118142' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/winnt/struct.IMAGE_OPTIONAL_HEADER64.html' title='winapi::winnt::IMAGE_OPTIONAL_HEADER64'>IMAGE_OPTIONAL_HEADER64</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/winnt/struct.IMAGE_OPTIONAL_HEADER64.html' title='struct winapi::winnt::IMAGE_OPTIONAL_HEADER64'>IMAGE_OPTIONAL_HEADER64</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/winnt/struct.IMAGE_OPTIONAL_HEADER64.html' title='struct winapi::winnt::IMAGE_OPTIONAL_HEADER64'>IMAGE_OPTIONAL_HEADER64</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/winnt/struct.IMAGE_OPTIONAL_HEADER64.html' title='struct winapi::winnt::IMAGE_OPTIONAL_HEADER64'>IMAGE_OPTIONAL_HEADER64</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -234,11 +236,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

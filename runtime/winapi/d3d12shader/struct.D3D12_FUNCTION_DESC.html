@@ -9,6 +9,7 @@
 
     <title>winapi::d3d12shader::D3D12_FUNCTION_DESC - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,146 +48,147 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-61830' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct D3D12_FUNCTION_DESC {
-    pub Version: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub Creator: <a class='type' href='../../winapi/winnt/type.LPCSTR.html' title='winapi::winnt::LPCSTR'>LPCSTR</a>,
-    pub Flags: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub ConstantBuffers: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub BoundResources: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub InstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub TempRegisterCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub TempArrayCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub DefCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub DclCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub TextureNormalInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub TextureLoadInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub TextureCompInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub TextureBiasInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub TextureGradientInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub FloatInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub IntInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub UintInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub StaticFlowControlCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub DynamicFlowControlCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub MacroInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub ArrayInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub MovInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub MovcInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub ConversionInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub BitwiseInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub MinFeatureLevel: <a class='struct' href='../../winapi/d3dcommon/struct.D3D_FEATURE_LEVEL.html' title='winapi::d3dcommon::D3D_FEATURE_LEVEL'>D3D_FEATURE_LEVEL</a>,
-    pub RequiredFeatureFlags: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='winapi::basetsd::UINT64'>UINT64</a>,
-    pub Name: <a class='type' href='../../winapi/winnt/type.LPCSTR.html' title='winapi::winnt::LPCSTR'>LPCSTR</a>,
-    pub FunctionParameterCount: <a class='type' href='../../winapi/minwindef/type.INT.html' title='winapi::minwindef::INT'>INT</a>,
-    pub HasReturn: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='winapi::minwindef::BOOL'>BOOL</a>,
-    pub Has10Level9VertexShader: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='winapi::minwindef::BOOL'>BOOL</a>,
-    pub Has10Level9PixelShader: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='winapi::minwindef::BOOL'>BOOL</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct D3D12_FUNCTION_DESC {
+    pub Version: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub Creator: <a class='type' href='../../winapi/winnt/type.LPCSTR.html' title='type winapi::winnt::LPCSTR'>LPCSTR</a>,
+    pub Flags: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub ConstantBuffers: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub BoundResources: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub InstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub TempRegisterCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub TempArrayCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub DefCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub DclCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub TextureNormalInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub TextureLoadInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub TextureCompInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub TextureBiasInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub TextureGradientInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub FloatInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub IntInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub UintInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub StaticFlowControlCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub DynamicFlowControlCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub MacroInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub ArrayInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub MovInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub MovcInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub ConversionInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub BitwiseInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub MinFeatureLevel: <a class='struct' href='../../winapi/d3dcommon/struct.D3D_FEATURE_LEVEL.html' title='struct winapi::d3dcommon::D3D_FEATURE_LEVEL'>D3D_FEATURE_LEVEL</a>,
+    pub RequiredFeatureFlags: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='type winapi::basetsd::UINT64'>UINT64</a>,
+    pub Name: <a class='type' href='../../winapi/winnt/type.LPCSTR.html' title='type winapi::winnt::LPCSTR'>LPCSTR</a>,
+    pub FunctionParameterCount: <a class='type' href='../../winapi/minwindef/type.INT.html' title='type winapi::minwindef::INT'>INT</a>,
+    pub HasReturn: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='type winapi::minwindef::BOOL'>BOOL</a>,
+    pub Has10Level9VertexShader: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='type winapi::minwindef::BOOL'>BOOL</a>,
+    pub Has10Level9PixelShader: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='type winapi::minwindef::BOOL'>BOOL</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.Version' class='structfield'>
                            <span id='Version.v' class='invisible'>
-                           <code>Version: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Creator' class='structfield'>
+                           <code>Version: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.Creator' class='structfield'>
                            <span id='Creator.v' class='invisible'>
-                           <code>Creator: <a class='type' href='../../winapi/winnt/type.LPCSTR.html' title='winapi::winnt::LPCSTR'>LPCSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Flags' class='structfield'>
+                           <code>Creator: <a class='type' href='../../winapi/winnt/type.LPCSTR.html' title='type winapi::winnt::LPCSTR'>LPCSTR</a></code>
+                           </span></span><span id='structfield.Flags' class='structfield'>
                            <span id='Flags.v' class='invisible'>
-                           <code>Flags: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ConstantBuffers' class='structfield'>
+                           <code>Flags: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.ConstantBuffers' class='structfield'>
                            <span id='ConstantBuffers.v' class='invisible'>
-                           <code>ConstantBuffers: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.BoundResources' class='structfield'>
+                           <code>ConstantBuffers: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.BoundResources' class='structfield'>
                            <span id='BoundResources.v' class='invisible'>
-                           <code>BoundResources: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.InstructionCount' class='structfield'>
+                           <code>BoundResources: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.InstructionCount' class='structfield'>
                            <span id='InstructionCount.v' class='invisible'>
-                           <code>InstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.TempRegisterCount' class='structfield'>
+                           <code>InstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.TempRegisterCount' class='structfield'>
                            <span id='TempRegisterCount.v' class='invisible'>
-                           <code>TempRegisterCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.TempArrayCount' class='structfield'>
+                           <code>TempRegisterCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.TempArrayCount' class='structfield'>
                            <span id='TempArrayCount.v' class='invisible'>
-                           <code>TempArrayCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DefCount' class='structfield'>
+                           <code>TempArrayCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.DefCount' class='structfield'>
                            <span id='DefCount.v' class='invisible'>
-                           <code>DefCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DclCount' class='structfield'>
+                           <code>DefCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.DclCount' class='structfield'>
                            <span id='DclCount.v' class='invisible'>
-                           <code>DclCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.TextureNormalInstructions' class='structfield'>
+                           <code>DclCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.TextureNormalInstructions' class='structfield'>
                            <span id='TextureNormalInstructions.v' class='invisible'>
-                           <code>TextureNormalInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.TextureLoadInstructions' class='structfield'>
+                           <code>TextureNormalInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.TextureLoadInstructions' class='structfield'>
                            <span id='TextureLoadInstructions.v' class='invisible'>
-                           <code>TextureLoadInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.TextureCompInstructions' class='structfield'>
+                           <code>TextureLoadInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.TextureCompInstructions' class='structfield'>
                            <span id='TextureCompInstructions.v' class='invisible'>
-                           <code>TextureCompInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.TextureBiasInstructions' class='structfield'>
+                           <code>TextureCompInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.TextureBiasInstructions' class='structfield'>
                            <span id='TextureBiasInstructions.v' class='invisible'>
-                           <code>TextureBiasInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.TextureGradientInstructions' class='structfield'>
+                           <code>TextureBiasInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.TextureGradientInstructions' class='structfield'>
                            <span id='TextureGradientInstructions.v' class='invisible'>
-                           <code>TextureGradientInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.FloatInstructionCount' class='structfield'>
+                           <code>TextureGradientInstructions: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.FloatInstructionCount' class='structfield'>
                            <span id='FloatInstructionCount.v' class='invisible'>
-                           <code>FloatInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.IntInstructionCount' class='structfield'>
+                           <code>FloatInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.IntInstructionCount' class='structfield'>
                            <span id='IntInstructionCount.v' class='invisible'>
-                           <code>IntInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.UintInstructionCount' class='structfield'>
+                           <code>IntInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.UintInstructionCount' class='structfield'>
                            <span id='UintInstructionCount.v' class='invisible'>
-                           <code>UintInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.StaticFlowControlCount' class='structfield'>
+                           <code>UintInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.StaticFlowControlCount' class='structfield'>
                            <span id='StaticFlowControlCount.v' class='invisible'>
-                           <code>StaticFlowControlCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DynamicFlowControlCount' class='structfield'>
+                           <code>StaticFlowControlCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.DynamicFlowControlCount' class='structfield'>
                            <span id='DynamicFlowControlCount.v' class='invisible'>
-                           <code>DynamicFlowControlCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MacroInstructionCount' class='structfield'>
+                           <code>DynamicFlowControlCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.MacroInstructionCount' class='structfield'>
                            <span id='MacroInstructionCount.v' class='invisible'>
-                           <code>MacroInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ArrayInstructionCount' class='structfield'>
+                           <code>MacroInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.ArrayInstructionCount' class='structfield'>
                            <span id='ArrayInstructionCount.v' class='invisible'>
-                           <code>ArrayInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MovInstructionCount' class='structfield'>
+                           <code>ArrayInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.MovInstructionCount' class='structfield'>
                            <span id='MovInstructionCount.v' class='invisible'>
-                           <code>MovInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MovcInstructionCount' class='structfield'>
+                           <code>MovInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.MovcInstructionCount' class='structfield'>
                            <span id='MovcInstructionCount.v' class='invisible'>
-                           <code>MovcInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ConversionInstructionCount' class='structfield'>
+                           <code>MovcInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.ConversionInstructionCount' class='structfield'>
                            <span id='ConversionInstructionCount.v' class='invisible'>
-                           <code>ConversionInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.BitwiseInstructionCount' class='structfield'>
+                           <code>ConversionInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.BitwiseInstructionCount' class='structfield'>
                            <span id='BitwiseInstructionCount.v' class='invisible'>
-                           <code>BitwiseInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MinFeatureLevel' class='structfield'>
+                           <code>BitwiseInstructionCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.MinFeatureLevel' class='structfield'>
                            <span id='MinFeatureLevel.v' class='invisible'>
-                           <code>MinFeatureLevel: <a class='struct' href='../../winapi/d3dcommon/struct.D3D_FEATURE_LEVEL.html' title='winapi::d3dcommon::D3D_FEATURE_LEVEL'>D3D_FEATURE_LEVEL</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.RequiredFeatureFlags' class='structfield'>
+                           <code>MinFeatureLevel: <a class='struct' href='../../winapi/d3dcommon/struct.D3D_FEATURE_LEVEL.html' title='struct winapi::d3dcommon::D3D_FEATURE_LEVEL'>D3D_FEATURE_LEVEL</a></code>
+                           </span></span><span id='structfield.RequiredFeatureFlags' class='structfield'>
                            <span id='RequiredFeatureFlags.v' class='invisible'>
-                           <code>RequiredFeatureFlags: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='winapi::basetsd::UINT64'>UINT64</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Name' class='structfield'>
+                           <code>RequiredFeatureFlags: <a class='type' href='../../winapi/basetsd/type.UINT64.html' title='type winapi::basetsd::UINT64'>UINT64</a></code>
+                           </span></span><span id='structfield.Name' class='structfield'>
                            <span id='Name.v' class='invisible'>
-                           <code>Name: <a class='type' href='../../winapi/winnt/type.LPCSTR.html' title='winapi::winnt::LPCSTR'>LPCSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.FunctionParameterCount' class='structfield'>
+                           <code>Name: <a class='type' href='../../winapi/winnt/type.LPCSTR.html' title='type winapi::winnt::LPCSTR'>LPCSTR</a></code>
+                           </span></span><span id='structfield.FunctionParameterCount' class='structfield'>
                            <span id='FunctionParameterCount.v' class='invisible'>
-                           <code>FunctionParameterCount: <a class='type' href='../../winapi/minwindef/type.INT.html' title='winapi::minwindef::INT'>INT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.HasReturn' class='structfield'>
+                           <code>FunctionParameterCount: <a class='type' href='../../winapi/minwindef/type.INT.html' title='type winapi::minwindef::INT'>INT</a></code>
+                           </span></span><span id='structfield.HasReturn' class='structfield'>
                            <span id='HasReturn.v' class='invisible'>
-                           <code>HasReturn: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='winapi::minwindef::BOOL'>BOOL</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Has10Level9VertexShader' class='structfield'>
+                           <code>HasReturn: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='type winapi::minwindef::BOOL'>BOOL</a></code>
+                           </span></span><span id='structfield.Has10Level9VertexShader' class='structfield'>
                            <span id='Has10Level9VertexShader.v' class='invisible'>
-                           <code>Has10Level9VertexShader: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='winapi::minwindef::BOOL'>BOOL</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Has10Level9PixelShader' class='structfield'>
+                           <code>Has10Level9VertexShader: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='type winapi::minwindef::BOOL'>BOOL</a></code>
+                           </span></span><span id='structfield.Has10Level9PixelShader' class='structfield'>
                            <span id='Has10Level9PixelShader.v' class='invisible'>
-                           <code>Has10Level9PixelShader: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='winapi::minwindef::BOOL'>BOOL</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/d3d12shader/struct.D3D12_FUNCTION_DESC.html' title='winapi::d3d12shader::D3D12_FUNCTION_DESC'>D3D12_FUNCTION_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-61864' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>Has10Level9PixelShader: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='type winapi::minwindef::BOOL'>BOOL</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/d3d12shader/struct.D3D12_FUNCTION_DESC.html' title='struct winapi::d3d12shader::D3D12_FUNCTION_DESC'>D3D12_FUNCTION_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/d3d12shader/struct.D3D12_FUNCTION_DESC.html' title='winapi::d3d12shader::D3D12_FUNCTION_DESC'>D3D12_FUNCTION_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-61826' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/d3d12shader/struct.D3D12_FUNCTION_DESC.html' title='winapi::d3d12shader::D3D12_FUNCTION_DESC'>D3D12_FUNCTION_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-61827' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/d3d12shader/struct.D3D12_FUNCTION_DESC.html' title='winapi::d3d12shader::D3D12_FUNCTION_DESC'>D3D12_FUNCTION_DESC</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/d3d12shader/struct.D3D12_FUNCTION_DESC.html' title='struct winapi::d3d12shader::D3D12_FUNCTION_DESC'>D3D12_FUNCTION_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/d3d12shader/struct.D3D12_FUNCTION_DESC.html' title='struct winapi::d3d12shader::D3D12_FUNCTION_DESC'>D3D12_FUNCTION_DESC</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/d3d12shader/struct.D3D12_FUNCTION_DESC.html' title='struct winapi::d3d12shader::D3D12_FUNCTION_DESC'>D3D12_FUNCTION_DESC</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -246,11 +248,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>lmjoin.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -134,14 +135,14 @@
     <span class='ident'>NetSetupNonExistentDomain</span>,
     <span class='ident'>NetSetupDnsMachine</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNETSETUP_NAME_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NETSETUP_NAME_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNETSETUP_NAME_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NETSETUP_NAME_TYPE</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>NETSETUP_JOIN_STATUS</span> {
     <span class='ident'>NetSetupUnknownStatus</span> <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>NetSetupUnjoined</span>,
     <span class='ident'>NetSetupWorkgroupName</span>,
     <span class='ident'>NetSetupDomainName</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNETSETUP_JOIN_STATUS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NETSETUP_JOIN_STATUS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNETSETUP_JOIN_STATUS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NETSETUP_JOIN_STATUS</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>NETSETUP_JOIN_DOMAIN</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>NETSETUP_ACCT_CREATE</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000002</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>NETSETUP_ACCT_DELETE</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000004</span>;
@@ -185,24 +186,24 @@
     <span class='ident'>lpMachineAccountOU</span>: ::<span class='ident'>LPCWSTR</span>,
     <span class='ident'>lpDcName</span>: ::<span class='ident'>LPCWSTR</span>,
     <span class='ident'>dwProvisionOptions</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>aCertTemplateNames</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPCWSTR</span>,
+    <span class='ident'>aCertTemplateNames</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPCWSTR</span>,
     <span class='ident'>cCertTemplateNames</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>aMachinePolicyNames</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPCWSTR</span>,
+    <span class='ident'>aMachinePolicyNames</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPCWSTR</span>,
     <span class='ident'>cMachinePolicyNames</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>aMachinePolicyPaths</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPCWSTR</span>,
+    <span class='ident'>aMachinePolicyPaths</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPCWSTR</span>,
     <span class='ident'>cMachinePolicyPaths</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>lpNetbiosName</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>lpSiteName</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>lpPrimaryDNSDomain</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNETSETUP_PROVISIONING_PARAMS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NETSETUP_PROVISIONING_PARAMS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNETSETUP_PROVISIONING_PARAMS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NETSETUP_PROVISIONING_PARAMS</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>NET_COMPUTER_NAME_TYPE</span> {
     <span class='ident'>NetPrimaryComputerName</span>,
     <span class='ident'>NetAlternateComputerNames</span>,
     <span class='ident'>NetAllComputerNames</span>,
     <span class='ident'>NetComputerNameTypeMax</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNET_COMPUTER_NAME_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NET_COMPUTER_NAME_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNET_COMPUTER_NAME_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NET_COMPUTER_NAME_TYPE</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -260,11 +261,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

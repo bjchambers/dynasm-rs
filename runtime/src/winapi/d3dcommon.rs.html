@@ -9,6 +9,7 @@
 
     <title>d3dcommon.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -1166,16 +1167,16 @@
     <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>,
     <span class='ident'>Definition</span>: ::<span class='ident'>LPCSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D_SHADER_MACRO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3D_SHADER_MACRO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D_SHADER_MACRO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3D_SHADER_MACRO</span>;
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D10Blob</span>(<span class='ident'>ID3D10BlobVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetBufferPointer</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>LPVOID</span>,
     <span class='kw'>fn</span> <span class='ident'>GetBufferSize</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>SIZE_T</span>
 }
 );
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D10BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ID3D10Blob</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D10BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ID3D10Blob</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>ID3DBlob</span> <span class='op'>=</span> <span class='ident'>ID3D10Blob</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DBLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ID3DBlob</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DBLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ID3DBlob</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>D3D_INCLUDE_TYPE</span> {
     <span class='ident'>D3D_INCLUDE_LOCAL</span> <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>D3D_INCLUDE_SYSTEM</span>,
@@ -1186,12 +1187,12 @@
 <span class='ident'>interface</span> <span class='ident'>ID3DInclude</span>(<span class='ident'>ID3DIncludeVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>Open</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>IncludeType</span>: <span class='ident'>D3D_INCLUDE_TYPE</span>, <span class='ident'>pFileName</span>: ::<span class='ident'>LPCSTR</span>, <span class='ident'>pParentData</span>: ::<span class='ident'>LPCVOID</span>,
-        <span class='ident'>ppData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPCVOID</span>, <span class='ident'>pBytes</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
+        <span class='ident'>ppData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPCVOID</span>, <span class='ident'>pBytes</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>Close</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pData</span>: ::<span class='ident'>LPCVOID</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }
 );
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DINCLUDE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ID3DInclude</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DINCLUDE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ID3DInclude</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>D3D_SHADER_VARIABLE_CLASS</span> {
     <span class='ident'>D3D_SVC_SCALAR</span> <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>D3D_SVC_VECTOR</span>,
@@ -1606,11 +1607,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

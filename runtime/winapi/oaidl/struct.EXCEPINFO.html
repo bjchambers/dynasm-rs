@@ -9,6 +9,7 @@
 
     <title>winapi::oaidl::EXCEPINFO - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,47 +48,48 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-83704' class='srclink' href='../../src/winapi/macros.rs.html#256-258' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct EXCEPINFO {
-    pub wCode: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub wReserved: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub bstrSource: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='winapi::wtypes::BSTR'>BSTR</a>,
-    pub bstrDescription: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='winapi::wtypes::BSTR'>BSTR</a>,
-    pub bstrHelpFile: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='winapi::wtypes::BSTR'>BSTR</a>,
-    pub dwHelpContext: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub pvReserved: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='winapi::winnt::PVOID'>PVOID</a>,
-    pub pfnDeferredFillIn: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;unsafe extern &quot;system&quot; fn(einfo: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/oaidl/struct.EXCEPINFO.html' title='winapi::oaidl::EXCEPINFO'>EXCEPINFO</a>) -&gt; <a class='type' href='../../winapi/winerror/type.HRESULT.html' title='winapi::winerror::HRESULT'>HRESULT</a>&gt;,
-    pub scode: <a class='type' href='../../winapi/wtypesbase/type.SCODE.html' title='winapi::wtypesbase::SCODE'>SCODE</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#256-258' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct EXCEPINFO {
+    pub wCode: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub wReserved: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub bstrSource: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='type winapi::wtypes::BSTR'>BSTR</a>,
+    pub bstrDescription: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='type winapi::wtypes::BSTR'>BSTR</a>,
+    pub bstrHelpFile: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='type winapi::wtypes::BSTR'>BSTR</a>,
+    pub dwHelpContext: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub pvReserved: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='type winapi::winnt::PVOID'>PVOID</a>,
+    pub pfnDeferredFillIn: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='enum core::option::Option'>Option</a>&lt;unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/oaidl/struct.EXCEPINFO.html' title='struct winapi::oaidl::EXCEPINFO'>EXCEPINFO</a>) -&gt; <a class='type' href='../../winapi/winerror/type.HRESULT.html' title='type winapi::winerror::HRESULT'>HRESULT</a>&gt;,
+    pub scode: <a class='type' href='../../winapi/wtypesbase/type.SCODE.html' title='type winapi::wtypesbase::SCODE'>SCODE</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.wCode' class='structfield'>
                            <span id='wCode.v' class='invisible'>
-                           <code>wCode: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.wReserved' class='structfield'>
+                           <code>wCode: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.wReserved' class='structfield'>
                            <span id='wReserved.v' class='invisible'>
-                           <code>wReserved: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.bstrSource' class='structfield'>
+                           <code>wReserved: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.bstrSource' class='structfield'>
                            <span id='bstrSource.v' class='invisible'>
-                           <code>bstrSource: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='winapi::wtypes::BSTR'>BSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.bstrDescription' class='structfield'>
+                           <code>bstrSource: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='type winapi::wtypes::BSTR'>BSTR</a></code>
+                           </span></span><span id='structfield.bstrDescription' class='structfield'>
                            <span id='bstrDescription.v' class='invisible'>
-                           <code>bstrDescription: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='winapi::wtypes::BSTR'>BSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.bstrHelpFile' class='structfield'>
+                           <code>bstrDescription: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='type winapi::wtypes::BSTR'>BSTR</a></code>
+                           </span></span><span id='structfield.bstrHelpFile' class='structfield'>
                            <span id='bstrHelpFile.v' class='invisible'>
-                           <code>bstrHelpFile: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='winapi::wtypes::BSTR'>BSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dwHelpContext' class='structfield'>
+                           <code>bstrHelpFile: <a class='type' href='../../winapi/wtypes/type.BSTR.html' title='type winapi::wtypes::BSTR'>BSTR</a></code>
+                           </span></span><span id='structfield.dwHelpContext' class='structfield'>
                            <span id='dwHelpContext.v' class='invisible'>
-                           <code>dwHelpContext: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pvReserved' class='structfield'>
+                           <code>dwHelpContext: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.pvReserved' class='structfield'>
                            <span id='pvReserved.v' class='invisible'>
-                           <code>pvReserved: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='winapi::winnt::PVOID'>PVOID</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pfnDeferredFillIn' class='structfield'>
+                           <code>pvReserved: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='type winapi::winnt::PVOID'>PVOID</a></code>
+                           </span></span><span id='structfield.pfnDeferredFillIn' class='structfield'>
                            <span id='pfnDeferredFillIn.v' class='invisible'>
-                           <code>pfnDeferredFillIn: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;unsafe extern &quot;system&quot; fn(einfo: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/oaidl/struct.EXCEPINFO.html' title='winapi::oaidl::EXCEPINFO'>EXCEPINFO</a>) -&gt; <a class='type' href='../../winapi/winerror/type.HRESULT.html' title='winapi::winerror::HRESULT'>HRESULT</a>&gt;</code>
-                           </span></span><span class='stab '></span><span id='structfield.scode' class='structfield'>
+                           <code>pfnDeferredFillIn: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='enum core::option::Option'>Option</a>&lt;unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/oaidl/struct.EXCEPINFO.html' title='struct winapi::oaidl::EXCEPINFO'>EXCEPINFO</a>) -&gt; <a class='type' href='../../winapi/winerror/type.HRESULT.html' title='type winapi::winerror::HRESULT'>HRESULT</a>&gt;</code>
+                           </span></span><span id='structfield.scode' class='structfield'>
                            <span id='scode.v' class='invisible'>
-                           <code>scode: <a class='type' href='../../winapi/wtypesbase/type.SCODE.html' title='winapi::wtypesbase::SCODE'>SCODE</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/oaidl/struct.EXCEPINFO.html' title='winapi::oaidl::EXCEPINFO'>EXCEPINFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-83715' class='srclink' href='../../src/winapi/macros.rs.html#259' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/oaidl/struct.EXCEPINFO.html' title='winapi::oaidl::EXCEPINFO'>EXCEPINFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-83716' class='srclink' href='../../src/winapi/macros.rs.html#260' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/oaidl/struct.EXCEPINFO.html' title='winapi::oaidl::EXCEPINFO'>EXCEPINFO</a></code></span></h4>
+                           <code>scode: <a class='type' href='../../winapi/wtypesbase/type.SCODE.html' title='type winapi::wtypesbase::SCODE'>SCODE</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/oaidl/struct.EXCEPINFO.html' title='struct winapi::oaidl::EXCEPINFO'>EXCEPINFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#259' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/oaidl/struct.EXCEPINFO.html' title='struct winapi::oaidl::EXCEPINFO'>EXCEPINFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#260' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/oaidl/struct.EXCEPINFO.html' title='struct winapi::oaidl::EXCEPINFO'>EXCEPINFO</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -147,11 +149,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

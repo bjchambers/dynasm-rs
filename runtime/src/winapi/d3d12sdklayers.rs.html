@@ -9,6 +9,7 @@
 
     <title>d3d12sdklayers.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -1129,12 +1130,12 @@
 }}
 <span class='macro'>RIDL</span><span class='macro'>!</span>{<span class='ident'>interface</span> <span class='ident'>ID3D12DebugCommandQueue</span>(<span class='ident'>ID3D12DebugCommandQueueVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>AssertResourceState</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>Subresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>State</span>: ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>Subresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>State</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span>
 }}
 <span class='macro'>RIDL</span><span class='macro'>!</span>{<span class='ident'>interface</span> <span class='ident'>ID3D12DebugCommandList</span>(<span class='ident'>ID3D12DebugCommandListVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>AssertResourceState</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>Subresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>State</span>: ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>Subresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>State</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span>,
     <span class='kw'>fn</span> <span class='ident'>SetFeatureMask</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Mask</span>: ::<span class='ident'>D3D12_DEBUG_FEATURE</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetFeatureMask</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>D3D12_DEBUG_FEATURE</span>
@@ -2100,16 +2101,16 @@
     <span class='ident'>Category</span>: <span class='ident'>D3D12_MESSAGE_CATEGORY</span>,
     <span class='ident'>Severity</span>: <span class='ident'>D3D12_MESSAGE_SEVERITY</span>,
     <span class='ident'>ID</span>: <span class='ident'>D3D12_MESSAGE_ID</span>,
-    <span class='ident'>pDescription</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_char</span>,
+    <span class='ident'>pDescription</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_char</span>,
     <span class='ident'>DescriptionByteLength</span>: ::<span class='ident'>SIZE_T</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_INFO_QUEUE_FILTER_DESC</span> {
     <span class='ident'>NumCategories</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pCategoryList</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3D12_MESSAGE_CATEGORY</span>,
+    <span class='ident'>pCategoryList</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3D12_MESSAGE_CATEGORY</span>,
     <span class='ident'>NumSeverities</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pSeverityList</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3D12_MESSAGE_SEVERITY</span>,
+    <span class='ident'>pSeverityList</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3D12_MESSAGE_SEVERITY</span>,
     <span class='ident'>NumIDs</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pIDList</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3D12_MESSAGE_ID</span>,
+    <span class='ident'>pIDList</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3D12_MESSAGE_ID</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_INFO_QUEUE_FILTER</span> {
     <span class='ident'>AllowList</span>: <span class='ident'>D3D12_INFO_QUEUE_FILTER_DESC</span>,
@@ -2120,8 +2121,8 @@
     <span class='kw'>fn</span> <span class='ident'>SetMessageCountLimit</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>MessageCountLimit</span>: ::<span class='ident'>UINT64</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>ClearStoredMessages</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>GetMessage</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>MessageIndex</span>: ::<span class='ident'>UINT64</span>, <span class='ident'>pMessage</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_MESSAGE</span>,
-        <span class='ident'>pMessageByteLength</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>SIZE_T</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>MessageIndex</span>: ::<span class='ident'>UINT64</span>, <span class='ident'>pMessage</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_MESSAGE</span>,
+        <span class='ident'>pMessageByteLength</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>SIZE_T</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetNumMessagesAllowedByStorageFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT64</span>,
     <span class='kw'>fn</span> <span class='ident'>GetNumMessagesDeniedByStorageFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT64</span>,
@@ -2129,24 +2130,24 @@
     <span class='kw'>fn</span> <span class='ident'>GetNumStoredMessagesAllowedByRetrievalFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT64</span>,
     <span class='kw'>fn</span> <span class='ident'>GetNumMessagesDiscardedByMessageCountLimit</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT64</span>,
     <span class='kw'>fn</span> <span class='ident'>GetMessageCountLimit</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT64</span>,
-    <span class='kw'>fn</span> <span class='ident'>AddStorageFilterEntries</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>AddStorageFilterEntries</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetStorageFilter</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>, <span class='ident'>pFilterByteLength</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>SIZE_T</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>, <span class='ident'>pFilterByteLength</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>SIZE_T</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>ClearStorageFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>PushEmptyStorageFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>PushCopyOfStorageFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>PushStorageFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>PushStorageFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>PopStorageFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>GetStorageFilterStackSize</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>,
-    <span class='kw'>fn</span> <span class='ident'>AddRetrievalFilterEntries</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>AddRetrievalFilterEntries</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetRetrievalFilter</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>, <span class='ident'>pFilterByteLength</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>SIZE_T</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>, <span class='ident'>pFilterByteLength</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>SIZE_T</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>ClearRetrievalFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>PushEmptyRetrievalFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>PushCopyOfRetrievalFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>PushRetrievalFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>PushRetrievalFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFilter</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_INFO_QUEUE_FILTER</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>PopRetrievalFilter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>GetRetrievalFilterStackSize</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>,
     <span class='kw'>fn</span> <span class='ident'>AddMessage</span>(
@@ -2226,11 +2227,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

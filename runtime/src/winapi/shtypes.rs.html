@@ -9,6 +9,7 @@
 
     <title>shtypes.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -91,8 +92,8 @@
     <span class='kw'>pub</span> <span class='ident'>cb</span>: ::<span class='ident'>USHORT</span>,
     <span class='kw'>pub</span> <span class='ident'>abID</span>: [::<span class='ident'>BYTE</span>; <span class='number'>0</span>],
 }
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSHITEMID</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SHITEMID</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCSHITEMID</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>SHITEMID</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSHITEMID</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SHITEMID</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCSHITEMID</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>SHITEMID</span>;
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>ITEMIDLIST</span> {
     <span class='kw'>pub</span> <span class='ident'>mkid</span>: <span class='ident'>SHITEMID</span>,
@@ -100,29 +101,29 @@
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>ITEMIDLIST_RELATIVE</span> <span class='op'>=</span> <span class='ident'>ITEMIDLIST</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>ITEMID_CHILD</span> <span class='op'>=</span> <span class='ident'>ITEMIDLIST</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>ITEMIDLIST_ABSOLUTE</span> <span class='op'>=</span> <span class='ident'>ITEMIDLIST</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPITEMIDLIST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMIDLIST</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCITEMIDLIST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ITEMIDLIST</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PIDLIST_ABSOLUTE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMIDLIST_ABSOLUTE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCIDLIST_ABSOLUTE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ITEMIDLIST_ABSOLUTE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUIDLIST_ABSOLUTE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ITEMIDLIST_ABSOLUTE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PIDLIST_RELATIVE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMIDLIST_RELATIVE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCIDLIST_RELATIVE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ITEMIDLIST_RELATIVE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUIDLIST_RELATIVE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMIDLIST_RELATIVE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUIDLIST_RELATIVE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ITEMIDLIST_RELATIVE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PITEMID_CHILD</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMID_CHILD</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCITEMID_CHILD</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ITEMID_CHILD</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUITEMID_CHILD</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMID_CHILD</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUITEMID_CHILD</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ITEMID_CHILD</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUITEMID_CHILD_ARRAY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>PCUITEMID_CHILD</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUIDLIST_RELATIVE_ARRAY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>PCUIDLIST_RELATIVE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCIDLIST_ABSOLUTE_ARRAY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>PCIDLIST_ABSOLUTE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUIDLIST_ABSOLUTE_ARRAY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>PCUIDLIST_ABSOLUTE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPITEMIDLIST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMIDLIST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCITEMIDLIST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ITEMIDLIST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PIDLIST_ABSOLUTE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMIDLIST_ABSOLUTE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCIDLIST_ABSOLUTE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ITEMIDLIST_ABSOLUTE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUIDLIST_ABSOLUTE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ITEMIDLIST_ABSOLUTE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PIDLIST_RELATIVE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMIDLIST_RELATIVE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCIDLIST_RELATIVE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ITEMIDLIST_RELATIVE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUIDLIST_RELATIVE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMIDLIST_RELATIVE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUIDLIST_RELATIVE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ITEMIDLIST_RELATIVE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PITEMID_CHILD</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMID_CHILD</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCITEMID_CHILD</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ITEMID_CHILD</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUITEMID_CHILD</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ITEMID_CHILD</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUITEMID_CHILD</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ITEMID_CHILD</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUITEMID_CHILD_ARRAY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>PCUITEMID_CHILD</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUIDLIST_RELATIVE_ARRAY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>PCUIDLIST_RELATIVE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCIDLIST_ABSOLUTE_ARRAY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>PCIDLIST_ABSOLUTE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCUIDLIST_ABSOLUTE_ARRAY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>PCUIDLIST_ABSOLUTE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>COMDLG_FILTERSPEC</span> {
     <span class='ident'>pszName</span>: ::<span class='ident'>LPCWSTR</span>,
     <span class='ident'>pszSpec</span>: ::<span class='ident'>LPCWSTR</span>,
 }}
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>KNOWNFOLDERID</span> <span class='op'>=</span> ::<span class='ident'>GUID</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>REFKNOWNFOLDERID</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>KNOWNFOLDERID</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>REFKNOWNFOLDERID</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>KNOWNFOLDERID</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -180,11 +181,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>combaseapi.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -62,7 +63,7 @@
 </pre><pre class='rust '>
 <span class='comment'>// Copyright © 2016, Peter Atashian</span>
 <span class='comment'>// Licensed under the MIT License &lt;LICENSE.md&gt;</span>
-<span class='kw'>use</span> <span class='kw'>super</span>::<span class='op'>*</span>;
+<span class='kw'>use</span> <span class='kw'>super</span>::<span class='kw-2'>*</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CLSCTX_INPROC_SERVER</span>: <span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CLSCTX_INPROC_HANDLER</span>: <span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CLSCTX_LOCAL_SERVER</span>: <span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x4</span>;
@@ -75,7 +76,7 @@
     <span class='ident'>dwServerTid</span>: <span class='ident'>DWORD</span>,
     <span class='ident'>ui64ServerAddress</span>: <span class='ident'>UINT64</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PServerInformation</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ServerInformation</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PServerInformation</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ServerInformation</span>;
 <span class='macro'>DECLARE_HANDLE</span><span class='macro'>!</span>(<span class='ident'>CO_MTA_USAGE_COOKIE</span>, <span class='ident'>CO_MTA_USAGE_COOKIE__</span>);
 </pre>
 </section>
@@ -134,11 +135,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

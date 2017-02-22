@@ -77,6 +77,7 @@
 <li><code>static_reg</code> matches any valid register name as seen in table 4, or any previously defined alias</li>
 <li><code>dynamic_reg_family</code> matches any valid register family from table 4</li>
 <li><code>size : &quot;BYTE&quot; | &quot;WORD&quot; | &quot;DWORD&quot; | &quot;AWORD&quot; | &quot;QWORD&quot; | &quot;OWORD&quot; | &quot;HWORD&quot;</code></li>
+<li><code>nosplit : &quot;NOSPLIT&quot;</code></li>
 </ul>
 
 <h2 id='entry-point' class='section-header'><a href='#entry-point'>Entry point</a></h2>
@@ -89,9 +90,10 @@
 <p><code>line : (&quot;;&quot; stmt) | directive | label | instruction ;</code></p>
 
 <h2 id='directives' class='section-header'><a href='#directives'>Directives</a></h2>
-<p>Directives are special commands given to the assembler that do not correspond to instructions directly.</p>
+<p>Directives are special commands given to the assembler that do not correspond to instructions directly.
+They are executed at parse time, and each directive can have different parsing rules.</p>
 
-<p><code>directive : &quot;.&quot; ident (arg (&quot;,&quot; arg)* )? ;</code></p>
+<p><code>directive : &quot;.&quot; ident directive_parsing_rule;</code></p>
 
 <h2 id='labels' class='section-header'><a href='#labels'>Labels</a></h2>
 <p><code>label : ident &quot;:&quot; | &quot;-&gt;&quot; ident &quot;:&quot; | &quot;=&gt;&quot; expr ;</code></p>
@@ -102,9 +104,9 @@
 <h2 id='arguments' class='section-header'><a href='#arguments'>Arguments</a></h2>
 <p><code>arg : register | (size? ( memoryref | labelref | typemap | expr ));</code></p>
 
-<p><code>typemap : register &quot;=&gt;&quot; expr_path (&quot;.&quot; ident | &quot;[&quot; regrefitem &quot;]&quot; (&quot;.&quot; ident)?) ;</code></p>
+<p><code>typemap : register &quot;=&gt;&quot; expr_path (&quot;.&quot; ident | &quot;[&quot; size? regref &quot;]&quot; (&quot;.&quot; ident)?) ;</code></p>
 
-<p><code>memoryref : &quot;[&quot; (regref | labelref) &quot;]&quot; ;</code></p>
+<p><code>memoryref : &quot;[&quot; nosplit? size? (regref | labelref) &quot;]&quot; ;</code></p>
 
 <p><code>regref : regrefitem (&quot;+&quot; regrefitem)* ;</code></p>
 
@@ -132,6 +134,11 @@
 </thead>
 
 <tbody>
+<tr>
+<td><code>.arch</code></td>
+<td>a single identifier</td>
+<td>Specifies the current architecture to assemble. Defaults to the current target architecture. Only <code>x64</code> is supported as of now.</td>
+</tr>
 <tr>
 <td><code>.alias</code></td>
 <td>An name followed by a register</td>
@@ -171,7 +178,7 @@
 </table>
 
 <h2 id='aliases' class='section-header'><a href='#aliases'>Aliases</a></h2>
-<p>Dynasm-rs allows the user to define aliases for registers using the <code>.alias name, register</code> directive. These aliases can then be used at places where registers are allowed to be used. Note that aliases are only usable after the end of the <code>dynasm!</code> block in which they were defined, and their scoping is crate-global. They are defined in lexical parsing order.</p>
+<p>Dynasm-rs allows the user to define aliases for registers using the <code>.alias name, register</code> directive. These aliases can then be used at places where registers are allowed to be used. Note that aliases are defined in lexical parsing order and that their scoping is crate-global.</p>
 
 <h2 id='macros' class='section-header'><a href='#macros'>Macros</a></h2>
 <p>While this is technically not a feature of dynasm-rs, there are a few rules that must be taken into account when using normal rust macros with dynasm-rs.</p>
@@ -184,7 +191,7 @@
         ; <span class='ident'>imul</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg1</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg2</span>
         ; <span class='ident'>add</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>accumulator</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg1</span>
     )};
-}<a class='test-arrow' target='_blank' href=''>Run</a></pre>
+}</pre>
 
 <p>An important thing to notice here is which matchers are used for which parts of <code>dynasm!</code> syntax. The following table lists the correct matchers to be used for expanding to dynasm syntax elements. Note that <code>$a:expr</code> means that anything that parses to an expression like <code>$a:ident</code> and just raw token trees are allowed.</p>
 
@@ -209,7 +216,7 @@
 </tr>
 <tr>
 <td style="text-align: left">Memory reference</td>
-<td style="text-align: left"><code>$mem:expr</code></td>
+<td style="text-align: left"><code>[ $mem:expr ]</code></td>
 </tr>
 <tr>
 <td style="text-align: left">Any element inside a memory reference</td>
@@ -229,7 +236,7 @@
 </tr>
 <tr>
 <td style="text-align: left">Type map</td>
-<td style="text-align: left"><code>$reg:expr =&gt; $type:path[$reg:expr].$attr:ident</code></td>
+<td style="text-align: left"><code>$reg:expr =&gt; $type:path [ $mem:expr ] . $attr:ident</code></td>
 </tr>
 </tbody>
 </table>
@@ -250,7 +257,7 @@
     ; <span class='ident'>mov</span> <span class='ident'>rcx</span>, <span class='ident'>rax</span>
     ;; <span class='macro'>call_extern</span><span class='macro'>!</span>(<span class='ident'>ops</span>, <span class='ident'>extern_func</span>)
     ; <span class='ident'>mov</span> <span class='ident'>rcx</span>, <span class='ident'>rax</span>
-);<a class='test-arrow' target='_blank' href=''>Run</a></pre>
+);</pre>
 
 <h2 id='labels-1' class='section-header'><a href='#labels-1'>Labels</a></h2>
 <p>In order to describe flow control effectively, dynasm-rs supports labels. However, since the assembly templates can be combined in a variety of ways at the mercy of the program using dynasm-rs, the semantics of these labels are somewhat different from how labels work in a static assembler.</p>
@@ -326,6 +333,7 @@
 <th style="text-align: left">Segment</th>
 <th style="text-align: left">Control</th>
 <th style="text-align: left">Debug</th>
+<th style="text-align: left">Bound</th>
 </tr>
 </thead>
 
@@ -345,6 +353,7 @@
 <td style="text-align: left"><code>Rs</code></td>
 <td style="text-align: left"><code>RC</code></td>
 <td style="text-align: left"><code>RD</code></td>
+<td style="text-align: left"><code>RB</code></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>0</code></td>
@@ -361,6 +370,7 @@
 <td style="text-align: left"><code>es</code></td>
 <td style="text-align: left"><code>cr0</code></td>
 <td style="text-align: left"><code>dr0</code></td>
+<td style="text-align: left"><code>bnd0</code></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>1</code></td>
@@ -377,6 +387,7 @@
 <td style="text-align: left"><code>cs</code></td>
 <td style="text-align: left"><code>cr1</code></td>
 <td style="text-align: left"><code>dr1</code></td>
+<td style="text-align: left"><code>bnd1</code></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>2</code></td>
@@ -393,6 +404,7 @@
 <td style="text-align: left"><code>ss</code></td>
 <td style="text-align: left"><code>cr2</code></td>
 <td style="text-align: left"><code>dr2</code></td>
+<td style="text-align: left"><code>bnd2</code></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>3</code></td>
@@ -409,6 +421,7 @@
 <td style="text-align: left"><code>ds</code></td>
 <td style="text-align: left"><code>cr3</code></td>
 <td style="text-align: left"><code>dr3</code></td>
+<td style="text-align: left"><code>bnd3</code></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>4</code></td>
@@ -425,6 +438,7 @@
 <td style="text-align: left"><code>fs</code></td>
 <td style="text-align: left"><code>cr4</code></td>
 <td style="text-align: left"><code>dr4</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>5</code></td>
@@ -441,6 +455,7 @@
 <td style="text-align: left"><code>gs</code></td>
 <td style="text-align: left"><code>cr5</code></td>
 <td style="text-align: left"><code>dr5</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>6</code></td>
@@ -457,6 +472,7 @@
 <td style="text-align: left"></td>
 <td style="text-align: left"><code>cr6</code></td>
 <td style="text-align: left"><code>dr6</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>7</code></td>
@@ -473,6 +489,7 @@
 <td style="text-align: left"></td>
 <td style="text-align: left"><code>cr7</code></td>
 <td style="text-align: left"><code>dr7</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>8</code></td>
@@ -489,6 +506,7 @@
 <td style="text-align: left"></td>
 <td style="text-align: left"><code>cr8</code></td>
 <td style="text-align: left"><code>dr8</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>9</code></td>
@@ -505,6 +523,7 @@
 <td style="text-align: left"></td>
 <td style="text-align: left"><code>cr9</code></td>
 <td style="text-align: left"><code>dr9</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>10</code></td>
@@ -521,6 +540,7 @@
 <td style="text-align: left"></td>
 <td style="text-align: left"><code>cr10</code></td>
 <td style="text-align: left"><code>dr10</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>11</code></td>
@@ -537,6 +557,7 @@
 <td style="text-align: left"></td>
 <td style="text-align: left"><code>cr11</code></td>
 <td style="text-align: left"><code>dr11</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>12</code></td>
@@ -553,6 +574,7 @@
 <td style="text-align: left"></td>
 <td style="text-align: left"><code>cr12</code></td>
 <td style="text-align: left"><code>dr12</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>13</code></td>
@@ -569,6 +591,7 @@
 <td style="text-align: left"></td>
 <td style="text-align: left"><code>cr13</code></td>
 <td style="text-align: left"><code>dr13</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>14</code></td>
@@ -585,6 +608,7 @@
 <td style="text-align: left"></td>
 <td style="text-align: left"><code>cr14</code></td>
 <td style="text-align: left"><code>dr14</code></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: right"><code>15</code></td>
@@ -601,6 +625,7 @@
 <td style="text-align: left"></td>
 <td style="text-align: left"><code>cr15</code></td>
 <td style="text-align: left"><code>dr15</code></td>
+<td style="text-align: left"></td>
 </tr>
 </tbody>
 </table>
@@ -609,9 +634,19 @@
 <p>All flow control instructions have a jump target as argument. A jump target can be either an immediate specifying a relative offset to the end of the current instruction or a label reference. For many instructions, the size of the offset to be encoded is variable, and by default dynasm-rs will pick the largest size possible. This can be overridden using a size prefix on the operand.</p>
 
 <h4 id='memory-references' class='section-header'><a href='#memory-references'>Memory references</a></h4>
-<p>Many x64 instructions can taken an indirect memory reference as operand. Such an operand is denoted as an expression containing registers surrounded by square brackets. Note that, unlike the original dynasm, dynasm-rs is insensitive to the order of the different operands in the expression and can perform rudimentary arithmetric to encode forms like <code>[rax * 5]</code>. However, due to the limitations of x64 assembly, there are of course limitations on what can be encoded. These limitations are detected at compile time, but several of them cannot be checked when dynamic registers are used. The size of the dereferenced value can be determined by a size prefix.</p>
+<p>Many x64 instructions can taken an indirect memory reference as operand. Such an operand is denoted as an expression containing registers surrounded by square brackets. Note that, unlike the original dynasm, dynasm-rs is insensitive to the order of the different operands in the expression and can perform rudimentary arithmetic to encode forms like <code>[rax * 5]</code>. However, due to the limitations of x64 assembly, there are of course limitations on what can be encoded. These limitations are detected at compile time, but several of them cannot be checked when dynamic registers are used. The size of the dereferenced value can be determined by a size prefix.</p>
 
-<p>The following are several examples of what can be encoded</p>
+<p>To give more control to how the operand gets encoded, dynasm-rs features both displacement size overrides and a hinting mechanism similar to NASM. By default dynasm will try to infer the wanted displacement size if the displacement is a constant, and if it fails to it will encode a four-byte displacement. However, this behaviour can be altered using a size override after the opening bracket of the memory reference. </p>
+
+<p>The hinting mechanism by default tries to select the smallest way for a memory reference to be encoded, and any freedom in this is solved with the following rules:
+- The first unscaled register that only appears once can be encoded as base will be used as such.
+- If no unscaled register is present, the first register with a total scale of 1 will be used as base.</p>
+
+<p>One complication in the &quot;smallest encoding&quot; rule is <code>[rax * 2]</code>. As memory references without base require a four-byte displacement, it is shorter to encode this as <code>[rax + rax * 1]</code>. This kind of index splitting is the default behaviour for dynasm-rs, and can be disabled by using the <code>NOSPLIT</code> keyword in the memory reference. This keyword must come before the displacement size specifier if both are used as in <code>[NOSPLIT BYTE rax * 2 + 1]</code>.</p>
+
+<p>As a final node, the <code>mib</code> addressing mode used by Intel&#39;s MPX extensions deserves some attention. Dynasm-rs does not implement special syntax for this addressing mode. Instead, the index and base registers in this addressing mode can simply be specified by the hinting behaviour described above.</p>
+
+<p>The following are several examples of what can be encoded:</p>
 
 <p>Table 5: dynasm-rs memory reference formats</p>
 
@@ -637,6 +672,18 @@
 <td style="text-align: left">A scaled register can be dereferenced. Possible scales are 8, 4, 2 and 1, although 3, 5 and 9 can also be encoded when it is the only used register.</td>
 </tr>
 <tr>
+<td style="text-align: left"><code>[BYTE rax + 77]</code></td>
+<td style="text-align: left">The size of the displacement encoded can b e defined using a size override.</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>[rax * 1 + rbx]</code></td>
+<td style="text-align: left">Which register is encoded as index can be explicitly controlled by multiplying with 1.</td>
+</tr>
+<tr>
+<td style="text-align: left"><code>[NOSPLIT rax * 2]</code></td>
+<td style="text-align: left">The nosplit keyword forces this to be encoded sub-optimally without a base register.</td>
+</tr>
+<tr>
 <td style="text-align: left"><code>[rax * 4 + rbx + expr]</code></td>
 <td style="text-align: left">The previously mentioned forms can all be combined. Order is not important.</td>
 </tr>
@@ -657,6 +704,8 @@
 
 <h4 id='type-mapped-references' class='section-header'><a href='#type-mapped-references'>Type mapped references</a></h4>
 <p>To ease interoperation with rust structures, dynasm-rs supports the following syntax for accessing members of pointers to structs and struct arrays. In this syntax, the scale and displacement in a normal memory reference are derived from the size of the type and the offset of the member in the type. Due to the limitations of procedural macros, invalid scales will unfortunately only panic at runtime. Note that dynasm-rs is unable to infer the size of the attribute and it should therefore be determined by a size prefix.</p>
+
+<p>Just like memory references, type mapped references support displacement size overrides after the opening square bracket. However, as the first register is always encoded as index, they do not support <code>NOSPLIT</code>.</p>
 
 <p>The syntax for type maps is as follows:</p>
 
@@ -691,11 +740,8 @@
 </table>
 
 <h4 id='immediates' class='section-header'><a href='#immediates'>Immediates</a></h4>
-<p>Any operand which does not match the previously discussed forms will be interpreted as an immediate argument. This operand will be evaluated as an expression at runtime and the resulting value will be encoded. The size of the encoded value can be determined by a size prefix.</p>
+<p>Any operand which does not match the previously discussed forms will be interpreted as an immediate argument. This operand will be evaluated as an expression at runtime and the resulting value will be encoded. The size of the encoded value can be determined by a size prefix. If such a a prefix is not given, dynasm-rs will try to infer it from the value of the immediate, but this is only possible if the immediate is a simple constant. As this might change in the future, you should use explicit size overrides if the encoded displacement size matters.</p>
 
-    <script type="text/javascript">
-        window.playgroundUrl = "";
-    </script>
     </section>
 <script src="../plugin/jquery.js"></script>
 <script type="text/javascript">

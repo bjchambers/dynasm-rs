@@ -9,6 +9,7 @@
 
     <title>dxgi1_4.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -153,21 +154,21 @@
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IDXGIAdapter3</span>(<span class='ident'>IDXGIAdapter3Vtbl</span>): <span class='ident'>IDXGIAdapter2</span>(<span class='ident'>IDXGIAdapter2Vtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>RegisterHardwareContentProtectionTeardownStatusEvent</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hEvent</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>pdwCookie</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hEvent</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>pdwCookie</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>UnregisterHardwareContentProtectionTeardownStatus</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dwCookie</span>: ::<span class='ident'>DWORD</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>QueryVideoMemoryInfo</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NodeIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>MemorySegmentGroup</span>: ::<span class='ident'>DXGI_MEMORY_SEGMENT_GROUP</span>,
-        <span class='ident'>pVideoMemoryInfo</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_QUERY_VIDEO_MEMORY_INFO</span>
+        <span class='ident'>pVideoMemoryInfo</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_QUERY_VIDEO_MEMORY_INFO</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>SetVideoMemoryReservation</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NodeIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>MemorySegmentGroup</span>: ::<span class='ident'>DXGI_MEMORY_SEGMENT_GROUP</span>,
         <span class='ident'>Reservation</span>: ::<span class='ident'>UINT64</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>RegisterVideoMemoryBudgetChangeNotificationEvent</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hEvent</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>pdwCookie</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hEvent</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>pdwCookie</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>UnregisterVideoMemoryBudgetChangeNotification</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dwCookie</span>: ::<span class='ident'>DWORD</span>
@@ -177,10 +178,10 @@
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IDXGIFactory4</span>(<span class='ident'>IDXGIFactory4Vtbl</span>): <span class='ident'>IDXGIFactory3</span>(<span class='ident'>IDXGIFactory3Vtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>EnumAdapterByLuid</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>AdapterLuid</span>: ::<span class='ident'>LUID</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvAdapter</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>AdapterLuid</span>: ::<span class='ident'>LUID</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvAdapter</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>EnumWarpAdapter</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvAdapter</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvAdapter</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
@@ -188,7 +189,7 @@
 <span class='ident'>interface</span> <span class='ident'>IDXGIOutput4</span>(<span class='ident'>IDXGIOutput4Vtbl</span>): <span class='ident'>IDXGIOutput3</span>(<span class='ident'>IDXGIOutput3Vtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>CheckOverlayColorSpaceSupport</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Format</span>: ::<span class='ident'>DXGI_FORMAT</span>, <span class='ident'>ColorSpace</span>: ::<span class='ident'>DXGI_COLOR_SPACE_TYPE</span>,
-        <span class='ident'>pConcernedDevice</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>pFlags</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
+        <span class='ident'>pConcernedDevice</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>pFlags</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
@@ -196,15 +197,15 @@
 <span class='ident'>interface</span> <span class='ident'>IDXGISwapChain3</span>(<span class='ident'>IDXGISwapChain3Vtbl</span>): <span class='ident'>IDXGISwapChain2</span>(<span class='ident'>IDXGISwapChain2Vtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetCurrentBackBufferIndex</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>,
     <span class='kw'>fn</span> <span class='ident'>CheckColorSpaceSupport</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ColorSpace</span>: ::<span class='ident'>DXGI_COLOR_SPACE_TYPE</span>, <span class='ident'>pColorSpaceSupport</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ColorSpace</span>: ::<span class='ident'>DXGI_COLOR_SPACE_TYPE</span>, <span class='ident'>pColorSpaceSupport</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>SetColorSpace1</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ColorSpace</span>: ::<span class='ident'>DXGI_COLOR_SPACE_TYPE</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>ResizeBuffers1</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>BufferCount</span>: ::<span class='ident'>UINT</span>, <span class='ident'>Width</span>: ::<span class='ident'>UINT</span>, <span class='ident'>Height</span>: ::<span class='ident'>UINT</span>, <span class='ident'>Format</span>: ::<span class='ident'>DXGI_FORMAT</span>,
-        <span class='ident'>SwapChainFlags</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pCreationNodeMask</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>,
-        <span class='ident'>ppPresentQueue</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>
+        <span class='ident'>SwapChainFlags</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pCreationNodeMask</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>,
+        <span class='ident'>ppPresentQueue</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 </pre>
@@ -264,11 +265,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

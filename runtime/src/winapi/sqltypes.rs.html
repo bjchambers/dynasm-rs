@@ -9,6 +9,7 @@
 
     <title>sqltypes.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -200,7 +201,7 @@
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLTRANSID</span> <span class='op'>=</span> <span class='ident'>SQLULEN</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLROWOFFSET</span> <span class='op'>=</span> <span class='ident'>SQLLEN</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLNUMERIC</span> <span class='op'>=</span> ::<span class='ident'>c_uchar</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLPOINTER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLPOINTER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLREAL</span> <span class='op'>=</span> ::<span class='ident'>c_float</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLSMALLINT</span> <span class='op'>=</span> ::<span class='ident'>c_short</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLUSMALLINT</span> <span class='op'>=</span> ::<span class='ident'>c_ushort</span>;
@@ -208,7 +209,7 @@
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLTIMESTAMP</span> <span class='op'>=</span> ::<span class='ident'>c_uchar</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLVARCHAR</span> <span class='op'>=</span> ::<span class='ident'>c_uchar</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLRETURN</span> <span class='op'>=</span> <span class='ident'>SQLSMALLINT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLHANDLE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLHANDLE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLHENV</span> <span class='op'>=</span> <span class='ident'>SQLHANDLE</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLHDBC</span> <span class='op'>=</span> <span class='ident'>SQLHANDLE</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLHSTMT</span> <span class='op'>=</span> <span class='ident'>SQLHANDLE</span>;
@@ -229,10 +230,10 @@
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SDOUBLE</span> <span class='op'>=</span> ::<span class='ident'>c_double</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LDOUBLE</span> <span class='op'>=</span> ::<span class='ident'>c_double</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SFLOAT</span> <span class='op'>=</span> ::<span class='ident'>c_float</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HENV</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HDBC</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HSTMT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HENV</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HDBC</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HSTMT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>RETCODE</span> <span class='op'>=</span> ::<span class='ident'>c_short</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SQLHWND</span> <span class='op'>=</span> ::<span class='ident'>HWND</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DATE_STRUCT</span> {
@@ -360,11 +361,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

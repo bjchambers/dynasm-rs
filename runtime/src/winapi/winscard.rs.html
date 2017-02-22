@@ -9,6 +9,7 @@
 
     <title>winscard.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -317,13 +318,13 @@
 <span class='doccomment'>//! Data Protection API Prototypes and Definitions</span>
 <span class='comment'>// This header file provides the definitions and symbols necessary for an</span>
 <span class='comment'>// Application or Smart Card Service Provider to access the Smartcard Subsystem.</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCBYTE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>BYTE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCBYTE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>BYTE</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SCARDCONTEXT</span> <span class='op'>=</span> ::<span class='ident'>ULONG_PTR</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARDCONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARDCONTEXT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSCARDCONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARDCONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARDCONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARDCONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSCARDCONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARDCONTEXT</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SCARDHANDLE</span> <span class='op'>=</span> ::<span class='ident'>ULONG_PTR</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARDHANDLE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARDHANDLE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSCARDHANDLE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARDHANDLE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARDHANDLE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARDHANDLE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSCARDHANDLE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARDHANDLE</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>SCARD_AUTOALLOCATE</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='op'>-</span><span class='number'>1i32</span> <span class='kw'>as</span> ::<span class='ident'>DWORD</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>SCARD_SCOPE_USER</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>SCARD_SCOPE_TERMINAL</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>1</span>;
@@ -339,8 +340,8 @@
     <span class='ident'>cbAtr</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgbAtr</span>: [::<span class='ident'>BYTE</span>; <span class='number'>36</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARD_READERSTATEA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_READERSTATEA</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSCARD_READERSTATEA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_READERSTATEA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARD_READERSTATEA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_READERSTATEA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSCARD_READERSTATEA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_READERSTATEA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>SCARD_READERSTATEW</span> {
     <span class='ident'>szReader</span>: ::<span class='ident'>LPCWSTR</span>,
     <span class='ident'>pvUserData</span>: ::<span class='ident'>LPVOID</span>,
@@ -349,8 +350,8 @@
     <span class='ident'>cbAtr</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgbAtr</span>: [::<span class='ident'>BYTE</span>; <span class='number'>36</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARD_READERSTATEW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_READERSTATEW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSCARD_READERSTATEW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_READERSTATEW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARD_READERSTATEW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_READERSTATEW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSCARD_READERSTATEW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_READERSTATEW</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SCARD_READERSTATE_A</span> <span class='op'>=</span> <span class='ident'>SCARD_READERSTATEA</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SCARD_READERSTATE_W</span> <span class='op'>=</span> <span class='ident'>SCARD_READERSTATEW</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARD_READERSTATE_A</span> <span class='op'>=</span> <span class='ident'>PSCARD_READERSTATEA</span>;
@@ -374,8 +375,8 @@
     <span class='ident'>rgbAtr</span>: [::<span class='ident'>BYTE</span>; <span class='number'>36</span>],
     <span class='ident'>rgbMask</span>: [::<span class='ident'>BYTE</span>; <span class='number'>36</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARD_ATRMASK</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_ATRMASK</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSCARD_ATRMASK</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_ATRMASK</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCARD_ATRMASK</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_ATRMASK</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSCARD_ATRMASK</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCARD_ATRMASK</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>SCARD_SHARE_EXCLUSIVE</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>SCARD_SHARE_SHARED</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>SCARD_SHARE_DIRECT</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>3</span>;
@@ -413,8 +414,8 @@
     <span class='ident'>dwShareMode</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwPreferredProtocols</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARD_SEARCH_CRITERIAA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARD_SEARCH_CRITERIAA</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARD_SEARCH_CRITERIAA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARD_SEARCH_CRITERIAA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARD_SEARCH_CRITERIAA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARD_SEARCH_CRITERIAA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARD_SEARCH_CRITERIAA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARD_SEARCH_CRITERIAA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>OPENCARD_SEARCH_CRITERIAW</span> {
     <span class='ident'>dwStructSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>lpstrGroupNames</span>: ::<span class='ident'>LPWSTR</span>,
@@ -430,8 +431,8 @@
     <span class='ident'>dwShareMode</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwPreferredProtocols</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARD_SEARCH_CRITERIAW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARD_SEARCH_CRITERIAW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARD_SEARCH_CRITERIAW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARD_SEARCH_CRITERIAW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARD_SEARCH_CRITERIAW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARD_SEARCH_CRITERIAW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARD_SEARCH_CRITERIAW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARD_SEARCH_CRITERIAW</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>OPENCARDNAME_EXA</span> {
     <span class='ident'>dwStructSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hSCardContext</span>: <span class='ident'>SCARDCONTEXT</span>,
@@ -452,8 +453,8 @@
     <span class='ident'>dwActiveProtocol</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hCardHandle</span>: <span class='ident'>SCARDHANDLE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARDNAME_EXA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAME_EXA</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARDNAME_EXA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAME_EXA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARDNAME_EXA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAME_EXA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARDNAME_EXA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAME_EXA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>OPENCARDNAME_EXW</span> {
     <span class='ident'>dwStructSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hSCardContext</span>: <span class='ident'>SCARDCONTEXT</span>,
@@ -474,8 +475,8 @@
     <span class='ident'>dwActiveProtocol</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hCardHandle</span>: <span class='ident'>SCARDHANDLE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARDNAME_EXW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAME_EXW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARDNAME_EXW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAME_EXW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARDNAME_EXW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAME_EXW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARDNAME_EXW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAME_EXW</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>OPENCARDNAMEA_EX</span> <span class='op'>=</span> <span class='ident'>OPENCARDNAME_EXA</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>OPENCARDNAMEW_EX</span> <span class='op'>=</span> <span class='ident'>OPENCARDNAME_EXW</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARDNAMEA_EX</span> <span class='op'>=</span> <span class='ident'>POPENCARDNAME_EXA</span>;
@@ -511,14 +512,14 @@
     <span class='ident'>READER_SEL_REQUEST</span>, <span class='ident'>ReaderAndContainerParameter</span>, <span class='ident'>SerialNumberParameter</span>,
     <span class='ident'>SerialNumberParameter_mut</span>, <span class='ident'>READER_SEL_REQUEST_SerialNumberParameter</span>
 );
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PREADER_SEL_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>READER_SEL_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PREADER_SEL_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>READER_SEL_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>READER_SEL_RESPONSE</span> {
     <span class='ident'>cbReaderNameOffset</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>cchReaderNameLength</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>cbCardNameOffset</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>cchCardNameLength</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PREADER_SEL_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>READER_SEL_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PREADER_SEL_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>READER_SEL_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>OPENCARDNAMEA</span> {
     <span class='ident'>dwStructSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hwndOwner</span>: ::<span class='ident'>HWND</span>,
@@ -544,8 +545,8 @@
     <span class='ident'>lpfnDisconnect</span>: <span class='ident'>LPOCNDSCPROC</span>,
     <span class='ident'>hCardHandle</span>: <span class='ident'>SCARDHANDLE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARDNAMEA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAMEA</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARDNAMEA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAMEA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARDNAMEA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAMEA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARDNAMEA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAMEA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>OPENCARDNAMEW</span> {
     <span class='ident'>dwStructSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hwndOwner</span>: ::<span class='ident'>HWND</span>,
@@ -571,8 +572,8 @@
     <span class='ident'>lpfnDisconnect</span>: <span class='ident'>LPOCNDSCPROC</span>,
     <span class='ident'>hCardHandle</span>: <span class='ident'>SCARDHANDLE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARDNAMEW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAMEW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARDNAMEW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAMEW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARDNAMEW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAMEW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOPENCARDNAMEW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENCARDNAMEW</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>OPENCARDNAME_A</span> <span class='op'>=</span> <span class='ident'>OPENCARDNAMEA</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>OPENCARDNAME_W</span> <span class='op'>=</span> <span class='ident'>OPENCARDNAMEW</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POPENCARDNAME_A</span> <span class='op'>=</span> <span class='ident'>POPENCARDNAMEA</span>;
@@ -638,11 +639,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

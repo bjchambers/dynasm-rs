@@ -9,6 +9,7 @@
 
     <title>tlhelp32.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -164,8 +165,8 @@
     <span class='ident'>th32HeapID</span>: :: <span class='ident'>ULONG_PTR</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHEAPLIST32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HEAPLIST32</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHEAPLIST32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HEAPLIST32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHEAPLIST32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HEAPLIST32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHEAPLIST32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HEAPLIST32</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>HF32_DEFAULT</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>HF32_SHARED</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>2</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>HEAPENTRY32</span> {
@@ -179,8 +180,8 @@
     <span class='ident'>th32ProcessID</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>th32HeapID</span>: ::<span class='ident'>ULONG_PTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHEAPENTRY32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HEAPENTRY32</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHEAPENTRY32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HEAPENTRY32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHEAPENTRY32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HEAPENTRY32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHEAPENTRY32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HEAPENTRY32</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>LF32_FIXED</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>LF32_FREE</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000002</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>LF32_MOVEABLE</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000004</span>;
@@ -196,8 +197,8 @@
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>szExeFile</span>: [::<span class='ident'>WCHAR</span>; ::<span class='ident'>MAX_PATH</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPROCESSENTRY32W</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESSENTRY32W</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPPROCESSENTRY32W</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESSENTRY32W</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPROCESSENTRY32W</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESSENTRY32W</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPPROCESSENTRY32W</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESSENTRY32W</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>PROCESSENTRY32</span> {
     <span class='ident'>dwSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>cntUsage</span>: ::<span class='ident'>DWORD</span>,
@@ -210,8 +211,8 @@
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>szExeFile</span>: [::<span class='ident'>CHAR</span>; ::<span class='ident'>MAX_PATH</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPROCESSENTRY32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESSENTRY32</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPPROCESSENTRY32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESSENTRY32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPROCESSENTRY32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESSENTRY32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPPROCESSENTRY32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PROCESSENTRY32</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>THREADENTRY32</span> {
     <span class='ident'>dwSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>cntUsage</span>: ::<span class='ident'>DWORD</span>,
@@ -221,36 +222,36 @@
     <span class='ident'>tpDeltaPri</span>: ::<span class='ident'>LONG</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTHREADENTRY32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>THREADENTRY32</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPTHREADENTRY32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>THREADENTRY32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTHREADENTRY32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>THREADENTRY32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPTHREADENTRY32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>THREADENTRY32</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>MODULEENTRY32W</span> {
     <span class='ident'>dwSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>th32ModuleID</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>th32ProcessID</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>GlblcntUsage</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>ProccntUsage</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>modBaseAddr</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>modBaseAddr</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>modBaseSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hModule</span>: ::<span class='ident'>HMODULE</span>,
     <span class='ident'>szModule</span>: [::<span class='ident'>WCHAR</span>; ::<span class='ident'>MAX_MODULE_NAME32</span> <span class='op'>+</span> <span class='number'>1</span>],
     <span class='ident'>szExePath</span>: [::<span class='ident'>WCHAR</span>; ::<span class='ident'>MAX_PATH</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMODULEENTRY32W</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MODULEENTRY32W</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMODULEENTRY32W</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MODULEENTRY32W</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMODULEENTRY32W</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MODULEENTRY32W</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMODULEENTRY32W</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MODULEENTRY32W</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>MODULEENTRY32</span> {
     <span class='ident'>dwSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>th32ModuleID</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>th32ProcessID</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>GlblcntUsage</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>ProccntUsage</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>modBaseAddr</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>modBaseAddr</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>modBaseSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hModule</span>: ::<span class='ident'>HMODULE</span>,
     <span class='ident'>szModule</span>: [::<span class='ident'>CHAR</span>; ::<span class='ident'>MAX_MODULE_NAME32</span> <span class='op'>+</span> <span class='number'>1</span>],
     <span class='ident'>szExePath</span>: [::<span class='ident'>CHAR</span>; ::<span class='ident'>MAX_PATH</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMODULEENTRY32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MODULEENTRY32</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMODULEENTRY32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MODULEENTRY32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMODULEENTRY32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MODULEENTRY32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMODULEENTRY32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MODULEENTRY32</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -308,11 +309,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

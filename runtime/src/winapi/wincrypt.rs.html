@@ -9,6 +9,7 @@
 
     <title>wincrypt.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -2627,18 +2628,18 @@
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CMS_KEY_INFO</span> {
     <span class='ident'>dwVersion</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Algid</span>: <span class='ident'>ALG_ID</span>,
-    <span class='ident'>pbOID</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbOID</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cbOID</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCMS_KEY_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CMS_KEY_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCMS_KEY_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CMS_KEY_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>HMAC_INFO</span> {
     <span class='ident'>HashAlgid</span>: <span class='ident'>ALG_ID</span>,
-    <span class='ident'>pbInnerString</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbInnerString</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cbInnerString</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pbOuterString</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbOuterString</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cbOuterString</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHMAC_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HMAC_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHMAC_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HMAC_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>SCHANNEL_ALG</span> {
     <span class='ident'>dwUse</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Algid</span>: <span class='ident'>ALG_ID</span>,
@@ -2646,7 +2647,7 @@
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwReserved</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCHANNEL_ALG</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCHANNEL_ALG</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSCHANNEL_ALG</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SCHANNEL_ALG</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>SCHANNEL_MAC_KEY</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000000</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>SCHANNEL_ENC_KEY</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>INTERNATIONAL_USAGE</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
@@ -2712,7 +2713,7 @@
     <span class='ident'>Type</span>: ::<span class='ident'>GUID</span>,
     <span class='ident'>Subtype</span>: ::<span class='ident'>GUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKEY_TYPE_SUBTYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KEY_TYPE_SUBTYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKEY_TYPE_SUBTYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KEY_TYPE_SUBTYPE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>CERT_FORTEZZA_DATA_PROP</span> {
     <span class='ident'>SerialNumber</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>8</span>],
     <span class='ident'>CertIndex</span>: ::<span class='ident'>c_int</span>,
@@ -2724,19 +2725,19 @@
     <span class='ident'>i</span>: ::<span class='ident'>c_uchar</span>,
     <span class='ident'>j</span>: ::<span class='ident'>c_uchar</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_RC4_KEY_STATE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_RC4_KEY_STATE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_RC4_KEY_STATE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_RC4_KEY_STATE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_DES_KEY_STATE</span> {
     <span class='ident'>Key</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>8</span>],
     <span class='ident'>IV</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>8</span>],
     <span class='ident'>Feedback</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>8</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DES_KEY_STATE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_DES_KEY_STATE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DES_KEY_STATE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_DES_KEY_STATE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_3DES_KEY_STATE</span> {
     <span class='ident'>Key</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>24</span>],
     <span class='ident'>IV</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>8</span>],
     <span class='ident'>Feedback</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>8</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_3DES_KEY_STATE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_3DES_KEY_STATE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_3DES_KEY_STATE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_3DES_KEY_STATE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_AES_128_KEY_STATE</span> {
     <span class='ident'>Key</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>16</span>],
     <span class='ident'>IV</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>16</span>],
@@ -2744,7 +2745,7 @@
     <span class='ident'>DecryptionState</span>: [[::<span class='ident'>c_uchar</span>; <span class='number'>16</span>]; <span class='number'>11</span>],
     <span class='ident'>Feedback</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>16</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_AES_128_KEY_STATE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_AES_128_KEY_STATE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_AES_128_KEY_STATE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_AES_128_KEY_STATE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_AES_256_KEY_STATE</span> {
     <span class='ident'>Key</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>32</span>],
     <span class='ident'>IV</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>16</span>],
@@ -2752,58 +2753,58 @@
     <span class='ident'>DecryptionState</span>: [[::<span class='ident'>c_uchar</span>; <span class='number'>16</span>]; <span class='number'>15</span>],
     <span class='ident'>Feedback</span>: [::<span class='ident'>c_uchar</span>; <span class='number'>16</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_AES_256_KEY_STATE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_AES_256_KEY_STATE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_AES_256_KEY_STATE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_AES_256_KEY_STATE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPTOAPI_BLOB</span> {
     <span class='ident'>cbData</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pbData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
 }}
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRYPT_INTEGER_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_INTEGER_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_INTEGER_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRYPT_UINT_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_UINT_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_UINT_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRYPT_OBJID_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_OBJID_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_OBJID_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CERT_NAME_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_NAME_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_NAME_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CERT_RDN_VALUE_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_RDN_VALUE_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_RDN_VALUE_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CERT_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRL_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRL_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRL_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>DATA_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDATA_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDATA_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRYPT_DATA_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DATA_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DATA_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRYPT_HASH_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_HASH_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_HASH_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRYPT_DIGEST_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DIGEST_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DIGEST_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRYPT_DER_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DER_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DER_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRYPT_ATTR_BLOB</span> <span class='op'>=</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ATTR_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ATTR_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPTOAPI_BLOB</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CMS_DH_KEY_INFO</span> {
     <span class='ident'>dwVersion</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Algid</span>: <span class='ident'>ALG_ID</span>,
     <span class='ident'>pszContentEncObjId</span>: ::<span class='ident'>LPSTR</span>,
     <span class='ident'>PubInfo</span>: <span class='ident'>CRYPT_DATA_BLOB</span>,
-    <span class='ident'>pReserved</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pReserved</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCMS_DH_KEY_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CMS_DH_KEY_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCMS_DH_KEY_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CMS_DH_KEY_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTPROV_OR_NCRYPT_KEY_HANDLE</span> <span class='op'>=</span> ::<span class='ident'>ULONG_PTR</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTPROV_LEGACY</span> <span class='op'>=</span> ::<span class='ident'>ULONG_PTR</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_BIT_BLOB</span> {
     <span class='ident'>cbData</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pbData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cUnusedBits</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_BIT_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_BIT_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_BIT_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_BIT_BLOB</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span> {
     <span class='ident'>pszObjId</span>: ::<span class='ident'>LPSTR</span>,
     <span class='ident'>Parameters</span>: <span class='ident'>CRYPT_OBJID_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ALGORITHM_IDENTIFIER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ALGORITHM_IDENTIFIER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>szOID_RSA</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;1.2.840.113549&quot;</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>szOID_PKCS</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;1.2.840.113549.1&quot;</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>szOID_RSA_HASH</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;1.2.840.113549.2&quot;</span>;
@@ -2958,41 +2959,41 @@
     <span class='ident'>dwAlgId</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pszObjId</span>: ::<span class='ident'>LPCSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_OBJID_TABLE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_OBJID_TABLE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_OBJID_TABLE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_OBJID_TABLE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_HASH_INFO</span> {
     <span class='ident'>HashAlgorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
     <span class='ident'>Hash</span>: <span class='ident'>CRYPT_HASH_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_HASH_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_HASH_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_HASH_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_HASH_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_EXTENSION</span> {
     <span class='ident'>pszObjId</span>: ::<span class='ident'>LPSTR</span>,
     <span class='ident'>fCritical</span>: ::<span class='ident'>BOOL</span>,
     <span class='ident'>Value</span>: <span class='ident'>CRYPT_OBJID_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_EXTENSION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_EXTENSION</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_EXTENSION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CERT_EXTENSION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_EXTENSION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_EXTENSION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_EXTENSION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CERT_EXTENSION</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_ATTRIBUTE_TYPE_VALUE</span> {
     <span class='ident'>pszObjId</span>: ::<span class='ident'>LPSTR</span>,
     <span class='ident'>Value</span>: <span class='ident'>CRYPT_OBJID_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ATTRIBUTE_TYPE_VALUE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ATTRIBUTE_TYPE_VALUE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ATTRIBUTE_TYPE_VALUE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ATTRIBUTE_TYPE_VALUE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_ATTRIBUTE</span> {
     <span class='ident'>pszObjId</span>: ::<span class='ident'>LPSTR</span>,
     <span class='ident'>cValue</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgValue</span>: <span class='ident'>PCRYPT_ATTR_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ATTRIBUTE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ATTRIBUTE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ATTRIBUTE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ATTRIBUTE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_ATTRIBUTES</span> {
     <span class='ident'>cAttr</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgAttr</span>: <span class='ident'>PCRYPT_ATTRIBUTE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ATTRIBUTES</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ATTRIBUTES</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ATTRIBUTES</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ATTRIBUTES</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_RDN_ATTR</span> {
     <span class='ident'>pszObjId</span>: ::<span class='ident'>LPSTR</span>,
     <span class='ident'>dwValueType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Value</span>: <span class='ident'>CERT_RDN_VALUE_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_RDN_ATTR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_RDN_ATTR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_RDN_ATTR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_RDN_ATTR</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>szOID_COMMON_NAME</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;2.5.4.3&quot;</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>szOID_SUR_NAME</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;2.5.4.4&quot;</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>szOID_DEVICE_SERIAL_NUMBER</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;2.5.4.5&quot;</span>;
@@ -3076,22 +3077,22 @@
     <span class='ident'>cRDNAttr</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgRDNAttr</span>: <span class='ident'>PCERT_RDN_ATTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_RDN</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_RDN</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_RDN</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_RDN</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_NAME_INFO</span> {
     <span class='ident'>cRDN</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgRDN</span>: <span class='ident'>PCERT_RDN</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_NAME_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_NAME_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_NAME_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_NAME_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_NAME_VALUE</span> {
     <span class='ident'>dwValueType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Value</span>: <span class='ident'>CERT_RDN_VALUE_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_NAME_VALUE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_NAME_VALUE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_NAME_VALUE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_NAME_VALUE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_PUBLIC_KEY_INFO</span> {
     <span class='ident'>Algorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
     <span class='ident'>PublicKey</span>: <span class='ident'>CRYPT_BIT_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_PUBLIC_KEY_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_PUBLIC_KEY_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_PUBLIC_KEY_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_PUBLIC_KEY_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_RSA_PUBLIC_KEY_OBJID</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='ident'>szOID_RSA_RSA</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_DEFAULT_OID_PUBLIC_KEY_SIGN</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='ident'>szOID_RSA_RSA</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_DEFAULT_OID_PUBLIC_KEY_XCHG</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='ident'>szOID_RSA_RSA</span>;
@@ -3101,7 +3102,7 @@
     <span class='ident'>szCurveOid</span>: ::<span class='ident'>LPSTR</span>,
     <span class='ident'>PublicKey</span>: <span class='ident'>CRYPT_BIT_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ECC_PRIVATE_KEY_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ECC_PRIVATE_KEY_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ECC_PRIVATE_KEY_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ECC_PRIVATE_KEY_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CRYPT_ECC_PRIVATE_KEY_INFO_v1</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_PRIVATE_KEY_INFO</span> {
     <span class='ident'>Version</span>: ::<span class='ident'>DWORD</span>,
@@ -3109,22 +3110,22 @@
     <span class='ident'>PrivateKey</span>: <span class='ident'>CRYPT_DER_BLOB</span>,
     <span class='ident'>pAttributes</span>: <span class='ident'>PCRYPT_ATTRIBUTES</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_PRIVATE_KEY_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_PRIVATE_KEY_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_PRIVATE_KEY_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_PRIVATE_KEY_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_ENCRYPTED_PRIVATE_KEY_INFO</span> {
     <span class='ident'>EncryptionAlgorithm</span>: ::<span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
     <span class='ident'>EncryptedPrivateKey</span>: ::<span class='ident'>CRYPT_DATA_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ENCRYPTED_PRIVATE_KEY_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ENCRYPTED_PRIVATE_KEY_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ENCRYPTED_PRIVATE_KEY_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ENCRYPTED_PRIVATE_KEY_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DECRYPT_PRIVATE_KEY_FUNC</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
     <span class='ident'>Algorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>, <span class='ident'>EncryptedPrivateKey</span>: <span class='ident'>CRYPT_DATA_BLOB</span>,
-    <span class='ident'>pbClearTextKey</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>, <span class='ident'>pcbClearTextKey</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>, <span class='ident'>pVoidDecryptFunc</span>: ::<span class='ident'>LPVOID</span>,
+    <span class='ident'>pbClearTextKey</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>, <span class='ident'>pcbClearTextKey</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>, <span class='ident'>pVoidDecryptFunc</span>: ::<span class='ident'>LPVOID</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ENCRYPT_PRIVATE_KEY_FUNC</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>Algorithm</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>, <span class='ident'>pClearTextPrivateKey</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_DATA_BLOB</span>,
-    <span class='ident'>pbEncryptedKey</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>, <span class='ident'>pcbEncryptedKey</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>, <span class='ident'>pVoidEncryptFunc</span>: ::<span class='ident'>LPVOID</span>,
+    <span class='ident'>Algorithm</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>, <span class='ident'>pClearTextPrivateKey</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_DATA_BLOB</span>,
+    <span class='ident'>pbEncryptedKey</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>, <span class='ident'>pcbEncryptedKey</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>, <span class='ident'>pVoidEncryptFunc</span>: ::<span class='ident'>LPVOID</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_RESOLVE_HCRYPTPROV_FUNC</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>pPrivateKeyInfo</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_PRIVATE_KEY_INFO</span>, <span class='ident'>phCryptProv</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCRYPTPROV</span>,
+    <span class='ident'>pPrivateKeyInfo</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_PRIVATE_KEY_INFO</span>, <span class='ident'>phCryptProv</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCRYPTPROV</span>,
     <span class='ident'>pVoidResolveFunc</span>: ::<span class='ident'>LPVOID</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>CRYPT_PKCS8_IMPORT_PARAMS</span> {
@@ -3134,9 +3135,9 @@
     <span class='ident'>pDecryptPrivateKeyFunc</span>: <span class='ident'>PCRYPT_DECRYPT_PRIVATE_KEY_FUNC</span>,
     <span class='ident'>pVoidDecryptFunc</span>: ::<span class='ident'>LPVOID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_PKCS8_IMPORT_PARAMS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_PKCS8_IMPORT_PARAMS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_PKCS8_IMPORT_PARAMS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_PKCS8_IMPORT_PARAMS</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CRYPT_PRIVATE_KEY_BLOB_AND_PARAMS</span> <span class='op'>=</span> <span class='ident'>CRYPT_PKCS8_IMPORT_PARAMS</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPCRYPT_PRIVATE_KEY_BLOB_AND_PARAMS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_PKCS8_IMPORT_PARAMS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPCRYPT_PRIVATE_KEY_BLOB_AND_PARAMS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_PKCS8_IMPORT_PARAMS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>CRYPT_PKCS8_EXPORT_PARAMS</span> {
     <span class='ident'>hCryptProv</span>: <span class='ident'>HCRYPTPROV</span>,
     <span class='ident'>dwKeySpec</span>: ::<span class='ident'>DWORD</span>,
@@ -3144,7 +3145,7 @@
     <span class='ident'>pEncryptPrivateKeyFunc</span>: <span class='ident'>PCRYPT_ENCRYPT_PRIVATE_KEY_FUNC</span>,
     <span class='ident'>pVoidEncryptFunc</span>: ::<span class='ident'>LPVOID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_PKCS8_EXPORT_PARAMS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_PKCS8_EXPORT_PARAMS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_PKCS8_EXPORT_PARAMS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_PKCS8_EXPORT_PARAMS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_INFO</span> {
     <span class='ident'>dwVersion</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>SerialNumber</span>: <span class='ident'>CRYPT_INTEGER_BLOB</span>,
@@ -3159,7 +3160,7 @@
     <span class='ident'>cExtension</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgExtension</span>: <span class='ident'>PCERT_EXTENSION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_V1</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_V2</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_V3</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>2</span>;
@@ -3180,7 +3181,7 @@
     <span class='ident'>cExtension</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgExtension</span>: <span class='ident'>PCERT_EXTENSION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRL_ENTRY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRL_ENTRY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRL_ENTRY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRL_ENTRY</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRL_INFO</span> {
     <span class='ident'>dwVersion</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>SignatureAlgorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
@@ -3192,7 +3193,7 @@
     <span class='ident'>cExtension</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgExtension</span>: <span class='ident'>PCERT_EXTENSION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRL_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRL_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRL_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRL_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CRL_V1</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CRL_V2</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_BUNDLE_CERTIFICATE</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0</span>;
@@ -3200,14 +3201,14 @@
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_OR_CRL_BLOB</span> {
     <span class='ident'>dwChoice</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>cbEncoded</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pbEncoded</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbEncoded</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_OR_CRL_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_OR_CRL_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_OR_CRL_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_OR_CRL_BLOB</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_OR_CRL_BUNDLE</span> {
     <span class='ident'>cItem</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgItem</span>: <span class='ident'>PCERT_OR_CRL_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_OR_CRL_BUNDLE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_OR_CRL_BUNDLE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_OR_CRL_BUNDLE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_OR_CRL_BUNDLE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_REQUEST_INFO</span> {
     <span class='ident'>dwVersion</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Subject</span>: <span class='ident'>CERT_NAME_BLOB</span>,
@@ -3215,36 +3216,36 @@
     <span class='ident'>cAttribute</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgAttribute</span>: <span class='ident'>PCRYPT_ATTRIBUTE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REQUEST_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REQUEST_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REQUEST_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REQUEST_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_REQUEST_V1</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_KEYGEN_REQUEST_INFO</span> {
     <span class='ident'>dwVersion</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>SubjectPublicKeyInfo</span>: <span class='ident'>CERT_PUBLIC_KEY_INFO</span>,
     <span class='ident'>pwszChallengeString</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_KEYGEN_REQUEST_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_KEYGEN_REQUEST_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_KEYGEN_REQUEST_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_KEYGEN_REQUEST_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_KEYGEN_REQUEST_V1</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_SIGNED_CONTENT_INFO</span> {
     <span class='ident'>ToBeSigned</span>: <span class='ident'>CRYPT_DER_BLOB</span>,
     <span class='ident'>SignatureAlgorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
     <span class='ident'>Signature</span>: <span class='ident'>CRYPT_BIT_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SIGNED_CONTENT_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SIGNED_CONTENT_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SIGNED_CONTENT_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SIGNED_CONTENT_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CTL_USAGE</span> {
     <span class='ident'>cUsageIdentifier</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rgpszUsageIdentifier</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPSTR</span>,
+    <span class='ident'>rgpszUsageIdentifier</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_USAGE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_USAGE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_USAGE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_USAGE</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CERT_ENHKEY_USAGE</span> <span class='op'>=</span> <span class='ident'>CTL_USAGE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_ENHKEY_USAGE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_ENHKEY_USAGE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCTL_USAGE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CTL_USAGE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_ENHKEY_USAGE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CERT_ENHKEY_USAGE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_ENHKEY_USAGE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_ENHKEY_USAGE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCTL_USAGE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CTL_USAGE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_ENHKEY_USAGE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CERT_ENHKEY_USAGE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CTL_ENTRY</span> {
     <span class='ident'>SubjectIdentifier</span>: <span class='ident'>CRYPT_DATA_BLOB</span>,
     <span class='ident'>cAttribute</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgAttribute</span>: <span class='ident'>PCRYPT_ATTRIBUTE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_ENTRY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_ENTRY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_ENTRY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_ENTRY</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CTL_INFO</span> {
     <span class='ident'>dwVersion</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>SubjectUsage</span>: <span class='ident'>CTL_USAGE</span>,
@@ -3258,7 +3259,7 @@
     <span class='ident'>cExtension</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgExtension</span>: <span class='ident'>PCERT_EXTENSION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CTL_V1</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_TIME_STAMP_REQUEST_INFO</span> {
     <span class='ident'>pszTimeStampAlgorithm</span>: ::<span class='ident'>LPSTR</span>,
@@ -3267,18 +3268,18 @@
     <span class='ident'>cAttribute</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgAttribute</span>: <span class='ident'>PCRYPT_ATTRIBUTE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_TIME_STAMP_REQUEST_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_TIME_STAMP_REQUEST_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_TIME_STAMP_REQUEST_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_TIME_STAMP_REQUEST_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_ENROLLMENT_NAME_VALUE_PAIR</span> {
     <span class='ident'>pwszName</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>pwszValue</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ENROLLMENT_NAME_VALUE_PAIR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ENROLLMENT_NAME_VALUE_PAIR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ENROLLMENT_NAME_VALUE_PAIR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ENROLLMENT_NAME_VALUE_PAIR</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_CSP_PROVIDER</span> {
     <span class='ident'>dwKeySpec</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pwszProviderName</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>Signature</span>: <span class='ident'>CRYPT_BIT_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_CSP_PROVIDER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_CSP_PROVIDER</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_CSP_PROVIDER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_CSP_PROVIDER</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_ENCODING_TYPE_MASK</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x0000FFFF</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CMSG_ENCODING_TYPE_MASK</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0xFFFF0000</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CRYPT_ASN_ENCODING</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
@@ -3306,7 +3307,7 @@
     <span class='ident'>pfnAlloc</span>: <span class='ident'>PFN_CRYPT_ALLOC</span>,
     <span class='ident'>pfnFree</span>: <span class='ident'>PFN_CRYPT_FREE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ENCODE_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ENCODE_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ENCODE_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_ENCODE_PARA</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CRYPT_ENCODE_NO_SIGNATURE_BYTE_REVERSAL_FLAG</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x8</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CRYPT_ENCODE_ALLOC_FLAG</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x8000</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CRYPT_UNICODE_NAME_ENCODE_ENABLE_T61_UNICODE_FLAG</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span>
@@ -3327,7 +3328,7 @@
     <span class='ident'>pfnAlloc</span>: <span class='ident'>PFN_CRYPT_ALLOC</span>,
     <span class='ident'>pfnFree</span>: <span class='ident'>PFN_CRYPT_FREE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DECODE_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_DECODE_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DECODE_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_DECODE_PARA</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CRYPT_DECODE_NOCOPY_FLAG</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CRYPT_DECODE_TO_BE_SIGNED_FLAG</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CRYPT_DECODE_SHARE_OID_STRING_FLAG</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x4</span>;
@@ -3571,39 +3572,39 @@
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>szOID_PKIX_POLICY_QUALIFIER_USERNOTICE</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;1.3.6.1.5.5.7.2.2&quot;</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>szOID_ROOT_PROGRAM_FLAGS</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;1.3.6.1.4.1.311.60.1.1&quot;</span>;
 <span class='comment'>//6992</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTMSG</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTMSG</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
 <span class='comment'>//9353</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCERTSTORE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCERTSTORE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_CONTEXT</span> {
     <span class='ident'>dwCertEncodingType</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pbCertEncoded</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbCertEncoded</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cbCertEncoded</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pCertInfo</span>: ::<span class='ident'>PCERT_INFO</span>,
     <span class='ident'>hCertStore</span>: <span class='ident'>HCERTSTORE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CONTEXT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CERT_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CERT_CONTEXT</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRL_CONTEXT</span> {
     <span class='ident'>dwCertEncodingType</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pbCrlEncoded</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbCrlEncoded</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cbCrlEncoded</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pCrlInfo</span>: ::<span class='ident'>PCRL_INFO</span>,
     <span class='ident'>hCertStore</span>: <span class='ident'>HCERTSTORE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRL_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRL_CONTEXT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCRL_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CRL_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRL_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRL_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCRL_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CRL_CONTEXT</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CTL_CONTEXT</span> {
     <span class='ident'>dwMsgAndCertEncodingType</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pbCtlEncoded</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbCtlEncoded</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cbCtlEncoded</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pCtlInfo</span>: ::<span class='ident'>PCTL_INFO</span>,
     <span class='ident'>hCertStore</span>: <span class='ident'>HCERTSTORE</span>,
     <span class='ident'>hCryptMsg</span>: <span class='ident'>HCRYPTMSG</span>,
-    <span class='ident'>pbCtlContent</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbCtlContent</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cbCtlContent</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_CONTEXT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCTL_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CTL_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCTL_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CTL_CONTEXT</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_STORE_PROV_MSG</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_STORE_PROV_MEMORY</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_STORE_PROV_FILE</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>3</span>;
@@ -3967,11 +3968,11 @@
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>szOID_ROOT_PROGRAM_NO_OCSP_FAILOVER_TO_CRL</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;1.3.6.1.4.1.311.60.3.3&quot;</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_KEY_PROV_PARAM</span> {
     <span class='ident'>dwParam</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pbData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cbData</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_KEY_PROV_PARAM</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_KEY_PROV_PARAM</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_KEY_PROV_PARAM</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_KEY_PROV_PARAM</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_KEY_PROV_INFO</span> {
     <span class='ident'>pwszContainerName</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>pwszProvName</span>: ::<span class='ident'>LPWSTR</span>,
@@ -3981,19 +3982,19 @@
     <span class='ident'>rgProvParam</span>: <span class='ident'>PCRYPT_KEY_PROV_PARAM</span>,
     <span class='ident'>dwKeySpec</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_KEY_PROV_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_KEY_PROV_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_KEY_PROV_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_KEY_PROV_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_SET_KEY_PROV_HANDLE_PROP_ID</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_SET_KEY_CONTEXT_PROP_ID</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_NCRYPT_KEY_SPEC</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0xFFFFFFFF</span>;
 <span class='comment'>//20213</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCERT_SERVER_OCSP_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCERT_SERVER_OCSP_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_SERVER_OCSP_RESPONSE_CONTEXT</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pbEncodedOcspResponse</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbEncodedOcspResponse</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cbEncodedOcspResponse</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SERVER_OCSP_RESPONSE_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SERVER_OCSP_RESPONSE_CONTEXT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_SERVER_OCSP_RESPONSE_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CERT_SERVER_OCSP_RESPONSE_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SERVER_OCSP_RESPONSE_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SERVER_OCSP_RESPONSE_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_SERVER_OCSP_RESPONSE_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CERT_SERVER_OCSP_RESPONSE_CONTEXT</span>;
 
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_CHAIN_CACHE_END_CERT</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CERT_CHAIN_THREAD_STORE_SYNC</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000002</span>;
@@ -4008,7 +4009,7 @@
     <span class='ident'>hRestrictedTrust</span>: <span class='ident'>HCERTSTORE</span>,
     <span class='ident'>hRestrictedOther</span>: <span class='ident'>HCERTSTORE</span>,
     <span class='ident'>cAdditionalStore</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rghAdditionalStore</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCERTSTORE</span>,
+    <span class='ident'>rghAdditionalStore</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCERTSTORE</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwUrlRetrievalTimeout</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>MaximumCachedCertificates</span>: ::<span class='ident'>DWORD</span>,
@@ -4019,25 +4020,25 @@
     <span class='comment'>// #if (NTDDI_VERSION &gt;= NTDDI_WIN8)</span>
     <span class='ident'>dwExclusiveFlags</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_ENGINE_CONFIG</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_ENGINE_CONFIG</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_ENGINE_CONFIG</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_ENGINE_CONFIG</span>;
 <span class='comment'>// 18748</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCERTCHAINENGINE</span> <span class='op'>=</span> ::<span class='ident'>HANDLE</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_CERT_CREATE_CONTEXT_SORT_FUNC</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>cbTotalEncoded</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>cbRemainEncoded</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>cEntry</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pvSort</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+    <span class='ident'>cbTotalEncoded</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>cbRemainEncoded</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>cEntry</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pvSort</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>CERT_CREATE_CONTEXT_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pfnFree</span>: <span class='ident'>PFN_CRYPT_FREE</span>,
-    <span class='ident'>pvFree</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvFree</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
     <span class='ident'>pfnSort</span>: <span class='ident'>PFN_CERT_CREATE_CONTEXT_SORT_FUNC</span>,
-    <span class='ident'>pvSort</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvSort</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CREATE_CONTEXT_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CREATE_CONTEXT_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CREATE_CONTEXT_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CREATE_CONTEXT_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_EXTENSIONS</span> {
     <span class='ident'>cExtension</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgExtension</span>: <span class='ident'>PCERT_EXTENSION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_EXTENSIONS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_EXTENSIONS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_EXTENSIONS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_EXTENSIONS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_REVOCATION_CRL_INFO</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pBaseCrlContext</span>: <span class='ident'>PCCRL_CONTEXT</span>,
@@ -4045,12 +4046,12 @@
     <span class='ident'>pCrlEntry</span>: <span class='ident'>PCRL_ENTRY</span>,
     <span class='ident'>fDeltaCrlEntry</span>: ::<span class='ident'>BOOL</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REVOCATION_CRL_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REVOCATION_CRL_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REVOCATION_CRL_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REVOCATION_CRL_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_TRUST_STATUS</span> {
     <span class='ident'>dwErrorStatus</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwInfoStatus</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_TRUST_STATUS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_TRUST_STATUS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_TRUST_STATUS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_TRUST_STATUS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_REVOCATION_INFO</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwRevocationResult</span>: ::<span class='ident'>DWORD</span>,
@@ -4060,13 +4061,13 @@
     <span class='ident'>dwFreshnessTime</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pCrlInfo</span>: <span class='ident'>PCERT_REVOCATION_CRL_INFO</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REVOCATION_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REVOCATION_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REVOCATION_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REVOCATION_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_TRUST_LIST_INFO</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pCtlEntry</span>: <span class='ident'>PCTL_ENTRY</span>,
     <span class='ident'>pCtlContext</span>: <span class='ident'>PCCTL_CONTEXT</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_TRUST_LIST_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_TRUST_LIST_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_TRUST_LIST_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_TRUST_LIST_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_CHAIN_ELEMENT</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pCertContext</span>: <span class='ident'>PCCERT_CONTEXT</span>,
@@ -4076,33 +4077,33 @@
     <span class='ident'>pApplicationUsage</span>: <span class='ident'>PCERT_ENHKEY_USAGE</span>,
     <span class='ident'>pwszExtendedErrorInfo</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_ELEMENT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_ELEMENT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_CHAIN_ELEMENT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CERT_CHAIN_ELEMENT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_ELEMENT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_ELEMENT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_CHAIN_ELEMENT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CERT_CHAIN_ELEMENT</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_SIMPLE_CHAIN</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>TrustStatus</span>: <span class='ident'>CERT_TRUST_STATUS</span>,
     <span class='ident'>cElement</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rgpElement</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCERT_CHAIN_ELEMENT</span>,
+    <span class='ident'>rgpElement</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCERT_CHAIN_ELEMENT</span>,
     <span class='ident'>pTrustListInfo</span>: <span class='ident'>PCERT_TRUST_LIST_INFO</span>,
     <span class='ident'>fHasRevocationFreshnessTime</span>: ::<span class='ident'>BOOL</span>,
     <span class='ident'>dwRevocationFreshnessTime</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SIMPLE_CHAIN</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SIMPLE_CHAIN</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_SIMPLE_CHAIN</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CERT_SIMPLE_CHAIN</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SIMPLE_CHAIN</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SIMPLE_CHAIN</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_SIMPLE_CHAIN</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CERT_SIMPLE_CHAIN</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_CHAIN_CONTEXT</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>TrustStatus</span>: <span class='ident'>CERT_TRUST_STATUS</span>,
     <span class='ident'>cChain</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rgpChain</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCERT_SIMPLE_CHAIN</span>,
+    <span class='ident'>rgpChain</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCERT_SIMPLE_CHAIN</span>,
     <span class='ident'>cLowerQualityChainContext</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rgpLowerQualityChainContext</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCCERT_CHAIN_CONTEXT</span>,
+    <span class='ident'>rgpLowerQualityChainContext</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCCERT_CHAIN_CONTEXT</span>,
     <span class='ident'>fHasRevocationFreshnessTime</span>: ::<span class='ident'>BOOL</span>,
     <span class='ident'>dwRevocationFreshnessTime</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwCreateFlags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>ChainId</span>: ::<span class='ident'>GUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_CONTEXT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_CHAIN_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CERT_CHAIN_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_CHAIN_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CERT_CHAIN_CONTEXT</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_PHYSICAL_STORE_INFO</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pszOpenStoreProvider</span>: ::<span class='ident'>LPSTR</span>,
@@ -4112,50 +4113,50 @@
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwPriority</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_PHYSICAL_STORE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_PHYSICAL_STORE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_PHYSICAL_STORE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_PHYSICAL_STORE_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_SYSTEM_STORE_INFO</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SYSTEM_STORE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SYSTEM_STORE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SYSTEM_STORE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SYSTEM_STORE_INFO</span>;
 <span class='comment'>//13401</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_CERT_ENUM_SYSTEM_STORE_LOCATION</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>pwszStoreLocation</span>: ::<span class='ident'>LPCWSTR</span>, <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pvReserved</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>pvArg</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pwszStoreLocation</span>: ::<span class='ident'>LPCWSTR</span>, <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pvReserved</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>pvArg</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='comment'>//13408</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_CERT_ENUM_SYSTEM_STORE</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>pvSystemStore</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pStoreInfo</span>: <span class='ident'>PCERT_SYSTEM_STORE_INFO</span>,
-    <span class='ident'>pvReserved</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>pvArg</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvSystemStore</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pStoreInfo</span>: <span class='ident'>PCERT_SYSTEM_STORE_INFO</span>,
+    <span class='ident'>pvReserved</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>pvArg</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='comment'>//13416</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_CERT_ENUM_PHYSICAL_STORE</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>pvSystemStore</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pwszStoreName</span>: ::<span class='ident'>LPCWSTR</span>,
-    <span class='ident'>pStoreInfo</span>: <span class='ident'>PCERT_PHYSICAL_STORE_INFO</span>, <span class='ident'>pvReserved</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>pvArg</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvSystemStore</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pwszStoreName</span>: ::<span class='ident'>LPCWSTR</span>,
+    <span class='ident'>pStoreInfo</span>: <span class='ident'>PCERT_PHYSICAL_STORE_INFO</span>, <span class='ident'>pvReserved</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>pvArg</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_STRONG_SIGN_SERIALIZED_INFO</span> {
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pwszCNGSignHashAlgids</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>pwszCNGPubKeyMinBitLengths</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_STRONG_SIGN_SERIALIZED_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_STRONG_SIGN_SERIALIZED_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_STRONG_SIGN_SERIALIZED_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_STRONG_SIGN_SERIALIZED_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_STRONG_SIGN_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwInfoChoice</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pvInfo</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvInfo</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>(
     <span class='ident'>CERT_STRONG_SIGN_PARA</span>, <span class='ident'>pvInfo</span>, <span class='ident'>pSerializedInfo</span>, <span class='ident'>pSerializedInfo_mut</span>,
     <span class='ident'>PCERT_STRONG_SIGN_SERIALIZED_INFO</span>
 );
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>CERT_STRONG_SIGN_PARA</span>, <span class='ident'>pvInfo</span>, <span class='ident'>pszOID</span>, <span class='ident'>pszOID_mut</span>, ::<span class='ident'>LPSTR</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_STRONG_SIGN_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_STRONG_SIGN_PARA</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_STRONG_SIGN_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CERT_STRONG_SIGN_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_STRONG_SIGN_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_STRONG_SIGN_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_STRONG_SIGN_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CERT_STRONG_SIGN_PARA</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>USAGE_MATCH_TYPE_AND</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000000</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>USAGE_MATCH_TYPE_OR</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_USAGE_MATCH</span> {
     <span class='ident'>dwType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Usage</span>: <span class='ident'>CERT_ENHKEY_USAGE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_USAGE_MATCH</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_USAGE_MATCH</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_USAGE_MATCH</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_USAGE_MATCH</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_CHAIN_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>RequestedUsage</span>: <span class='ident'>CERT_USAGE_MATCH</span>,
@@ -4167,7 +4168,7 @@
     <span class='ident'>pStrongSignPara</span>: <span class='ident'>PCCERT_STRONG_SIGN_PARA</span>,
     <span class='ident'>dwStrongSignFlags</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_SELECT_CHAIN_PARA</span> {
     <span class='ident'>hChainEngine</span>: <span class='ident'>HCERTCHAINENGINE</span>,
     <span class='ident'>pTime</span>: ::<span class='ident'>PFILETIME</span>,
@@ -4175,48 +4176,48 @@
     <span class='ident'>pChainPara</span>: <span class='ident'>PCERT_CHAIN_PARA</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SELECT_CHAIN_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SELECT_CHAIN_PARA</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_SELECT_CHAIN_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CERT_SELECT_CHAIN_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SELECT_CHAIN_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SELECT_CHAIN_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_SELECT_CHAIN_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CERT_SELECT_CHAIN_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_SELECT_CRITERIA</span> {
     <span class='ident'>dwType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>cPara</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>ppPara</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>ppPara</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SELECT_CRITERIA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SELECT_CRITERIA</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_SELECT_CRITERIA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CERT_SELECT_CRITERIA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_SELECT_CRITERIA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_SELECT_CRITERIA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCERT_SELECT_CRITERIA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CERT_SELECT_CRITERIA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CTL_VERIFY_USAGE_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>ListIdentifier</span>: <span class='ident'>CRYPT_DATA_BLOB</span>,
     <span class='ident'>cCtlStore</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rghCtlStore</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCERTSTORE</span>,
+    <span class='ident'>rghCtlStore</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCERTSTORE</span>,
     <span class='ident'>cSignerStore</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rghSignerStore</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCERTSTORE</span>,
+    <span class='ident'>rghSignerStore</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCERTSTORE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_VERIFY_USAGE_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_VERIFY_USAGE_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_VERIFY_USAGE_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_VERIFY_USAGE_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CTL_VERIFY_USAGE_STATUS</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwError</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>ppCtl</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCCTL_CONTEXT</span>,
+    <span class='ident'>ppCtl</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCCTL_CONTEXT</span>,
     <span class='ident'>dwCtlEntryIndex</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>ppSigner</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCCERT_CONTEXT</span>,
+    <span class='ident'>ppSigner</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCCERT_CONTEXT</span>,
     <span class='ident'>dwSignerIndex</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_VERIFY_USAGE_STATUS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_VERIFY_USAGE_STATUS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCTL_VERIFY_USAGE_STATUS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CTL_VERIFY_USAGE_STATUS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_CHAIN_POLICY_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pvExtraPolicyPara</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvExtraPolicyPara</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_POLICY_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_POLICY_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_POLICY_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_POLICY_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_CHAIN_POLICY_STATUS</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwError</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>lChainIndex</span>: ::<span class='ident'>LONG</span>,
     <span class='ident'>lElementIndex</span>: ::<span class='ident'>LONG</span>,
-    <span class='ident'>pvExtraPolicyStatus</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvExtraPolicyStatus</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_POLICY_STATUS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_POLICY_STATUS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_CHAIN_POLICY_STATUS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_CHAIN_POLICY_STATUS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_REVOCATION_CHAIN_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hChainEngine</span>: <span class='ident'>HCERTCHAINENGINE</span>,
@@ -4226,12 +4227,12 @@
     <span class='ident'>pftCurrentTime</span>: ::<span class='ident'>LPFILETIME</span>,
     <span class='ident'>pftCacheResync</span>: ::<span class='ident'>LPFILETIME</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REVOCATION_CHAIN_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REVOCATION_CHAIN_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REVOCATION_CHAIN_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REVOCATION_CHAIN_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_REVOCATION_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pIssuerCert</span>: <span class='ident'>PCCERT_CONTEXT</span>,
     <span class='ident'>cCertStore</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rgCertStore</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCERTSTORE</span>,
+    <span class='ident'>rgCertStore</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCERTSTORE</span>,
     <span class='ident'>hCrlStore</span>: <span class='ident'>HCERTSTORE</span>,
     <span class='ident'>pftTimeToUse</span>: ::<span class='ident'>LPFILETIME</span>,
     <span class='ident'>dwUrlRetrievalTimeout</span>: ::<span class='ident'>DWORD</span>,
@@ -4242,7 +4243,7 @@
     <span class='ident'>pftCacheResync</span>: ::<span class='ident'>LPFILETIME</span>,
     <span class='ident'>pChainPara</span>: <span class='ident'>PCERT_REVOCATION_CHAIN_PARA</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REVOCATION_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REVOCATION_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REVOCATION_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REVOCATION_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CERT_REVOCATION_STATUS</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwIndex</span>: ::<span class='ident'>DWORD</span>,
@@ -4251,30 +4252,30 @@
     <span class='ident'>fHasFreshnessTime</span>: ::<span class='ident'>BOOL</span>,
     <span class='ident'>dwFreshnessTime</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REVOCATION_STATUS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REVOCATION_STATUS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCERT_REVOCATION_STATUS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CERT_REVOCATION_STATUS</span>;
 <span class='comment'>//16990</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTASYNC</span> <span class='op'>=</span> ::<span class='ident'>HANDLE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHCRYPTASYNC</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>HANDLE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHCRYPTASYNC</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>HANDLE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_ENCRYPT_MESSAGE_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwMsgEncodingType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hCryptProv</span>: <span class='ident'>HCRYPTPROV_LEGACY</span>,
     <span class='ident'>ContentEncryptionAlgorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
-    <span class='ident'>pvEncryptionAuxInfo</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvEncryptionAuxInfo</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwInnerContentType</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ENCRYPT_MESSAGE_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_DECRYPT_MESSAGE_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_ENCRYPT_MESSAGE_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_DECRYPT_MESSAGE_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_DECRYPT_MESSAGE_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwMsgAndCertEncodingType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>cCertStore</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rghCertStore</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCERTSTORE</span>,
+    <span class='ident'>rghCertStore</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HCERTSTORE</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DECRYPT_MESSAGE_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_DECRYPT_MESSAGE_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_DECRYPT_MESSAGE_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_DECRYPT_MESSAGE_PARA</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_CRYPT_GET_SIGNER_CERTIFICATE</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>pvGetArg</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>dwCertEncodingType</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pSignerId</span>: <span class='ident'>PCERT_INFO</span>,
+    <span class='ident'>pvGetArg</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>dwCertEncodingType</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pSignerId</span>: <span class='ident'>PCERT_INFO</span>,
     <span class='ident'>hMsgCertStore</span>: <span class='ident'>HCERTSTORE</span>,
 ) <span class='op'>-&gt;</span> <span class='ident'>PCCERT_CONTEXT</span><span class='op'>&gt;</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>CRYPT_VERIFY_MESSAGE_PARA</span> {
@@ -4282,10 +4283,10 @@
     <span class='ident'>dwMsgAndCertEncodingType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hCryptProv</span>: <span class='ident'>HCRYPTPROV_LEGACY</span>,
     <span class='ident'>pfnGetSignerCertificate</span>: <span class='ident'>PFN_CRYPT_GET_SIGNER_CERTIFICATE</span>,
-    <span class='ident'>pvGetArg</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvGetArg</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
     <span class='ident'>pStrongSignPara</span>: <span class='ident'>PCCERT_STRONG_SIGN_PARA</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_VERIFY_MESSAGE_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_VERIFY_MESSAGE_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_VERIFY_MESSAGE_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_VERIFY_MESSAGE_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_OID_INFO</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>oszOID</span>: ::<span class='ident'>LPCSTR</span>,
@@ -4298,27 +4299,27 @@
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>CRYPT_OID_INFO</span>, <span class='ident'>dwValue</span>, <span class='ident'>Algid</span>, <span class='ident'>Algid_mut</span>, <span class='ident'>ALG_ID</span>);
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>CRYPT_OID_INFO</span>, <span class='ident'>dwValue</span>, <span class='ident'>dwLength</span>, <span class='ident'>dwLength_mut</span>, ::<span class='ident'>DWORD</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_OID_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_OID_INFO</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCRYPT_OID_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CRYPT_OID_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_OID_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_OID_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCRYPT_OID_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CRYPT_OID_INFO</span>;
 <span class='comment'>//18004</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_CRYPT_ENUM_KEYID_PROP</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>pKeyIdentifier</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CRYPT_HASH_BLOB</span>, <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pvReserved</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
-    <span class='ident'>pvArg</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>cProp</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>rgdwPropId</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>, <span class='ident'>rgpvData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
-    <span class='ident'>rgcbData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>,
+    <span class='ident'>pKeyIdentifier</span>: <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CRYPT_HASH_BLOB</span>, <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pvReserved</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvArg</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>cProp</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>rgdwPropId</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>, <span class='ident'>rgpvData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>rgcbData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='comment'>//6379</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_CRYPT_ENUM_OID_FUNC</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
     <span class='ident'>dwEncodingType</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pszFuncName</span>: ::<span class='ident'>LPCSTR</span>, <span class='ident'>pszOID</span>: ::<span class='ident'>LPCSTR</span>, <span class='ident'>cValue</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rgdwValueType</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>DWORD</span>, <span class='ident'>rgpwszValueName</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>LPCWSTR</span>,
-    <span class='ident'>rgpbValueData</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>BYTE</span>, <span class='ident'>rgcbValueData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>DWORD</span>, <span class='ident'>pvArg</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>rgdwValueType</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>DWORD</span>, <span class='ident'>rgpwszValueName</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>LPCWSTR</span>,
+    <span class='ident'>rgpbValueData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>BYTE</span>, <span class='ident'>rgcbValueData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>DWORD</span>, <span class='ident'>pvArg</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='comment'>//6675</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_CRYPT_ENUM_OID_INFO</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>pInfo</span>: <span class='ident'>PCCRYPT_OID_INFO</span>, <span class='ident'>pvArg</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pInfo</span>: <span class='ident'>PCCRYPT_OID_INFO</span>, <span class='ident'>pvArg</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='comment'>//6022</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTOIDFUNCSET</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTOIDFUNCADDR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTOIDFUNCSET</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTOIDFUNCADDR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_CRYPT_ASYNC_PARAM_FREE_FUNC</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
     <span class='ident'>pszParamOid</span>: ::<span class='ident'>LPSTR</span>, <span class='ident'>pvParam</span>: ::<span class='ident'>LPVOID</span>,
 )<span class='op'>&gt;</span>;
@@ -4327,30 +4328,30 @@
     <span class='ident'>dwMsgEncodingType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hCryptProv</span>: <span class='ident'>HCRYPTPROV_LEGACY</span>,
     <span class='ident'>HashAlgorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
-    <span class='ident'>pvHashAuxInfo</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvHashAuxInfo</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_HASH_MESSAGE_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_HASH_MESSAGE_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_HASH_MESSAGE_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_HASH_MESSAGE_PARA</span>;
 <span class='comment'>//14750</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTDEFAULTCONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>HCRYPTDEFAULTCONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_OID_FUNC_ENTRY</span> {
     <span class='ident'>pszOID</span>: ::<span class='ident'>LPCSTR</span>,
-    <span class='ident'>pvFuncAddr</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvFuncAddr</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_OID_FUNC_ENTRY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_OID_FUNC_ENTRY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_OID_FUNC_ENTRY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_OID_FUNC_ENTRY</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CMSG_SIGNER_ENCODE_INFO</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pCertInfo</span>: <span class='ident'>PCERT_INFO</span>,
     <span class='ident'>hCryptProv</span>: <span class='ident'>HCRYPTPROV</span>,
     <span class='ident'>dwKeySpec</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>HashAlgorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
-    <span class='ident'>pvHashAuxInfo</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvHashAuxInfo</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
     <span class='ident'>cAuthAttr</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgAuthAttr</span>: <span class='ident'>PCRYPT_ATTRIBUTE</span>,
     <span class='ident'>cUnauthAttr</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgUnauthAttr</span>: <span class='ident'>PCRYPT_ATTRIBUTE</span>,
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>CMSG_SIGNER_ENCODE_INFO</span>, <span class='ident'>hCryptProv</span>, <span class='ident'>hNCryptKey</span>, <span class='ident'>hNCryptKey_mut</span>, ::<span class='ident'>NCRYPT_KEY_HANDLE</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCMSG_SIGNER_ENCODE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CMSG_SIGNER_ENCODE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCMSG_SIGNER_ENCODE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CMSG_SIGNER_ENCODE_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CMSG_SIGNED_ENCODE_INFO</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>cSigners</span>: ::<span class='ident'>DWORD</span>,
@@ -4360,23 +4361,23 @@
     <span class='ident'>cCrlEncoded</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgCrlEncoded</span>: <span class='ident'>PCRL_BLOB</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCMSG_SIGNED_ENCODE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CMSG_SIGNED_ENCODE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCMSG_SIGNED_ENCODE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CMSG_SIGNED_ENCODE_INFO</span>;
 <span class='comment'>//7393</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_CMSG_STREAM_OUTPUT</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>pvArg</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>pbData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>, <span class='ident'>cbData</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>fFinal</span>: ::<span class='ident'>BOOL</span>,
+    <span class='ident'>pvArg</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>pbData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>, <span class='ident'>cbData</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>fFinal</span>: ::<span class='ident'>BOOL</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>CMSG_STREAM_INFO</span> {
     <span class='ident'>cbContent</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pfnStreamOutput</span>: <span class='ident'>PFN_CMSG_STREAM_OUTPUT</span>,
-    <span class='ident'>pvArg</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvArg</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCMSG_STREAM_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CMSG_STREAM_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCMSG_STREAM_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CMSG_STREAM_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_TIMESTAMP_ACCURACY</span> {
     <span class='ident'>dwSeconds</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwMillis</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwMicros</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_TIMESTAMP_ACCURACY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_TIMESTAMP_ACCURACY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_TIMESTAMP_ACCURACY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_TIMESTAMP_ACCURACY</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_TIMESTAMP_INFO</span> {
     <span class='ident'>dwVersion</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pszTSAPolicyId</span>: ::<span class='ident'>LPSTR</span>,
@@ -4391,13 +4392,13 @@
     <span class='ident'>cExtension</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgExtension</span>: <span class='ident'>PCERT_EXTENSION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_TIMESTAMP_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_TIMESTAMP_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_TIMESTAMP_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_TIMESTAMP_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_TIMESTAMP_CONTEXT</span> {
     <span class='ident'>cbEncoded</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pbEncoded</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbEncoded</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>pTimeStamp</span>: <span class='ident'>PCRYPT_TIMESTAMP_INFO</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_TIMESTAMP_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_TIMESTAMP_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_TIMESTAMP_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_TIMESTAMP_CONTEXT</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_TIMESTAMP_PARA</span> {
     <span class='ident'>pszTSAPolicyId</span>: ::<span class='ident'>LPCSTR</span>,
     <span class='ident'>fRequestCerts</span>: ::<span class='ident'>BOOL</span>,
@@ -4405,17 +4406,17 @@
     <span class='ident'>cExtension</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgExtension</span>: <span class='ident'>PCERT_EXTENSION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_TIMESTAMP_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_TIMESTAMP_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_TIMESTAMP_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_TIMESTAMP_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_SIGN_MESSAGE_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwMsgEncodingType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>pSigningCert</span>: <span class='ident'>PCCERT_CONTEXT</span>,
     <span class='ident'>HashAlgorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
-    <span class='ident'>pvHashAuxInfo</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvHashAuxInfo</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
     <span class='ident'>cMsgCert</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rgpMsgCert</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCCERT_CONTEXT</span>,
+    <span class='ident'>rgpMsgCert</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCCERT_CONTEXT</span>,
     <span class='ident'>cMsgCrl</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>rgpMsgCrl</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCCRL_CONTEXT</span>,
+    <span class='ident'>rgpMsgCrl</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCCRL_CONTEXT</span>,
     <span class='ident'>cAuthAttr</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>rgAuthAttr</span>: <span class='ident'>PCRYPT_ATTRIBUTE</span>,
     <span class='ident'>cUnauthAttr</span>: ::<span class='ident'>DWORD</span>,
@@ -4423,33 +4424,33 @@
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwInnerContentType</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_SIGN_MESSAGE_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_SIGN_MESSAGE_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_SIGN_MESSAGE_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_SIGN_MESSAGE_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_KEY_SIGN_MESSAGE_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwMsgAndCertEncodingType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hCryptProv</span>: <span class='ident'>HCRYPTPROV</span>,
     <span class='ident'>dwKeySpec</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>HashAlgorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
-    <span class='ident'>pvHashAuxInfo</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pvHashAuxInfo</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
     <span class='ident'>PubKeyAlgorithm</span>: <span class='ident'>CRYPT_ALGORITHM_IDENTIFIER</span>,
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>CRYPT_KEY_SIGN_MESSAGE_PARA</span>, <span class='ident'>hCryptProv</span>, <span class='ident'>hNCryptKey</span>, <span class='ident'>hNCryptKey_mut</span>, ::<span class='ident'>NCRYPT_KEY_HANDLE</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_KEY_SIGN_MESSAGE_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_KEY_SIGN_MESSAGE_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_KEY_SIGN_MESSAGE_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_KEY_SIGN_MESSAGE_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CRYPT_KEY_VERIFY_MESSAGE_PARA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwMsgEncodingType</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>hCryptProv</span>: <span class='ident'>HCRYPTPROV_LEGACY</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_KEY_VERIFY_MESSAGE_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_KEY_VERIFY_MESSAGE_PARA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCRYPT_KEY_VERIFY_MESSAGE_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CRYPT_KEY_VERIFY_MESSAGE_PARA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>HTTPSPolicyCallbackData</span> {
 	<span class='ident'>cbSize</span>: ::<span class='ident'>DWORD</span>,
 	<span class='ident'>dwAuthType</span>: ::<span class='ident'>DWORD</span>,
 	<span class='ident'>fdwChecks</span>: ::<span class='ident'>DWORD</span>,
-	<span class='ident'>pwszServerName</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>WCHAR</span>,
+	<span class='ident'>pwszServerName</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>WCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHTTPSPolicyCallbackData</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HTTPSPolicyCallbackData</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHTTPSPolicyCallbackData</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HTTPSPolicyCallbackData</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SSL_EXTRA_CERT_CHAIN_POLICY_PARA</span> <span class='op'>=</span> <span class='ident'>HTTPSPolicyCallbackData</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSSL_EXTRA_CERT_CHAIN_POLICY_PARA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HTTPSPolicyCallbackData</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSSL_EXTRA_CERT_CHAIN_POLICY_PARA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HTTPSPolicyCallbackData</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>AUTHTYPE_CLIENT</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>AUTHTYPE_SERVER</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CTL_ENTRY_FROM_PROP_CHAIN_FLAG</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x1</span>;
@@ -4512,11 +4513,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

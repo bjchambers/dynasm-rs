@@ -9,6 +9,7 @@
 
     <title>lmdfs.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -387,27 +388,27 @@
     <span class='ident'>TargetPriorityRank</span>: ::<span class='ident'>USHORT</span>,
     <span class='ident'>Reserved</span>: ::<span class='ident'>USHORT</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_TARGET_PRIORITY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_TARGET_PRIORITY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_TARGET_PRIORITY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_TARGET_PRIORITY</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_1</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_1</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_1</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_1</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_1</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_1</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_1</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_1</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_1</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span> <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_1_32</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>ULONG</span>,
 }}
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_1_32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_1_32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_1_32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_1_32</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_1_32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_1_32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_1_32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_1_32</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_2</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>Comment</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>State</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>NumberOfStorages</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_2</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_2</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_2</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_2</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_2</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_2</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_2</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_2</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span> <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_2_32</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Comment</span>: ::<span class='ident'>ULONG</span>,
@@ -415,33 +416,33 @@
     <span class='ident'>NumberOfStorages</span>: ::<span class='ident'>DWORD</span>,
 }}
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_2_32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_2_32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_2_32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_2_32</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_2_32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_2_32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_2_32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_2_32</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_STORAGE_INFO</span> {
     <span class='ident'>State</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>ServerName</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>ShareName</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_STORAGE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_STORAGE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_STORAGE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_STORAGE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span> <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_STORAGE_INFO_0_32</span> {
     <span class='ident'>State</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>ServerName</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>ShareName</span>: ::<span class='ident'>ULONG</span>,
 }}
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_STORAGE_INFO_0_32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO_0_32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_STORAGE_INFO_0_32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO_0_32</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_STORAGE_INFO_0_32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO_0_32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_STORAGE_INFO_0_32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO_0_32</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_STORAGE_INFO_1</span> {
     <span class='ident'>State</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>ServerName</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>ShareName</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>TargetPriority</span>: <span class='ident'>DFS_TARGET_PRIORITY</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_STORAGE_INFO_1</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO_1</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_STORAGE_INFO_1</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO_1</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_STORAGE_INFO_1</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO_1</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_STORAGE_INFO_1</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_STORAGE_INFO_1</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_3</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>Comment</span>: ::<span class='ident'>LPWSTR</span>,
@@ -449,8 +450,8 @@
     <span class='ident'>NumberOfStorages</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Storage</span>: <span class='ident'>LPDFS_STORAGE_INFO</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_3</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_3</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_3</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_3</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_3</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_3</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_3</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_3</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span> <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_3_32</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Comment</span>: ::<span class='ident'>ULONG</span>,
@@ -459,9 +460,9 @@
     <span class='ident'>Storage</span>: ::<span class='ident'>ULONG</span>,
 }}
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_3_32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_3_32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_3_32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_3_32</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_3_32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_3_32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_3_32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_3_32</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_4</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>Comment</span>: ::<span class='ident'>LPWSTR</span>,
@@ -471,8 +472,8 @@
     <span class='ident'>NumberOfStorages</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Storage</span>: <span class='ident'>LPDFS_STORAGE_INFO</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_4</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_4</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_4</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_4</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_4</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_4</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_4</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_4</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span> <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_4_32</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Comment</span>: ::<span class='ident'>ULONG</span>,
@@ -483,9 +484,9 @@
     <span class='ident'>Storage</span>: ::<span class='ident'>ULONG</span>,
 }}
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_4_32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_4_32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_4_32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_4_32</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_4_32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_4_32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_4_32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_4_32</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_5</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>Comment</span>: ::<span class='ident'>LPWSTR</span>,
@@ -496,8 +497,8 @@
     <span class='ident'>MetadataSize</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>NumberOfStorages</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_5</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_5</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_5</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_5</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_5</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_5</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_5</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_5</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_6</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>Comment</span>: ::<span class='ident'>LPWSTR</span>,
@@ -509,13 +510,13 @@
     <span class='ident'>NumberOfStorages</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Storage</span>: <span class='ident'>LPDFS_STORAGE_INFO</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_6</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_6</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_6</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_6</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_6</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_6</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_6</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_6</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_7</span> {
     <span class='ident'>GenerationGuid</span>: ::<span class='ident'>GUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_7</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_7</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_7</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_7</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_7</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_7</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_7</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_7</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_8</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>Comment</span>: ::<span class='ident'>LPWSTR</span>,
@@ -528,8 +529,8 @@
     <span class='ident'>pSecurityDescriptor</span>: ::<span class='ident'>PSECURITY_DESCRIPTOR</span>,
     <span class='ident'>NumberOfStorages</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_8</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_8</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_8</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_8</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_8</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_8</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_8</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_8</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_9</span> {
     <span class='ident'>EntryPath</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>Comment</span>: ::<span class='ident'>LPWSTR</span>,
@@ -543,8 +544,8 @@
     <span class='ident'>NumberOfStorages</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>Storage</span>: <span class='ident'>LPDFS_STORAGE_INFO</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_9</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_9</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_9</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_9</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_9</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_9</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_9</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_9</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DFS_PROPERTY_FLAG_INSITE_REFERRALS</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DFS_PROPERTY_FLAG_ROOT_SCALABILITY</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00000002</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DFS_PROPERTY_FLAG_SITE_COSTING</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00000004</span>;
@@ -560,34 +561,34 @@
     <span class='ident'>NamespaceMinorVersion</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>NamespaceCapabilities</span>: ::<span class='ident'>ULONGLONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_50</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_50</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_50</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_50</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_50</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_50</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_50</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_50</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_100</span> {
     <span class='ident'>Comment</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_100</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_100</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_100</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_100</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_100</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_100</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_100</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_100</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_101</span> {
     <span class='ident'>State</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_101</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_101</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_101</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_101</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_101</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_101</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_101</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_101</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_102</span> {
     <span class='ident'>Timeout</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_102</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_102</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_102</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_102</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_102</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_102</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_102</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_102</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_103</span> {
     <span class='ident'>PropertyFlagMask</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>PropertyFlags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_103</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_103</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_103</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_103</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_103</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_103</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_103</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_103</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_104</span> {
     <span class='ident'>TargetPriority</span>: <span class='ident'>DFS_TARGET_PRIORITY</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_104</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_104</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_104</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_104</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_104</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_104</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_104</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_104</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_105</span> {
     <span class='ident'>Comment</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>State</span>: ::<span class='ident'>DWORD</span>,
@@ -595,14 +596,14 @@
     <span class='ident'>PropertyFlagMask</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>PropertyFlags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_105</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_105</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_105</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_105</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_105</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_105</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_105</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_105</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_106</span> {
     <span class='ident'>State</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>TargetPriority</span>: <span class='ident'>DFS_TARGET_PRIORITY</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_106</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_106</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_106</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_106</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_106</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_106</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_106</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_106</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_107</span> {
     <span class='ident'>Comment</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>State</span>: ::<span class='ident'>DWORD</span>,
@@ -612,25 +613,25 @@
     <span class='ident'>SdLengthReserved</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>pSecurityDescriptor</span>: ::<span class='ident'>PSECURITY_DESCRIPTOR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_107</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_107</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_107</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_107</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_107</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_107</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_107</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_107</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_150</span> {
     <span class='ident'>SdLengthReserved</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>pSecurityDescriptor</span>: ::<span class='ident'>PSECURITY_DESCRIPTOR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_150</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_150</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_150</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_150</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_150</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_150</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_150</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_150</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_200</span> {
     <span class='ident'>FtDfsName</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_200</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_200</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_200</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_200</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_200</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_200</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_200</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_200</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_INFO_300</span> {
     <span class='ident'>Flags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>DfsName</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_300</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_300</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_300</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_300</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_INFO_300</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_300</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_INFO_300</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_INFO_300</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DFS_ADD_VOLUME</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DFS_RESTORE_VOLUME</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>NET_DFS_SETDC_FLAGS</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000000</span>;
@@ -640,21 +641,21 @@
     <span class='ident'>SiteFlags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>SiteName</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_SITENAME_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_SITENAME_INFO</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_SITENAME_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_SITENAME_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_SITENAME_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_SITENAME_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_SITENAME_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_SITENAME_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DFS_SITE_PRIMARY</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x1</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_SITELIST_INFO</span> {
     <span class='ident'>cSites</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Site</span>: [<span class='ident'>DFS_SITENAME_INFO</span>; <span class='number'>1</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_SITELIST_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_SITELIST_INFO</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_SITELIST_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_SITELIST_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_SITELIST_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_SITELIST_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDFS_SITELIST_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_SITELIST_INFO</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>DFS_NAMESPACE_VERSION_ORIGIN</span> {
     <span class='ident'>DFS_NAMESPACE_VERSION_ORIGIN_COMBINED</span> <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>DFS_NAMESPACE_VERSION_ORIGIN_SERVER</span>,
     <span class='ident'>DFS_NAMESPACE_VERSION_ORIGIN_DOMAIN</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_NAMESPACE_VERSION_ORIGIN</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_NAMESPACE_VERSION_ORIGIN</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_NAMESPACE_VERSION_ORIGIN</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_NAMESPACE_VERSION_ORIGIN</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DFS_NAMESPACE_CAPABILITY_ABDE</span>: ::<span class='ident'>ULONGLONG</span> <span class='op'>=</span> <span class='number'>0x0000000000000001</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DFS_SUPPORTED_NAMESPACE_VERSION_INFO</span> {
     <span class='ident'>DomainDfsMajorVersion</span>: ::<span class='ident'>ULONG</span>,
@@ -664,7 +665,7 @@
     <span class='ident'>StandaloneDfsMinorVersion</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>StandaloneDfsCapabilities</span>: ::<span class='ident'>ULONGLONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_SUPPORTED_NAMESPACE_VERSION_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_SUPPORTED_NAMESPACE_VERSION_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDFS_SUPPORTED_NAMESPACE_VERSION_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DFS_SUPPORTED_NAMESPACE_VERSION_INFO</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -722,11 +723,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>winapi::wingdi::LOGCOLORSPACEW - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,51 +48,52 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-114957' class='srclink' href='../../src/winapi/macros.rs.html#256-258' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct LOGCOLORSPACEW {
-    pub lcsSignature: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lcsVersion: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lcsSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lcsCSType: <a class='type' href='../../winapi/wingdi/type.LCSCSTYPE.html' title='winapi::wingdi::LCSCSTYPE'>LCSCSTYPE</a>,
-    pub lcsIntent: <a class='type' href='../../winapi/wingdi/type.LCSGAMUTMATCH.html' title='winapi::wingdi::LCSGAMUTMATCH'>LCSGAMUTMATCH</a>,
-    pub lcsEndpoints: <a class='struct' href='../../winapi/wingdi/struct.CIEXYZTRIPLE.html' title='winapi::wingdi::CIEXYZTRIPLE'>CIEXYZTRIPLE</a>,
-    pub lcsGammaRed: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lcsGammaGreen: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lcsGammaBlue: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lcsFilename: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 260]</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#256-258' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct LOGCOLORSPACEW {
+    pub lcsSignature: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lcsVersion: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lcsSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lcsCSType: <a class='type' href='../../winapi/wingdi/type.LCSCSTYPE.html' title='type winapi::wingdi::LCSCSTYPE'>LCSCSTYPE</a>,
+    pub lcsIntent: <a class='type' href='../../winapi/wingdi/type.LCSGAMUTMATCH.html' title='type winapi::wingdi::LCSGAMUTMATCH'>LCSGAMUTMATCH</a>,
+    pub lcsEndpoints: <a class='struct' href='../../winapi/wingdi/struct.CIEXYZTRIPLE.html' title='struct winapi::wingdi::CIEXYZTRIPLE'>CIEXYZTRIPLE</a>,
+    pub lcsGammaRed: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lcsGammaGreen: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lcsGammaBlue: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lcsFilename: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 260]</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.lcsSignature' class='structfield'>
                            <span id='lcsSignature.v' class='invisible'>
-                           <code>lcsSignature: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lcsVersion' class='structfield'>
+                           <code>lcsSignature: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lcsVersion' class='structfield'>
                            <span id='lcsVersion.v' class='invisible'>
-                           <code>lcsVersion: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lcsSize' class='structfield'>
+                           <code>lcsVersion: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lcsSize' class='structfield'>
                            <span id='lcsSize.v' class='invisible'>
-                           <code>lcsSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lcsCSType' class='structfield'>
+                           <code>lcsSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lcsCSType' class='structfield'>
                            <span id='lcsCSType.v' class='invisible'>
-                           <code>lcsCSType: <a class='type' href='../../winapi/wingdi/type.LCSCSTYPE.html' title='winapi::wingdi::LCSCSTYPE'>LCSCSTYPE</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lcsIntent' class='structfield'>
+                           <code>lcsCSType: <a class='type' href='../../winapi/wingdi/type.LCSCSTYPE.html' title='type winapi::wingdi::LCSCSTYPE'>LCSCSTYPE</a></code>
+                           </span></span><span id='structfield.lcsIntent' class='structfield'>
                            <span id='lcsIntent.v' class='invisible'>
-                           <code>lcsIntent: <a class='type' href='../../winapi/wingdi/type.LCSGAMUTMATCH.html' title='winapi::wingdi::LCSGAMUTMATCH'>LCSGAMUTMATCH</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lcsEndpoints' class='structfield'>
+                           <code>lcsIntent: <a class='type' href='../../winapi/wingdi/type.LCSGAMUTMATCH.html' title='type winapi::wingdi::LCSGAMUTMATCH'>LCSGAMUTMATCH</a></code>
+                           </span></span><span id='structfield.lcsEndpoints' class='structfield'>
                            <span id='lcsEndpoints.v' class='invisible'>
-                           <code>lcsEndpoints: <a class='struct' href='../../winapi/wingdi/struct.CIEXYZTRIPLE.html' title='winapi::wingdi::CIEXYZTRIPLE'>CIEXYZTRIPLE</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lcsGammaRed' class='structfield'>
+                           <code>lcsEndpoints: <a class='struct' href='../../winapi/wingdi/struct.CIEXYZTRIPLE.html' title='struct winapi::wingdi::CIEXYZTRIPLE'>CIEXYZTRIPLE</a></code>
+                           </span></span><span id='structfield.lcsGammaRed' class='structfield'>
                            <span id='lcsGammaRed.v' class='invisible'>
-                           <code>lcsGammaRed: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lcsGammaGreen' class='structfield'>
+                           <code>lcsGammaRed: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lcsGammaGreen' class='structfield'>
                            <span id='lcsGammaGreen.v' class='invisible'>
-                           <code>lcsGammaGreen: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lcsGammaBlue' class='structfield'>
+                           <code>lcsGammaGreen: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lcsGammaBlue' class='structfield'>
                            <span id='lcsGammaBlue.v' class='invisible'>
-                           <code>lcsGammaBlue: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lcsFilename' class='structfield'>
+                           <code>lcsGammaBlue: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lcsFilename' class='structfield'>
                            <span id='lcsFilename.v' class='invisible'>
-                           <code>lcsFilename: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 260]</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/wingdi/struct.LOGCOLORSPACEW.html' title='winapi::wingdi::LOGCOLORSPACEW'>LOGCOLORSPACEW</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-114969' class='srclink' href='../../src/winapi/macros.rs.html#259' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/wingdi/struct.LOGCOLORSPACEW.html' title='winapi::wingdi::LOGCOLORSPACEW'>LOGCOLORSPACEW</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-114970' class='srclink' href='../../src/winapi/macros.rs.html#260' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/wingdi/struct.LOGCOLORSPACEW.html' title='winapi::wingdi::LOGCOLORSPACEW'>LOGCOLORSPACEW</a></code></span></h4>
+                           <code>lcsFilename: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 260]</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/wingdi/struct.LOGCOLORSPACEW.html' title='struct winapi::wingdi::LOGCOLORSPACEW'>LOGCOLORSPACEW</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#259' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/wingdi/struct.LOGCOLORSPACEW.html' title='struct winapi::wingdi::LOGCOLORSPACEW'>LOGCOLORSPACEW</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#260' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/wingdi/struct.LOGCOLORSPACEW.html' title='struct winapi::wingdi::LOGCOLORSPACEW'>LOGCOLORSPACEW</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -151,11 +153,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

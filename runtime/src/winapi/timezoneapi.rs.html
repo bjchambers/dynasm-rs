@@ -9,6 +9,7 @@
 
     <title>timezoneapi.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -83,8 +84,8 @@
     <span class='ident'>DaylightDate</span>: ::<span class='ident'>SYSTEMTIME</span>,
     <span class='ident'>DaylightBias</span>: ::<span class='ident'>LONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTIME_ZONE_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TIME_ZONE_INFORMATION</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPTIME_ZONE_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TIME_ZONE_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTIME_ZONE_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TIME_ZONE_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPTIME_ZONE_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TIME_ZONE_INFORMATION</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>DYNAMIC_TIME_ZONE_INFORMATION</span> {
     <span class='ident'>Bias</span>: ::<span class='ident'>LONG</span>,
     <span class='ident'>StandardName</span>: [::<span class='ident'>WCHAR</span>; <span class='number'>32</span>],
@@ -96,7 +97,7 @@
     <span class='ident'>TimeZoneKeyName</span>: [::<span class='ident'>WCHAR</span>; <span class='number'>128</span>],
     <span class='ident'>DynamicDaylightTimeDisabled</span>: ::<span class='ident'>BOOLEAN</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDYNAMIC_TIME_ZONE_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DYNAMIC_TIME_ZONE_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDYNAMIC_TIME_ZONE_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DYNAMIC_TIME_ZONE_INFORMATION</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -154,11 +155,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

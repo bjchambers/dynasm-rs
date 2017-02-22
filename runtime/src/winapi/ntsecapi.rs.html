@@ -9,6 +9,7 @@
 
     <title>ntsecapi.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -1776,7 +1777,7 @@
     <span class='ident'>AuditCategoryDirectoryServiceAccess</span>,
     <span class='ident'>AuditCategoryAccountLogon</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_EVENT_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_EVENT_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_EVENT_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_EVENT_TYPE</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>POLICY_AUDIT_EVENT_UNCHANGED</span>: <span class='ident'>POLICY_AUDIT_EVENT_OPTIONS</span> <span class='op'>=</span> <span class='number'>0x00000000</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>POLICY_AUDIT_EVENT_SUCCESS</span>: <span class='ident'>POLICY_AUDIT_EVENT_OPTIONS</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>POLICY_AUDIT_EVENT_FAILURE</span>: <span class='ident'>POLICY_AUDIT_EVENT_OPTIONS</span> <span class='op'>=</span> <span class='number'>0x00000002</span>;
@@ -1815,14 +1816,14 @@
     <span class='ident'>RelativeId</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>DomainIndex</span>: ::<span class='ident'>LONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_TRANSLATED_SID</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_TRANSLATED_SID</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_TRANSLATED_SID</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_TRANSLATED_SID</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>POLICY_LSA_SERVER_ROLE</span> {
     <span class='ident'>PolicyServerRoleBackup</span> <span class='op'>=</span> <span class='number'>2</span>,
     <span class='ident'>PolicyServerRolePrimary</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_LSA_SERVER_ROLE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_LSA_SERVER_ROLE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_LSA_SERVER_ROLE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_LSA_SERVER_ROLE</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POLICY_AUDIT_EVENT_OPTIONS</span> <span class='op'>=</span> ::<span class='ident'>ULONG</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_EVENT_OPTIONS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ULONG</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_EVENT_OPTIONS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ULONG</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>POLICY_INFORMATION_CLASS</span> {
     <span class='ident'>PolicyAuditLogInformation</span> <span class='op'>=</span> <span class='number'>1</span>,
     <span class='ident'>PolicyAuditEventsInformation</span>,
@@ -1840,7 +1841,7 @@
     <span class='ident'>PolicyLocalAccountDomainInformation</span>,
     <span class='ident'>PolicyLastEntry</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_INFORMATION_CLASS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_INFORMATION_CLASS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_INFORMATION_CLASS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_INFORMATION_CLASS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_AUDIT_LOG_INFO</span> {
     <span class='ident'>AuditLogPercentFull</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>MaximumLogSize</span>: ::<span class='ident'>ULONG</span>,
@@ -1849,23 +1850,23 @@
     <span class='ident'>TimeToShutdown</span>: ::<span class='ident'>LARGE_INTEGER</span>,
     <span class='ident'>NextAuditRecordId</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_LOG_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_LOG_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_LOG_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_LOG_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_AUDIT_EVENTS_INFO</span> {
     <span class='ident'>AuditingMode</span>: ::<span class='ident'>BOOLEAN</span>,
     <span class='ident'>EventAuditingOptions</span>: <span class='ident'>PPOLICY_AUDIT_EVENT_OPTIONS</span>,
     <span class='ident'>MaximumAuditEventCount</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_EVENTS_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_EVENTS_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_EVENTS_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_EVENTS_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_AUDIT_SUBCATEGORIES_INFO</span> {
     <span class='ident'>MaximumSubCategoryCount</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>EventAuditingOptions</span>: <span class='ident'>PPOLICY_AUDIT_EVENT_OPTIONS</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_SUBCATEGORIES_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_SUBCATEGORIES_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_SUBCATEGORIES_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_SUBCATEGORIES_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_AUDIT_CATEGORIES_INFO</span> {
     <span class='ident'>MaximumSubCategoryCount</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>SubCategoriesInfo</span>: <span class='ident'>PPOLICY_AUDIT_SUBCATEGORIES_INFO</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_CATEGORIES_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_CATEGORIES_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_CATEGORIES_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_CATEGORIES_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>PER_USER_POLICY_UNCHANGED</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>PER_USER_AUDIT_SUCCESS_INCLUDE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x01</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>PER_USER_AUDIT_SUCCESS_EXCLUDE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x02</span>;
@@ -1879,48 +1880,48 @@
     <span class='ident'>Name</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
     <span class='ident'>Sid</span>: ::<span class='ident'>PSID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_PRIMARY_DOMAIN_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_PRIMARY_DOMAIN_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_PRIMARY_DOMAIN_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_PRIMARY_DOMAIN_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_PD_ACCOUNT_INFO</span> {
     <span class='ident'>Name</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_PD_ACCOUNT_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_PD_ACCOUNT_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_PD_ACCOUNT_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_PD_ACCOUNT_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_LSA_SERVER_ROLE_INFO</span> {
     <span class='ident'>LsaServerRole</span>: <span class='ident'>POLICY_LSA_SERVER_ROLE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_LSA_SERVER_ROLE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_LSA_SERVER_ROLE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_LSA_SERVER_ROLE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_LSA_SERVER_ROLE_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_REPLICA_SOURCE_INFO</span> {
     <span class='ident'>ReplicaSource</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
     <span class='ident'>ReplicaAccountName</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_REPLICA_SOURCE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_REPLICA_SOURCE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_REPLICA_SOURCE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_REPLICA_SOURCE_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_DEFAULT_QUOTA_INFO</span> {
     <span class='ident'>QuotaLimits</span>: ::<span class='ident'>QUOTA_LIMITS</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_DEFAULT_QUOTA_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_DEFAULT_QUOTA_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_DEFAULT_QUOTA_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_DEFAULT_QUOTA_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_MODIFICATION_INFO</span> {
     <span class='ident'>ModifiedId</span>: ::<span class='ident'>LARGE_INTEGER</span>,
     <span class='ident'>DatabaseCreationTime</span>: ::<span class='ident'>LARGE_INTEGER</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_MODIFICATION_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_MODIFICATION_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_MODIFICATION_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_MODIFICATION_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_AUDIT_FULL_SET_INFO</span> {
     <span class='ident'>ShutDownOnFull</span>: ::<span class='ident'>BOOLEAN</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_FULL_SET_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_FULL_SET_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_FULL_SET_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_FULL_SET_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_AUDIT_FULL_QUERY_INFO</span> {
     <span class='ident'>ShutDownOnFull</span>: ::<span class='ident'>BOOLEAN</span>,
     <span class='ident'>LogIsFull</span>: ::<span class='ident'>BOOLEAN</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_FULL_QUERY_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_FULL_QUERY_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_FULL_QUERY_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_FULL_QUERY_INFO</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>POLICY_DOMAIN_INFORMATION_CLASS</span> {
     <span class='ident'>PolicyDomainEfsInformation</span> <span class='op'>=</span> <span class='number'>2</span>,
     <span class='ident'>PolicyDomainKerberosTicketInformation</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_DOMAIN_INFORMATION_CLASS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_DOMAIN_INFORMATION_CLASS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_DOMAIN_INFORMATION_CLASS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_DOMAIN_INFORMATION_CLASS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_DOMAIN_EFS_INFO</span> {
     <span class='ident'>InfoLength</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>EfsBlob</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_DOMAIN_EFS_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_DOMAIN_EFS_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_DOMAIN_EFS_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_DOMAIN_EFS_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_DOMAIN_KERBEROS_TICKET_INFO</span> {
     <span class='ident'>AuthenticationOptions</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>MaxServiceTicketAge</span>: ::<span class='ident'>LARGE_INTEGER</span>,
@@ -1929,7 +1930,7 @@
     <span class='ident'>MaxClockSkew</span>: ::<span class='ident'>LARGE_INTEGER</span>,
     <span class='ident'>Reserved</span>: ::<span class='ident'>LARGE_INTEGER</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_DOMAIN_KERBEROS_TICKET_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_DOMAIN_KERBEROS_TICKET_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_DOMAIN_KERBEROS_TICKET_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_DOMAIN_KERBEROS_TICKET_INFO</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>POLICY_NOTIFICATION_INFORMATION_CLASS</span> {
     <span class='ident'>PolicyNotifyAuditEventsInformation</span> <span class='op'>=</span> <span class='number'>1</span>,
     <span class='ident'>PolicyNotifyAccountDomainInformation</span>,
@@ -1941,9 +1942,9 @@
     <span class='ident'>PolicyNotifyGlobalSaclInformation</span>,
     <span class='ident'>PolicyNotifyMax</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_NOTIFICATION_INFORMATION_CLASS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_NOTIFICATION_INFORMATION_CLASS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_NOTIFICATION_INFORMATION_CLASS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_NOTIFICATION_INFORMATION_CLASS</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LSA_HANDLE</span> <span class='op'>=</span> ::<span class='ident'>PVOID</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_HANDLE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>PVOID</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_HANDLE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>PVOID</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>TRUSTED_INFORMATION_CLASS</span> {
     <span class='ident'>TrustedDomainNameInformation</span> <span class='op'>=</span> <span class='number'>1</span>,
     <span class='ident'>TrustedControllersInformation</span>,
@@ -1959,25 +1960,25 @@
     <span class='ident'>TrustedDomainFullInformation2Internal</span>,
     <span class='ident'>TrustedDomainSupportedEncryptionTypes</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_INFORMATION_CLASS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_INFORMATION_CLASS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_INFORMATION_CLASS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_INFORMATION_CLASS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>TRUSTED_DOMAIN_NAME_INFO</span> {
     <span class='ident'>Name</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_NAME_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_NAME_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_NAME_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_NAME_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>TRUSTED_CONTROLLERS_INFO</span> {
     <span class='ident'>Entries</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Names</span>: ::<span class='ident'>PLSA_UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_CONTROLLERS_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_CONTROLLERS_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_CONTROLLERS_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_CONTROLLERS_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>TRUSTED_POSIX_OFFSET_INFO</span> {
     <span class='ident'>Offset</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_POSIX_OFFSET_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_POSIX_OFFSET_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_POSIX_OFFSET_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_POSIX_OFFSET_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>TRUSTED_PASSWORD_INFO</span> {
     <span class='ident'>Password</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
     <span class='ident'>OldPassword</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_PASSWORD_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_PASSWORD_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_PASSWORD_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_PASSWORD_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>TRUSTED_DOMAIN_INFORMATION_BASIC</span> <span class='op'>=</span> ::<span class='ident'>LSA_TRUST_INFORMATION</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_INFORMATION_BASIC</span> <span class='op'>=</span> ::<span class='ident'>PLSA_TRUST_INFORMATION</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>TRUST_DIRECTION_DISABLED</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00000000</span>;
@@ -2008,7 +2009,7 @@
     <span class='ident'>TrustType</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>TrustAttributes</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_INFORMATION_EX</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_INFORMATION_EX</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_INFORMATION_EX</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_INFORMATION_EX</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>TRUSTED_DOMAIN_INFORMATION_EX2</span> {
     <span class='ident'>Name</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
     <span class='ident'>FlatName</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
@@ -2019,7 +2020,7 @@
     <span class='ident'>ForestTrustLength</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>ForestTrustInfo</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_INFORMATION_EX2</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_INFORMATION_EX2</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_INFORMATION_EX2</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_INFORMATION_EX2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>TRUST_AUTH_TYPE_NONE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>TRUST_AUTH_TYPE_NT4OWF</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>TRUST_AUTH_TYPE_CLEAR</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>2</span>;
@@ -2030,7 +2031,7 @@
     <span class='ident'>AuthInfoLength</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>AuthInfo</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_AUTH_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_AUTH_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_AUTH_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_AUTH_INFORMATION</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>TRUSTED_DOMAIN_AUTH_INFORMATION</span> {
     <span class='ident'>IncomingAuthInfos</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>IncomingAuthenticationInformation</span>: <span class='ident'>PLSA_AUTH_INFORMATION</span>,
@@ -2039,24 +2040,24 @@
     <span class='ident'>OutgoingAuthenticationInformation</span>: <span class='ident'>PLSA_AUTH_INFORMATION</span>,
     <span class='ident'>OutgoingPreviousAuthenticationInformation</span>: <span class='ident'>PLSA_AUTH_INFORMATION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_AUTH_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_AUTH_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_AUTH_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_AUTH_INFORMATION</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>TRUSTED_DOMAIN_FULL_INFORMATION</span> {
     <span class='ident'>Information</span>: <span class='ident'>TRUSTED_DOMAIN_INFORMATION_EX</span>,
     <span class='ident'>PosixOffset</span>: <span class='ident'>TRUSTED_POSIX_OFFSET_INFO</span>,
     <span class='ident'>AuthInformation</span>: <span class='ident'>TRUSTED_DOMAIN_AUTH_INFORMATION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_FULL_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_FULL_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_FULL_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_FULL_INFORMATION</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>TRUSTED_DOMAIN_FULL_INFORMATION2</span> {
     <span class='ident'>Information</span>: <span class='ident'>TRUSTED_DOMAIN_INFORMATION_EX2</span>,
     <span class='ident'>PosixOffset</span>: <span class='ident'>TRUSTED_POSIX_OFFSET_INFO</span>,
     <span class='ident'>AuthInformation</span>: <span class='ident'>TRUSTED_DOMAIN_AUTH_INFORMATION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_FULL_INFORMATION2</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_FULL_INFORMATION2</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_FULL_INFORMATION2</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_FULL_INFORMATION2</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>TRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPES</span> {
     <span class='ident'>SupportedEncryptionTypes</span>: ::<span class='ident'>ULONG</span>,
 }}
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPES</span> <span class='op'>=</span>
-    <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPES</span>;
+    <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPES</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>LSA_FOREST_TRUST_RECORD_TYPE</span> {
     <span class='ident'>ForestTrustTopLevelName</span>,
     <span class='ident'>ForestTrustTopLevelNameEx</span>,
@@ -2076,13 +2077,13 @@
     <span class='ident'>DnsName</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
     <span class='ident'>NetbiosName</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_DOMAIN_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_DOMAIN_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_DOMAIN_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_DOMAIN_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>MAX_FOREST_TRUST_BINARY_DATA_SIZE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>128</span> <span class='op'>*</span> <span class='number'>1024</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>LSA_FOREST_TRUST_BINARY_DATA</span> {
     <span class='ident'>Length</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Buffer</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_BINARY_DATA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_BINARY_DATA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_BINARY_DATA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_BINARY_DATA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>LSA_FOREST_TRUST_RECORD_ForestTrustData</span> {
     <span class='ident'>DomainInfo</span>: <span class='ident'>LSA_FOREST_TRUST_DOMAIN_INFO</span>,
 }}
@@ -2100,13 +2101,13 @@
     <span class='ident'>Time</span>: ::<span class='ident'>LARGE_INTEGER</span>,
     <span class='ident'>ForestTrustData</span>: <span class='ident'>LSA_FOREST_TRUST_RECORD_ForestTrustData</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_RECORD</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_RECORD</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_RECORD</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_RECORD</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>MAX_RECORDS_IN_FOREST_TRUST_INFO</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>4000</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>LSA_FOREST_TRUST_INFORMATION</span> {
     <span class='ident'>RecordCount</span>: ::<span class='ident'>ULONG</span>,
-    <span class='ident'>Entries</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PLSA_FOREST_TRUST_RECORD</span>,
+    <span class='ident'>Entries</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PLSA_FOREST_TRUST_RECORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_INFORMATION</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>LSA_FOREST_TRUST_COLLISION_RECORD_TYPE</span> {
     <span class='ident'>CollisionTdo</span>,
     <span class='ident'>CollisionXref</span>,
@@ -2118,24 +2119,24 @@
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Name</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_COLLISION_RECORD</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_COLLISION_RECORD</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_COLLISION_RECORD</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_COLLISION_RECORD</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>LSA_FOREST_TRUST_COLLISION_INFORMATION</span> {
     <span class='ident'>RecordCount</span>: ::<span class='ident'>ULONG</span>,
-    <span class='ident'>Entries</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PLSA_FOREST_TRUST_COLLISION_RECORD</span>,
+    <span class='ident'>Entries</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PLSA_FOREST_TRUST_COLLISION_RECORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_COLLISION_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_COLLISION_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_FOREST_TRUST_COLLISION_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_FOREST_TRUST_COLLISION_INFORMATION</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LSA_ENUMERATION_HANDLE</span> <span class='op'>=</span> ::<span class='ident'>ULONG</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_ENUMERATION_HANDLE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ULONG</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_ENUMERATION_HANDLE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ULONG</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>LSA_ENUMERATION_INFORMATION</span> {
     <span class='ident'>Sid</span>: ::<span class='ident'>PSID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_ENUMERATION_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_ENUMERATION_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_ENUMERATION_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_ENUMERATION_INFORMATION</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>LSA_LAST_INTER_LOGON_INFO</span> {
     <span class='ident'>LastSuccessfulLogon</span>: ::<span class='ident'>LARGE_INTEGER</span>,
     <span class='ident'>LastFailedLogon</span>: ::<span class='ident'>LARGE_INTEGER</span>,
     <span class='ident'>FailedAttemptCountSinceLastSuccessfulLogon</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_LAST_INTER_LOGON_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_LAST_INTER_LOGON_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLSA_LAST_INTER_LOGON_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LSA_LAST_INTER_LOGON_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>SECURITY_LOGON_SESSION_DATA</span> {
     <span class='ident'>Size</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
@@ -2161,7 +2162,7 @@
     <span class='ident'>PasswordCanChange</span>: ::<span class='ident'>LARGE_INTEGER</span>,
     <span class='ident'>PasswordMustChange</span>: ::<span class='ident'>LARGE_INTEGER</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSECURITY_LOGON_SESSION_DATA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SECURITY_LOGON_SESSION_DATA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSECURITY_LOGON_SESSION_DATA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SECURITY_LOGON_SESSION_DATA</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CENTRAL_ACCESS_POLICY_OWNER_RIGHTS_PRESENT_FLAG</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CENTRAL_ACCESS_POLICY_STAGED_OWNER_RIGHTS_PRESENT_FLAG</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00000100</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CENTRAL_ACCESS_POLICY_STAGED_FLAG</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00010000</span>;
@@ -2182,8 +2183,8 @@
     <span class='ident'>StagedSD</span>: ::<span class='ident'>PSECURITY_DESCRIPTOR</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCENTRAL_ACCESS_POLICY_ENTRY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CENTRAL_ACCESS_POLICY_ENTRY</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCENTRAL_ACCESS_POLICY_ENTRY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CENTRAL_ACCESS_POLICY_ENTRY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCENTRAL_ACCESS_POLICY_ENTRY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CENTRAL_ACCESS_POLICY_ENTRY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCENTRAL_ACCESS_POLICY_ENTRY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CENTRAL_ACCESS_POLICY_ENTRY</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CENTRAL_ACCESS_POLICY</span> {
     <span class='ident'>CAPID</span>: ::<span class='ident'>PSID</span>,
     <span class='ident'>Name</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
@@ -2191,10 +2192,10 @@
     <span class='ident'>ChangeId</span>: ::<span class='ident'>LSA_UNICODE_STRING</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>CAPECount</span>: ::<span class='ident'>ULONG</span>,
-    <span class='ident'>CAPEs</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCENTRAL_ACCESS_POLICY_ENTRY</span>,
+    <span class='ident'>CAPEs</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PCENTRAL_ACCESS_POLICY_ENTRY</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCENTRAL_ACCESS_POLICY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CENTRAL_ACCESS_POLICY</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCENTRAL_ACCESS_POLICY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>CENTRAL_ACCESS_POLICY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCENTRAL_ACCESS_POLICY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CENTRAL_ACCESS_POLICY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCCENTRAL_ACCESS_POLICY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>CENTRAL_ACCESS_POLICY</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>NEGOTIATE_MESSAGES</span> {
     <span class='ident'>NegEnumPackagePrefixes</span> <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>NegGetCallerName</span> <span class='op'>=</span> <span class='number'>1</span>,
@@ -2209,24 +2210,24 @@
     <span class='ident'>PrefixLen</span>: ::<span class='ident'>ULONG_PTR</span>,
     <span class='ident'>Prefix</span>: [::<span class='ident'>UCHAR</span>; <span class='ident'>NEGOTIATE_MAX_PREFIX</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNEGOTIATE_PACKAGE_PREFIX</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NEGOTIATE_PACKAGE_PREFIX</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNEGOTIATE_PACKAGE_PREFIX</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NEGOTIATE_PACKAGE_PREFIX</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>NEGOTIATE_PACKAGE_PREFIXES</span> {
     <span class='ident'>MessageType</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>PrefixCount</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Offset</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Pad</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNEGOTIATE_PACKAGE_PREFIXES</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NEGOTIATE_PACKAGE_PREFIXES</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNEGOTIATE_PACKAGE_PREFIXES</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NEGOTIATE_PACKAGE_PREFIXES</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>NEGOTIATE_CALLER_NAME_REQUEST</span> {
     <span class='ident'>MessageType</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNEGOTIATE_CALLER_NAME_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NEGOTIATE_CALLER_NAME_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNEGOTIATE_CALLER_NAME_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NEGOTIATE_CALLER_NAME_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>NEGOTIATE_CALLER_NAME_RESPONSE</span> {
     <span class='ident'>MessageType</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>CallerName</span>: ::<span class='ident'>PWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNEGOTIATE_CALLER_NAME_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NEGOTIATE_CALLER_NAME_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNEGOTIATE_CALLER_NAME_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NEGOTIATE_CALLER_NAME_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DOMAIN_PASSWORD_INFORMATION</span> {
     <span class='ident'>MinPasswordLength</span>: ::<span class='ident'>USHORT</span>,
     <span class='ident'>PasswordHistoryLength</span>: ::<span class='ident'>USHORT</span>,
@@ -2234,7 +2235,7 @@
     <span class='ident'>MaxPasswordAge</span>: ::<span class='ident'>LARGE_INTEGER</span>,
     <span class='ident'>MinPasswordAge</span>: ::<span class='ident'>LARGE_INTEGER</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDOMAIN_PASSWORD_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DOMAIN_PASSWORD_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDOMAIN_PASSWORD_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DOMAIN_PASSWORD_INFORMATION</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DOMAIN_PASSWORD_COMPLEX</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DOMAIN_PASSWORD_NO_ANON_CHANGE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00000002</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DOMAIN_PASSWORD_NO_CLEAR_CHANGE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00000004</span>;
@@ -2261,20 +2262,20 @@
     <span class='ident'>MsV1_0NoElevationLogon</span> <span class='op'>=</span> <span class='number'>83</span>,
     <span class='ident'>MsV1_0LuidLogon</span> <span class='op'>=</span> <span class='number'>84</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_LOGON_SUBMIT_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_LOGON_SUBMIT_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_LOGON_SUBMIT_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_LOGON_SUBMIT_TYPE</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>MSV1_0_PROFILE_BUFFER_TYPE</span> {
     <span class='ident'>MsV1_0InteractiveProfile</span> <span class='op'>=</span> <span class='number'>2</span>,
     <span class='ident'>MsV1_0Lm20LogonProfile</span>,
     <span class='ident'>MsV1_0SmartCardProfile</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_PROFILE_BUFFER_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_PROFILE_BUFFER_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_PROFILE_BUFFER_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_PROFILE_BUFFER_TYPE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_INTERACTIVE_LOGON</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>MSV1_0_LOGON_SUBMIT_TYPE</span>,
     <span class='ident'>LogonDomainName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>UserName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>Password</span>: ::<span class='ident'>UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_INTERACTIVE_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_INTERACTIVE_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_INTERACTIVE_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_INTERACTIVE_LOGON</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_INTERACTIVE_PROFILE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>MSV1_0_PROFILE_BUFFER_TYPE</span>,
     <span class='ident'>LogonCount</span>: ::<span class='ident'>USHORT</span>,
@@ -2293,7 +2294,7 @@
     <span class='ident'>LogonServer</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>UserFlags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_INTERACTIVE_PROFILE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_INTERACTIVE_PROFILE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_INTERACTIVE_PROFILE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_INTERACTIVE_PROFILE</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>MSV1_0_CHALLENGE_LENGTH</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>8</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>MSV1_0_USER_SESSION_KEY_LENGTH</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>16</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>MSV1_0_LANMAN_SESSION_KEY_LENGTH</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>8</span>;
@@ -2332,7 +2333,7 @@
     <span class='ident'>CaseInsensitiveChallengeResponse</span>: ::<span class='ident'>STRING</span>,
     <span class='ident'>ParameterControl</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_LM20_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_LM20_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_LM20_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_LM20_LOGON</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_SUBAUTH_LOGON</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>MSV1_0_LOGON_SUBMIT_TYPE</span>,
     <span class='ident'>LogonDomainName</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -2344,14 +2345,14 @@
     <span class='ident'>ParameterControl</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>SubAuthPackageId</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_SUBAUTH_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_SUBAUTH_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_SUBAUTH_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_SUBAUTH_LOGON</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_S4U_LOGON</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>MSV1_0_LOGON_SUBMIT_TYPE</span>,
     <span class='ident'>MSV1_0_LOGON_SUBMIT_TYPE</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>UserPrincipalName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>DomainName</span>: ::<span class='ident'>UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_S4U_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_S4U_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_S4U_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_S4U_LOGON</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>LOGON_GUEST</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x01</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>LOGON_NOENCRYPTION</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x02</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>LOGON_CACHED_ACCOUNT</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x04</span>;
@@ -2383,7 +2384,7 @@
     <span class='ident'>LogonServer</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>UserParameters</span>: ::<span class='ident'>UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_LM20_LOGON_PROFILE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_LM20_LOGON_PROFILE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_LM20_LOGON_PROFILE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_LM20_LOGON_PROFILE</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>MSV1_0_OWF_PASSWORD_LENGTH</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>16</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_SUPPLEMENTAL_CREDENTIAL</span> {
     <span class='ident'>Version</span>: ::<span class='ident'>ULONG</span>,
@@ -2391,7 +2392,7 @@
     <span class='ident'>LmPassword</span>: [::<span class='ident'>UCHAR</span>; <span class='ident'>MSV1_0_OWF_PASSWORD_LENGTH</span>],
     <span class='ident'>NtPassword</span>: [::<span class='ident'>UCHAR</span>; <span class='ident'>MSV1_0_OWF_PASSWORD_LENGTH</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_SUPPLEMENTAL_CREDENTIAL</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_SUPPLEMENTAL_CREDENTIAL</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_SUPPLEMENTAL_CREDENTIAL</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_SUPPLEMENTAL_CREDENTIAL</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>MSV1_0_NTLM3_RESPONSE_LENGTH</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>16</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>MSV1_0_NTLM3_OWF_LENGTH</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>16</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_NTLM3_RESPONSE</span> {
@@ -2405,7 +2406,7 @@
     <span class='ident'>AvPairsOff</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Buffer</span>: [::<span class='ident'>UCHAR</span>; <span class='number'>1</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_NTLM3_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_NTLM3_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_NTLM3_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_NTLM3_RESPONSE</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>MSV1_0_AVID</span> {
     <span class='ident'>MsvAvEOL</span>,
     <span class='ident'>MsvAvNbComputerName</span>,
@@ -2423,7 +2424,7 @@
     <span class='ident'>AvId</span>: ::<span class='ident'>USHORT</span>,
     <span class='ident'>AvLen</span>: ::<span class='ident'>USHORT</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_AV_PAIR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_AV_PAIR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_AV_PAIR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_AV_PAIR</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>MSV1_0_PROTOCOL_MESSAGE_TYPE</span> {
     <span class='ident'>MsV1_0Lm20ChallengeRequest</span> <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>MsV1_0Lm20GetChallengeResponse</span>,
@@ -2446,7 +2447,7 @@
     <span class='ident'>MsV1_0GetCredentialKey</span>,
     <span class='ident'>MsV1_0SetThreadOption</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_PROTOCOL_MESSAGE_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_PROTOCOL_MESSAGE_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_PROTOCOL_MESSAGE_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_PROTOCOL_MESSAGE_TYPE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_CHANGEPASSWORD_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>MSV1_0_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>DomainName</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -2455,13 +2456,13 @@
     <span class='ident'>NewPassword</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>Impersonating</span>: ::<span class='ident'>BOOLEAN</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_CHANGEPASSWORD_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_CHANGEPASSWORD_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_CHANGEPASSWORD_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_CHANGEPASSWORD_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_CHANGEPASSWORD_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>MSV1_0_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>PasswordInfoValid</span>: ::<span class='ident'>BOOLEAN</span>,
     <span class='ident'>DomainPasswordInfo</span>: <span class='ident'>DOMAIN_PASSWORD_INFORMATION</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_CHANGEPASSWORD_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_CHANGEPASSWORD_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_CHANGEPASSWORD_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_CHANGEPASSWORD_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_PASSTHROUGH_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>MSV1_0_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>DomainName</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -2470,27 +2471,27 @@
     <span class='ident'>LogonData</span>: ::<span class='ident'>PUCHAR</span>,
     <span class='ident'>Pad</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_PASSTHROUGH_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_PASSTHROUGH_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_PASSTHROUGH_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_PASSTHROUGH_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_PASSTHROUGH_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>MSV1_0_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>Pad</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>DataLength</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>ValidationData</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_PASSTHROUGH_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_PASSTHROUGH_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_PASSTHROUGH_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_PASSTHROUGH_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_SUBAUTH_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>MSV1_0_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>SubAuthPackageId</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>SubAuthInfoLength</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>SubAuthSubmitBuffer</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_SUBAUTH_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_SUBAUTH_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_SUBAUTH_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_SUBAUTH_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MSV1_0_SUBAUTH_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>MSV1_0_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>SubAuthInfoLength</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>SubAuthReturnBuffer</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_SUBAUTH_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_SUBAUTH_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMSV1_0_SUBAUTH_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MSV1_0_SUBAUTH_RESPONSE</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>RTL_ENCRYPT_MEMORY_SIZE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>8</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>RTL_ENCRYPT_OPTION_CROSS_PROCESS</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x01</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>RTL_ENCRYPT_OPTION_SAME_LOGON</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x02</span>;
@@ -2601,31 +2602,31 @@
     <span class='ident'>KerbNoElevationLogon</span> <span class='op'>=</span> <span class='number'>83</span>,
     <span class='ident'>KerbLuidLogon</span> <span class='op'>=</span> <span class='number'>84</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_LOGON_SUBMIT_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_LOGON_SUBMIT_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_LOGON_SUBMIT_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_LOGON_SUBMIT_TYPE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_INTERACTIVE_LOGON</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_LOGON_SUBMIT_TYPE</span>,
     <span class='ident'>LogonDomainName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>UserName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>Password</span>: ::<span class='ident'>UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_INTERACTIVE_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_INTERACTIVE_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_INTERACTIVE_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_INTERACTIVE_LOGON</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_INTERACTIVE_UNLOCK_LOGON</span> {
     <span class='ident'>Logon</span>: <span class='ident'>KERB_INTERACTIVE_LOGON</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_INTERACTIVE_UNLOCK_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_INTERACTIVE_UNLOCK_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_INTERACTIVE_UNLOCK_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_INTERACTIVE_UNLOCK_LOGON</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_SMART_CARD_LOGON</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_LOGON_SUBMIT_TYPE</span>,
     <span class='ident'>Pin</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>CspDataLength</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>CspData</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SMART_CARD_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SMART_CARD_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SMART_CARD_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SMART_CARD_LOGON</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_SMART_CARD_UNLOCK_LOGON</span> {
     <span class='ident'>Logon</span>: <span class='ident'>KERB_SMART_CARD_LOGON</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SMART_CARD_UNLOCK_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SMART_CARD_UNLOCK_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SMART_CARD_UNLOCK_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SMART_CARD_UNLOCK_LOGON</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_CERTIFICATE_LOGON_FLAG_CHECK_DUPLICATES</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_CERTIFICATE_LOGON_FLAG_USE_CERTIFICATE_INFO</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x2</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_CERTIFICATE_LOGON</span> {
@@ -2637,12 +2638,12 @@
     <span class='ident'>CspDataLength</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>CspData</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_LOGON</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_CERTIFICATE_UNLOCK_LOGON</span> {
     <span class='ident'>Logon</span>: <span class='ident'>KERB_CERTIFICATE_LOGON</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_UNLOCK_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_UNLOCK_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_UNLOCK_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_UNLOCK_LOGON</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_CERTIFICATE_S4U_LOGON_FLAG_CHECK_DUPLICATES</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_CERTIFICATE_S4U_LOGON_FLAG_CHECK_LOGONHOURS</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_CERTIFICATE_S4U_LOGON_FLAG_FAIL_IF_NT_AUTH_POLICY_REQUIRED</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x4</span>;
@@ -2655,7 +2656,7 @@
     <span class='ident'>CertificateLength</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Certificate</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_S4U_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_S4U_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_S4U_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_S4U_LOGON</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_TICKET_LOGON</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_LOGON_SUBMIT_TYPE</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
@@ -2664,12 +2665,12 @@
     <span class='ident'>ServiceTicket</span>: ::<span class='ident'>PUCHAR</span>,
     <span class='ident'>TicketGrantingTicket</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_LOGON</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_TICKET_UNLOCK_LOGON</span> {
     <span class='ident'>Logon</span>: <span class='ident'>KERB_TICKET_LOGON</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_UNLOCK_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_UNLOCK_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_UNLOCK_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_UNLOCK_LOGON</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_S4U_LOGON_FLAG_CHECK_LOGONHOURS</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_S4U_LOGON_FLAG_IDENTIFY</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x8</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_S4U_LOGON</span> {
@@ -2678,13 +2679,13 @@
     <span class='ident'>ClientUpn</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>ClientRealm</span>: ::<span class='ident'>UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_S4U_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_S4U_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_S4U_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_S4U_LOGON</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>KERB_PROFILE_BUFFER_TYPE</span> {
     <span class='ident'>KerbInteractiveProfile</span> <span class='op'>=</span> <span class='number'>2</span>,
     <span class='ident'>KerbSmartCardProfile</span> <span class='op'>=</span> <span class='number'>4</span>,
     <span class='ident'>KerbTicketProfile</span> <span class='op'>=</span> <span class='number'>6</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PROFILE_BUFFER_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PROFILE_BUFFER_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PROFILE_BUFFER_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PROFILE_BUFFER_TYPE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_INTERACTIVE_PROFILE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROFILE_BUFFER_TYPE</span>,
     <span class='ident'>LogonCount</span>: ::<span class='ident'>USHORT</span>,
@@ -2703,30 +2704,30 @@
     <span class='ident'>LogonServer</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>UserFlags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_INTERACTIVE_PROFILE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_INTERACTIVE_PROFILE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_INTERACTIVE_PROFILE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_INTERACTIVE_PROFILE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_SMART_CARD_PROFILE</span> {
     <span class='ident'>Profile</span>: <span class='ident'>KERB_INTERACTIVE_PROFILE</span>,
     <span class='ident'>CertificateSize</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>CertificateData</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SMART_CARD_PROFILE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SMART_CARD_PROFILE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SMART_CARD_PROFILE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SMART_CARD_PROFILE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_CRYPTO_KEY</span> {
     <span class='ident'>KeyType</span>: ::<span class='ident'>LONG</span>,
     <span class='ident'>Length</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Value</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CRYPTO_KEY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CRYPTO_KEY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CRYPTO_KEY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CRYPTO_KEY</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_CRYPTO_KEY32</span> {
     <span class='ident'>KeyType</span>: ::<span class='ident'>LONG</span>,
     <span class='ident'>Length</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Offset</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CRYPTO_KEY32</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CRYPTO_KEY32</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CRYPTO_KEY32</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CRYPTO_KEY32</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_TICKET_PROFILE</span> {
     <span class='ident'>Profile</span>: <span class='ident'>KERB_INTERACTIVE_PROFILE</span>,
     <span class='ident'>SessionKey</span>: <span class='ident'>KERB_CRYPTO_KEY</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_PROFILE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_PROFILE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_PROFILE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_PROFILE</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span> {
     <span class='ident'>KerbDebugRequestMessage</span> <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>KerbQueryTicketCacheMessage</span>,
@@ -2763,12 +2764,12 @@
     <span class='ident'>KerbQueryDomainExtendedPoliciesMessage</span>,
     <span class='ident'>KerbQueryS4U2ProxyCacheMessage</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PROTOCOL_MESSAGE_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PROTOCOL_MESSAGE_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_TKT_CACHE_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_TKT_CACHE_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_TKT_CACHE_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_TKT_CACHE_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_TKT_CACHE_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_TICKET_CACHE_INFO</span> {
     <span class='ident'>ServerName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>RealmName</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -2778,7 +2779,7 @@
     <span class='ident'>EncryptionType</span>: ::<span class='ident'>LONG</span>,
     <span class='ident'>TicketFlags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_CACHE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_CACHE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_CACHE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_CACHE_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_TICKET_CACHE_INFO_EX</span> {
     <span class='ident'>ClientName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>ClientRealm</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -2790,7 +2791,7 @@
     <span class='ident'>EncryptionType</span>: ::<span class='ident'>LONG</span>,
     <span class='ident'>TicketFlags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_CACHE_INFO_EX</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_CACHE_INFO_EX</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_CACHE_INFO_EX</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_CACHE_INFO_EX</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_TICKET_CACHE_INFO_EX2</span> {
     <span class='ident'>ClientName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>ClientRealm</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -2804,7 +2805,7 @@
     <span class='ident'>SessionKeyType</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>BranchId</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_CACHE_INFO_EX2</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_CACHE_INFO_EX2</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_CACHE_INFO_EX2</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_CACHE_INFO_EX2</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_TICKET_CACHE_INFO_EX3</span> {
     <span class='ident'>ClientName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>ClientRealm</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -2820,31 +2821,31 @@
     <span class='ident'>CacheFlags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>KdcCalled</span>: ::<span class='ident'>UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_CACHE_INFO_EX3</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_CACHE_INFO_EX3</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TICKET_CACHE_INFO_EX3</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TICKET_CACHE_INFO_EX3</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_TKT_CACHE_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>CountOfTickets</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Tickets</span>: [<span class='ident'>KERB_TICKET_CACHE_INFO</span>; ::<span class='ident'>ANYSIZE_ARRAY</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_TKT_CACHE_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_TKT_CACHE_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_TKT_CACHE_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_TKT_CACHE_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_TKT_CACHE_EX_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>CountOfTickets</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Tickets</span>: [<span class='ident'>KERB_TICKET_CACHE_INFO_EX</span>; ::<span class='ident'>ANYSIZE_ARRAY</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_TKT_CACHE_EX_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_TKT_CACHE_EX_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_TKT_CACHE_EX_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_TKT_CACHE_EX_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_TKT_CACHE_EX2_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>CountOfTickets</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Tickets</span>: [<span class='ident'>KERB_TICKET_CACHE_INFO_EX2</span>; ::<span class='ident'>ANYSIZE_ARRAY</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_TKT_CACHE_EX2_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_TKT_CACHE_EX2_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_TKT_CACHE_EX2_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_TKT_CACHE_EX2_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_TKT_CACHE_EX3_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>CountOfTickets</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Tickets</span>: [<span class='ident'>KERB_TICKET_CACHE_INFO_EX3</span>; ::<span class='ident'>ANYSIZE_ARRAY</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_TKT_CACHE_EX3_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_TKT_CACHE_EX3_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_TKT_CACHE_EX3_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_TKT_CACHE_EX3_RESPONSE</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_USE_DEFAULT_TICKET_FLAGS</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x0</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_RETRIEVE_TICKET_DEFAULT</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x0</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_RETRIEVE_TICKET_DONT_USE_CACHE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x1</span>;
@@ -2859,24 +2860,24 @@
     <span class='ident'>Length</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Data</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_AUTH_DATA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_AUTH_DATA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_AUTH_DATA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_AUTH_DATA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_NET_ADDRESS</span> {
     <span class='ident'>Family</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Length</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Address</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_NET_ADDRESS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_NET_ADDRESS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_NET_ADDRESS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_NET_ADDRESS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_NET_ADDRESSES</span> {
     <span class='ident'>Number</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Addresses</span>: [<span class='ident'>KERB_NET_ADDRESS</span>; ::<span class='ident'>ANYSIZE_ARRAY</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_NET_ADDRESSES</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_NET_ADDRESSES</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_NET_ADDRESSES</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_NET_ADDRESSES</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_EXTERNAL_NAME</span> {
     <span class='ident'>NameType</span>: ::<span class='ident'>SHORT</span>,
     <span class='ident'>NameCount</span>: ::<span class='ident'>USHORT</span>,
     <span class='ident'>Names</span>: [::<span class='ident'>UNICODE_STRING</span>; ::<span class='ident'>ANYSIZE_ARRAY</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_EXTERNAL_NAME</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_EXTERNAL_NAME</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_EXTERNAL_NAME</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_EXTERNAL_NAME</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_EXTERNAL_TICKET</span> {
     <span class='ident'>ServiceName</span>: <span class='ident'>PKERB_EXTERNAL_NAME</span>,
     <span class='ident'>TargetName</span>: <span class='ident'>PKERB_EXTERNAL_NAME</span>,
@@ -2895,7 +2896,7 @@
     <span class='ident'>EncodedTicketSize</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>EncodedTicket</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_EXTERNAL_TICKET</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_EXTERNAL_TICKET</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_EXTERNAL_TICKET</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_EXTERNAL_TICKET</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_RETRIEVE_TKT_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
@@ -2905,18 +2906,18 @@
     <span class='ident'>EncryptionType</span>: ::<span class='ident'>LONG</span>,
     <span class='ident'>CredentialsHandle</span>: ::<span class='ident'>SecHandle</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_RETRIEVE_TKT_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_RETRIEVE_TKT_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_RETRIEVE_TKT_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_RETRIEVE_TKT_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_RETRIEVE_TKT_RESPONSE</span> {
     <span class='ident'>Ticket</span>: <span class='ident'>KERB_EXTERNAL_TICKET</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_RETRIEVE_TKT_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_RETRIEVE_TKT_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_RETRIEVE_TKT_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_RETRIEVE_TKT_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_PURGE_TKT_CACHE_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
     <span class='ident'>ServerName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>RealmName</span>: ::<span class='ident'>UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PURGE_TKT_CACHE_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PURGE_TKT_CACHE_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PURGE_TKT_CACHE_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PURGE_TKT_CACHE_REQUEST</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_PURGE_ALL_TICKETS</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_PURGE_TKT_CACHE_EX_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
@@ -2924,7 +2925,7 @@
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>TicketTemplate</span>: <span class='ident'>KERB_TICKET_CACHE_INFO_EX</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PURGE_TKT_CACHE_EX_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PURGE_TKT_CACHE_EX_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PURGE_TKT_CACHE_EX_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PURGE_TKT_CACHE_EX_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_SUBMIT_TKT_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
@@ -2933,13 +2934,13 @@
     <span class='ident'>KerbCredSize</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>KerbCredOffset</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SUBMIT_TKT_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SUBMIT_TKT_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SUBMIT_TKT_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SUBMIT_TKT_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_KDC_PROXY_CACHE_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_KDC_PROXY_CACHE_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_KDC_PROXY_CACHE_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_KDC_PROXY_CACHE_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_KDC_PROXY_CACHE_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KDC_PROXY_CACHE_ENTRY_DATA</span> {
     <span class='ident'>SinceLastUsed</span>: ::<span class='ident'>ULONG64</span>,
     <span class='ident'>DomainName</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -2951,24 +2952,24 @@
     <span class='ident'>CredDomainName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>GlobalCache</span>: ::<span class='ident'>BOOLEAN</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKDC_PROXY_CACHE_ENTRY_DATA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KDC_PROXY_CACHE_ENTRY_DATA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKDC_PROXY_CACHE_ENTRY_DATA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KDC_PROXY_CACHE_ENTRY_DATA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_KDC_PROXY_CACHE_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>CountOfEntries</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Entries</span>: <span class='ident'>PKDC_PROXY_CACHE_ENTRY_DATA</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_KDC_PROXY_CACHE_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_KDC_PROXY_CACHE_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_KDC_PROXY_CACHE_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_KDC_PROXY_CACHE_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_PURGE_KDC_PROXY_CACHE_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PURGE_KDC_PROXY_CACHE_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PURGE_KDC_PROXY_CACHE_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PURGE_KDC_PROXY_CACHE_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PURGE_KDC_PROXY_CACHE_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_PURGE_KDC_PROXY_CACHE_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>CountOfPurged</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PURGE_KDC_PROXY_CACHE_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PURGE_KDC_PROXY_CACHE_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PURGE_KDC_PROXY_CACHE_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PURGE_KDC_PROXY_CACHE_RESPONSE</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_S4U2PROXY_CACHE_ENTRY_INFO_FLAG_NEGATIVE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x1</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_S4U2PROXY_CACHE_ENTRY_INFO</span> {
     <span class='ident'>ServerName</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -2976,7 +2977,7 @@
     <span class='ident'>LastStatus</span>: ::<span class='ident'>NTSTATUS</span>,
     <span class='ident'>Expiry</span>: ::<span class='ident'>LARGE_INTEGER</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_S4U2PROXY_CACHE_ENTRY_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_S4U2PROXY_CACHE_ENTRY_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_S4U2PROXY_CACHE_ENTRY_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_S4U2PROXY_CACHE_ENTRY_INFO</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_S4U2PROXY_CRED_FLAG_NEGATIVE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x1</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_S4U2PROXY_CRED</span> {
     <span class='ident'>UserName</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -2987,19 +2988,19 @@
     <span class='ident'>CountOfEntries</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Entries</span>: <span class='ident'>PKERB_S4U2PROXY_CACHE_ENTRY_INFO</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_S4U2PROXY_CRED</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_S4U2PROXY_CRED</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_S4U2PROXY_CRED</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_S4U2PROXY_CRED</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_S4U2PROXY_CACHE_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_S4U2PROXY_CACHE_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_S4U2PROXY_CACHE_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_S4U2PROXY_CACHE_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_S4U2PROXY_CACHE_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_S4U2PROXY_CACHE_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>CountOfCreds</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Creds</span>: <span class='ident'>PKERB_S4U2PROXY_CRED</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_S4U2PROXY_CACHE_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_S4U2PROXY_CACHE_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_S4U2PROXY_CACHE_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_S4U2PROXY_CACHE_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_CHANGEPASSWORD_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>DomainName</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -3008,7 +3009,7 @@
     <span class='ident'>NewPassword</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>Impersonating</span>: ::<span class='ident'>BOOLEAN</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CHANGEPASSWORD_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CHANGEPASSWORD_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CHANGEPASSWORD_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CHANGEPASSWORD_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_SETPASSWORD_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
@@ -3018,7 +3019,7 @@
     <span class='ident'>AccountName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>Password</span>: ::<span class='ident'>UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SETPASSWORD_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SETPASSWORD_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SETPASSWORD_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SETPASSWORD_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_SETPASSWORD_EX_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
@@ -3033,7 +3034,7 @@
     <span class='ident'>KdcAddress</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>KdcAddressType</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SETPASSWORD_EX_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SETPASSWORD_EX_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_SETPASSWORD_EX_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_SETPASSWORD_EX_REQUEST</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DS_UNKNOWN_ADDRESS_TYPE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_SETPASS_USE_LOGONID</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_SETPASS_USE_CREDHANDLE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>2</span>;
@@ -3049,26 +3050,26 @@
     <span class='ident'>InitialVector</span>: ::<span class='ident'>PUCHAR</span>,
     <span class='ident'>EncryptedData</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_DECRYPT_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_DECRYPT_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_DECRYPT_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_DECRYPT_REQUEST</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_DECRYPT_FLAG_DEFAULT_KEY</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_DECRYPT_RESPONSE</span> {
     <span class='ident'>DecryptedData</span>: [::<span class='ident'>UCHAR</span>; ::<span class='ident'>ANYSIZE_ARRAY</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_DECRYPT_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_DECRYPT_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_DECRYPT_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_DECRYPT_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_ADD_BINDING_CACHE_ENTRY_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>RealmName</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>KdcAddress</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>AddressType</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_ADD_BINDING_CACHE_ENTRY_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_ADD_BINDING_CACHE_ENTRY_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_ADD_BINDING_CACHE_ENTRY_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_ADD_BINDING_CACHE_ENTRY_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_REFRESH_SCCRED_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>CredentialBlob</span>: ::<span class='ident'>UNICODE_STRING</span>,
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_REFRESH_SCCRED_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_REFRESH_SCCRED_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_REFRESH_SCCRED_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_REFRESH_SCCRED_REQUEST</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_REFRESH_SCCRED_RELEASE</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x0</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_REFRESH_SCCRED_GETTGT</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x1</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_ADD_CREDENTIALS_REQUEST</span> {
@@ -3079,7 +3080,7 @@
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_ADD_CREDENTIALS_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_ADD_CREDENTIALS_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_ADD_CREDENTIALS_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_ADD_CREDENTIALS_REQUEST</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_REQUEST_ADD_CREDENTIAL</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_REQUEST_REPLACE_CREDENTIAL</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>2</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_REQUEST_REMOVE_CREDENTIAL</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>4</span>;
@@ -3088,14 +3089,14 @@
     <span class='ident'>PrincipalNameCount</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>PrincipalNames</span>: [::<span class='ident'>UNICODE_STRING</span>; ::<span class='ident'>ANYSIZE_ARRAY</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_ADD_CREDENTIALS_REQUEST_EX</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_ADD_CREDENTIALS_REQUEST_EX</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_ADD_CREDENTIALS_REQUEST_EX</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_ADD_CREDENTIALS_REQUEST_EX</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_TRANSFER_CRED_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>OriginLogonId</span>: ::<span class='ident'>LUID</span>,
     <span class='ident'>DestinationLogonId</span>: ::<span class='ident'>LUID</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TRANSFER_CRED_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TRANSFER_CRED_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_TRANSFER_CRED_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_TRANSFER_CRED_REQUEST</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_TRANSFER_CRED_WITH_TICKETS</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>KERB_TRANSFER_CRED_CLEANUP_CREDENTIALS</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x2</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST</span> {
@@ -3103,7 +3104,7 @@
     <span class='ident'>LogonId</span>: ::<span class='ident'>LUID</span>,
 }}
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST</span> <span class='op'>=</span>
-    <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST</span>;
+    <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_BINDING_CACHE_ENTRY_DATA</span> {
     <span class='ident'>DiscoveryTime</span>: ::<span class='ident'>ULONG64</span>,
     <span class='ident'>RealmName</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -3114,13 +3115,13 @@
     <span class='ident'>CacheFlags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>KdcName</span>: ::<span class='ident'>UNICODE_STRING</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_BINDING_CACHE_ENTRY_DATA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_BINDING_CACHE_ENTRY_DATA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_BINDING_CACHE_ENTRY_DATA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_BINDING_CACHE_ENTRY_DATA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_BINDING_CACHE_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>CountOfEntries</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Entries</span>: <span class='ident'>PKERB_BINDING_CACHE_ENTRY_DATA</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_BINDING_CACHE_RESPONSE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_BINDING_CACHE_RESPONSE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_BINDING_CACHE_RESPONSE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_BINDING_CACHE_RESPONSE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_ADD_BINDING_CACHE_ENTRY_EX_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>RealmName</span>: ::<span class='ident'>UNICODE_STRING</span>,
@@ -3128,22 +3129,22 @@
     <span class='ident'>AddressType</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>DcFlags</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_ADD_BINDING_CACHE_ENTRY_EX_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_ADD_BINDING_CACHE_ENTRY_EX_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_ADD_BINDING_CACHE_ENTRY_EX_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_ADD_BINDING_CACHE_ENTRY_EX_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_BINDING_CACHE_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_BINDING_CACHE_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_BINDING_CACHE_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_BINDING_CACHE_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_BINDING_CACHE_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_PURGE_BINDING_CACHE_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PURGE_BINDING_CACHE_REQUEST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PURGE_BINDING_CACHE_REQUEST</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_PURGE_BINDING_CACHE_REQUEST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_PURGE_BINDING_CACHE_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>DomainName</span>: ::<span class='ident'>UNICODE_STRING</span>,
 }}
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST</span> <span class='op'>=</span>
-    <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST</span>;
+    <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>KERB_PROTOCOL_MESSAGE_TYPE</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
@@ -3151,34 +3152,34 @@
     <span class='ident'>DsFlags</span>: ::<span class='ident'>ULONG</span>,
 }}
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE</span> <span class='op'>=</span>
-    <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE</span>;
+    <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>KERB_CERTIFICATE_INFO_TYPE</span> {
     <span class='ident'>CertHashInfo</span> <span class='op'>=</span> <span class='number'>1</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_INFO_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_INFO_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_INFO_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_INFO_TYPE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_CERTIFICATE_HASHINFO</span> {
     <span class='ident'>StoreNameLength</span>: ::<span class='ident'>USHORT</span>,
     <span class='ident'>HashLength</span>: ::<span class='ident'>USHORT</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_HASHINFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_HASHINFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_HASHINFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_HASHINFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>KERB_CERTIFICATE_INFO</span> {
     <span class='ident'>CertInfoSize</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>InfoType</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PKERB_CERTIFICATE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>KERB_CERTIFICATE_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>POLICY_AUDIT_SID_ARRAY</span> {
     <span class='ident'>UsersCount</span>: ::<span class='ident'>ULONG</span>,
-    <span class='ident'>UserSidArray</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>PSID</span>,
+    <span class='ident'>UserSidArray</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>PSID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_SID_ARRAY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_SID_ARRAY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPOLICY_AUDIT_SID_ARRAY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>POLICY_AUDIT_SID_ARRAY</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>AUDIT_POLICY_INFORMATION</span> {
     <span class='ident'>AuditSubCategoryGuid</span>: ::<span class='ident'>GUID</span>,
     <span class='ident'>AuditingInformation</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>AuditCategoryGuid</span>: ::<span class='ident'>GUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PAUDIT_POLICY_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>AUDIT_POLICY_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PAUDIT_POLICY_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>AUDIT_POLICY_INFORMATION</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPAUDIT_POLICY_INFORMATION</span> <span class='op'>=</span> <span class='ident'>PAUDIT_POLICY_INFORMATION</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCAUDIT_POLICY_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>AUDIT_POLICY_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCAUDIT_POLICY_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>AUDIT_POLICY_INFORMATION</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>AUDIT_SET_SYSTEM_POLICY</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x0001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>AUDIT_QUERY_SYSTEM_POLICY</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x0002</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>AUDIT_SET_USER_POLICY</span>: ::<span class='ident'>ULONG</span> <span class='op'>=</span> <span class='number'>0x0004</span>;
@@ -3198,7 +3199,7 @@
     <span class='ident'>CertOffset</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>CertLength</span>: ::<span class='ident'>USHORT</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPKU2U_CERT_BLOB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PKU2U_CERT_BLOB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPKU2U_CERT_BLOB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PKU2U_CERT_BLOB</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>PKU2U_CREDUI_CONTEXT_VERSION</span>: ::<span class='ident'>ULONG64</span> <span class='op'>=</span> <span class='number'>0x4154414454524543</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>PKU2U_CREDUI_CONTEXT</span> {
     <span class='ident'>Version</span>: ::<span class='ident'>ULONG64</span>,
@@ -3207,11 +3208,11 @@
     <span class='ident'>CertArrayCount</span>: ::<span class='ident'>USHORT</span>,
     <span class='ident'>CertArrayOffset</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPKU2U_CREDUI_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PKU2U_CREDUI_CONTEXT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPKU2U_CREDUI_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PKU2U_CREDUI_CONTEXT</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>PKU2U_LOGON_SUBMIT_TYPE</span> {
     <span class='ident'>Pku2uCertificateS4ULogon</span> <span class='op'>=</span> <span class='number'>14</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPKU2U_LOGON_SUBMIT_TYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PKU2U_LOGON_SUBMIT_TYPE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPKU2U_LOGON_SUBMIT_TYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PKU2U_LOGON_SUBMIT_TYPE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>PKU2U_CERTIFICATE_S4U_LOGON</span> {
     <span class='ident'>MessageType</span>: <span class='ident'>PKU2U_LOGON_SUBMIT_TYPE</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>ULONG</span>,
@@ -3220,7 +3221,7 @@
     <span class='ident'>CertificateLength</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Certificate</span>: ::<span class='ident'>PUCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPKU2U_CERTIFICATE_S4U_LOGON</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PKU2U_CERTIFICATE_S4U_LOGON</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPKU2U_CERTIFICATE_S4U_LOGON</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PKU2U_CERTIFICATE_S4U_LOGON</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -3278,11 +3279,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

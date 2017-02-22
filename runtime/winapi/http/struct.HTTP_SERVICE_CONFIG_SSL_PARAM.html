@@ -9,6 +9,7 @@
 
     <title>winapi::http::HTTP_SERVICE_CONFIG_SSL_PARAM - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,54 +48,55 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-74931' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct HTTP_SERVICE_CONFIG_SSL_PARAM {
-    pub SslHashLength: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a>,
-    pub pSslHash: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='winapi::winnt::PVOID'>PVOID</a>,
-    pub AppId: <a class='struct' href='../../winapi/guiddef/struct.GUID.html' title='winapi::guiddef::GUID'>GUID</a>,
-    pub pSslCertStoreName: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='winapi::winnt::PWSTR'>PWSTR</a>,
-    pub DefaultCertCheckMode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub DefaultRevocationFreshnessTime: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub DefaultRevocationUrlRetrievalTimeout: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub pDefaultSslCtlIdentifier: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='winapi::winnt::PWSTR'>PWSTR</a>,
-    pub pDefaultSslCtlStoreName: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='winapi::winnt::PWSTR'>PWSTR</a>,
-    pub DefaultFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct HTTP_SERVICE_CONFIG_SSL_PARAM {
+    pub SslHashLength: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a>,
+    pub pSslHash: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='type winapi::winnt::PVOID'>PVOID</a>,
+    pub AppId: <a class='struct' href='../../winapi/guiddef/struct.GUID.html' title='struct winapi::guiddef::GUID'>GUID</a>,
+    pub pSslCertStoreName: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='type winapi::winnt::PWSTR'>PWSTR</a>,
+    pub DefaultCertCheckMode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub DefaultRevocationFreshnessTime: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub DefaultRevocationUrlRetrievalTimeout: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub pDefaultSslCtlIdentifier: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='type winapi::winnt::PWSTR'>PWSTR</a>,
+    pub pDefaultSslCtlStoreName: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='type winapi::winnt::PWSTR'>PWSTR</a>,
+    pub DefaultFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.SslHashLength' class='structfield'>
                            <span id='SslHashLength.v' class='invisible'>
-                           <code>SslHashLength: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pSslHash' class='structfield'>
+                           <code>SslHashLength: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a></code>
+                           </span></span><span id='structfield.pSslHash' class='structfield'>
                            <span id='pSslHash.v' class='invisible'>
-                           <code>pSslHash: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='winapi::winnt::PVOID'>PVOID</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.AppId' class='structfield'>
+                           <code>pSslHash: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='type winapi::winnt::PVOID'>PVOID</a></code>
+                           </span></span><span id='structfield.AppId' class='structfield'>
                            <span id='AppId.v' class='invisible'>
-                           <code>AppId: <a class='struct' href='../../winapi/guiddef/struct.GUID.html' title='winapi::guiddef::GUID'>GUID</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pSslCertStoreName' class='structfield'>
+                           <code>AppId: <a class='struct' href='../../winapi/guiddef/struct.GUID.html' title='struct winapi::guiddef::GUID'>GUID</a></code>
+                           </span></span><span id='structfield.pSslCertStoreName' class='structfield'>
                            <span id='pSslCertStoreName.v' class='invisible'>
-                           <code>pSslCertStoreName: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='winapi::winnt::PWSTR'>PWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DefaultCertCheckMode' class='structfield'>
+                           <code>pSslCertStoreName: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='type winapi::winnt::PWSTR'>PWSTR</a></code>
+                           </span></span><span id='structfield.DefaultCertCheckMode' class='structfield'>
                            <span id='DefaultCertCheckMode.v' class='invisible'>
-                           <code>DefaultCertCheckMode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DefaultRevocationFreshnessTime' class='structfield'>
+                           <code>DefaultCertCheckMode: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.DefaultRevocationFreshnessTime' class='structfield'>
                            <span id='DefaultRevocationFreshnessTime.v' class='invisible'>
-                           <code>DefaultRevocationFreshnessTime: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DefaultRevocationUrlRetrievalTimeout' class='structfield'>
+                           <code>DefaultRevocationFreshnessTime: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.DefaultRevocationUrlRetrievalTimeout' class='structfield'>
                            <span id='DefaultRevocationUrlRetrievalTimeout.v' class='invisible'>
-                           <code>DefaultRevocationUrlRetrievalTimeout: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pDefaultSslCtlIdentifier' class='structfield'>
+                           <code>DefaultRevocationUrlRetrievalTimeout: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.pDefaultSslCtlIdentifier' class='structfield'>
                            <span id='pDefaultSslCtlIdentifier.v' class='invisible'>
-                           <code>pDefaultSslCtlIdentifier: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='winapi::winnt::PWSTR'>PWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pDefaultSslCtlStoreName' class='structfield'>
+                           <code>pDefaultSslCtlIdentifier: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='type winapi::winnt::PWSTR'>PWSTR</a></code>
+                           </span></span><span id='structfield.pDefaultSslCtlStoreName' class='structfield'>
                            <span id='pDefaultSslCtlStoreName.v' class='invisible'>
-                           <code>pDefaultSslCtlStoreName: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='winapi::winnt::PWSTR'>PWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DefaultFlags' class='structfield'>
+                           <code>pDefaultSslCtlStoreName: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='type winapi::winnt::PWSTR'>PWSTR</a></code>
+                           </span></span><span id='structfield.DefaultFlags' class='structfield'>
                            <span id='DefaultFlags.v' class='invisible'>
-                           <code>DefaultFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/http/struct.HTTP_SERVICE_CONFIG_SSL_PARAM.html' title='winapi::http::HTTP_SERVICE_CONFIG_SSL_PARAM'>HTTP_SERVICE_CONFIG_SSL_PARAM</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-74942' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>DefaultFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/http/struct.HTTP_SERVICE_CONFIG_SSL_PARAM.html' title='struct winapi::http::HTTP_SERVICE_CONFIG_SSL_PARAM'>HTTP_SERVICE_CONFIG_SSL_PARAM</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/http/struct.HTTP_SERVICE_CONFIG_SSL_PARAM.html' title='winapi::http::HTTP_SERVICE_CONFIG_SSL_PARAM'>HTTP_SERVICE_CONFIG_SSL_PARAM</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-74927' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/http/struct.HTTP_SERVICE_CONFIG_SSL_PARAM.html' title='winapi::http::HTTP_SERVICE_CONFIG_SSL_PARAM'>HTTP_SERVICE_CONFIG_SSL_PARAM</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-74928' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/http/struct.HTTP_SERVICE_CONFIG_SSL_PARAM.html' title='winapi::http::HTTP_SERVICE_CONFIG_SSL_PARAM'>HTTP_SERVICE_CONFIG_SSL_PARAM</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/http/struct.HTTP_SERVICE_CONFIG_SSL_PARAM.html' title='struct winapi::http::HTTP_SERVICE_CONFIG_SSL_PARAM'>HTTP_SERVICE_CONFIG_SSL_PARAM</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/http/struct.HTTP_SERVICE_CONFIG_SSL_PARAM.html' title='struct winapi::http::HTTP_SERVICE_CONFIG_SSL_PARAM'>HTTP_SERVICE_CONFIG_SSL_PARAM</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/http/struct.HTTP_SERVICE_CONFIG_SSL_PARAM.html' title='struct winapi::http::HTTP_SERVICE_CONFIG_SSL_PARAM'>HTTP_SERVICE_CONFIG_SSL_PARAM</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -154,11 +156,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

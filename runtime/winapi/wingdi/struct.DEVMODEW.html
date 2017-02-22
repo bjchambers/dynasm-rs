@@ -9,6 +9,7 @@
 
     <title>winapi::wingdi::DEVMODEW - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,122 +48,123 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-114451' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct DEVMODEW {
-    pub dmDeviceName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a>,
-    pub dmSpecVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub dmDriverVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub dmSize: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub dmDriverExtra: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub dmFields: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct DEVMODEW {
+    pub dmDeviceName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a>,
+    pub dmSpecVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub dmDriverVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub dmSize: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub dmDriverExtra: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub dmFields: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
     pub union1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 16]</a>,
-    pub dmColor: <a class='type' href='../../winapi/type.c_short.html' title='winapi::c_short'>c_short</a>,
-    pub dmDuplex: <a class='type' href='../../winapi/type.c_short.html' title='winapi::c_short'>c_short</a>,
-    pub dmYResolution: <a class='type' href='../../winapi/type.c_short.html' title='winapi::c_short'>c_short</a>,
-    pub dmTTOption: <a class='type' href='../../winapi/type.c_short.html' title='winapi::c_short'>c_short</a>,
-    pub dmCollate: <a class='type' href='../../winapi/type.c_short.html' title='winapi::c_short'>c_short</a>,
-    pub dmFormName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a>,
-    pub dmLogPixels: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub dmBitsPerPel: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmPelsWidth: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmPelsHeight: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmDisplayFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmDisplayFrequency: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmICMMethod: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmICMIntent: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmMediaType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmDitherType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmReserved1: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmReserved2: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmPanningWidth: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dmPanningHeight: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmColor: <a class='type' href='../../winapi/type.c_short.html' title='type winapi::c_short'>c_short</a>,
+    pub dmDuplex: <a class='type' href='../../winapi/type.c_short.html' title='type winapi::c_short'>c_short</a>,
+    pub dmYResolution: <a class='type' href='../../winapi/type.c_short.html' title='type winapi::c_short'>c_short</a>,
+    pub dmTTOption: <a class='type' href='../../winapi/type.c_short.html' title='type winapi::c_short'>c_short</a>,
+    pub dmCollate: <a class='type' href='../../winapi/type.c_short.html' title='type winapi::c_short'>c_short</a>,
+    pub dmFormName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a>,
+    pub dmLogPixels: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub dmBitsPerPel: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmPelsWidth: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmPelsHeight: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmDisplayFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmDisplayFrequency: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmICMMethod: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmICMIntent: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmMediaType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmDitherType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmReserved1: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmReserved2: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmPanningWidth: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dmPanningHeight: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.dmDeviceName' class='structfield'>
                            <span id='dmDeviceName.v' class='invisible'>
-                           <code>dmDeviceName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmSpecVersion' class='structfield'>
+                           <code>dmDeviceName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a></code>
+                           </span></span><span id='structfield.dmSpecVersion' class='structfield'>
                            <span id='dmSpecVersion.v' class='invisible'>
-                           <code>dmSpecVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmDriverVersion' class='structfield'>
+                           <code>dmSpecVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.dmDriverVersion' class='structfield'>
                            <span id='dmDriverVersion.v' class='invisible'>
-                           <code>dmDriverVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmSize' class='structfield'>
+                           <code>dmDriverVersion: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.dmSize' class='structfield'>
                            <span id='dmSize.v' class='invisible'>
-                           <code>dmSize: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmDriverExtra' class='structfield'>
+                           <code>dmSize: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.dmDriverExtra' class='structfield'>
                            <span id='dmDriverExtra.v' class='invisible'>
-                           <code>dmDriverExtra: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmFields' class='structfield'>
+                           <code>dmDriverExtra: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.dmFields' class='structfield'>
                            <span id='dmFields.v' class='invisible'>
-                           <code>dmFields: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.union1' class='structfield'>
+                           <code>dmFields: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.union1' class='structfield'>
                            <span id='union1.v' class='invisible'>
                            <code>union1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 16]</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmColor' class='structfield'>
+                           </span></span><span id='structfield.dmColor' class='structfield'>
                            <span id='dmColor.v' class='invisible'>
-                           <code>dmColor: <a class='type' href='../../winapi/type.c_short.html' title='winapi::c_short'>c_short</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmDuplex' class='structfield'>
+                           <code>dmColor: <a class='type' href='../../winapi/type.c_short.html' title='type winapi::c_short'>c_short</a></code>
+                           </span></span><span id='structfield.dmDuplex' class='structfield'>
                            <span id='dmDuplex.v' class='invisible'>
-                           <code>dmDuplex: <a class='type' href='../../winapi/type.c_short.html' title='winapi::c_short'>c_short</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmYResolution' class='structfield'>
+                           <code>dmDuplex: <a class='type' href='../../winapi/type.c_short.html' title='type winapi::c_short'>c_short</a></code>
+                           </span></span><span id='structfield.dmYResolution' class='structfield'>
                            <span id='dmYResolution.v' class='invisible'>
-                           <code>dmYResolution: <a class='type' href='../../winapi/type.c_short.html' title='winapi::c_short'>c_short</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmTTOption' class='structfield'>
+                           <code>dmYResolution: <a class='type' href='../../winapi/type.c_short.html' title='type winapi::c_short'>c_short</a></code>
+                           </span></span><span id='structfield.dmTTOption' class='structfield'>
                            <span id='dmTTOption.v' class='invisible'>
-                           <code>dmTTOption: <a class='type' href='../../winapi/type.c_short.html' title='winapi::c_short'>c_short</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmCollate' class='structfield'>
+                           <code>dmTTOption: <a class='type' href='../../winapi/type.c_short.html' title='type winapi::c_short'>c_short</a></code>
+                           </span></span><span id='structfield.dmCollate' class='structfield'>
                            <span id='dmCollate.v' class='invisible'>
-                           <code>dmCollate: <a class='type' href='../../winapi/type.c_short.html' title='winapi::c_short'>c_short</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmFormName' class='structfield'>
+                           <code>dmCollate: <a class='type' href='../../winapi/type.c_short.html' title='type winapi::c_short'>c_short</a></code>
+                           </span></span><span id='structfield.dmFormName' class='structfield'>
                            <span id='dmFormName.v' class='invisible'>
-                           <code>dmFormName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmLogPixels' class='structfield'>
+                           <code>dmFormName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a></code>
+                           </span></span><span id='structfield.dmLogPixels' class='structfield'>
                            <span id='dmLogPixels.v' class='invisible'>
-                           <code>dmLogPixels: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmBitsPerPel' class='structfield'>
+                           <code>dmLogPixels: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.dmBitsPerPel' class='structfield'>
                            <span id='dmBitsPerPel.v' class='invisible'>
-                           <code>dmBitsPerPel: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmPelsWidth' class='structfield'>
+                           <code>dmBitsPerPel: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmPelsWidth' class='structfield'>
                            <span id='dmPelsWidth.v' class='invisible'>
-                           <code>dmPelsWidth: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmPelsHeight' class='structfield'>
+                           <code>dmPelsWidth: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmPelsHeight' class='structfield'>
                            <span id='dmPelsHeight.v' class='invisible'>
-                           <code>dmPelsHeight: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmDisplayFlags' class='structfield'>
+                           <code>dmPelsHeight: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmDisplayFlags' class='structfield'>
                            <span id='dmDisplayFlags.v' class='invisible'>
-                           <code>dmDisplayFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmDisplayFrequency' class='structfield'>
+                           <code>dmDisplayFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmDisplayFrequency' class='structfield'>
                            <span id='dmDisplayFrequency.v' class='invisible'>
-                           <code>dmDisplayFrequency: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmICMMethod' class='structfield'>
+                           <code>dmDisplayFrequency: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmICMMethod' class='structfield'>
                            <span id='dmICMMethod.v' class='invisible'>
-                           <code>dmICMMethod: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmICMIntent' class='structfield'>
+                           <code>dmICMMethod: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmICMIntent' class='structfield'>
                            <span id='dmICMIntent.v' class='invisible'>
-                           <code>dmICMIntent: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmMediaType' class='structfield'>
+                           <code>dmICMIntent: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmMediaType' class='structfield'>
                            <span id='dmMediaType.v' class='invisible'>
-                           <code>dmMediaType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmDitherType' class='structfield'>
+                           <code>dmMediaType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmDitherType' class='structfield'>
                            <span id='dmDitherType.v' class='invisible'>
-                           <code>dmDitherType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmReserved1' class='structfield'>
+                           <code>dmDitherType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmReserved1' class='structfield'>
                            <span id='dmReserved1.v' class='invisible'>
-                           <code>dmReserved1: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmReserved2' class='structfield'>
+                           <code>dmReserved1: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmReserved2' class='structfield'>
                            <span id='dmReserved2.v' class='invisible'>
-                           <code>dmReserved2: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmPanningWidth' class='structfield'>
+                           <code>dmReserved2: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmPanningWidth' class='structfield'>
                            <span id='dmPanningWidth.v' class='invisible'>
-                           <code>dmPanningWidth: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dmPanningHeight' class='structfield'>
+                           <code>dmPanningWidth: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dmPanningHeight' class='structfield'>
                            <span id='dmPanningHeight.v' class='invisible'>
-                           <code>dmPanningHeight: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/wingdi/struct.DEVMODEW.html' title='winapi::wingdi::DEVMODEW'>DEVMODEW</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-114482' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>dmPanningHeight: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/wingdi/struct.DEVMODEW.html' title='struct winapi::wingdi::DEVMODEW'>DEVMODEW</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/wingdi/struct.DEVMODEW.html' title='winapi::wingdi::DEVMODEW'>DEVMODEW</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-114447' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/wingdi/struct.DEVMODEW.html' title='winapi::wingdi::DEVMODEW'>DEVMODEW</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-114448' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/wingdi/struct.DEVMODEW.html' title='winapi::wingdi::DEVMODEW'>DEVMODEW</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/wingdi/struct.DEVMODEW.html' title='struct winapi::wingdi::DEVMODEW'>DEVMODEW</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/wingdi/struct.DEVMODEW.html' title='struct winapi::wingdi::DEVMODEW'>DEVMODEW</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/wingdi/struct.DEVMODEW.html' title='struct winapi::wingdi::DEVMODEW'>DEVMODEW</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -222,11 +224,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

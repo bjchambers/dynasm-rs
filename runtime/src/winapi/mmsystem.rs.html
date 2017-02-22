@@ -9,6 +9,7 @@
 
     <title>mmsystem.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -312,9 +313,9 @@
     <span class='ident'>wType</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>u</span>: <span class='ident'>MMTIME_u</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMMTIME</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MMTIME</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPMMTIME</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MMTIME</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMMTIME</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MMTIME</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMMTIME</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MMTIME</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPMMTIME</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MMTIME</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMMTIME</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MMTIME</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MMTIME_u</span> {
     <span class='ident'>data</span>: [<span class='ident'>u8</span>; <span class='number'>8</span>],
 }}
@@ -420,8 +421,8 @@
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>WAVERR_LASTERROR</span>: <span class='ident'>MMRESULT</span> <span class='op'>=</span> <span class='ident'>WAVERR_BASE</span> <span class='op'>+</span> <span class='number'>3</span>;
 <span class='macro'>DECLARE_HANDLE</span><span class='macro'>!</span>(<span class='ident'>HWAVEIN</span>, <span class='ident'>HWAVEIN__</span>);
 <span class='macro'>DECLARE_HANDLE</span><span class='macro'>!</span>(<span class='ident'>HWAVEOUT</span>, <span class='ident'>HWAVEOUT__</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHWAVEIN</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HWAVEIN</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHWAVEOUT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HWAVEOUT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHWAVEIN</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HWAVEIN</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHWAVEOUT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HWAVEOUT</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>WOM_OPEN</span>: ::<span class='ident'>UINT</span> <span class='op'>=</span> <span class='ident'>MM_WOM_OPEN</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>WOM_CLOSE</span>: ::<span class='ident'>UINT</span> <span class='op'>=</span> <span class='ident'>MM_WOM_CLOSE</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>WOM_DONE</span>: ::<span class='ident'>UINT</span> <span class='op'>=</span> <span class='ident'>MM_WOM_DONE</span>;
@@ -442,12 +443,12 @@
     <span class='ident'>dwUser</span>: ::<span class='ident'>DWORD_PTR</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwLoops</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>lpNext</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEHDR</span>,
+    <span class='ident'>lpNext</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEHDR</span>,
     <span class='ident'>reserved</span>: ::<span class='ident'>DWORD_PTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWAVEHDR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEHDR</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPWAVEHDR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEHDR</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWAVEHDR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEHDR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWAVEHDR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEHDR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPWAVEHDR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEHDR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWAVEHDR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEHDR</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>WAVEOUTCAPSW</span> {
     <span class='ident'>wMid</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>wPid</span>: ::<span class='ident'>WORD</span>,
@@ -458,9 +459,9 @@
     <span class='ident'>wReserved1</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>dwSupport</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWAVEOUTCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEOUTCAPSW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPWAVEOUTCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEOUTCAPSW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWAVEOUTCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEOUTCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWAVEOUTCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEOUTCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPWAVEOUTCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEOUTCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWAVEOUTCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEOUTCAPSW</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>WAVEINCAPSW</span> {
     <span class='ident'>wMid</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>wPid</span>: ::<span class='ident'>WORD</span>,
@@ -470,9 +471,9 @@
     <span class='ident'>wChannels</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>wReserved1</span>: ::<span class='ident'>WORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWAVEINCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEINCAPSW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPWAVEINCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEINCAPSW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWAVEINCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEINCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWAVEINCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEINCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPWAVEINCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEINCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWAVEINCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WAVEINCAPSW</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>WAVE_INVALIDFORMAT</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000000</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>WAVE_FORMAT_1M08</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>WAVE_FORMAT_1S08</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000002</span>;
@@ -499,10 +500,10 @@
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>WAVE_FORMAT_96M16</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00040000</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>WAVE_FORMAT_96S16</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00080000</span>;
 <span class='comment'>//782 (Win 7 SDK)</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWAVEFORMATEX</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>WAVEFORMATEX</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPWAVEFORMATEX</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>WAVEFORMATEX</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWAVEFORMATEX</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>WAVEFORMATEX</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCWAVEFORMATEX</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>WAVEFORMATEX</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWAVEFORMATEX</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>WAVEFORMATEX</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPWAVEFORMATEX</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>WAVEFORMATEX</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWAVEFORMATEX</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>WAVEFORMATEX</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCWAVEFORMATEX</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>WAVEFORMATEX</span>;
 <span class='comment'>//2170 (Win 7 SDK)</span>
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>TIMERR_NOERROR</span>: ::<span class='ident'>MMRESULT</span> <span class='op'>=</span> <span class='number'>0</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>TIMERR_NOCANDO</span>: ::<span class='ident'>MMRESULT</span> <span class='op'>=</span> <span class='ident'>TIMERR_BASE</span> <span class='op'>+</span> <span class='number'>1</span>;
@@ -512,23 +513,23 @@
     <span class='ident'>wPeriodMin</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>wPeriodMax</span>: ::<span class='ident'>UINT</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTIMECAPS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TIMECAPS</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPTIMECAPS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TIMECAPS</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPTIMECAPS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>TIMECAPS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTIMECAPS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TIMECAPS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPTIMECAPS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TIMECAPS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPTIMECAPS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>TIMECAPS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MIDIHDR</span> {
     <span class='ident'>lpData</span>: ::<span class='ident'>LPSTR</span>,
     <span class='ident'>dwBufferLength</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwBytesRecorded</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwUser</span>: ::<span class='ident'>DWORD_PTR</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>lpNext</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIHDR</span>,
+    <span class='ident'>lpNext</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIHDR</span>,
     <span class='ident'>reserved</span>: ::<span class='ident'>DWORD_PTR</span>,
     <span class='ident'>dwOffset</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwReserved</span>: [::<span class='ident'>DWORD_PTR</span>; <span class='number'>4</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMIDIHDR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIHDR</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPMIDIHDR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIHDR</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMIDIHDR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIHDR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMIDIHDR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIHDR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPMIDIHDR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIHDR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMIDIHDR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIHDR</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MIDIINCAPSW</span> {
     <span class='ident'>wMid</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>wPid</span>: ::<span class='ident'>WORD</span>,
@@ -536,9 +537,9 @@
     <span class='ident'>szPname</span>: [::<span class='ident'>WCHAR</span>; <span class='number'>32</span>],
     <span class='ident'>dwSupport</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMIDIINCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIINCAPSW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPMIDIINCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIINCAPSW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMIDIINCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIINCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMIDIINCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIINCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPMIDIINCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIINCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMIDIINCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIINCAPSW</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MIDIOUTCAPSW</span> {
     <span class='ident'>wMid</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>wPid</span>: ::<span class='ident'>WORD</span>,
@@ -550,17 +551,17 @@
     <span class='ident'>wChannelMask</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>dwSupport</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMIDIOUTCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIOUTCAPSW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPMIDIOUTCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIOUTCAPSW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMIDIOUTCAPSW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIOUTCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PMIDIOUTCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIOUTCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NPMIDIOUTCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIOUTCAPSW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMIDIOUTCAPSW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MIDIOUTCAPSW</span>;
 <span class='macro'>DECLARE_HANDLE</span><span class='macro'>!</span>(<span class='ident'>HMIDIIN</span>, <span class='ident'>HMIDIIN__</span>);
 <span class='macro'>DECLARE_HANDLE</span><span class='macro'>!</span>(<span class='ident'>HMIDIOUT</span>, <span class='ident'>HMIDIOUT__</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHMIDIIN</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HMIDIIN</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHMIDIOUT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HMIDIOUT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHMIDIIN</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HMIDIIN</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHMIDIOUT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HMIDIOUT</span>;
 <span class='macro'>DECLARE_HANDLE</span><span class='macro'>!</span>(<span class='ident'>HMIDISTRM</span>, <span class='ident'>HMIDISTRM__</span>);
 <span class='macro'>DECLARE_HANDLE</span><span class='macro'>!</span>(<span class='ident'>HMIDI</span>, <span class='ident'>HMIDI__</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHMIDISTRM</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HMIDISTRM</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHMIDI</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HMIDI</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHMIDISTRM</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HMIDISTRM</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHMIDI</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HMIDI</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -618,11 +619,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

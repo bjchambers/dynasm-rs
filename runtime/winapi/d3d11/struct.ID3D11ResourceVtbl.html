@@ -9,6 +9,7 @@
 
     <title>winapi::d3d11::ID3D11ResourceVtbl - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,25 +48,26 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-44511' class='srclink' href='../../src/winapi/macros.rs.html#139-145' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct ID3D11ResourceVtbl {
-    pub parent: <a class='struct' href='../../winapi/d3d11/struct.ID3D11DeviceChildVtbl.html' title='winapi::d3d11::ID3D11DeviceChildVtbl'>ID3D11DeviceChildVtbl</a>,
-    pub GetType: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>, pResourceDimension: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.D3D11_RESOURCE_DIMENSION.html' title='winapi::d3d11::D3D11_RESOURCE_DIMENSION'>D3D11_RESOURCE_DIMENSION</a>),
-    pub SetEvictionPriority: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>, EvictionPriority: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>),
-    pub GetEvictionPriority: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#139-145' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct ID3D11ResourceVtbl {
+    pub parent: <a class='struct' href='../../winapi/d3d11/struct.ID3D11DeviceChildVtbl.html' title='struct winapi::d3d11::ID3D11DeviceChildVtbl'>ID3D11DeviceChildVtbl</a>,
+    pub GetType: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='struct winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.D3D11_RESOURCE_DIMENSION.html' title='struct winapi::d3d11::D3D11_RESOURCE_DIMENSION'>D3D11_RESOURCE_DIMENSION</a>),
+    pub SetEvictionPriority: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='struct winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>, _: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>),
+    pub GetEvictionPriority: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='struct winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.parent' class='structfield'>
                            <span id='parent.v' class='invisible'>
-                           <code>parent: <a class='struct' href='../../winapi/d3d11/struct.ID3D11DeviceChildVtbl.html' title='winapi::d3d11::ID3D11DeviceChildVtbl'>ID3D11DeviceChildVtbl</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.GetType' class='structfield'>
+                           <code>parent: <a class='struct' href='../../winapi/d3d11/struct.ID3D11DeviceChildVtbl.html' title='struct winapi::d3d11::ID3D11DeviceChildVtbl'>ID3D11DeviceChildVtbl</a></code>
+                           </span></span><span id='structfield.GetType' class='structfield'>
                            <span id='GetType.v' class='invisible'>
-                           <code>GetType: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>, pResourceDimension: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.D3D11_RESOURCE_DIMENSION.html' title='winapi::d3d11::D3D11_RESOURCE_DIMENSION'>D3D11_RESOURCE_DIMENSION</a>)</code>
-                           </span></span><span class='stab '></span><span id='structfield.SetEvictionPriority' class='structfield'>
+                           <code>GetType: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='struct winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.D3D11_RESOURCE_DIMENSION.html' title='struct winapi::d3d11::D3D11_RESOURCE_DIMENSION'>D3D11_RESOURCE_DIMENSION</a>)</code>
+                           </span></span><span id='structfield.SetEvictionPriority' class='structfield'>
                            <span id='SetEvictionPriority.v' class='invisible'>
-                           <code>SetEvictionPriority: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>, EvictionPriority: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>)</code>
-                           </span></span><span class='stab '></span><span id='structfield.GetEvictionPriority' class='structfield'>
+                           <code>SetEvictionPriority: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='struct winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>, _: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>)</code>
+                           </span></span><span id='structfield.GetEvictionPriority' class='structfield'>
                            <span id='GetEvictionPriority.v' class='invisible'>
-                           <code>GetEvictionPriority: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span></section>
+                           <code>GetEvictionPriority: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d11/struct.ID3D11Resource.html' title='struct winapi::d3d11::ID3D11Resource'>ID3D11Resource</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -121,11 +123,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

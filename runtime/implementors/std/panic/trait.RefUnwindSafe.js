@@ -1,4 +1,5 @@
 (function() {var implementors = {};
+implementors["libc"] = [];
 implementors["winapi"] = [];
 
             if (window.register_implementors) {

@@ -9,6 +9,7 @@
 
     <title>winapi::bcrypt::CRYPT_PROVIDER_REF - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,42 +48,43 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-27814' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct CRYPT_PROVIDER_REF {
-    pub dwInterface: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a>,
-    pub pszFunction: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='winapi::winnt::PWSTR'>PWSTR</a>,
-    pub pszProvider: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='winapi::winnt::PWSTR'>PWSTR</a>,
-    pub cProperties: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a>,
-    pub rgpProperties: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/bcrypt/type.PCRYPT_PROPERTY_REF.html' title='winapi::bcrypt::PCRYPT_PROPERTY_REF'>PCRYPT_PROPERTY_REF</a>,
-    pub pUM: <a class='type' href='../../winapi/bcrypt/type.PCRYPT_IMAGE_REF.html' title='winapi::bcrypt::PCRYPT_IMAGE_REF'>PCRYPT_IMAGE_REF</a>,
-    pub pKM: <a class='type' href='../../winapi/bcrypt/type.PCRYPT_IMAGE_REF.html' title='winapi::bcrypt::PCRYPT_IMAGE_REF'>PCRYPT_IMAGE_REF</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct CRYPT_PROVIDER_REF {
+    pub dwInterface: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a>,
+    pub pszFunction: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='type winapi::winnt::PWSTR'>PWSTR</a>,
+    pub pszProvider: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='type winapi::winnt::PWSTR'>PWSTR</a>,
+    pub cProperties: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a>,
+    pub rgpProperties: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/bcrypt/type.PCRYPT_PROPERTY_REF.html' title='type winapi::bcrypt::PCRYPT_PROPERTY_REF'>PCRYPT_PROPERTY_REF</a>,
+    pub pUM: <a class='type' href='../../winapi/bcrypt/type.PCRYPT_IMAGE_REF.html' title='type winapi::bcrypt::PCRYPT_IMAGE_REF'>PCRYPT_IMAGE_REF</a>,
+    pub pKM: <a class='type' href='../../winapi/bcrypt/type.PCRYPT_IMAGE_REF.html' title='type winapi::bcrypt::PCRYPT_IMAGE_REF'>PCRYPT_IMAGE_REF</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.dwInterface' class='structfield'>
                            <span id='dwInterface.v' class='invisible'>
-                           <code>dwInterface: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pszFunction' class='structfield'>
+                           <code>dwInterface: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a></code>
+                           </span></span><span id='structfield.pszFunction' class='structfield'>
                            <span id='pszFunction.v' class='invisible'>
-                           <code>pszFunction: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='winapi::winnt::PWSTR'>PWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pszProvider' class='structfield'>
+                           <code>pszFunction: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='type winapi::winnt::PWSTR'>PWSTR</a></code>
+                           </span></span><span id='structfield.pszProvider' class='structfield'>
                            <span id='pszProvider.v' class='invisible'>
-                           <code>pszProvider: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='winapi::winnt::PWSTR'>PWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.cProperties' class='structfield'>
+                           <code>pszProvider: <a class='type' href='../../winapi/winnt/type.PWSTR.html' title='type winapi::winnt::PWSTR'>PWSTR</a></code>
+                           </span></span><span id='structfield.cProperties' class='structfield'>
                            <span id='cProperties.v' class='invisible'>
-                           <code>cProperties: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.rgpProperties' class='structfield'>
+                           <code>cProperties: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a></code>
+                           </span></span><span id='structfield.rgpProperties' class='structfield'>
                            <span id='rgpProperties.v' class='invisible'>
-                           <code>rgpProperties: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/bcrypt/type.PCRYPT_PROPERTY_REF.html' title='winapi::bcrypt::PCRYPT_PROPERTY_REF'>PCRYPT_PROPERTY_REF</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pUM' class='structfield'>
+                           <code>rgpProperties: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/bcrypt/type.PCRYPT_PROPERTY_REF.html' title='type winapi::bcrypt::PCRYPT_PROPERTY_REF'>PCRYPT_PROPERTY_REF</a></code>
+                           </span></span><span id='structfield.pUM' class='structfield'>
                            <span id='pUM.v' class='invisible'>
-                           <code>pUM: <a class='type' href='../../winapi/bcrypt/type.PCRYPT_IMAGE_REF.html' title='winapi::bcrypt::PCRYPT_IMAGE_REF'>PCRYPT_IMAGE_REF</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pKM' class='structfield'>
+                           <code>pUM: <a class='type' href='../../winapi/bcrypt/type.PCRYPT_IMAGE_REF.html' title='type winapi::bcrypt::PCRYPT_IMAGE_REF'>PCRYPT_IMAGE_REF</a></code>
+                           </span></span><span id='structfield.pKM' class='structfield'>
                            <span id='pKM.v' class='invisible'>
-                           <code>pKM: <a class='type' href='../../winapi/bcrypt/type.PCRYPT_IMAGE_REF.html' title='winapi::bcrypt::PCRYPT_IMAGE_REF'>PCRYPT_IMAGE_REF</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/bcrypt/struct.CRYPT_PROVIDER_REF.html' title='winapi::bcrypt::CRYPT_PROVIDER_REF'>CRYPT_PROVIDER_REF</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-27822' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>pKM: <a class='type' href='../../winapi/bcrypt/type.PCRYPT_IMAGE_REF.html' title='type winapi::bcrypt::PCRYPT_IMAGE_REF'>PCRYPT_IMAGE_REF</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/bcrypt/struct.CRYPT_PROVIDER_REF.html' title='struct winapi::bcrypt::CRYPT_PROVIDER_REF'>CRYPT_PROVIDER_REF</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/bcrypt/struct.CRYPT_PROVIDER_REF.html' title='winapi::bcrypt::CRYPT_PROVIDER_REF'>CRYPT_PROVIDER_REF</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-27810' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/bcrypt/struct.CRYPT_PROVIDER_REF.html' title='winapi::bcrypt::CRYPT_PROVIDER_REF'>CRYPT_PROVIDER_REF</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-27811' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/bcrypt/struct.CRYPT_PROVIDER_REF.html' title='winapi::bcrypt::CRYPT_PROVIDER_REF'>CRYPT_PROVIDER_REF</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/bcrypt/struct.CRYPT_PROVIDER_REF.html' title='struct winapi::bcrypt::CRYPT_PROVIDER_REF'>CRYPT_PROVIDER_REF</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/bcrypt/struct.CRYPT_PROVIDER_REF.html' title='struct winapi::bcrypt::CRYPT_PROVIDER_REF'>CRYPT_PROVIDER_REF</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/bcrypt/struct.CRYPT_PROVIDER_REF.html' title='struct winapi::bcrypt::CRYPT_PROVIDER_REF'>CRYPT_PROVIDER_REF</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -142,11 +144,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

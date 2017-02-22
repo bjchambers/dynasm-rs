@@ -9,6 +9,7 @@
 
     <title>devpropdef.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -118,7 +119,7 @@
 <span class='comment'>// Licensed under the MIT License &lt;LICENSE.md&gt;</span>
 <span class='doccomment'>//! Defines property types and keys for the Plug and Play Device Property API</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>DEVPROPTYPE</span> <span class='op'>=</span> ::<span class='ident'>ULONG</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPTYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ULONG</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPTYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ULONG</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DEVPROP_TYPEMOD_ARRAY</span>: <span class='ident'>DEVPROPTYPE</span> <span class='op'>=</span> <span class='number'>0x00001000</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DEVPROP_TYPEMOD_LIST</span>: <span class='ident'>DEVPROPTYPE</span> <span class='op'>=</span> <span class='number'>0x00002000</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DEVPROP_TYPE_EMPTY</span>: <span class='ident'>DEVPROPTYPE</span> <span class='op'>=</span> <span class='number'>0x00000000</span>;
@@ -154,36 +155,36 @@
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DEVPROP_MASK_TYPE</span>: <span class='ident'>DEVPROPTYPE</span> <span class='op'>=</span> <span class='number'>0x00000FFF</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DEVPROP_MASK_TYPEMOD</span>: <span class='ident'>DEVPROPTYPE</span> <span class='op'>=</span> <span class='number'>0x0000F000</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>DEVPROP_BOOLEAN</span> <span class='op'>=</span> ::<span class='ident'>CHAR</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROP_BOOLEAN</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>CHAR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROP_BOOLEAN</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>CHAR</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DEVPROP_TRUE</span>: <span class='ident'>DEVPROP_BOOLEAN</span> <span class='op'>=</span> <span class='op'>-</span><span class='number'>1</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DEVPROP_FALSE</span>: <span class='ident'>DEVPROP_BOOLEAN</span> <span class='op'>=</span> <span class='number'>0</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>DEVPROPGUID</span> <span class='op'>=</span> ::<span class='ident'>GUID</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPGUID</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>GUID</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPGUID</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>GUID</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>DEVPROPID</span> <span class='op'>=</span> ::<span class='ident'>ULONG</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPID</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ULONG</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPID</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ULONG</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DEVPROPKEY</span> {
     <span class='ident'>fmtid</span>: <span class='ident'>DEVPROPGUID</span>,
     <span class='ident'>pid</span>: <span class='ident'>DEVPROPID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPKEY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DEVPROPKEY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPKEY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DEVPROPKEY</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>DEVPROPSTORE</span> {
     <span class='ident'>DEVPROP_STORE_SYSTEM</span>,
     <span class='ident'>DEVPROP_STORE_USER</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPSTORE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DEVPROPSTORE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPSTORE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DEVPROPSTORE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DEVPROPCOMPKEY</span> {
     <span class='ident'>Key</span>: <span class='ident'>DEVPROPKEY</span>,
     <span class='ident'>Store</span>: <span class='ident'>DEVPROPSTORE</span>,
     <span class='ident'>LocaleName</span>: ::<span class='ident'>PCWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPCOMPKEY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DEVPROPCOMPKEY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPCOMPKEY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DEVPROPCOMPKEY</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DEVPROPERTY</span> {
     <span class='ident'>CompKey</span>: <span class='ident'>DEVPROPCOMPKEY</span>,
     <span class='ident'>Type</span>: <span class='ident'>DEVPROPTYPE</span>,
     <span class='ident'>BufferSize</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>Buffer</span>: ::<span class='ident'>PVOID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPERTY</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DEVPROPERTY</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDEVPROPERTY</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DEVPROPERTY</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DEVPROPID_FIRST_USABLE</span>: <span class='ident'>DEVPROPID</span> <span class='op'>=</span> <span class='number'>2</span>;
 </pre>
 </section>
@@ -242,11 +243,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>activation.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -50,7 +51,7 @@
 </pre><pre class='rust '>
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IActivationFactory</span>(<span class='ident'>IActivationFactoryVtbl</span>): <span class='ident'>IInspectable</span>(<span class='ident'>IInspectableVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>ActivateInstance</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>instance</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IInspectable</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>ActivateInstance</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>instance</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IInspectable</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }
 );</pre>
 </section>
@@ -109,11 +110,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>fs2 - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
     
@@ -47,12 +48,12 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-0' class='srclink' href='../src/fs2/lib.rs.html#1-407' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/fs2/lib.rs.html#1-407' title='goto source code'>[src]</a></span></h1>
 <h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class='trait' href='trait.FileExt.html'
-                                  title='fs2::FileExt'>FileExt</a></td>
+                                  title='trait fs2::FileExt'>FileExt</a></td>
                            <td class='docblock-short'>
                                 <p>Extension trait for <code>std::fs::File</code> which provides allocation, duplication and locking methods.</p>
                            </td>
@@ -60,7 +61,7 @@
 <table>
                        <tr class=' module-item'>
                            <td><a class='fn' href='fn.allocation_granularity.html'
-                                  title='fs2::allocation_granularity'>allocation_granularity</a></td>
+                                  title='fn fs2::allocation_granularity'>allocation_granularity</a></td>
                            <td class='docblock-short'>
                                 <p>Returns the filesystem&#39;s disk space allocation granularity in bytes.
 The provided path may be for any file in the filesystem.</p>
@@ -68,7 +69,7 @@ The provided path may be for any file in the filesystem.</p>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='fn' href='fn.available_space.html'
-                                  title='fs2::available_space'>available_space</a></td>
+                                  title='fn fs2::available_space'>available_space</a></td>
                            <td class='docblock-short'>
                                 <p>Returns the available space in bytes to non-priveleged users in the file
 system containing the provided path.</p>
@@ -76,7 +77,7 @@ system containing the provided path.</p>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='fn' href='fn.free_space.html'
-                                  title='fs2::free_space'>free_space</a></td>
+                                  title='fn fs2::free_space'>free_space</a></td>
                            <td class='docblock-short'>
                                 <p>Returns the number of free bytes in the file system containing the provided
 path.</p>
@@ -84,7 +85,7 @@ path.</p>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='fn' href='fn.lock_contended_error.html'
-                                  title='fs2::lock_contended_error'>lock_contended_error</a></td>
+                                  title='fn fs2::lock_contended_error'>lock_contended_error</a></td>
                            <td class='docblock-short'>
                                 <p>Returns the error that a call to a try lock method on a contended file will
 return.</p>
@@ -92,7 +93,7 @@ return.</p>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='fn' href='fn.total_space.html'
-                                  title='fs2::total_space'>total_space</a></td>
+                                  title='fn fs2::total_space'>total_space</a></td>
                            <td class='docblock-short'>
                                 <p>Returns the total space in bytes in the file system containing the provided
 path.</p>
@@ -153,11 +154,9 @@ path.</p>
     <script>
         window.rootPath = "../";
         window.currentCrate = "fs2";
-        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
-    <script src="../extra.js"></script>
     <script defer src="../search-index.js"></script>
 </body>
 </html>

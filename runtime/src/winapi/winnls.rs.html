@@ -9,6 +9,7 @@
 
     <title>winnls.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -233,7 +234,7 @@
     <span class='ident'>dwEffectiveId</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>guidCustomVersion</span>: ::<span class='ident'>GUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNLSVERSIONINFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NLSVERSIONINFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNLSVERSIONINFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NLSVERSIONINFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>NLSVERSIONINFOEX</span> {
     <span class='ident'>dwNLSVersionInfoSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwNLSVersion</span>: ::<span class='ident'>DWORD</span>,
@@ -241,7 +242,7 @@
     <span class='ident'>dwEffectiveId</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>guidCustomVersion</span>: ::<span class='ident'>GUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNLSVERSIONINFOEX</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NLSVERSIONINFOEX</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNLSVERSIONINFOEX</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NLSVERSIONINFOEX</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>NORM_FORM</span> {
     <span class='ident'>NormalizationOther</span> <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>NormalizationC</span> <span class='op'>=</span> <span class='number'>0x1</span>,
@@ -283,7 +284,7 @@
     <span class='ident'>DefaultChar</span>: [::<span class='ident'>BYTE</span>; <span class='ident'>MAX_DEFAULTCHAR</span>],
     <span class='ident'>LeadByte</span>: [::<span class='ident'>BYTE</span>; <span class='ident'>MAX_LEADBYTES</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCPINFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CPINFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCPINFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CPINFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>CPINFOEXA</span> {
     <span class='ident'>MaxCharSize</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>DefaultChar</span>: [::<span class='ident'>BYTE</span>; <span class='ident'>MAX_DEFAULTCHAR</span>],
@@ -292,7 +293,7 @@
     <span class='ident'>CodePage</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>CodePageName</span>: [::<span class='ident'>CHAR</span>; ::<span class='ident'>MAX_PATH</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCPINFOEXA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CPINFOEXA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCPINFOEXA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CPINFOEXA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>CPINFOEXW</span> {
     <span class='ident'>MaxCharSize</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>DefaultChar</span>: [::<span class='ident'>BYTE</span>; <span class='ident'>MAX_DEFAULTCHAR</span>],
@@ -301,7 +302,7 @@
     <span class='ident'>CodePage</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>CodePageName</span>: [::<span class='ident'>WCHAR</span>; ::<span class='ident'>MAX_PATH</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCPINFOEXW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CPINFOEXW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCPINFOEXW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CPINFOEXW</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>NUMBERFMTA</span> {
     <span class='ident'>NumDigits</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>LeadingZero</span>: ::<span class='ident'>UINT</span>,
@@ -310,7 +311,7 @@
     <span class='ident'>lpThousandSep</span>: ::<span class='ident'>LPSTR</span>,
     <span class='ident'>NegativeOrder</span>: ::<span class='ident'>UINT</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNUMBERFMTA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NUMBERFMTA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNUMBERFMTA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NUMBERFMTA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>NUMBERFMTW</span> {
     <span class='ident'>NumDigits</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>LeadingZero</span>: ::<span class='ident'>UINT</span>,
@@ -319,7 +320,7 @@
     <span class='ident'>lpThousandSep</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>NegativeOrder</span>: ::<span class='ident'>UINT</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNUMBERFMTW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NUMBERFMTW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNUMBERFMTW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NUMBERFMTW</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CURRENCYFMTA</span> {
     <span class='ident'>NumDigits</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>LeadingZero</span>: ::<span class='ident'>UINT</span>,
@@ -330,7 +331,7 @@
     <span class='ident'>PositiveOrder</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>lpCurrencySymbol</span>: ::<span class='ident'>LPSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCURRENCYFMTA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CURRENCYFMTA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCURRENCYFMTA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CURRENCYFMTA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>CURRENCYFMTW</span> {
     <span class='ident'>NumDigits</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>LeadingZero</span>: ::<span class='ident'>UINT</span>,
@@ -341,7 +342,7 @@
     <span class='ident'>PositiveOrder</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>lpCurrencySymbol</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCURRENCYFMTW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>CURRENCYFMTW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCURRENCYFMTW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>CURRENCYFMTW</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>NLS_FUNCTION</span> <span class='op'>=</span> ::<span class='ident'>DWORD</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>FILEMUIINFO</span> {
     <span class='ident'>dwSize</span>: ::<span class='ident'>DWORD</span>,
@@ -358,7 +359,7 @@
     <span class='ident'>dwTypeNameMUIOffset</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>abBuffer</span>: [::<span class='ident'>BYTE</span>; <span class='number'>8</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFILEMUIINFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>FILEMUIINFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFILEMUIINFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>FILEMUIINFO</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CALINFO_ENUMPROCEXEX</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
     ::<span class='ident'>LPWSTR</span>, ::<span class='ident'>CALID</span>, ::<span class='ident'>LPWSTR</span>, ::<span class='ident'>LPARAM</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
@@ -428,11 +429,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

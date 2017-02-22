@@ -9,6 +9,7 @@
 
     <title>d3d9types.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -1927,7 +1928,7 @@
     <span class='ident'>Usage</span>: ::<span class='ident'>BYTE</span>,
     <span class='ident'>UsageIndex</span>: ::<span class='ident'>BYTE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DVERTEXELEMENT9</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3DVERTEXELEMENT9</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DVERTEXELEMENT9</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3DVERTEXELEMENT9</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>D3DDECL_END</span>: <span class='ident'>D3DVERTEXELEMENT9</span> <span class='op'>=</span> <span class='ident'>D3DVERTEXELEMENT9</span> {
     <span class='ident'>Stream</span>: <span class='number'>0xFF</span>,
     <span class='ident'>Offset</span>: <span class='number'>0</span>,
@@ -2464,7 +2465,7 @@
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3DLOCKED_RECT</span> {
     <span class='ident'>Pitch</span>: ::<span class='ident'>INT</span>,
-    <span class='ident'>pBits</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pBits</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3DBOX</span> {
     <span class='ident'>Left</span>: ::<span class='ident'>UINT</span>,
@@ -2477,7 +2478,7 @@
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3DLOCKED_BOX</span> {
     <span class='ident'>RowPitch</span>: ::<span class='ident'>INT</span>,
     <span class='ident'>SlicePitch</span>: ::<span class='ident'>INT</span>,
-    <span class='ident'>pBits</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pBits</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3DRANGE</span> {
     <span class='ident'>Offset</span>: ::<span class='ident'>UINT</span>,
@@ -2556,19 +2557,19 @@
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3DDEVINFO_RESOURCEMANAGER</span> {
     <span class='ident'>stats</span>: [<span class='ident'>D3DRESOURCESTATS</span>; <span class='number'>8</span> <span class='comment'>/*D3DRTYPECOUNT, rust bug?*/</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DDEVINFO_RESOURCEMANAGER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3DDEVINFO_RESOURCEMANAGER</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DDEVINFO_RESOURCEMANAGER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3DDEVINFO_RESOURCEMANAGER</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3DDEVINFO_D3DVERTEXSTATS</span> {
     <span class='ident'>NumRenderedTriangles</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>NumExtraClippingTriangles</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DDEVINFO_D3DVERTEXSTATS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3DDEVINFO_D3DVERTEXSTATS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DDEVINFO_D3DVERTEXSTATS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3DDEVINFO_D3DVERTEXSTATS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3DDEVINFO_VCACHE</span> {
     <span class='ident'>Pattern</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>OptMethod</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>CacheSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>MagicNumber</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DDEVINFO_VCACHE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3DDEVINFO_VCACHE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3DDEVINFO_VCACHE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>D3DDEVINFO_VCACHE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3DDEVINFO_D3D9PIPELINETIMINGS</span> {
     <span class='ident'>VertexProcessingTimePercent</span>: ::<span class='ident'>FLOAT</span>,
     <span class='ident'>PixelProcessingTimePercent</span>: ::<span class='ident'>FLOAT</span>,
@@ -2894,11 +2895,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

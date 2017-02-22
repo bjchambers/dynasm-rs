@@ -9,6 +9,7 @@
 
     <title>ws2spi.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -109,14 +110,14 @@
     <span class='ident'>wHighVersion</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>szDescription</span>: [::<span class='ident'>WCHAR</span>; <span class='ident'>WSPDESCRIPTION_LEN</span> <span class='op'>+</span> <span class='number'>1</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWSPDATA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WSPDATA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWSPDATA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WSPDATA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>WSATHREADID</span> {
     <span class='ident'>ThreadHandle</span>: ::<span class='ident'>HANDLE</span>,
     <span class='ident'>Reserved</span>: ::<span class='ident'>DWORD_PTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWSATHREADID</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WSATHREADID</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPWSATHREADID</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WSATHREADID</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNSPV2STARTUP</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>lpProviderId</span>: ::<span class='ident'>LPGUID</span>, <span class='ident'>ppvClientSessionArg</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPVOID</span>,
+    <span class='ident'>lpProviderId</span>: ::<span class='ident'>LPGUID</span>, <span class='ident'>ppvClientSessionArg</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPVOID</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>INT</span><span class='op'>&gt;</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNSPV2CLEANUP</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
     <span class='ident'>lpProviderId</span>: ::<span class='ident'>LPGUID</span>, <span class='ident'>pvClientSessionArg</span>: ::<span class='ident'>LPVOID</span>,
@@ -149,10 +150,10 @@
     <span class='ident'>NSPv2SetServiceEx</span>: <span class='ident'>LPNSPV2SETSERVICEEX</span>,
     <span class='ident'>NSPv2ClientSessionRundown</span>: <span class='ident'>LPNSPV2CLIENTSESSIONRUNDOWN</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNSPV2_ROUTINE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NSPV2_ROUTINE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNSPV2_ROUTINE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NSPV2_ROUTINE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCNSPV2_ROUTINE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>NSPV2_ROUTINE</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCNSPV2_ROUTINE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>NSPV2_ROUTINE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNSPV2_ROUTINE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NSPV2_ROUTINE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPNSPV2_ROUTINE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NSPV2_ROUTINE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCNSPV2_ROUTINE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>NSPV2_ROUTINE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCNSPV2_ROUTINE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>NSPV2_ROUTINE</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>WSC_PROVIDER_INFO_TYPE</span> {
     <span class='ident'>ProviderInfoLspCategories</span>,
     <span class='ident'>ProviderInfoAudit</span>,
@@ -214,11 +215,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

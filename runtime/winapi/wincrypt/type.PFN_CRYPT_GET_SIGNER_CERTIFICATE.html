@@ -9,6 +9,7 @@
 
     <title>winapi::wincrypt::PFN_CRYPT_GET_SIGNER_CERTIFICATE - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,8 +48,8 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-15204' class='srclink' href='../../src/winapi/wincrypt.rs.html#2025-2028' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type PFN_CRYPT_GET_SIGNER_CERTIFICATE = <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;unsafe extern &quot;system&quot; fn(pvGetArg: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../winapi/enum.c_void.html' title='winapi::c_void'>c_void</a>, dwCertEncodingType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>, pSignerId: <a class='type' href='../../winapi/wincrypt/type.PCERT_INFO.html' title='winapi::wincrypt::PCERT_INFO'>PCERT_INFO</a>, hMsgCertStore: <a class='type' href='../../winapi/wincrypt/type.HCERTSTORE.html' title='winapi::wincrypt::HCERTSTORE'>HCERTSTORE</a>) -&gt; <a class='type' href='../../winapi/wincrypt/type.PCCERT_CONTEXT.html' title='winapi::wincrypt::PCCERT_CONTEXT'>PCCERT_CONTEXT</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/winapi/wincrypt.rs.html#2025-2028' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type PFN_CRYPT_GET_SIGNER_CERTIFICATE = <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='enum core::option::Option'>Option</a>&lt;unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../winapi/enum.c_void.html' title='enum winapi::c_void'>c_void</a>, _: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>, _: <a class='type' href='../../winapi/wincrypt/type.PCERT_INFO.html' title='type winapi::wincrypt::PCERT_INFO'>PCERT_INFO</a>, _: <a class='type' href='../../winapi/wincrypt/type.HCERTSTORE.html' title='type winapi::wincrypt::HCERTSTORE'>HCERTSTORE</a>) -&gt; <a class='type' href='../../winapi/wincrypt/type.PCCERT_CONTEXT.html' title='type winapi::wincrypt::PCCERT_CONTEXT'>PCCERT_CONTEXT</a>&gt;;</pre></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -104,11 +105,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

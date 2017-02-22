@@ -9,6 +9,7 @@
 
     <title>winapi::timezoneapi::DYNAMIC_TIME_ZONE_INFORMATION - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,47 +48,48 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-104555' class='srclink' href='../../src/winapi/macros.rs.html#256-258' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct DYNAMIC_TIME_ZONE_INFORMATION {
-    pub Bias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='winapi::winnt::LONG'>LONG</a>,
-    pub StandardName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a>,
-    pub StandardDate: <a class='struct' href='../../winapi/minwinbase/struct.SYSTEMTIME.html' title='winapi::minwinbase::SYSTEMTIME'>SYSTEMTIME</a>,
-    pub StandardBias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='winapi::winnt::LONG'>LONG</a>,
-    pub DaylightName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a>,
-    pub DaylightDate: <a class='struct' href='../../winapi/minwinbase/struct.SYSTEMTIME.html' title='winapi::minwinbase::SYSTEMTIME'>SYSTEMTIME</a>,
-    pub DaylightBias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='winapi::winnt::LONG'>LONG</a>,
-    pub TimeZoneKeyName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 128]</a>,
-    pub DynamicDaylightTimeDisabled: <a class='type' href='../../winapi/winnt/type.BOOLEAN.html' title='winapi::winnt::BOOLEAN'>BOOLEAN</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#256-258' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct DYNAMIC_TIME_ZONE_INFORMATION {
+    pub Bias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='type winapi::winnt::LONG'>LONG</a>,
+    pub StandardName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a>,
+    pub StandardDate: <a class='struct' href='../../winapi/minwinbase/struct.SYSTEMTIME.html' title='struct winapi::minwinbase::SYSTEMTIME'>SYSTEMTIME</a>,
+    pub StandardBias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='type winapi::winnt::LONG'>LONG</a>,
+    pub DaylightName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a>,
+    pub DaylightDate: <a class='struct' href='../../winapi/minwinbase/struct.SYSTEMTIME.html' title='struct winapi::minwinbase::SYSTEMTIME'>SYSTEMTIME</a>,
+    pub DaylightBias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='type winapi::winnt::LONG'>LONG</a>,
+    pub TimeZoneKeyName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 128]</a>,
+    pub DynamicDaylightTimeDisabled: <a class='type' href='../../winapi/winnt/type.BOOLEAN.html' title='type winapi::winnt::BOOLEAN'>BOOLEAN</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.Bias' class='structfield'>
                            <span id='Bias.v' class='invisible'>
-                           <code>Bias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='winapi::winnt::LONG'>LONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.StandardName' class='structfield'>
+                           <code>Bias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='type winapi::winnt::LONG'>LONG</a></code>
+                           </span></span><span id='structfield.StandardName' class='structfield'>
                            <span id='StandardName.v' class='invisible'>
-                           <code>StandardName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.StandardDate' class='structfield'>
+                           <code>StandardName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a></code>
+                           </span></span><span id='structfield.StandardDate' class='structfield'>
                            <span id='StandardDate.v' class='invisible'>
-                           <code>StandardDate: <a class='struct' href='../../winapi/minwinbase/struct.SYSTEMTIME.html' title='winapi::minwinbase::SYSTEMTIME'>SYSTEMTIME</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.StandardBias' class='structfield'>
+                           <code>StandardDate: <a class='struct' href='../../winapi/minwinbase/struct.SYSTEMTIME.html' title='struct winapi::minwinbase::SYSTEMTIME'>SYSTEMTIME</a></code>
+                           </span></span><span id='structfield.StandardBias' class='structfield'>
                            <span id='StandardBias.v' class='invisible'>
-                           <code>StandardBias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='winapi::winnt::LONG'>LONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DaylightName' class='structfield'>
+                           <code>StandardBias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='type winapi::winnt::LONG'>LONG</a></code>
+                           </span></span><span id='structfield.DaylightName' class='structfield'>
                            <span id='DaylightName.v' class='invisible'>
-                           <code>DaylightName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DaylightDate' class='structfield'>
+                           <code>DaylightName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 32]</a></code>
+                           </span></span><span id='structfield.DaylightDate' class='structfield'>
                            <span id='DaylightDate.v' class='invisible'>
-                           <code>DaylightDate: <a class='struct' href='../../winapi/minwinbase/struct.SYSTEMTIME.html' title='winapi::minwinbase::SYSTEMTIME'>SYSTEMTIME</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DaylightBias' class='structfield'>
+                           <code>DaylightDate: <a class='struct' href='../../winapi/minwinbase/struct.SYSTEMTIME.html' title='struct winapi::minwinbase::SYSTEMTIME'>SYSTEMTIME</a></code>
+                           </span></span><span id='structfield.DaylightBias' class='structfield'>
                            <span id='DaylightBias.v' class='invisible'>
-                           <code>DaylightBias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='winapi::winnt::LONG'>LONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.TimeZoneKeyName' class='structfield'>
+                           <code>DaylightBias: <a class='type' href='../../winapi/winnt/type.LONG.html' title='type winapi::winnt::LONG'>LONG</a></code>
+                           </span></span><span id='structfield.TimeZoneKeyName' class='structfield'>
                            <span id='TimeZoneKeyName.v' class='invisible'>
-                           <code>TimeZoneKeyName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 128]</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.DynamicDaylightTimeDisabled' class='structfield'>
+                           <code>TimeZoneKeyName: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='type' href='../../winapi/winnt/type.WCHAR.html' title='type winapi::winnt::WCHAR'>WCHAR</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 128]</a></code>
+                           </span></span><span id='structfield.DynamicDaylightTimeDisabled' class='structfield'>
                            <span id='DynamicDaylightTimeDisabled.v' class='invisible'>
-                           <code>DynamicDaylightTimeDisabled: <a class='type' href='../../winapi/winnt/type.BOOLEAN.html' title='winapi::winnt::BOOLEAN'>BOOLEAN</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/timezoneapi/struct.DYNAMIC_TIME_ZONE_INFORMATION.html' title='winapi::timezoneapi::DYNAMIC_TIME_ZONE_INFORMATION'>DYNAMIC_TIME_ZONE_INFORMATION</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104568' class='srclink' href='../../src/winapi/macros.rs.html#259' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/timezoneapi/struct.DYNAMIC_TIME_ZONE_INFORMATION.html' title='winapi::timezoneapi::DYNAMIC_TIME_ZONE_INFORMATION'>DYNAMIC_TIME_ZONE_INFORMATION</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104569' class='srclink' href='../../src/winapi/macros.rs.html#260' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/timezoneapi/struct.DYNAMIC_TIME_ZONE_INFORMATION.html' title='winapi::timezoneapi::DYNAMIC_TIME_ZONE_INFORMATION'>DYNAMIC_TIME_ZONE_INFORMATION</a></code></span></h4>
+                           <code>DynamicDaylightTimeDisabled: <a class='type' href='../../winapi/winnt/type.BOOLEAN.html' title='type winapi::winnt::BOOLEAN'>BOOLEAN</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/timezoneapi/struct.DYNAMIC_TIME_ZONE_INFORMATION.html' title='struct winapi::timezoneapi::DYNAMIC_TIME_ZONE_INFORMATION'>DYNAMIC_TIME_ZONE_INFORMATION</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#259' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/timezoneapi/struct.DYNAMIC_TIME_ZONE_INFORMATION.html' title='struct winapi::timezoneapi::DYNAMIC_TIME_ZONE_INFORMATION'>DYNAMIC_TIME_ZONE_INFORMATION</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#260' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/timezoneapi/struct.DYNAMIC_TIME_ZONE_INFORMATION.html' title='struct winapi::timezoneapi::DYNAMIC_TIME_ZONE_INFORMATION'>DYNAMIC_TIME_ZONE_INFORMATION</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -147,11 +149,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

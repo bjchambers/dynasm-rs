@@ -9,6 +9,7 @@
 
     <title>winbase.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -685,7 +686,7 @@
     <span class='ident'>dwProvSpec2</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>wcProvChar</span>: [::<span class='ident'>WCHAR</span>; <span class='number'>1</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCOMMPROP</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>COMMPROP</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCOMMPROP</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>COMMPROP</span>;
 <span class='comment'>//432</span>
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>COMSTAT</span> {
     <span class='ident'>BitFields</span>: ::<span class='ident'>DWORD</span>,
@@ -702,7 +703,7 @@
     <span class='ident'>fTxim</span> <span class='ident'>set_fTxim</span>[<span class='number'>6</span>..<span class='number'>7</span>],
     <span class='ident'>fReserved</span> <span class='ident'>set_fReserved</span>[<span class='number'>7</span>..<span class='number'>32</span>],
 ]);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCOMSTAT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>COMSTAT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCOMSTAT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>COMSTAT</span>;
 <span class='comment'>//460</span>
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DCB</span> {
     <span class='ident'>DCBlength</span>: ::<span class='ident'>DWORD</span>,
@@ -737,7 +738,7 @@
     <span class='ident'>fAbortOnError</span> <span class='ident'>set_fAbortOnError</span>[<span class='number'>14</span>..<span class='number'>15</span>],
     <span class='ident'>fDummy2</span> <span class='ident'>set_fDummy2</span>[<span class='number'>15</span>..<span class='number'>32</span>],
 ]);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDCB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DCB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPDCB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DCB</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>COMMTIMEOUTS</span> {
     <span class='ident'>ReadIntervalTimeout</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>ReadTotalTimeoutMultiplier</span>: ::<span class='ident'>DWORD</span>,
@@ -745,7 +746,7 @@
     <span class='ident'>WriteTotalTimeoutMultiplier</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>WriteTotalTimeoutConstant</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCOMMTIMEOUTS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>COMMTIMEOUTS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCOMMTIMEOUTS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>COMMTIMEOUTS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>COMMCONFIG</span> {
     <span class='ident'>dwSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>wVersion</span>: ::<span class='ident'>WORD</span>,
@@ -756,7 +757,7 @@
     <span class='ident'>dwProviderSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>wcProviderData</span>: [::<span class='ident'>WCHAR</span>; <span class='number'>1</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCOMMCONFIG</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>COMMCONFIG</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPCOMMCONFIG</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>COMMCONFIG</span>;
 <span class='comment'>//547</span>
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>MEMORYSTATUS</span> {
     <span class='ident'>dwLength</span>: ::<span class='ident'>DWORD</span>,
@@ -768,7 +769,7 @@
     <span class='ident'>dwTotalVirtual</span>: ::<span class='ident'>SIZE_T</span>,
     <span class='ident'>dwAvailVirtual</span>: ::<span class='ident'>SIZE_T</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMEMORYSTATUS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MEMORYSTATUS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPMEMORYSTATUS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>MEMORYSTATUS</span>;
 <span class='comment'>//568</span>
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DEBUG_PROCESS</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000001</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>DEBUG_ONLY_THIS_PROCESS</span>: ::<span class='ident'>DWORD</span> <span class='op'>=</span> <span class='number'>0x00000002</span>;
@@ -974,12 +975,12 @@
 <span class='macro'>UNION</span><span class='macro'>!</span>{<span class='ident'>COPYFILE2_MESSAGE</span>, <span class='ident'>Info</span>, <span class='ident'>PollContinue</span>, <span class='ident'>PollContinue_mut</span>, <span class='ident'>COPYFILE2_MESSAGE_PollContinue</span>}
 <span class='macro'>UNION</span><span class='macro'>!</span>{<span class='ident'>COPYFILE2_MESSAGE</span>, <span class='ident'>Info</span>, <span class='ident'>Error</span>, <span class='ident'>Error_mut</span>, <span class='ident'>COPYFILE2_MESSAGE_Error</span>}
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCOPYFILE2_PROGRESS_ROUTINE</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>pMessage</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>COPYFILE2_MESSAGE</span>, <span class='ident'>pvCallbackContext</span>: ::<span class='ident'>PVOID</span>,
+    <span class='ident'>pMessage</span>: <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>COPYFILE2_MESSAGE</span>, <span class='ident'>pvCallbackContext</span>: ::<span class='ident'>PVOID</span>,
 ) <span class='op'>-&gt;</span> <span class='ident'>COPYFILE2_MESSAGE_ACTION</span><span class='op'>&gt;</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>COPYFILE2_EXTENDED_PARAMETERS</span> {
     <span class='ident'>dwSize</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwCopyFlags</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pfCancel</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>,
+    <span class='ident'>pfCancel</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>,
     <span class='ident'>pProgressRoutine</span>: <span class='ident'>PCOPYFILE2_PROGRESS_ROUTINE</span>,
     <span class='ident'>pvCallbackContext</span>: ::<span class='ident'>PVOID</span>,
 }}
@@ -1003,13 +1004,13 @@
     <span class='ident'>szHwProfileGuid</span>: [::<span class='ident'>CHAR</span>; <span class='ident'>HW_PROFILE_GUIDLEN</span>],
     <span class='ident'>szHwProfileName</span>: [::<span class='ident'>CHAR</span>; ::<span class='ident'>MAX_PROFILE_LEN</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHW_PROFILE_INFOA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HW_PROFILE_INFOA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHW_PROFILE_INFOA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HW_PROFILE_INFOA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>HW_PROFILE_INFOW</span> {
     <span class='ident'>dwDockInfo</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>szHwProfileGuid</span>: [::<span class='ident'>WCHAR</span>; <span class='ident'>HW_PROFILE_GUIDLEN</span>],
     <span class='ident'>szHwProfileName</span>: [::<span class='ident'>WCHAR</span>; ::<span class='ident'>MAX_PROFILE_LEN</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHW_PROFILE_INFOW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HW_PROFILE_INFOW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPHW_PROFILE_INFOW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HW_PROFILE_INFOW</span>;
 <span class='comment'>//7574</span>
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>ACTCTXA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>ULONG</span>,
@@ -1022,7 +1023,7 @@
     <span class='ident'>lpApplicationName</span>: ::<span class='ident'>LPCSTR</span>,
     <span class='ident'>hModule</span>: ::<span class='ident'>HMODULE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PACTCTXA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ACTCTXA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PACTCTXA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ACTCTXA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>ACTCTXW</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>dwFlags</span>: ::<span class='ident'>DWORD</span>,
@@ -1034,14 +1035,14 @@
     <span class='ident'>lpApplicationName</span>: ::<span class='ident'>LPCWSTR</span>,
     <span class='ident'>hModule</span>: ::<span class='ident'>HMODULE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PACTCTXW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ACTCTXW</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCACTCTXA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ACTCTXA</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCACTCTXW</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ACTCTXW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PACTCTXW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ACTCTXW</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCACTCTXA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ACTCTXA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCACTCTXW</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ACTCTXW</span>;
 <span class='comment'>//</span>
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_CONTEXT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_COMPLETION_LIST</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_CONTEXT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_COMPLETION_LIST</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>UMS_THREAD_INFO_CLASS</span> <span class='op'>=</span> ::<span class='ident'>RTL_UMS_THREAD_INFO_CLASS</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_THREAD_INFO_CLASS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>UMS_THREAD_INFO_CLASS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_THREAD_INFO_CLASS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>UMS_THREAD_INFO_CLASS</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_SCHEDULER_ENTRY_POINT</span> <span class='op'>=</span> ::<span class='ident'>PRTL_UMS_SCHEDULER_ENTRY_POINT</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>UMS_SCHEDULER_STARTUP_INFO</span> {
     <span class='ident'>UmsVersion</span>: ::<span class='ident'>ULONG</span>,
@@ -1049,7 +1050,7 @@
     <span class='ident'>SchedulerProc</span>: <span class='ident'>PUMS_SCHEDULER_ENTRY_POINT</span>,
     <span class='ident'>SchedulerParam</span>: ::<span class='ident'>PVOID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_SCHEDULER_STARTUP_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>UMS_SCHEDULER_STARTUP_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_SCHEDULER_STARTUP_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>UMS_SCHEDULER_STARTUP_INFO</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>UMS_SYSTEM_THREAD_INFORMATION</span> {
     <span class='ident'>UmsVersion</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>BitFields</span>: ::<span class='ident'>ULONG</span>,
@@ -1062,7 +1063,7 @@
     <span class='ident'>UMS_SYSTEM_THREAD_INFORMATION</span>, <span class='ident'>BitFields</span>, <span class='ident'>ThreadUmsFlags</span>, <span class='ident'>ThreadUmsFlags_mut</span>,
     ::<span class='ident'>ULONG</span>
 );
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_SYSTEM_THREAD_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>UMS_SYSTEM_THREAD_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUMS_SYSTEM_THREAD_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>UMS_SYSTEM_THREAD_INFORMATION</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA</span> {
     <span class='ident'>lpInformation</span>: ::<span class='ident'>PVOID</span>,
     <span class='ident'>lpSectionBase</span>: ::<span class='ident'>PVOID</span>,
@@ -1071,9 +1072,9 @@
     <span class='ident'>ulSectionGlobalDataLength</span>: ::<span class='ident'>ULONG</span>,
 }}
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA</span> <span class='op'>=</span>
-    <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA</span>;
+    <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA</span> <span class='op'>=</span>
-    <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA</span>;
+    <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>ACTCTX_SECTION_KEYED_DATA</span> {
     <span class='ident'>cbSize</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>ulDataFormatVersion</span>: ::<span class='ident'>ULONG</span>,
@@ -1088,8 +1089,8 @@
     <span class='ident'>ulFlags</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>AssemblyMetadata</span>: <span class='ident'>ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PACTCTX_SECTION_KEYED_DATA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ACTCTX_SECTION_KEYED_DATA</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCACTCTX_SECTION_KEYED_DATA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>ACTCTX_SECTION_KEYED_DATA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PACTCTX_SECTION_KEYED_DATA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ACTCTX_SECTION_KEYED_DATA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PCACTCTX_SECTION_KEYED_DATA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>ACTCTX_SECTION_KEYED_DATA</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>STREAM_INFO_LEVELS</span> {
     <span class='ident'>FindStreamInfoStandard</span>,
     <span class='ident'>FindStreamInfoMaxInfoLevel</span>,
@@ -1121,7 +1122,7 @@
     <span class='ident'>BatteryLifeTime</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>BatteryFullLifeTime</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSYSTEM_POWER_STATUS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SYSTEM_POWER_STATUS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSYSTEM_POWER_STATUS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SYSTEM_POWER_STATUS</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>OFS_MAXPATHNAME</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>128</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>OFSTRUCT</span> {
     <span class='ident'>cBytes</span>: ::<span class='ident'>BYTE</span>,
@@ -1131,8 +1132,8 @@
     <span class='ident'>Reserved2</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>szPathName</span>: [::<span class='ident'>CHAR</span>; <span class='ident'>OFS_MAXPATHNAME</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POFSTRUCT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OFSTRUCT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOFSTRUCT</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OFSTRUCT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>POFSTRUCT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OFSTRUCT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPOFSTRUCT</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OFSTRUCT</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>FILE_ID_TYPE</span> {
     <span class='ident'>FileIdType</span>,
     <span class='ident'>ObjectIdType</span>,
@@ -1146,7 +1147,7 @@
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>FILE_ID_DESCRIPTOR</span>, <span class='ident'>ObjectId</span>, <span class='ident'>FileId</span>, <span class='ident'>FileId_mut</span>, ::<span class='ident'>LARGE_INTEGER</span>);
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>FILE_ID_DESCRIPTOR</span>, <span class='ident'>ObjectId</span>, <span class='ident'>ExtendedFileId</span>, <span class='ident'>ExtendedFileId_mut</span>, ::<span class='ident'>FILE_ID_128</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPFILE_ID_DESCRIPTOR</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>FILE_ID_DESCRIPTOR</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPFILE_ID_DESCRIPTOR</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>FILE_ID_DESCRIPTOR</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -1204,11 +1205,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

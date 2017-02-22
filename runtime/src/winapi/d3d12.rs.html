@@ -9,6 +9,7 @@
 
     <title>d3d12.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -2977,37 +2978,37 @@
 }}
 <span class='macro'>RIDL</span><span class='macro'>!</span>{<span class='ident'>interface</span> <span class='ident'>ID3D12Object</span>(<span class='ident'>ID3D12ObjectVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetPrivateData</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>guid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>pDataSize</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>guid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>pDataSize</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>SetPrivateData</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>guid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>DataSize</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>guid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>DataSize</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>SetPrivateDataInterface</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>guid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>pData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>IUnknown</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>guid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>pData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>IUnknown</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>SetName</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCWSTR</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }}
 <span class='macro'>RIDL</span><span class='macro'>!</span>{<span class='ident'>interface</span> <span class='ident'>ID3D12DeviceChild</span>(<span class='ident'>ID3D12DeviceChildVtbl</span>): <span class='ident'>ID3D12Object</span>(<span class='ident'>ID3D12ObjectVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetDevice</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvDevice</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvDevice</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }}
 <span class='macro'>RIDL</span><span class='macro'>!</span>{<span class='ident'>interface</span> <span class='ident'>ID3D12RootSignature</span>(<span class='ident'>ID3D12RootSignatureVtbl</span>):
     <span class='ident'>ID3D12DeviceChild</span>(<span class='ident'>ID3D12DeviceChildVtbl</span>) {
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_SHADER_BYTECODE</span> {
-    <span class='ident'>pShaderBytecode</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pShaderBytecode</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>,
     <span class='ident'>BytecodeLength</span>: ::<span class='ident'>SIZE_T</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_STREAM_OUTPUT_DESC</span> {
-    <span class='ident'>pSODeclaration</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>D3D12_SO_DECLARATION_ENTRY</span>,
+    <span class='ident'>pSODeclaration</span>: <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>D3D12_SO_DECLARATION_ENTRY</span>,
     <span class='ident'>NumEntries</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pBufferStrides</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>,
+    <span class='ident'>pBufferStrides</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>,
     <span class='ident'>NumStrides</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>RasterizedStream</span>: ::<span class='ident'>UINT</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_INPUT_LAYOUT_DESC</span> {
-    <span class='ident'>pInputElementDescs</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>D3D12_INPUT_ELEMENT_DESC</span>,
+    <span class='ident'>pInputElementDescs</span>: <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>D3D12_INPUT_ELEMENT_DESC</span>,
     <span class='ident'>NumElements</span>: ::<span class='ident'>UINT</span>,
 }}
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>D3D12_INDEX_BUFFER_STRIP_CUT_VALUE</span> {
@@ -3016,7 +3017,7 @@
     <span class='ident'>D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_0xFFFFFFFF</span> <span class='op'>=</span> <span class='number'>2</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_CACHED_PIPELINE_STATE</span> {
-    <span class='ident'>pCachedBlob</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pCachedBlob</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>,
     <span class='ident'>CachedBlobSizeInBytes</span>: ::<span class='ident'>SIZE_T</span>,
 }}
 <span class='macro'>FLAGS</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>D3D12_PIPELINE_STATE_FLAGS</span> {
@@ -3024,7 +3025,7 @@
     <span class='ident'>D3D12_PIPELINE_STATE_FLAG_TOOL_DEBUG</span> <span class='op'>=</span> <span class='number'>0x1</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_GRAPHICS_PIPELINE_STATE_DESC</span> {
-    <span class='ident'>pRootSignature</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ID3D12RootSignature</span>,
+    <span class='ident'>pRootSignature</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ID3D12RootSignature</span>,
     <span class='ident'>VS</span>: <span class='ident'>D3D12_SHADER_BYTECODE</span>,
     <span class='ident'>PS</span>: <span class='ident'>D3D12_SHADER_BYTECODE</span>,
     <span class='ident'>DS</span>: <span class='ident'>D3D12_SHADER_BYTECODE</span>,
@@ -3047,7 +3048,7 @@
     <span class='ident'>Flags</span>: <span class='ident'>D3D12_PIPELINE_STATE_FLAGS</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_COMPUTE_PIPELINE_STATE_DESC</span> {
-    <span class='ident'>pRootSignature</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ID3D12RootSignature</span>,
+    <span class='ident'>pRootSignature</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ID3D12RootSignature</span>,
     <span class='ident'>CS</span>: <span class='ident'>D3D12_SHADER_BYTECODE</span>,
     <span class='ident'>NodeMask</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>CachedPSO</span>: <span class='ident'>D3D12_CACHED_PIPELINE_STATE</span>,
@@ -3584,7 +3585,7 @@
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_COMMAND_SIGNATURE_DESC</span> {
     <span class='ident'>ByteStride</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>NumArgumentDescs</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pArgumentDescs</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_INDIRECT_ARGUMENT_DESC</span>,
+    <span class='ident'>pArgumentDescs</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_INDIRECT_ARGUMENT_DESC</span>,
     <span class='ident'>NodeMask</span>: ::<span class='ident'>UINT</span>,
 }}
 
@@ -3640,7 +3641,7 @@
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_DISCARD_REGION</span> {
     <span class='ident'>NumRects</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pRects</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>,
+    <span class='ident'>pRects</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>,
     <span class='ident'>FirstSubresource</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>NumSubresources</span>: ::<span class='ident'>UINT</span>,
 }}
@@ -3676,7 +3677,7 @@
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_FEATURE_DATA_FEATURE_LEVELS</span> {
     <span class='ident'>NumFeatureLevels</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pFeatureLevelsRequested</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D_FEATURE_LEVEL</span>,
+    <span class='ident'>pFeatureLevelsRequested</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D_FEATURE_LEVEL</span>,
     <span class='ident'>MaxSupportedFeatureLevel</span>: ::<span class='ident'>D3D_FEATURE_LEVEL</span>,
 }}
 
@@ -3772,7 +3773,7 @@
 
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_MEMCPY_DEST</span> {
-    <span class='ident'>pData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
     <span class='ident'>RowPitch</span>: ::<span class='ident'>SIZE_T</span>,
     <span class='ident'>SlicePitch</span>: ::<span class='ident'>SIZE_T</span>,
 }}
@@ -3840,8 +3841,8 @@
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>D3D12_RENDER_TARGET_VIEW_DESC</span>, <span class='ident'>u</span>, <span class='ident'>Buffer</span>, <span class='ident'>Buffer_mut</span>, ::<span class='ident'>D3D12_BUFFER_RTV</span>);
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_RESOURCE_ALIASING_BARRIER</span> {
-    <span class='ident'>pResourceBefore</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
-    <span class='ident'>pResourceAfter</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+    <span class='ident'>pResourceBefore</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+    <span class='ident'>pResourceAfter</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
 }}
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_RESOURCE_ALLOCATION_INFO</span> {
@@ -3873,14 +3874,14 @@
 }}
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_RESOURCE_TRANSITION_BARRIER</span> {
-    <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+    <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
     <span class='ident'>Subresource</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>StateBefore</span>: ::<span class='ident'>D3D12_RESOURCE_STATES</span>,
     <span class='ident'>StateAfter</span>: ::<span class='ident'>D3D12_RESOURCE_STATES</span>,
 }}
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_RESOURCE_UAV_BARRIER</span> {
-    <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+    <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
 }}
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_ROOT_CONSTANTS</span> {
@@ -3896,7 +3897,7 @@
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_ROOT_DESCRIPTOR_TABLE</span> {
     <span class='ident'>NumDescriptorRanges</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pDescriptorRanges</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_DESCRIPTOR_RANGE</span>,
+    <span class='ident'>pDescriptorRanges</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_DESCRIPTOR_RANGE</span>,
 }}
 
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_pointer_width</span> <span class='op'>=</span> <span class='string'>&quot;64&quot;</span>)]</span>
@@ -3920,9 +3921,9 @@
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_ROOT_SIGNATURE_DESC</span> {
     <span class='ident'>NumParameters</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pParameters</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_ROOT_PARAMETER</span>,
+    <span class='ident'>pParameters</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_ROOT_PARAMETER</span>,
     <span class='ident'>NumStaticSamplers</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pStaticSamplers</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_STATIC_SAMPLER_DESC</span>,
+    <span class='ident'>pStaticSamplers</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_STATIC_SAMPLER_DESC</span>,
     <span class='ident'>Flags</span>: ::<span class='ident'>D3D12_ROOT_SIGNATURE_FLAGS</span>,
 }}
 
@@ -3990,7 +3991,7 @@
 
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_SUBRESOURCE_DATA</span> {
-    <span class='ident'>pData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>,
+    <span class='ident'>pData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>,
     <span class='ident'>RowPitch</span>: ::<span class='ident'>LONG_PTR</span>,
     <span class='ident'>SlicePitch</span>: ::<span class='ident'>LONG_PTR</span>,
 }}
@@ -4170,7 +4171,7 @@
 }}
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>D3D12_TEXTURE_COPY_LOCATION</span> {
-    <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+    <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
     <span class='ident'>Type</span>: ::<span class='ident'>D3D12_TEXTURE_COPY_TYPE</span>,
     <span class='ident'>u</span>: ::<span class='ident'>D3D12_PLACED_SUBRESOURCE_FOOTPRINT</span>,
 }}
@@ -4236,43 +4237,43 @@
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12CommandQueue</span>(<span class='ident'>ID3D12CommandQueueVtbl</span>): <span class='ident'>ID3D12Pageable</span>(<span class='ident'>ID3D12PageableVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>UpdateTileMappings</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>NumResourceRegions</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pResourceRegionStartCoordinates</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILED_RESOURCE_COORDINATE</span>,
-        <span class='ident'>pResourceRegionSizes</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILE_REGION_SIZE</span>, <span class='ident'>pHeap</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Heap</span>,
-        <span class='ident'>NumRanges</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pRangeFlags</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILE_RANGE_FLAGS</span>,
-        <span class='ident'>pHeapRangeStartOffsets</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>, <span class='ident'>pRangeTileCounts</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>NumResourceRegions</span>: ::<span class='ident'>UINT</span>,
+        <span class='ident'>pResourceRegionStartCoordinates</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILED_RESOURCE_COORDINATE</span>,
+        <span class='ident'>pResourceRegionSizes</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILE_REGION_SIZE</span>, <span class='ident'>pHeap</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Heap</span>,
+        <span class='ident'>NumRanges</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pRangeFlags</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILE_RANGE_FLAGS</span>,
+        <span class='ident'>pHeapRangeStartOffsets</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>, <span class='ident'>pRangeTileCounts</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>,
         <span class='ident'>Flags</span>: ::<span class='ident'>D3D12_TILE_MAPPING_FLAGS</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CopyTileMappings</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDstResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
-        <span class='ident'>pDstRegionStartCoordinate</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILED_RESOURCE_COORDINATE</span>,
-        <span class='ident'>pSrcResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
-        <span class='ident'>pSrcRegionStartCoordinate</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILED_RESOURCE_COORDINATE</span>,
-        <span class='ident'>pRegionSize</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILE_REGION_SIZE</span>, <span class='ident'>Flags</span>: ::<span class='ident'>D3D12_TILE_MAPPING_FLAGS</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDstResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+        <span class='ident'>pDstRegionStartCoordinate</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILED_RESOURCE_COORDINATE</span>,
+        <span class='ident'>pSrcResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+        <span class='ident'>pSrcRegionStartCoordinate</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILED_RESOURCE_COORDINATE</span>,
+        <span class='ident'>pRegionSize</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILE_REGION_SIZE</span>, <span class='ident'>Flags</span>: ::<span class='ident'>D3D12_TILE_MAPPING_FLAGS</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>ExecuteCommandLists</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumCommandLists</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppCommandLists</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12CommandList</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumCommandLists</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppCommandLists</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12CommandList</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetMarker</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Metadata</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>Size</span>: ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Metadata</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>Size</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>BeginEvent</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Metadata</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>Size</span>: ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Metadata</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>Size</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>EndEvent</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>Signal</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFence</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Fence</span>, <span class='ident'>Value</span>: ::<span class='ident'>UINT64</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFence</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Fence</span>, <span class='ident'>Value</span>: ::<span class='ident'>UINT64</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>Wait</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFence</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Fence</span>, <span class='ident'>Value</span>: ::<span class='ident'>UINT64</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFence</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Fence</span>, <span class='ident'>Value</span>: ::<span class='ident'>UINT64</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetTimestampFrequency</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFrequency</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT64</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetTimestampFrequency</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pFrequency</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT64</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetClockCalibration</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pGpuTimestamp</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT64</span>, <span class='ident'>pCpuTimestamp</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT64</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pGpuTimestamp</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT64</span>, <span class='ident'>pCpuTimestamp</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT64</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_COMMAND_QUEUE_DESC</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_COMMAND_QUEUE_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_COMMAND_QUEUE_DESC</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_COMMAND_QUEUE_DESC</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
@@ -4282,14 +4283,14 @@
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12DescriptorHeap</span>(<span class='ident'>ID3D12DescriptorHeapVtbl</span>): <span class='ident'>ID3D12Pageable</span>(<span class='ident'>ID3D12PageableVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_DESCRIPTOR_HEAP_DESC</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_DESCRIPTOR_HEAP_DESC</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_DESCRIPTOR_HEAP_DESC</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_DESCRIPTOR_HEAP_DESC</span>,
     <span class='kw'>fn</span> <span class='ident'>GetCPUDescriptorHandleForHeapStart</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>,
     <span class='kw'>fn</span> <span class='ident'>GetGPUDescriptorHandleForHeapStart</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_GPU_DESCRIPTOR_HANDLE</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_GPU_DESCRIPTOR_HANDLE</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_GPU_DESCRIPTOR_HANDLE</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_GPU_DESCRIPTOR_HANDLE</span>
 });
 
 
@@ -4298,74 +4299,74 @@
 <span class='ident'>interface</span> <span class='ident'>ID3D12Device</span>(<span class='ident'>ID3D12DeviceVtbl</span>): <span class='ident'>ID3D12Object</span>(<span class='ident'>ID3D12ObjectVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetNodeCount</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateCommandQueue</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_COMMAND_QUEUE_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppCommandQueue</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_COMMAND_QUEUE_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
+        <span class='ident'>ppCommandQueue</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateCommandAllocator</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>type_</span>: ::<span class='ident'>D3D12_COMMAND_LIST_TYPE</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppCommandAllocator</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='ident'>ppCommandAllocator</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateGraphicsPipelineState</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_GRAPHICS_PIPELINE_STATE_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppPipelineState</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_GRAPHICS_PIPELINE_STATE_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
+        <span class='ident'>ppPipelineState</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateComputePipelineState</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_COMPUTE_PIPELINE_STATE_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppPipelineState</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_COMPUTE_PIPELINE_STATE_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
+        <span class='ident'>ppPipelineState</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateCommandList</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>nodeMask</span>: ::<span class='ident'>UINT</span>, <span class='ident'>type_</span>: ::<span class='ident'>D3D12_COMMAND_LIST_TYPE</span>,
-        <span class='ident'>pCommandAllocator</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12CommandAllocator</span>,
-        <span class='ident'>pInitialState</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12PipelineState</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppCommandList</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='ident'>pCommandAllocator</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12CommandAllocator</span>,
+        <span class='ident'>pInitialState</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12PipelineState</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
+        <span class='ident'>ppCommandList</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CheckFeatureSupport</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Feature</span>: ::<span class='ident'>D3D12_FEATURE</span>, <span class='ident'>pFeatureSupportData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Feature</span>: ::<span class='ident'>D3D12_FEATURE</span>, <span class='ident'>pFeatureSupportData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
         <span class='ident'>FeatureSupportDataSize</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateDescriptorHeap</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDescriptorHeapDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_DESCRIPTOR_HEAP_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppvHeap</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDescriptorHeapDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_DESCRIPTOR_HEAP_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
+        <span class='ident'>ppvHeap</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetDescriptorHandleIncrementSize</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>DescriptorHeapType</span>: ::<span class='ident'>D3D12_DESCRIPTOR_HEAP_TYPE</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateRootSignature</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>nodeMask</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pBlobWithRootSignature</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>,
-        <span class='ident'>blobLengthInBytes</span>: ::<span class='ident'>SIZE_T</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvRootSignature</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>nodeMask</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pBlobWithRootSignature</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>,
+        <span class='ident'>blobLengthInBytes</span>: ::<span class='ident'>SIZE_T</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvRootSignature</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateConstantBufferView</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CONSTANT_BUFFER_VIEW_DESC</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CONSTANT_BUFFER_VIEW_DESC</span>,
         <span class='ident'>DestDescriptor</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CreateShaderResourceView</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
-        <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_SHADER_RESOURCE_VIEW_DESC</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+        <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_SHADER_RESOURCE_VIEW_DESC</span>,
         <span class='ident'>DestDescriptor</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CreateUnorderedAccessView</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pCounterResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
-        <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_UNORDERED_ACCESS_VIEW_DESC</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pCounterResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+        <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_UNORDERED_ACCESS_VIEW_DESC</span>,
         <span class='ident'>DestDescriptor</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CreateRenderTargetView</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RENDER_TARGET_VIEW_DESC</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RENDER_TARGET_VIEW_DESC</span>,
         <span class='ident'>DestDescriptor</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CreateDepthStencilView</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_DEPTH_STENCIL_VIEW_DESC</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_DEPTH_STENCIL_VIEW_DESC</span>,
         <span class='ident'>DestDescriptor</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CreateSampler</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_SAMPLER_DESC</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_SAMPLER_DESC</span>,
         <span class='ident'>DestDescriptor</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CopyDescriptors</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumDestDescriptorRanges</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pDestDescriptorRangeStarts</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>,
-        <span class='ident'>pDestDescriptorRangeSizes</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>, <span class='ident'>NumSrcDescriptorRanges</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pSrcDescriptorRangeStarts</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>,
-        <span class='ident'>pSrcDescriptorRangeSizes</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>, <span class='ident'>DescriptorHeapsType</span>: ::<span class='ident'>D3D12_DESCRIPTOR_HEAP_TYPE</span>
+        <span class='ident'>pDestDescriptorRangeStarts</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>,
+        <span class='ident'>pDestDescriptorRangeSizes</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>, <span class='ident'>NumSrcDescriptorRanges</span>: ::<span class='ident'>UINT</span>,
+        <span class='ident'>pSrcDescriptorRangeStarts</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>,
+        <span class='ident'>pSrcDescriptorRangeSizes</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>, <span class='ident'>DescriptorHeapsType</span>: ::<span class='ident'>D3D12_DESCRIPTOR_HEAP_TYPE</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CopyDescriptorsSimple</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumDescriptors</span>: ::<span class='ident'>UINT</span>, <span class='ident'>DestDescriptorRangeStart</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>,
@@ -4374,78 +4375,78 @@
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>GetResourceAllocationInfo</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>visibleMask</span>: ::<span class='ident'>UINT</span>, <span class='ident'>numResourceDescs</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pResourceDescs</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>,
-        <span class='ident'>__ret_val</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_RESOURCE_ALLOCATION_INFO</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_RESOURCE_ALLOCATION_INFO</span>,
+        <span class='ident'>pResourceDescs</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>,
+        <span class='ident'>__ret_val</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_RESOURCE_ALLOCATION_INFO</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_RESOURCE_ALLOCATION_INFO</span>,
     <span class='kw'>fn</span> <span class='ident'>GetCustomHeapProperties</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>nodeMask</span>: ::<span class='ident'>UINT</span>, <span class='ident'>heapType</span>: ::<span class='ident'>D3D12_HEAP_TYPE</span>,
-        <span class='ident'>__ret_val</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_PROPERTIES</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_PROPERTIES</span>,
+        <span class='ident'>__ret_val</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_PROPERTIES</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_PROPERTIES</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateCommittedResource</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pHeapProperties</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_HEAP_PROPERTIES</span>, <span class='ident'>HeapFlags</span>: ::<span class='ident'>D3D12_HEAP_FLAGS</span>,
-        <span class='ident'>pResourceDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>, <span class='ident'>InitialResourceState</span>: ::<span class='ident'>D3D12_RESOURCE_STATES</span>,
-        <span class='ident'>pOptimizedClearValue</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CLEAR_VALUE</span>, <span class='ident'>riidResource</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppvResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pHeapProperties</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_HEAP_PROPERTIES</span>, <span class='ident'>HeapFlags</span>: ::<span class='ident'>D3D12_HEAP_FLAGS</span>,
+        <span class='ident'>pResourceDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>, <span class='ident'>InitialResourceState</span>: ::<span class='ident'>D3D12_RESOURCE_STATES</span>,
+        <span class='ident'>pOptimizedClearValue</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CLEAR_VALUE</span>, <span class='ident'>riidResource</span>: ::<span class='ident'>REFGUID</span>,
+        <span class='ident'>ppvResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateHeap</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_HEAP_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvHeap</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_HEAP_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvHeap</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreatePlacedResource</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pHeap</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Heap</span>, <span class='ident'>HeapOffset</span>: ::<span class='ident'>UINT64</span>,
-        <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>, <span class='ident'>InitialState</span>: ::<span class='ident'>D3D12_RESOURCE_STATES</span>,
-        <span class='ident'>pOptimizedClearValue</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CLEAR_VALUE</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppvResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pHeap</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Heap</span>, <span class='ident'>HeapOffset</span>: ::<span class='ident'>UINT64</span>,
+        <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>, <span class='ident'>InitialState</span>: ::<span class='ident'>D3D12_RESOURCE_STATES</span>,
+        <span class='ident'>pOptimizedClearValue</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CLEAR_VALUE</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
+        <span class='ident'>ppvResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateReservedResource</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>, <span class='ident'>InitialState</span>: ::<span class='ident'>D3D12_RESOURCE_STATES</span>,
-        <span class='ident'>pOptimizedClearValue</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CLEAR_VALUE</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppvResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>, <span class='ident'>InitialState</span>: ::<span class='ident'>D3D12_RESOURCE_STATES</span>,
+        <span class='ident'>pOptimizedClearValue</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CLEAR_VALUE</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
+        <span class='ident'>ppvResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateSharedHandle</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pObject</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12DeviceChild</span>, <span class='ident'>pAttributes</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>SECURITY_ATTRIBUTES</span>,
-        <span class='ident'>Access</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCWSTR</span>, <span class='ident'>pHandle</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>HANDLE</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pObject</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12DeviceChild</span>, <span class='ident'>pAttributes</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>SECURITY_ATTRIBUTES</span>,
+        <span class='ident'>Access</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCWSTR</span>, <span class='ident'>pHandle</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>HANDLE</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>OpenSharedHandle</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NTHandle</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvObj</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NTHandle</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppvObj</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>OpenSharedHandleByName</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCWSTR</span>, <span class='ident'>Access</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pNTHandle</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>HANDLE</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCWSTR</span>, <span class='ident'>Access</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pNTHandle</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>HANDLE</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>MakeResident</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumObjects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppObjects</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Pageable</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumObjects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppObjects</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Pageable</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>Evict</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumObjects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppObjects</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Pageable</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumObjects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppObjects</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Pageable</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateFence</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>InitialValue</span>: ::<span class='ident'>UINT64</span>, <span class='ident'>Flags</span>: ::<span class='ident'>D3D12_FENCE_FLAGS</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppFence</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='ident'>ppFence</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetDeviceRemovedReason</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetCopyableFootprints</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResourceDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>, <span class='ident'>FirstSubresource</span>: ::<span class='ident'>UINT</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResourceDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>, <span class='ident'>FirstSubresource</span>: ::<span class='ident'>UINT</span>,
         <span class='ident'>NumSubresources</span>: ::<span class='ident'>UINT</span>, <span class='ident'>BaseOffset</span>: ::<span class='ident'>UINT64</span>,
-        <span class='ident'>pLayouts</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_PLACED_SUBRESOURCE_FOOTPRINT</span>, <span class='ident'>pNumRows</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>,
-        <span class='ident'>pRowSizeInBytes</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT64</span>, <span class='ident'>pTotalBytes</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT64</span>
+        <span class='ident'>pLayouts</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_PLACED_SUBRESOURCE_FOOTPRINT</span>, <span class='ident'>pNumRows</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>,
+        <span class='ident'>pRowSizeInBytes</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT64</span>, <span class='ident'>pTotalBytes</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT64</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CreateQueryHeap</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_QUERY_HEAP_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppvHeap</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_QUERY_HEAP_DESC</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
+        <span class='ident'>ppvHeap</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>SetStablePowerState</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Enable</span>: ::<span class='ident'>BOOL</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateCommandSignature</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_COMMAND_SIGNATURE_DESC</span>,
-        <span class='ident'>pRootSignature</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12RootSignature</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
-        <span class='ident'>ppvCommandSignature</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_COMMAND_SIGNATURE_DESC</span>,
+        <span class='ident'>pRootSignature</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12RootSignature</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>,
+        <span class='ident'>ppvCommandSignature</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetResourceTiling</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pTiledResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pNumTilesForEntireResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>,
-        <span class='ident'>pPackedMipDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_PACKED_MIP_INFO</span>,
-        <span class='ident'>pStandardTileShapeForNonPackedMips</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_TILE_SHAPE</span>,
-        <span class='ident'>pNumSubresourceTilings</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>FirstSubresourceTilingToGet</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pSubresourceTilingsForNonPackedMips</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SUBRESOURCE_TILING</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pTiledResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pNumTilesForEntireResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>,
+        <span class='ident'>pPackedMipDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_PACKED_MIP_INFO</span>,
+        <span class='ident'>pStandardTileShapeForNonPackedMips</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_TILE_SHAPE</span>,
+        <span class='ident'>pNumSubresourceTilings</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>FirstSubresourceTilingToGet</span>: ::<span class='ident'>UINT</span>,
+        <span class='ident'>pSubresourceTilingsForNonPackedMips</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SUBRESOURCE_TILING</span>
     ) <span class='op'>-&gt;</span> (),
-    <span class='kw'>fn</span> <span class='ident'>GetAdapterLuid</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LUID</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LUID</span>
+    <span class='kw'>fn</span> <span class='ident'>GetAdapterLuid</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LUID</span>) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LUID</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
@@ -4461,10 +4462,10 @@
 <span class='ident'>interface</span> <span class='ident'>ID3D12GraphicsCommandList</span>(<span class='ident'>ID3D12GraphicsCommandListVtbl</span>): <span class='ident'>ID3D12CommandList</span>(<span class='ident'>ID3D12CommandListVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>Close</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>Reset</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pAllocator</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12CommandAllocator</span>,
-        <span class='ident'>pInitialState</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12PipelineState</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pAllocator</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12CommandAllocator</span>,
+        <span class='ident'>pInitialState</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12PipelineState</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>ClearState</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pPipelineState</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12PipelineState</span>) <span class='op'>-&gt;</span> (),
+    <span class='kw'>fn</span> <span class='ident'>ClearState</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pPipelineState</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12PipelineState</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>DrawInstanced</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>VertexCountPerInstance</span>: ::<span class='ident'>UINT</span>, <span class='ident'>InstanceCount</span>: ::<span class='ident'>UINT</span>,
         <span class='ident'>StartVertexLocation</span>: ::<span class='ident'>UINT</span>, <span class='ident'>StartInstanceLocation</span>: ::<span class='ident'>UINT</span>
@@ -4477,54 +4478,54 @@
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ThreadGroupCountX</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ThreadGroupCountY</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ThreadGroupCountZ</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CopyBufferRegion</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDstBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>DstOffset</span>: ::<span class='ident'>UINT64</span>,
-        <span class='ident'>pSrcBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>SrcOffset</span>: ::<span class='ident'>UINT64</span>, <span class='ident'>NumBytes</span>: ::<span class='ident'>UINT64</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDstBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>DstOffset</span>: ::<span class='ident'>UINT64</span>,
+        <span class='ident'>pSrcBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>SrcOffset</span>: ::<span class='ident'>UINT64</span>, <span class='ident'>NumBytes</span>: ::<span class='ident'>UINT64</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CopyTextureRegion</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDst</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TEXTURE_COPY_LOCATION</span>, <span class='ident'>DstX</span>: ::<span class='ident'>UINT</span>, <span class='ident'>DstY</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>DstZ</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pSrc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TEXTURE_COPY_LOCATION</span>, <span class='ident'>pSrcBox</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_BOX</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDst</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TEXTURE_COPY_LOCATION</span>, <span class='ident'>DstX</span>: ::<span class='ident'>UINT</span>, <span class='ident'>DstY</span>: ::<span class='ident'>UINT</span>,
+        <span class='ident'>DstZ</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pSrc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TEXTURE_COPY_LOCATION</span>, <span class='ident'>pSrcBox</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_BOX</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CopyResource</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDstResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pSrcResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDstResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pSrcResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CopyTiles</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pTiledResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
-        <span class='ident'>pTileRegionStartCoordinate</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILED_RESOURCE_COORDINATE</span>,
-        <span class='ident'>pTileRegionSize</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILE_REGION_SIZE</span>, <span class='ident'>pBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pTiledResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+        <span class='ident'>pTileRegionStartCoordinate</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILED_RESOURCE_COORDINATE</span>,
+        <span class='ident'>pTileRegionSize</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_TILE_REGION_SIZE</span>, <span class='ident'>pBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
         <span class='ident'>BufferStartOffsetInBytes</span>: ::<span class='ident'>UINT64</span>, <span class='ident'>Flags</span>: ::<span class='ident'>D3D12_TILE_COPY_FLAGS</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>ResolveSubresource</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDstResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>DstSubresource</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pSrcResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>SrcSubresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>Format</span>: ::<span class='ident'>DXGI_FORMAT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDstResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>DstSubresource</span>: ::<span class='ident'>UINT</span>,
+        <span class='ident'>pSrcResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>SrcSubresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>Format</span>: ::<span class='ident'>DXGI_FORMAT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>IASetPrimitiveTopology</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>PrimitiveTopology</span>: ::<span class='ident'>D3D12_PRIMITIVE_TOPOLOGY</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>RSSetViewports</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumViewports</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pViewports</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_VIEWPORT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumViewports</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pViewports</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_VIEWPORT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>RSSetScissorRects</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumRects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pRects</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumRects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pRects</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>
     ) <span class='op'>-&gt;</span> (),
-    <span class='kw'>fn</span> <span class='ident'>OMSetBlendFactor</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>BlendFactor</span>: <span class='op'>*</span><span class='kw'>const</span> [::<span class='ident'>FLOAT</span>; <span class='number'>4</span>]) <span class='op'>-&gt;</span> (),
+    <span class='kw'>fn</span> <span class='ident'>OMSetBlendFactor</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>BlendFactor</span>: <span class='kw-2'>*</span><span class='kw'>const</span> [::<span class='ident'>FLOAT</span>; <span class='number'>4</span>]) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>OMSetStencilRef</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>StencilRef</span>: ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetPipelineState</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pPipelineState</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12PipelineState</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pPipelineState</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12PipelineState</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>ResourceBarrier</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumBarriers</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pBarriers</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_BARRIER</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumBarriers</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pBarriers</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RESOURCE_BARRIER</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>ExecuteBundle</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pCommandList</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12GraphicsCommandList</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pCommandList</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12GraphicsCommandList</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetDescriptorHeaps</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumDescriptorHeaps</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppDescriptorHeaps</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12DescriptorHeap</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumDescriptorHeaps</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppDescriptorHeaps</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12DescriptorHeap</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetComputeRootSignature</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pRootSignature</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12RootSignature</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pRootSignature</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12RootSignature</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetGraphicsRootSignature</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pRootSignature</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12RootSignature</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pRootSignature</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12RootSignature</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetComputeRootDescriptorTable</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>RootParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>BaseDescriptor</span>: ::<span class='ident'>D3D12_GPU_DESCRIPTOR_HANDLE</span>
@@ -4540,11 +4541,11 @@
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetComputeRoot32BitConstants</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>RootParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>Num32BitValuesToSet</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pSrcData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>DestOffsetIn32BitValues</span>: ::<span class='ident'>UINT</span>
+        <span class='ident'>pSrcData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>DestOffsetIn32BitValues</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetGraphicsRoot32BitConstants</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>RootParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>Num32BitValuesToSet</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pSrcData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>DestOffsetIn32BitValues</span>: ::<span class='ident'>UINT</span>
+        <span class='ident'>pSrcData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>DestOffsetIn32BitValues</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetComputeRootConstantBufferView</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>RootParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>BufferLocation</span>: ::<span class='ident'>D3D12_GPU_VIRTUAL_ADDRESS</span>
@@ -4565,77 +4566,77 @@
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>RootParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>BufferLocation</span>: ::<span class='ident'>D3D12_GPU_VIRTUAL_ADDRESS</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>IASetIndexBuffer</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pView</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_INDEX_BUFFER_VIEW</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pView</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_INDEX_BUFFER_VIEW</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>IASetVertexBuffers</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>StartSlot</span>: ::<span class='ident'>UINT</span>, <span class='ident'>NumViews</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pViews</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_VERTEX_BUFFER_VIEW</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>StartSlot</span>: ::<span class='ident'>UINT</span>, <span class='ident'>NumViews</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pViews</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_VERTEX_BUFFER_VIEW</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SOSetTargets</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>StartSlot</span>: ::<span class='ident'>UINT</span>, <span class='ident'>NumViews</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pViews</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_STREAM_OUTPUT_BUFFER_VIEW</span>
+        <span class='ident'>pViews</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_STREAM_OUTPUT_BUFFER_VIEW</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>OMSetRenderTargets</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumRenderTargetDescriptors</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pRenderTargetDescriptors</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>,
+        <span class='ident'>pRenderTargetDescriptors</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>,
         <span class='ident'>RTsSingleHandleToDescriptorRange</span>: ::<span class='ident'>BOOL</span>,
-        <span class='ident'>pDepthStencilDescriptor</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>
+        <span class='ident'>pDepthStencilDescriptor</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>ClearDepthStencilView</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>DepthStencilView</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>,
         <span class='ident'>ClearFlags</span>: ::<span class='ident'>D3D12_CLEAR_FLAGS</span>, <span class='ident'>Depth</span>: ::<span class='ident'>FLOAT</span>, <span class='ident'>Stencil</span>: ::<span class='ident'>UINT8</span>, <span class='ident'>NumRects</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pRects</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>
+        <span class='ident'>pRects</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>ClearRenderTargetView</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>RenderTargetView</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>, <span class='ident'>ColorRGBA</span>: <span class='op'>*</span><span class='kw'>const</span> [::<span class='ident'>FLOAT</span>; <span class='number'>4</span>],
-        <span class='ident'>NumRects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pRects</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>RenderTargetView</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>, <span class='ident'>ColorRGBA</span>: <span class='kw-2'>*</span><span class='kw'>const</span> [::<span class='ident'>FLOAT</span>; <span class='number'>4</span>],
+        <span class='ident'>NumRects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pRects</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>ClearUnorderedAccessViewUint</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ViewGPUHandleInCurrentHeap</span>: ::<span class='ident'>D3D12_GPU_DESCRIPTOR_HANDLE</span>,
-        <span class='ident'>ViewCPUHandle</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>, <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
-        <span class='ident'>Values</span>: <span class='op'>*</span><span class='kw'>const</span> [::<span class='ident'>UINT</span>; <span class='number'>4</span>], <span class='ident'>NumRects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pRects</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>
+        <span class='ident'>ViewCPUHandle</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>, <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+        <span class='ident'>Values</span>: <span class='kw-2'>*</span><span class='kw'>const</span> [::<span class='ident'>UINT</span>; <span class='number'>4</span>], <span class='ident'>NumRects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pRects</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>ClearUnorderedAccessViewFloat</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ViewGPUHandleInCurrentHeap</span>: ::<span class='ident'>D3D12_GPU_DESCRIPTOR_HANDLE</span>,
-        <span class='ident'>ViewCPUHandle</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>, <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
-        <span class='ident'>Values</span>: <span class='op'>*</span><span class='kw'>const</span> [::<span class='ident'>FLOAT</span>; <span class='number'>4</span>], <span class='ident'>NumRects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pRects</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>
+        <span class='ident'>ViewCPUHandle</span>: ::<span class='ident'>D3D12_CPU_DESCRIPTOR_HANDLE</span>, <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+        <span class='ident'>Values</span>: <span class='kw-2'>*</span><span class='kw'>const</span> [::<span class='ident'>FLOAT</span>; <span class='number'>4</span>], <span class='ident'>NumRects</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pRects</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RECT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>DiscardResource</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pRegion</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_DISCARD_REGION</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>pRegion</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_DISCARD_REGION</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>BeginQuery</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pQueryHeap</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12QueryHeap</span>, <span class='ident'>Type</span>: ::<span class='ident'>D3D12_QUERY_TYPE</span>, <span class='ident'>Index</span>: ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pQueryHeap</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12QueryHeap</span>, <span class='ident'>Type</span>: ::<span class='ident'>D3D12_QUERY_TYPE</span>, <span class='ident'>Index</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>EndQuery</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pQueryHeap</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12QueryHeap</span>, <span class='ident'>Type</span>: ::<span class='ident'>D3D12_QUERY_TYPE</span>, <span class='ident'>Index</span>: ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pQueryHeap</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12QueryHeap</span>, <span class='ident'>Type</span>: ::<span class='ident'>D3D12_QUERY_TYPE</span>, <span class='ident'>Index</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>ResolveQueryData</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pQueryHeap</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12QueryHeap</span>, <span class='ident'>Type</span>: ::<span class='ident'>D3D12_QUERY_TYPE</span>,
-        <span class='ident'>StartIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>NumQueries</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDestinationBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pQueryHeap</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12QueryHeap</span>, <span class='ident'>Type</span>: ::<span class='ident'>D3D12_QUERY_TYPE</span>,
+        <span class='ident'>StartIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>NumQueries</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDestinationBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>,
         <span class='ident'>AlignedDestinationBufferOffset</span>: ::<span class='ident'>UINT64</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetPredication</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>AlignedBufferOffset</span>: ::<span class='ident'>UINT64</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>AlignedBufferOffset</span>: ::<span class='ident'>UINT64</span>,
         <span class='ident'>Operation</span>: ::<span class='ident'>D3D12_PREDICATION_OP</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>SetMarker</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Metadata</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>Size</span>: ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Metadata</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>Size</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>BeginEvent</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Metadata</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>Size</span>: ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Metadata</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>, <span class='ident'>Size</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>EndEvent</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>ExecuteIndirect</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pCommandSignature</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12CommandSignature</span>, <span class='ident'>MaxCommandCount</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pArgumentBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>ArgumentBufferOffset</span>: ::<span class='ident'>UINT64</span>,
-        <span class='ident'>pCountBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>CountBufferOffset</span>: ::<span class='ident'>UINT64</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pCommandSignature</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12CommandSignature</span>, <span class='ident'>MaxCommandCount</span>: ::<span class='ident'>UINT</span>,
+        <span class='ident'>pArgumentBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>ArgumentBufferOffset</span>: ::<span class='ident'>UINT64</span>,
+        <span class='ident'>pCountBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12Resource</span>, <span class='ident'>CountBufferOffset</span>: ::<span class='ident'>UINT64</span>
     ) <span class='op'>-&gt;</span> ()
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12Heap</span>(<span class='ident'>ID3D12HeapVtbl</span>): <span class='ident'>ID3D12Pageable</span>(<span class='ident'>ID3D12PageableVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_DESC</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_DESC</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_DESC</span>
 });
 
 
@@ -4646,7 +4647,7 @@
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12PipelineState</span>(<span class='ident'>ID3D12PipelineStateVtbl</span>): <span class='ident'>ID3D12Pageable</span>(<span class='ident'>ID3D12PageableVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetCachedBlob</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppBlob</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3DBlob</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>GetCachedBlob</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppBlob</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3DBlob</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
@@ -4656,41 +4657,41 @@
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12Resource</span>(<span class='ident'>ID3D12ResourceVtbl</span>): <span class='ident'>ID3D12Pageable</span>(<span class='ident'>ID3D12PageableVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>Map</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Subresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pReadRange</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RANGE</span>,
-        <span class='ident'>ppData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Subresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pReadRange</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RANGE</span>,
+        <span class='ident'>ppData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>Unmap</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Subresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pWrittenRange</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RANGE</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Subresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pWrittenRange</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_RANGE</span>
     ) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>__ret_val</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_RESOURCE_DESC</span>,
     <span class='kw'>fn</span> <span class='ident'>GetGPUVirtualAddress</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>D3D12_GPU_VIRTUAL_ADDRESS</span>,
     <span class='kw'>fn</span> <span class='ident'>WriteToSubresource</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>DstSubresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDstBox</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_BOX</span>, <span class='ident'>pSrcData</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>DstSubresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDstBox</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_BOX</span>, <span class='ident'>pSrcData</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>c_void</span>,
         <span class='ident'>SrcRowPitch</span>: ::<span class='ident'>UINT</span>, <span class='ident'>SrcDepthPitch</span>: ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>ReadFromSubresource</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDstData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>DstRowPitch</span>: ::<span class='ident'>UINT</span>, <span class='ident'>DstDepthPitch</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>SrcSubresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pSrcBox</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_BOX</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDstData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>, <span class='ident'>DstRowPitch</span>: ::<span class='ident'>UINT</span>, <span class='ident'>DstDepthPitch</span>: ::<span class='ident'>UINT</span>,
+        <span class='ident'>SrcSubresource</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pSrcBox</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_BOX</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetHeapProperties</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pHeapProperties</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_PROPERTIES</span>,
-        <span class='ident'>pHeapFlags</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_FLAGS</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pHeapProperties</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_PROPERTIES</span>,
+        <span class='ident'>pHeapFlags</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_HEAP_FLAGS</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12RootSignatureDeserializer</span>(<span class='ident'>ID3D12RootSignatureDeserializerVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetRootSignatureDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_ROOT_SIGNATURE_DESC</span>
+    <span class='kw'>fn</span> <span class='ident'>GetRootSignatureDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_ROOT_SIGNATURE_DESC</span>
 });
 
 
 
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_D3D12_CREATE_DEVICE</span> <span class='op'>=</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span> (_ : <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, _ : ::<span class='ident'>D3D_FEATURE_LEVEL</span>, _ : ::<span class='ident'>REFGUID</span>, _ : <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_D3D12_CREATE_ROOT_SIGNATURE_DESERIALIZER</span> <span class='op'>=</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span> (<span class='ident'>pSrcData</span>: ::<span class='ident'>LPCVOID</span>, <span class='ident'>SrcDataSizeInBytes</span>: ::<span class='ident'>SIZE_T</span>, <span class='ident'>pRootSignatureDeserializerInterface</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppRootSignatureDeserializer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_D3D12_GET_DEBUG_INTERFACE</span> <span class='op'>=</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span> (_ : ::<span class='ident'>REFGUID</span>, _ : <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_D3D12_SERIALIZE_ROOT_SIGNATURE</span> <span class='op'>=</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span> (<span class='ident'>pRootSignature</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_ROOT_SIGNATURE_DESC</span>, <span class='ident'>Version</span>: ::<span class='ident'>D3D_ROOT_SIGNATURE_VERSION</span>, <span class='ident'>ppBlob</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3DBlob</span>, <span class='ident'>ppErrorBlob</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3DBlob</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_D3D12_CREATE_DEVICE</span> <span class='op'>=</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span> (_ : <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, _ : ::<span class='ident'>D3D_FEATURE_LEVEL</span>, _ : ::<span class='ident'>REFGUID</span>, _ : <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_D3D12_CREATE_ROOT_SIGNATURE_DESERIALIZER</span> <span class='op'>=</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span> (<span class='ident'>pSrcData</span>: ::<span class='ident'>LPCVOID</span>, <span class='ident'>SrcDataSizeInBytes</span>: ::<span class='ident'>SIZE_T</span>, <span class='ident'>pRootSignatureDeserializerInterface</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppRootSignatureDeserializer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_D3D12_GET_DEBUG_INTERFACE</span> <span class='op'>=</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span> (_ : ::<span class='ident'>REFGUID</span>, _ : <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFN_D3D12_SERIALIZE_ROOT_SIGNATURE</span> <span class='op'>=</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span> (<span class='ident'>pRootSignature</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>D3D12_ROOT_SIGNATURE_DESC</span>, <span class='ident'>Version</span>: ::<span class='ident'>D3D_ROOT_SIGNATURE_VERSION</span>, <span class='ident'>ppBlob</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3DBlob</span>, <span class='ident'>ppErrorBlob</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3DBlob</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -4748,11 +4749,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

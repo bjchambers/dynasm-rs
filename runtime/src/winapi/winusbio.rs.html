@@ -9,6 +9,7 @@
 
     <title>winusbio.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -70,7 +71,7 @@
 	<span class='ident'>MaximumPacketSize</span>: ::<span class='ident'>USHORT</span>,
 	<span class='ident'>Interval</span>: ::<span class='ident'>UCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWINUSB_PIPE_INFORMATION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WINUSB_PIPE_INFORMATION</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWINUSB_PIPE_INFORMATION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WINUSB_PIPE_INFORMATION</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>WINUSB_PIPE_INFORMATION_EX</span> {
 	<span class='ident'>PipeType</span>: ::<span class='ident'>USBD_PIPE_TYPE</span>,
 	<span class='ident'>PipeId</span>: ::<span class='ident'>UCHAR</span>,
@@ -78,7 +79,7 @@
 	<span class='ident'>Interval</span>: ::<span class='ident'>UCHAR</span>,
 	<span class='ident'>MaximumBytesPerInterval</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWINUSB_PIPE_INFORMATION_EX</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WINUSB_PIPE_INFORMATION_EX</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PWINUSB_PIPE_INFORMATION_EX</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WINUSB_PIPE_INFORMATION_EX</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -136,11 +137,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

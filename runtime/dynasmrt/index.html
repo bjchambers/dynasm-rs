@@ -9,6 +9,7 @@
 
     <title>dynasmrt - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
     
@@ -47,19 +48,27 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-0' class='srclink' href='../src/dynasmrt/src/lib.rs.html#1-709' title='goto source code'>[src]</a></span></h1>
-<h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
+               </span><a class='srclink' href='../src/dynasmrt/lib.rs.html#1-148' title='goto source code'>[src]</a></span></h1>
+<h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='x64/index.html'
+                                  title='mod dynasmrt::x64'>x64</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class='macro' href='macro.MutPointer.html'
-                                  title='dynasmrt::MutPointer'>MutPointer</a></td>
+                                  title='macro dynasmrt::MutPointer'>MutPointer</a></td>
                            <td class='docblock-short'>
                                 <p>Preforms the same action as the <code>Pointer!</code> macro, but casts to a *mut pointer.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='macro' href='macro.Pointer.html'
-                                  title='dynasmrt::Pointer'>Pointer</a></td>
+                                  title='macro dynasmrt::Pointer'>Pointer</a></td>
                            <td class='docblock-short'>
                                 <p>This macro takes a *const pointer from the source operand, and then casts it to the desired return type.
 this allows it to be used as an easy shorthand for passing pointers as dynasm immediate arguments.</p>
@@ -67,30 +76,8 @@ this allows it to be used as an easy shorthand for passing pointers as dynasm im
                        </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
                        <tr class=' module-item'>
-                           <td><a class='struct' href='struct.Assembler.html'
-                                  title='dynasmrt::Assembler'>Assembler</a></td>
-                           <td class='docblock-short'>
-                                <p>This struct is an implementation of a dynasm runtime. It supports incremental
-compilation as well as multithreaded execution with simultaneous compilation.
-Its implementation ensures that no memory is writeable and executable at the
-same time.</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class='struct' href='struct.AssemblyModifier.html'
-                                  title='dynasmrt::AssemblyModifier'>AssemblyModifier</a></td>
-                           <td class='docblock-short'>
-                                <p>This struct is a wrapper around an <code>Assembler</code> normally created using the
-<code>Assembler.alter</code> method. Instead of writing to a temporary assembling buffer,
-this struct assembles directly into an executable buffer. The <code>goto</code> method can
-be used to set the assembling offset in the <code>ExecutableBuffer</code> of the assembler
-(this offset is initialized to 0) after which the data at this location can be
-overwritten by assembling into this struct.</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
                            <td><a class='struct' href='struct.AssemblyOffset.html'
-                                  title='dynasmrt::AssemblyOffset'>AssemblyOffset</a></td>
+                                  title='struct dynasmrt::AssemblyOffset'>AssemblyOffset</a></td>
                            <td class='docblock-short'>
                                 <p>A struct representing an offset into the assembling buffer of a <code>DynasmLabelApi</code> struct.
 The wrapped <code>usize</code> is the offset from the start of the assembling buffer in bytes.</p>
@@ -98,41 +85,30 @@ The wrapped <code>usize</code> is the offset from the start of the assembling bu
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='struct' href='struct.DynamicLabel.html'
-                                  title='dynasmrt::DynamicLabel'>DynamicLabel</a></td>
+                                  title='struct dynasmrt::DynamicLabel'>DynamicLabel</a></td>
                            <td class='docblock-short'>
                                 <p>A dynamic label</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='struct' href='struct.ExecutableBuffer.html'
-                                  title='dynasmrt::ExecutableBuffer'>ExecutableBuffer</a></td>
+                                  title='struct dynasmrt::ExecutableBuffer'>ExecutableBuffer</a></td>
                            <td class='docblock-short'>
                                 <p>A structure holding a buffer of executable memory</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='struct' href='struct.Executor.html'
-                                  title='dynasmrt::Executor'>Executor</a></td>
+                                  title='struct dynasmrt::Executor'>Executor</a></td>
                            <td class='docblock-short'>
                                 <p>A read-only shared reference to the executable buffer inside an Assembler. By
 locking it the internal <code>ExecutableBuffer</code> can be accessed and executed.</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class='struct' href='struct.UncommittedModifier.html'
-                                  title='dynasmrt::UncommittedModifier'>UncommittedModifier</a></td>
-                           <td class='docblock-short'>
-                                <p>This struct is a wrapper around an <code>Assembler</code> normally created using the
-<code>Assembler.alter_uncommitted</code> method. It allows the user to edit parts
-of the assembling buffer that cannot be determined easily or efficiently
-in advance. Due to limitations of the label resolution algorithms, this
-assembler does not allow labels to be used.</p>
                            </td>
                        </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class='trait' href='trait.DynasmApi.html'
-                                  title='dynasmrt::DynasmApi'>DynasmApi</a></td>
+                                  title='trait dynasmrt::DynasmApi'>DynasmApi</a></td>
                            <td class='docblock-short'>
                                 <p>This trait represents the interface that must be implemented to allow
 the dynasm preprocessor to assemble into a datastructure.</p>
@@ -140,7 +116,7 @@ the dynasm preprocessor to assemble into a datastructure.</p>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='trait' href='trait.DynasmLabelApi.html'
-                                  title='dynasmrt::DynasmLabelApi'>DynasmLabelApi</a></td>
+                                  title='trait dynasmrt::DynasmLabelApi'>DynasmLabelApi</a></td>
                            <td class='docblock-short'>
                                 <p>This trait extends DynasmApi to not only allow assembling, but also labels and various directives</p>
                            </td>
@@ -200,11 +176,9 @@ the dynasm preprocessor to assemble into a datastructure.</p>
     <script>
         window.rootPath = "../";
         window.currentCrate = "dynasmrt";
-        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
-    <script src="../extra.js"></script>
     <script defer src="../search-index.js"></script>
 </body>
 </html>

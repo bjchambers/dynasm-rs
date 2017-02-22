@@ -9,6 +9,7 @@
 
     <title>windowscodecs.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -410,7 +411,7 @@
 <span class='comment'>// Licensed under the MIT License &lt;LICENSE.md&gt;</span>
 <span class='doccomment'>//! Mappings for the contents of wincodec.h</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>WICColor</span> <span class='op'>=</span> ::<span class='ident'>UINT32</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>WICInProcPointer</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>WICInProcPointer</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>REFWICPixelFormatGUID</span> <span class='op'>=</span> ::<span class='ident'>REFGUID</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>WICPixelFormatGUID</span> <span class='op'>=</span> ::<span class='ident'>GUID</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>WICRect</span> {
@@ -458,8 +459,8 @@
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>WICBitmapPattern</span> {
     <span class='ident'>Position</span>: ::<span class='ident'>ULARGE_INTEGER</span>,
     <span class='ident'>Length</span>: ::<span class='ident'>ULONG</span>,
-    <span class='ident'>Pattern</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
-    <span class='ident'>Mask</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>Pattern</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>Mask</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>EndOfStream</span>: ::<span class='ident'>BOOL</span>,
 }}
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>WICBitmapInterpolationMode</span> {
@@ -675,7 +676,7 @@
 <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>unused_qualifications</span>)]</span>
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>WICBitmapPlane</span> {
     <span class='ident'>Format</span>: <span class='ident'>WICPixelFormatGUID</span>,
-    <span class='ident'>pbBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
+    <span class='ident'>pbBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>,
     <span class='ident'>cbStride</span>: ::<span class='ident'>UINT</span>,
     <span class='ident'>cbBufferSize</span>: ::<span class='ident'>UINT</span>,
 }}
@@ -684,89 +685,89 @@
     <span class='kw'>fn</span> <span class='ident'>InitializePredefined</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ePaletteType</span>: <span class='ident'>WICBitmapPaletteType</span>, <span class='ident'>fAddTransparentColor</span>: ::<span class='ident'>BOOL</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>InitializeCustom</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pColors</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICColor</span>, <span class='ident'>cCount</span>: ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>InitializeCustom</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pColors</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICColor</span>, <span class='ident'>cCount</span>: ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>InitializeFromBitmap</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pISurface</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>cCount</span>: ::<span class='ident'>UINT</span>, <span class='ident'>fAddTransparentColor</span>: ::<span class='ident'>BOOL</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pISurface</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>cCount</span>: ::<span class='ident'>UINT</span>, <span class='ident'>fAddTransparentColor</span>: ::<span class='ident'>BOOL</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>InitializeFromPalette</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pIPalette</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICPalette</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetType</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pePaletteType</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICBitmapPaletteType</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetColorCount</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pcCount</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>InitializeFromPalette</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pIPalette</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICPalette</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetType</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pePaletteType</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICBitmapPaletteType</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetColorCount</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pcCount</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetColors</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>cCount</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pColros</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICColor</span>, <span class='ident'>pcActualColors</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>cCount</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pColros</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICColor</span>, <span class='ident'>pcActualColors</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>IsBlackWhite</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pfIsBlackWhite</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>IsGrayscale</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pfIsGrayscale</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>HasAlpha</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pfHasAlpha</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>IsBlackWhite</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pfIsBlackWhite</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>IsGrayscale</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pfIsGrayscale</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>HasAlpha</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pfHasAlpha</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IWICBitmapSource</span>(<span class='ident'>IWICBitmapSourceVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetSize</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>puiWidth</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>puiHeight</span>: ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetPixelFormat</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pPixelFormat</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICPixelFormatGUID</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetResolution</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDpiX</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>f64</span>, <span class='ident'>pDpiY</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>f64</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>CopyPalette</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pIPalette</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICPalette</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetSize</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>puiWidth</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>puiHeight</span>: ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetPixelFormat</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pPixelFormat</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICPixelFormatGUID</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetResolution</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDpiX</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>f64</span>, <span class='ident'>pDpiY</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>f64</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>CopyPalette</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pIPalette</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICPalette</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CopyPixels</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>prc</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>WICRect</span>, <span class='ident'>cbStride</span>: ::<span class='ident'>UINT</span>, <span class='ident'>cbBufferSize</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pbBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>prc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>WICRect</span>, <span class='ident'>cbStride</span>: ::<span class='ident'>UINT</span>, <span class='ident'>cbBufferSize</span>: ::<span class='ident'>UINT</span>,
+        <span class='ident'>pbBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BYTE</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IWICFormatConverter</span>(<span class='ident'>IWICFormatConverterVtbl</span>): <span class='ident'>IWICBitmapSource</span>(<span class='ident'>IWICBitmapSourceVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>Initialize</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pISource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>dstFormat</span>: <span class='ident'>REFWICPixelFormatGUID</span>,
-        <span class='ident'>dither</span>: <span class='ident'>WICBitmapDitherType</span>, <span class='ident'>pIPalette</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICPalette</span>, <span class='ident'>alphaThreasholdPercent</span>: <span class='ident'>f64</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pISource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>dstFormat</span>: <span class='ident'>REFWICPixelFormatGUID</span>,
+        <span class='ident'>dither</span>: <span class='ident'>WICBitmapDitherType</span>, <span class='ident'>pIPalette</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICPalette</span>, <span class='ident'>alphaThreasholdPercent</span>: <span class='ident'>f64</span>,
         <span class='ident'>paletteTranslate</span>: <span class='ident'>WICBitmapPaletteType</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CanConvert</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>srcPixelFormat</span>: <span class='ident'>REFWICPixelFormatGUID</span>, <span class='ident'>dstPixelFormat</span>: <span class='ident'>REFWICPixelFormatGUID</span>,
-        <span class='ident'>pfCanConvert</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>
+        <span class='ident'>pfCanConvert</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IWICPlanarFormatConverter</span>(<span class='ident'>IWICPlanarFormatConverterVtbl</span>)
     : <span class='ident'>IWICBitmapSource</span>(<span class='ident'>IWICBitmapSourceVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>Initialize</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppPlanes</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>cPlanes</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>dstFormat</span>: <span class='ident'>REFWICPixelFormatGUID</span>, <span class='ident'>dither</span>: <span class='ident'>WICBitmapDitherType</span>, <span class='ident'>pIPalette</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICPalette</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppPlanes</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>cPlanes</span>: ::<span class='ident'>UINT</span>,
+        <span class='ident'>dstFormat</span>: <span class='ident'>REFWICPixelFormatGUID</span>, <span class='ident'>dither</span>: <span class='ident'>WICBitmapDitherType</span>, <span class='ident'>pIPalette</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICPalette</span>,
         <span class='ident'>alphaThreasholdPercent</span>: <span class='ident'>f64</span>, <span class='ident'>paletteTranslate</span>: <span class='ident'>WICBitmapPaletteType</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CanConvert</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pSrcPixelFormats</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>WICPixelFormatGUID</span>, <span class='ident'>cSrcPlanes</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>dstPixelFormat</span>: <span class='ident'>REFWICPixelFormatGUID</span>, <span class='ident'>pfCanConvert</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pSrcPixelFormats</span>: <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>WICPixelFormatGUID</span>, <span class='ident'>cSrcPlanes</span>: ::<span class='ident'>UINT</span>,
+        <span class='ident'>dstPixelFormat</span>: <span class='ident'>REFWICPixelFormatGUID</span>, <span class='ident'>pfCanConvert</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IWICBitmapScaler</span>(<span class='ident'>IWICBitmapScalerVtbl</span>): <span class='ident'>IWICBitmapSource</span>(<span class='ident'>IWICBitmapSourceVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>Initialize</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pISource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>uiWidth</span>: ::<span class='ident'>UINT</span>, <span class='ident'>uiHeight</span>: ::<span class='ident'>UINT</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pISource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>uiWidth</span>: ::<span class='ident'>UINT</span>, <span class='ident'>uiHeight</span>: ::<span class='ident'>UINT</span>,
         <span class='ident'>mode</span>: <span class='ident'>WICBitmapInterpolationMode</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IWICBitmapClipper</span>(<span class='ident'>IWICBitmapClipperVtbl</span>): <span class='ident'>IWICBitmapSource</span>(<span class='ident'>IWICBitmapSourceVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>Initialize</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pISource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>prc</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>WICRect</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>Initialize</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pISource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>prc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>WICRect</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IWICBitmapFlipRotator</span>(<span class='ident'>IWICBitmapFlipRotatorVtbl</span>)
     : <span class='ident'>IWICBitmapSource</span>(<span class='ident'>IWICBitmapSourceVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>Initialize</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pISource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>options</span>: <span class='ident'>WICBitmapTransformOptions</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pISource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapSource</span>, <span class='ident'>options</span>: <span class='ident'>WICBitmapTransformOptions</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IWICBitmapLock</span>(<span class='ident'>IWICBitmapLockVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetSize</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>puiWidth</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>puiHeight</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetStride</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pcbStride</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetSize</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>puiWidth</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>puiHeight</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetStride</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pcbStride</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetDataPointer</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pcbBufferSize</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>ppbData</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICInProcPointer</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pcbBufferSize</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>ppbData</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICInProcPointer</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetPixelFormat</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pPixelFormat</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICPixelFormatGUID</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>GetPixelFormat</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pPixelFormat</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>WICPixelFormatGUID</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IWICBitmap</span>(<span class='ident'>IWICBitmapVtbl</span>): <span class='ident'>IWICBitmapSource</span>(<span class='ident'>IWICBitmapSourceVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>Lock</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>prcLock</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>WICRect</span>, <span class='ident'>flags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>ppILock</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapLock</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>prcLock</span>: <span class='kw-2'>*</span><span class='kw'>const</span> <span class='ident'>WICRect</span>, <span class='ident'>flags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>ppILock</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICBitmapLock</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>SetPalette</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pIPalette</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICPalette</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>SetPalette</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pIPalette</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IWICPalette</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>SetResolution</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dpiX</span>: <span class='ident'>f64</span>, <span class='ident'>dpiY</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 </pre>
@@ -826,11 +827,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

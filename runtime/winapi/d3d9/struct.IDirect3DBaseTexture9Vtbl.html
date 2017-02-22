@@ -9,6 +9,7 @@
 
     <title>winapi::d3d9::IDirect3DBaseTexture9Vtbl - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,37 +48,38 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-38209' class='srclink' href='../../src/winapi/macros.rs.html#139-145' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct IDirect3DBaseTexture9Vtbl {
-    pub parent: <a class='struct' href='../../winapi/d3d9/struct.IDirect3DResource9Vtbl.html' title='winapi::d3d9::IDirect3DResource9Vtbl'>IDirect3DResource9Vtbl</a>,
-    pub SetLOD: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>, LODNew: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub GetLOD: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub GetLevelCount: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SetAutoGenFilterType: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>, FilterType: <a class='struct' href='../../winapi/d3d9types/struct.D3DTEXTUREFILTERTYPE.html' title='winapi::d3d9types::D3DTEXTUREFILTERTYPE'>D3DTEXTUREFILTERTYPE</a>) -&gt; <a class='type' href='../../winapi/winerror/type.HRESULT.html' title='winapi::winerror::HRESULT'>HRESULT</a>,
-    pub GetAutoGenFilterType: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='struct' href='../../winapi/d3d9types/struct.D3DTEXTUREFILTERTYPE.html' title='winapi::d3d9types::D3DTEXTUREFILTERTYPE'>D3DTEXTUREFILTERTYPE</a>,
-    pub GenerateMipSubLevels: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>),
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#139-145' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct IDirect3DBaseTexture9Vtbl {
+    pub parent: <a class='struct' href='../../winapi/d3d9/struct.IDirect3DResource9Vtbl.html' title='struct winapi::d3d9::IDirect3DResource9Vtbl'>IDirect3DResource9Vtbl</a>,
+    pub SetLOD: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>, _: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub GetLOD: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub GetLevelCount: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SetAutoGenFilterType: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>, _: <a class='struct' href='../../winapi/d3d9types/struct.D3DTEXTUREFILTERTYPE.html' title='struct winapi::d3d9types::D3DTEXTUREFILTERTYPE'>D3DTEXTUREFILTERTYPE</a>) -&gt; <a class='type' href='../../winapi/winerror/type.HRESULT.html' title='type winapi::winerror::HRESULT'>HRESULT</a>,
+    pub GetAutoGenFilterType: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='struct' href='../../winapi/d3d9types/struct.D3DTEXTUREFILTERTYPE.html' title='struct winapi::d3d9types::D3DTEXTUREFILTERTYPE'>D3DTEXTUREFILTERTYPE</a>,
+    pub GenerateMipSubLevels: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>),
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.parent' class='structfield'>
                            <span id='parent.v' class='invisible'>
-                           <code>parent: <a class='struct' href='../../winapi/d3d9/struct.IDirect3DResource9Vtbl.html' title='winapi::d3d9::IDirect3DResource9Vtbl'>IDirect3DResource9Vtbl</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SetLOD' class='structfield'>
+                           <code>parent: <a class='struct' href='../../winapi/d3d9/struct.IDirect3DResource9Vtbl.html' title='struct winapi::d3d9::IDirect3DResource9Vtbl'>IDirect3DResource9Vtbl</a></code>
+                           </span></span><span id='structfield.SetLOD' class='structfield'>
                            <span id='SetLOD.v' class='invisible'>
-                           <code>SetLOD: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>, LODNew: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.GetLOD' class='structfield'>
+                           <code>SetLOD: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>, _: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.GetLOD' class='structfield'>
                            <span id='GetLOD.v' class='invisible'>
-                           <code>GetLOD: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.GetLevelCount' class='structfield'>
+                           <code>GetLOD: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.GetLevelCount' class='structfield'>
                            <span id='GetLevelCount.v' class='invisible'>
-                           <code>GetLevelCount: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SetAutoGenFilterType' class='structfield'>
+                           <code>GetLevelCount: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SetAutoGenFilterType' class='structfield'>
                            <span id='SetAutoGenFilterType.v' class='invisible'>
-                           <code>SetAutoGenFilterType: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>, FilterType: <a class='struct' href='../../winapi/d3d9types/struct.D3DTEXTUREFILTERTYPE.html' title='winapi::d3d9types::D3DTEXTUREFILTERTYPE'>D3DTEXTUREFILTERTYPE</a>) -&gt; <a class='type' href='../../winapi/winerror/type.HRESULT.html' title='winapi::winerror::HRESULT'>HRESULT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.GetAutoGenFilterType' class='structfield'>
+                           <code>SetAutoGenFilterType: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>, _: <a class='struct' href='../../winapi/d3d9types/struct.D3DTEXTUREFILTERTYPE.html' title='struct winapi::d3d9types::D3DTEXTUREFILTERTYPE'>D3DTEXTUREFILTERTYPE</a>) -&gt; <a class='type' href='../../winapi/winerror/type.HRESULT.html' title='type winapi::winerror::HRESULT'>HRESULT</a></code>
+                           </span></span><span id='structfield.GetAutoGenFilterType' class='structfield'>
                            <span id='GetAutoGenFilterType.v' class='invisible'>
-                           <code>GetAutoGenFilterType: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='struct' href='../../winapi/d3d9types/struct.D3DTEXTUREFILTERTYPE.html' title='winapi::d3d9types::D3DTEXTUREFILTERTYPE'>D3DTEXTUREFILTERTYPE</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.GenerateMipSubLevels' class='structfield'>
+                           <code>GetAutoGenFilterType: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>) -&gt; <a class='struct' href='../../winapi/d3d9types/struct.D3DTEXTUREFILTERTYPE.html' title='struct winapi::d3d9types::D3DTEXTUREFILTERTYPE'>D3DTEXTUREFILTERTYPE</a></code>
+                           </span></span><span id='structfield.GenerateMipSubLevels' class='structfield'>
                            <span id='GenerateMipSubLevels.v' class='invisible'>
-                           <code>GenerateMipSubLevels: unsafe extern &quot;system&quot; fn(This: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>)</code>
-                           </span></span><span class='stab '></span></section>
+                           <code>GenerateMipSubLevels: unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/d3d9/struct.IDirect3DBaseTexture9.html' title='struct winapi::d3d9::IDirect3DBaseTexture9'>IDirect3DBaseTexture9</a>)</code>
+                           </span></span></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -133,11 +135,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>nb30.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -248,7 +249,7 @@
 <span class='comment'>// This module contains the definitions for portable NetBIOS 3.0 support.</span>
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>NCBNAMSZ</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>16</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>MAX_LANA</span>: <span class='ident'>usize</span> <span class='op'>=</span> <span class='number'>254</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFPOST</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(<span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NCB</span>)<span class='op'>&gt;</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFPOST</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(<span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NCB</span>)<span class='op'>&gt;</span>;
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_arch</span><span class='op'>=</span><span class='string'>&quot;x86_64&quot;</span>)]</span>
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='ident'>nodebug</span> <span class='kw'>struct</span> <span class='ident'>NCB</span> {
     <span class='ident'>ncb_command</span>: ::<span class='ident'>UCHAR</span>,
@@ -285,7 +286,7 @@
     <span class='ident'>ncb_reserve</span>: [::<span class='ident'>UCHAR</span>; <span class='number'>10</span>],
     <span class='ident'>ncb_event</span>: ::<span class='ident'>HANDLE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNCB</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NCB</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNCB</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NCB</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>ADAPTER_STATUS</span> {
     <span class='ident'>adapter_address</span>: [::<span class='ident'>UCHAR</span>; <span class='number'>6</span>],
     <span class='ident'>rev_major</span>: ::<span class='ident'>UCHAR</span>,
@@ -315,13 +316,13 @@
     <span class='ident'>max_sess_pkt_size</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>name_count</span>: ::<span class='ident'>WORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PADAPTER_STATUS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ADAPTER_STATUS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PADAPTER_STATUS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ADAPTER_STATUS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>NAME_BUFFER</span> {
     <span class='ident'>name</span>: [::<span class='ident'>UCHAR</span>; <span class='ident'>NCBNAMSZ</span>],
     <span class='ident'>name_num</span>: ::<span class='ident'>UCHAR</span>,
     <span class='ident'>name_flags</span>: ::<span class='ident'>UCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNAME_BUFFER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>NAME_BUFFER</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PNAME_BUFFER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>NAME_BUFFER</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>NAME_FLAGS_MASK</span>: ::<span class='ident'>UCHAR</span> <span class='op'>=</span> <span class='number'>0x87</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>GROUP_NAME</span>: ::<span class='ident'>UCHAR</span> <span class='op'>=</span> <span class='number'>0x80</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>UNIQUE_NAME</span>: ::<span class='ident'>UCHAR</span> <span class='op'>=</span> <span class='number'>0x00</span>;
@@ -336,7 +337,7 @@
     <span class='ident'>rcv_dg_outstanding</span>: ::<span class='ident'>UCHAR</span>,
     <span class='ident'>rcv_any_outstanding</span>: ::<span class='ident'>UCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSESSION_HEADER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SESSION_HEADER</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSESSION_HEADER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SESSION_HEADER</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>SESSION_BUFFER</span> {
     <span class='ident'>lsn</span>: ::<span class='ident'>UCHAR</span>,
     <span class='ident'>state</span>: ::<span class='ident'>UCHAR</span>,
@@ -345,7 +346,7 @@
     <span class='ident'>rcvs_outstanding</span>: ::<span class='ident'>UCHAR</span>,
     <span class='ident'>sends_outstanding</span>: ::<span class='ident'>UCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSESSION_BUFFER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>SESSION_BUFFER</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSESSION_BUFFER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>SESSION_BUFFER</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>LISTEN_OUTSTANDING</span>: ::<span class='ident'>UCHAR</span> <span class='op'>=</span> <span class='number'>0x01</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>CALL_PENDING</span>: ::<span class='ident'>UCHAR</span> <span class='op'>=</span> <span class='number'>0x02</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>SESSION_ESTABLISHED</span>: ::<span class='ident'>UCHAR</span> <span class='op'>=</span> <span class='number'>0x03</span>;
@@ -356,13 +357,13 @@
     <span class='ident'>length</span>: ::<span class='ident'>UCHAR</span>,
     <span class='ident'>lana</span>: [::<span class='ident'>UCHAR</span>; <span class='ident'>MAX_LANA</span> <span class='op'>+</span> <span class='number'>1</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLANA_ENUM</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>LANA_ENUM</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PLANA_ENUM</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>LANA_ENUM</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>FIND_NAME_HEADER</span> {
     <span class='ident'>node_count</span>: ::<span class='ident'>WORD</span>,
     <span class='ident'>reserved</span>: ::<span class='ident'>UCHAR</span>,
     <span class='ident'>unique_group</span>: ::<span class='ident'>UCHAR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFIND_NAME_HEADER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>FIND_NAME_HEADER</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFIND_NAME_HEADER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>FIND_NAME_HEADER</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>FIND_NAME_BUFFER</span> {
     <span class='ident'>length</span>: ::<span class='ident'>UCHAR</span>,
     <span class='ident'>access_control</span>: ::<span class='ident'>UCHAR</span>,
@@ -371,13 +372,13 @@
     <span class='ident'>source_addr</span>: [::<span class='ident'>UCHAR</span>; <span class='number'>6</span>],
     <span class='ident'>routing_info</span>: [::<span class='ident'>UCHAR</span>; <span class='number'>18</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFIND_NAME_BUFFER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>FIND_NAME_BUFFER</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PFIND_NAME_BUFFER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>FIND_NAME_BUFFER</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>ACTION_HEADER</span> {
     <span class='ident'>transport_id</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>action_code</span>: ::<span class='ident'>USHORT</span>,
     <span class='ident'>reserved</span>: ::<span class='ident'>USHORT</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PACTION_HEADER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ACTION_HEADER</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PACTION_HEADER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ACTION_HEADER</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>NCBCALL</span>: ::<span class='ident'>UCHAR</span> <span class='op'>=</span> <span class='number'>0x10</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>NCBLISTEN</span>: ::<span class='ident'>UCHAR</span> <span class='op'>=</span> <span class='number'>0x11</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>NCBHANGUP</span>: ::<span class='ident'>UCHAR</span> <span class='op'>=</span> <span class='number'>0x12</span>;
@@ -500,11 +501,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

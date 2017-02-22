@@ -9,6 +9,7 @@
 
     <title>objidl.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -153,19 +154,19 @@
     <span class='ident'>grfMode</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwTickCountDeadline</span>: ::<span class='ident'>DWORD</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPBIND_OPTS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>BIND_OPTS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPBIND_OPTS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>BIND_OPTS</span>;
 <span class='comment'>//8479</span>
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IBindCtx</span>(<span class='ident'>IBindCtxVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>RegisterObjectBound</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>punk</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>RevokeObjectBound</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>punk</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>RegisterObjectBound</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>punk</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>RevokeObjectBound</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>punk</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>ReleaseBoundObjects</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>SetBindOptions</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pbindopts</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>BIND_OPTS</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetBindOptions</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pbindopts</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>BIND_OPTS</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetRunningObjectTable</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pprot</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IRunningObjectTable</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>RegisterObjectParam</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pszKey</span>: ::<span class='ident'>LPOLESTR</span>, <span class='ident'>punk</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetObjectParam</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pszKey</span>: ::<span class='ident'>LPOLESTR</span>, <span class='ident'>ppunk</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>EnumObjectParam</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppenum</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IEnumString</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>SetBindOptions</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pbindopts</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>BIND_OPTS</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetBindOptions</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pbindopts</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>BIND_OPTS</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetRunningObjectTable</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pprot</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IRunningObjectTable</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>RegisterObjectParam</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pszKey</span>: ::<span class='ident'>LPOLESTR</span>, <span class='ident'>punk</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetObjectParam</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pszKey</span>: ::<span class='ident'>LPOLESTR</span>, <span class='ident'>ppunk</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>EnumObjectParam</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppenum</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IEnumString</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>RevokeObjectParam</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pszKey</span>: ::<span class='ident'>LPOLESTR</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }
 );
@@ -175,19 +176,19 @@
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IRunningObjectTable</span>(<span class='ident'>IRunningObjectTableVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>Register</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>grfFlags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>punkObject</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>pmkObjectName</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMoniker</span>,
-        <span class='ident'>pdwRegister</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>grfFlags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>punkObject</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>pmkObjectName</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMoniker</span>,
+        <span class='ident'>pdwRegister</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>Revoke</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dwRegister</span>: ::<span class='ident'>DWORD</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>IsRunning</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pmkObjectName</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMoniker</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>IsRunning</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pmkObjectName</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMoniker</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetObject</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pmkObjectName</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMoniker</span>, <span class='ident'>ppunkObject</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pmkObjectName</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMoniker</span>, <span class='ident'>ppunkObject</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>NoteChangeTime</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dwRegister</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pfiletime</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>FILETIME</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>NoteChangeTime</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dwRegister</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pfiletime</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>FILETIME</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetTimeOfLastChange</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pmkObjectName</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMoniker</span>, <span class='ident'>pfiletime</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>FILETIME</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pmkObjectName</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMoniker</span>, <span class='ident'>pfiletime</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>FILETIME</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>EnumRunning</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppenumMoniker</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IEnumMoniker</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>EnumRunning</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppenumMoniker</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IEnumMoniker</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }
 );
 <span class='comment'>//9350</span>
@@ -211,7 +212,7 @@
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>SOLE_AUTHENTICATION_SERVICE</span> {
     <span class='ident'>dwAuthnSvc</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>dwAuthzSvc</span>: ::<span class='ident'>DWORD</span>,
-    <span class='ident'>pPrincipalName</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>OLECHAR</span>,
+    <span class='ident'>pPrincipalName</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>OLECHAR</span>,
     <span class='ident'>hr</span>: ::<span class='ident'>HRESULT</span>,
 }}
 
@@ -224,22 +225,22 @@
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IMarshal</span>(<span class='ident'>IMarshalVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetUnmarshalClass</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFIID</span>, <span class='ident'>pv</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>, <span class='ident'>dwDestContext</span>: ::<span class='ident'>DWORD</span>,
-        <span class='ident'>pvDestContext</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>, <span class='ident'>mshlflags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pCid</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>CLSID</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFIID</span>, <span class='ident'>pv</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>, <span class='ident'>dwDestContext</span>: ::<span class='ident'>DWORD</span>,
+        <span class='ident'>pvDestContext</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>, <span class='ident'>mshlflags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pCid</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>CLSID</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetMarshalSizeMax</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFIID</span>, <span class='ident'>pv</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>, <span class='ident'>dwDestContext</span>: ::<span class='ident'>DWORD</span>,
-        <span class='ident'>pvDestContext</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>, <span class='ident'>mshlflags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pSize</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFIID</span>, <span class='ident'>pv</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>, <span class='ident'>dwDestContext</span>: ::<span class='ident'>DWORD</span>,
+        <span class='ident'>pvDestContext</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>, <span class='ident'>mshlflags</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pSize</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>MarshalInterface</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pStm</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>IStream</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFIID</span>, <span class='ident'>pv</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>,
-        <span class='ident'>dwDestContext</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pvDestContext</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pStm</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>IStream</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFIID</span>, <span class='ident'>pv</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>,
+        <span class='ident'>dwDestContext</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pvDestContext</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>VOID</span>,
         <span class='ident'>mshlflags</span>: ::<span class='ident'>DWORD</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>UnmarshalInterface</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pStm</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>IStream</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFIID</span>, <span class='ident'>ppv</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>VOID</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pStm</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>IStream</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFIID</span>, <span class='ident'>ppv</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>VOID</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>ReleaseMarshalData</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pStm</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>IStream</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>ReleaseMarshalData</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pStm</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>IStream</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>DisconnectObject</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dwReserved</span>: ::<span class='ident'>DWORD</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }
 );</pre>
@@ -299,11 +300,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

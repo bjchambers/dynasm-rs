@@ -9,6 +9,7 @@
 
     <title>owning_ref - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
     
@@ -47,7 +48,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-0' class='srclink' href='../src/owning_ref/lib.rs.html#1-721' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/owning_ref/lib.rs.html#1-721' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'>
 <h1 id='an-owning-reference' class='section-header'><a href='#an-owning-reference'>An owning reference.</a></h1>
 <p>This crate provides the <em>owning reference</em> type <code>OwningRef</code> that enables it
@@ -72,14 +73,14 @@ which allows for less verbose type signatures. For example, <code>BoxRef&lt;T&gt
 
     <span class='comment'>// Transfer into a BoxRef.</span>
     <span class='kw'>let</span> <span class='ident'>arr</span>: <span class='ident'>BoxRef</span><span class='op'>&lt;</span>[<span class='ident'>i32</span>]<span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>BoxRef</span>::<span class='ident'>new</span>(<span class='ident'>arr</span>);
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='op'>*</span><span class='ident'>arr</span>, <span class='kw-2'>&amp;</span>[<span class='number'>1</span>, <span class='number'>2</span>, <span class='number'>3</span>, <span class='number'>4</span>]);
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>*</span><span class='ident'>arr</span>, <span class='kw-2'>&amp;</span>[<span class='number'>1</span>, <span class='number'>2</span>, <span class='number'>3</span>, <span class='number'>4</span>]);
 
     <span class='comment'>// We can slice the array without losing ownership or changing type.</span>
     <span class='kw'>let</span> <span class='ident'>arr</span>: <span class='ident'>BoxRef</span><span class='op'>&lt;</span>[<span class='ident'>i32</span>]<span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>arr</span>.<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>arr</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='ident'>arr</span>[<span class='number'>1</span>..<span class='number'>3</span>]);
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='op'>*</span><span class='ident'>arr</span>, <span class='kw-2'>&amp;</span>[<span class='number'>2</span>, <span class='number'>3</span>]);
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>*</span><span class='ident'>arr</span>, <span class='kw-2'>&amp;</span>[<span class='number'>2</span>, <span class='number'>3</span>]);
 
     <span class='comment'>// Also works for Arc, Rc, String and Vec!</span>
-}<a class='test-arrow' target='_blank' href=''>Run</a></pre>
+}</pre>
 
 <h2 id='caching-a-reference-to-a-struct-field' class='section-header'><a href='#caching-a-reference-to-a-struct-field'>Caching a reference to a struct field</a></h2>
 <pre class='rust rust-example-rendered'>
@@ -104,8 +105,8 @@ which allows for less verbose type signatures. For example, <code>BoxRef&lt;T&gt
         }
     });
 
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='op'>*</span><span class='ident'>or</span>, <span class='number'>200</span>);
-}<a class='test-arrow' target='_blank' href=''>Run</a></pre>
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>*</span><span class='ident'>or</span>, <span class='number'>200</span>);
+}</pre>
 
 <h2 id='caching-a-reference-to-an-entry-in-a-vector' class='section-header'><a href='#caching-a-reference-to-an-entry-in-a-vector'>Caching a reference to an entry in a vector</a></h2>
 <pre class='rust rust-example-rendered'>
@@ -114,8 +115,8 @@ which allows for less verbose type signatures. For example, <code>BoxRef&lt;T&gt
 
 <span class='kw'>fn</span> <span class='ident'>main</span>() {
     <span class='kw'>let</span> <span class='ident'>v</span> <span class='op'>=</span> <span class='ident'>VecRef</span>::<span class='ident'>new</span>(<span class='macro'>vec</span><span class='macro'>!</span>[<span class='number'>1</span>, <span class='number'>2</span>, <span class='number'>3</span>, <span class='number'>4</span>, <span class='number'>5</span>]).<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>v</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='ident'>v</span>[<span class='number'>3</span>]);
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='op'>*</span><span class='ident'>v</span>, <span class='number'>4</span>);
-}<a class='test-arrow' target='_blank' href=''>Run</a></pre>
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>*</span><span class='ident'>v</span>, <span class='number'>4</span>);
+}</pre>
 
 <h2 id='caching-a-subslice-of-a-string' class='section-header'><a href='#caching-a-subslice-of-a-string'>Caching a subslice of a String</a></h2>
 <pre class='rust rust-example-rendered'>
@@ -126,8 +127,8 @@ which allows for less verbose type signatures. For example, <code>BoxRef&lt;T&gt
     <span class='kw'>let</span> <span class='ident'>s</span> <span class='op'>=</span> <span class='ident'>StringRef</span>::<span class='ident'>new</span>(<span class='string'>&quot;hello world&quot;</span>.<span class='ident'>to_owned</span>())
         .<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>s</span><span class='op'>|</span> <span class='ident'>s</span>.<span class='ident'>split</span>(<span class='string'>&#39; &#39;</span>).<span class='ident'>nth</span>(<span class='number'>1</span>).<span class='ident'>unwrap</span>());
 
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='op'>*</span><span class='ident'>s</span>, <span class='string'>&quot;world&quot;</span>);
-}<a class='test-arrow' target='_blank' href=''>Run</a></pre>
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>*</span><span class='ident'>s</span>, <span class='string'>&quot;world&quot;</span>);
+}</pre>
 
 <h2 id='reference-counted-slices-that-share-ownership-of-the-backing-storage' class='section-header'><a href='#reference-counted-slices-that-share-ownership-of-the-backing-storage'>Reference counted slices that share ownership of the backing storage</a></h2>
 <pre class='rust rust-example-rendered'>
@@ -137,18 +138,18 @@ which allows for less verbose type signatures. For example, <code>BoxRef&lt;T&gt
 
 <span class='kw'>fn</span> <span class='ident'>main</span>() {
     <span class='kw'>let</span> <span class='ident'>rc</span>: <span class='ident'>RcRef</span><span class='op'>&lt;</span>[<span class='ident'>i32</span>]<span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>RcRef</span>::<span class='ident'>new</span>(<span class='ident'>Rc</span>::<span class='ident'>new</span>([<span class='number'>1</span>, <span class='number'>2</span>, <span class='number'>3</span>, <span class='number'>4</span>]) <span class='kw'>as</span> <span class='ident'>Rc</span><span class='op'>&lt;</span>[<span class='ident'>i32</span>]<span class='op'>&gt;</span>);
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='op'>*</span><span class='ident'>rc</span>, <span class='kw-2'>&amp;</span>[<span class='number'>1</span>, <span class='number'>2</span>, <span class='number'>3</span>, <span class='number'>4</span>]);
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>*</span><span class='ident'>rc</span>, <span class='kw-2'>&amp;</span>[<span class='number'>1</span>, <span class='number'>2</span>, <span class='number'>3</span>, <span class='number'>4</span>]);
 
     <span class='kw'>let</span> <span class='ident'>rc_a</span>: <span class='ident'>RcRef</span><span class='op'>&lt;</span>[<span class='ident'>i32</span>]<span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>rc</span>.<span class='ident'>clone</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>s</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='ident'>s</span>[<span class='number'>0</span>..<span class='number'>2</span>]);
     <span class='kw'>let</span> <span class='ident'>rc_b</span> <span class='op'>=</span> <span class='ident'>rc</span>.<span class='ident'>clone</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>s</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='ident'>s</span>[<span class='number'>1</span>..<span class='number'>3</span>]);
     <span class='kw'>let</span> <span class='ident'>rc_c</span> <span class='op'>=</span> <span class='ident'>rc</span>.<span class='ident'>clone</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>s</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='ident'>s</span>[<span class='number'>2</span>..<span class='number'>4</span>]);
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='op'>*</span><span class='ident'>rc_a</span>, <span class='kw-2'>&amp;</span>[<span class='number'>1</span>, <span class='number'>2</span>]);
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='op'>*</span><span class='ident'>rc_b</span>, <span class='kw-2'>&amp;</span>[<span class='number'>2</span>, <span class='number'>3</span>]);
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='op'>*</span><span class='ident'>rc_c</span>, <span class='kw-2'>&amp;</span>[<span class='number'>3</span>, <span class='number'>4</span>]);
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>*</span><span class='ident'>rc_a</span>, <span class='kw-2'>&amp;</span>[<span class='number'>1</span>, <span class='number'>2</span>]);
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>*</span><span class='ident'>rc_b</span>, <span class='kw-2'>&amp;</span>[<span class='number'>2</span>, <span class='number'>3</span>]);
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>*</span><span class='ident'>rc_c</span>, <span class='kw-2'>&amp;</span>[<span class='number'>3</span>, <span class='number'>4</span>]);
 
     <span class='kw'>let</span> <span class='ident'>rc_c_a</span> <span class='op'>=</span> <span class='ident'>rc_c</span>.<span class='ident'>clone</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>s</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='ident'>s</span>[<span class='number'>1</span>]);
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='op'>*</span><span class='ident'>rc_c_a</span>, <span class='kw-2'>&amp;</span><span class='number'>4</span>);
-}<a class='test-arrow' target='_blank' href=''>Run</a></pre>
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>*</span><span class='ident'>rc_c_a</span>, <span class='kw-2'>&amp;</span><span class='number'>4</span>);
+}</pre>
 
 <h2 id='atomic-reference-counted-slices-that-share-ownership-of-the-backing-storage' class='section-header'><a href='#atomic-reference-counted-slices-that-share-ownership-of-the-backing-storage'>Atomic reference counted slices that share ownership of the backing storage</a></h2>
 <pre class='rust rust-example-rendered'>
@@ -179,7 +180,7 @@ which allows for less verbose type signatures. For example, <code>BoxRef&lt;T&gt
     <span class='kw'>let</span> <span class='ident'>rc</span>: <span class='ident'>ArcRef</span><span class='op'>&lt;</span>[<span class='ident'>i32</span>]<span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>rc</span>.<span class='ident'>into</span>();
 
     <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>par_sum</span>(<span class='ident'>rc</span>), <span class='number'>10</span>);
-}<a class='test-arrow' target='_blank' href=''>Run</a></pre>
+}</pre>
 
 <h2 id='references-into-raii-locks' class='section-header'><a href='#references-into-raii-locks'>References into RAII locks</a></h2>
 <pre class='rust rust-example-rendered'>
@@ -193,24 +194,24 @@ which allows for less verbose type signatures. For example, <code>BoxRef&lt;T&gt
 
     <span class='kw'>let</span> <span class='ident'>refref</span> <span class='op'>=</span> {
         <span class='kw'>let</span> <span class='ident'>refref</span> <span class='op'>=</span> <span class='ident'>RefRef</span>::<span class='ident'>new</span>(<span class='ident'>refcell</span>.<span class='ident'>borrow</span>()).<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>x</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='ident'>x</span>.<span class='number'>3</span>);
-        <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='op'>*</span><span class='ident'>refref</span>, <span class='number'>4</span>);
+        <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>*</span><span class='ident'>refref</span>, <span class='number'>4</span>);
 
         <span class='comment'>// We move the RAII lock and the reference to one of</span>
         <span class='comment'>// the subfields in the data it guards here:</span>
         <span class='ident'>refref</span>
     };
 
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='op'>*</span><span class='ident'>refref</span>, <span class='number'>4</span>);
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>*</span><span class='ident'>refref</span>, <span class='number'>4</span>);
 
     <span class='ident'>drop</span>(<span class='ident'>refref</span>);
 
-    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='op'>*</span><span class='ident'>refcell</span>.<span class='ident'>borrow</span>(), (<span class='number'>1</span>, <span class='number'>2</span>, <span class='number'>3</span>, <span class='number'>4</span>));
-}<a class='test-arrow' target='_blank' href=''>Run</a></pre>
+    <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='kw-2'>*</span><span class='ident'>refcell</span>.<span class='ident'>borrow</span>(), (<span class='number'>1</span>, <span class='number'>2</span>, <span class='number'>3</span>, <span class='number'>4</span>));
+}</pre>
 </div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class='struct' href='struct.OwningRef.html'
-                                  title='owning_ref::OwningRef'>OwningRef</a></td>
+                                  title='struct owning_ref::OwningRef'>OwningRef</a></td>
                            <td class='docblock-short'>
                                 <p>An owning reference.</p>
                            </td>
@@ -218,7 +219,7 @@ which allows for less verbose type signatures. For example, <code>BoxRef&lt;T&gt
 <table>
                        <tr class=' module-item'>
                            <td><a class='trait' href='trait.CloneStableAddress.html'
-                                  title='owning_ref::CloneStableAddress'>CloneStableAddress</a></td>
+                                  title='trait owning_ref::CloneStableAddress'>CloneStableAddress</a></td>
                            <td class='docblock-short'>
                                 <p>Marker trait for expressing that the memory address of the value
 reachable via a dereference remains identical even if <code>self</code> is a clone.</p>
@@ -226,7 +227,7 @@ reachable via a dereference remains identical even if <code>self</code> is a clo
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='trait' href='trait.Erased.html'
-                                  title='owning_ref::Erased'>Erased</a></td>
+                                  title='trait owning_ref::Erased'>Erased</a></td>
                            <td class='docblock-short'>
                                 <p>Helper trait for an erased concrete type an owner dereferences to.
 This is used in form of a trait object for keeping
@@ -235,7 +236,7 @@ something around to (virtually) call the destructor.</p>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='trait' href='trait.IntoErased.html'
-                                  title='owning_ref::IntoErased'>IntoErased</a></td>
+                                  title='trait owning_ref::IntoErased'>IntoErased</a></td>
                            <td class='docblock-short'>
                                 <p>Helper trait for erasing the concrete type of what an owner derferences to,
 for example <code>Box&lt;T&gt; -&gt; Box&lt;Erased&gt;</code>. This would be unneeded with
@@ -244,7 +245,7 @@ higher kinded types support in the language.</p>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='trait' href='trait.StableAddress.html'
-                                  title='owning_ref::StableAddress'>StableAddress</a></td>
+                                  title='trait owning_ref::StableAddress'>StableAddress</a></td>
                            <td class='docblock-short'>
                                 <p>Marker trait for expressing that the memory address of the value
 reachable via a dereference remains identical even if <code>self</code> gets moved.</p>
@@ -253,91 +254,91 @@ reachable via a dereference remains identical even if <code>self</code> gets mov
 <table>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.ArcRef.html'
-                                  title='owning_ref::ArcRef'>ArcRef</a></td>
+                                  title='type owning_ref::ArcRef'>ArcRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses a <code>Arc</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.BoxRef.html'
-                                  title='owning_ref::BoxRef'>BoxRef</a></td>
+                                  title='type owning_ref::BoxRef'>BoxRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses a <code>Box</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.ErasedArcRef.html'
-                                  title='owning_ref::ErasedArcRef'>ErasedArcRef</a></td>
+                                  title='type owning_ref::ErasedArcRef'>ErasedArcRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses an erased <code>Arc</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.ErasedBoxRef.html'
-                                  title='owning_ref::ErasedBoxRef'>ErasedBoxRef</a></td>
+                                  title='type owning_ref::ErasedBoxRef'>ErasedBoxRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses an erased <code>Box</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.ErasedRcRef.html'
-                                  title='owning_ref::ErasedRcRef'>ErasedRcRef</a></td>
+                                  title='type owning_ref::ErasedRcRef'>ErasedRcRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses an erased <code>Rc</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.MutexGuardRef.html'
-                                  title='owning_ref::MutexGuardRef'>MutexGuardRef</a></td>
+                                  title='type owning_ref::MutexGuardRef'>MutexGuardRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses a <code>MutexGuard</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.RcRef.html'
-                                  title='owning_ref::RcRef'>RcRef</a></td>
+                                  title='type owning_ref::RcRef'>RcRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses a <code>Rc</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.RefMutRef.html'
-                                  title='owning_ref::RefMutRef'>RefMutRef</a></td>
+                                  title='type owning_ref::RefMutRef'>RefMutRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses a <code>RefMut</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.RefRef.html'
-                                  title='owning_ref::RefRef'>RefRef</a></td>
+                                  title='type owning_ref::RefRef'>RefRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses a <code>Ref</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.RwLockReadGuardRef.html'
-                                  title='owning_ref::RwLockReadGuardRef'>RwLockReadGuardRef</a></td>
+                                  title='type owning_ref::RwLockReadGuardRef'>RwLockReadGuardRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses a <code>RwLockReadGuard</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.RwLockWriteGuardRef.html'
-                                  title='owning_ref::RwLockWriteGuardRef'>RwLockWriteGuardRef</a></td>
+                                  title='type owning_ref::RwLockWriteGuardRef'>RwLockWriteGuardRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses a <code>RwLockWriteGuard</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.StringRef.html'
-                                  title='owning_ref::StringRef'>StringRef</a></td>
+                                  title='type owning_ref::StringRef'>StringRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses a <code>String</code> as the owner.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='type' href='type.VecRef.html'
-                                  title='owning_ref::VecRef'>VecRef</a></td>
+                                  title='type owning_ref::VecRef'>VecRef</a></td>
                            <td class='docblock-short'>
                                 <p>Typedef of a owning reference that uses a <code>Vec</code> as the owner.</p>
                            </td>
@@ -397,11 +398,9 @@ reachable via a dereference remains identical even if <code>self</code> gets mov
     <script>
         window.rootPath = "../";
         window.currentCrate = "owning_ref";
-        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
-    <script src="../extra.js"></script>
     <script defer src="../search-index.js"></script>
 </body>
 </html>

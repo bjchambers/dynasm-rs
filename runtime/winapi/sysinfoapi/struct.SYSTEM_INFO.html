@@ -9,6 +9,7 @@
 
     <title>winapi::sysinfoapi::SYSTEM_INFO - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,61 +48,62 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-104426' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct SYSTEM_INFO {
-    pub wProcessorArchitecture: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub wReserved: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub dwPageSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lpMinimumApplicationAddress: <a class='type' href='../../winapi/minwindef/type.LPVOID.html' title='winapi::minwindef::LPVOID'>LPVOID</a>,
-    pub lpMaximumApplicationAddress: <a class='type' href='../../winapi/minwindef/type.LPVOID.html' title='winapi::minwindef::LPVOID'>LPVOID</a>,
-    pub dwActiveProcessorMask: <a class='type' href='../../winapi/basetsd/type.DWORD_PTR.html' title='winapi::basetsd::DWORD_PTR'>DWORD_PTR</a>,
-    pub dwNumberOfProcessors: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dwProcessorType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub dwAllocationGranularity: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub wProcessorLevel: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
-    pub wProcessorRevision: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct SYSTEM_INFO {
+    pub wProcessorArchitecture: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub wReserved: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub dwPageSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lpMinimumApplicationAddress: <a class='type' href='../../winapi/minwindef/type.LPVOID.html' title='type winapi::minwindef::LPVOID'>LPVOID</a>,
+    pub lpMaximumApplicationAddress: <a class='type' href='../../winapi/minwindef/type.LPVOID.html' title='type winapi::minwindef::LPVOID'>LPVOID</a>,
+    pub dwActiveProcessorMask: <a class='type' href='../../winapi/basetsd/type.DWORD_PTR.html' title='type winapi::basetsd::DWORD_PTR'>DWORD_PTR</a>,
+    pub dwNumberOfProcessors: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dwProcessorType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub dwAllocationGranularity: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub wProcessorLevel: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
+    pub wProcessorRevision: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.wProcessorArchitecture' class='structfield'>
                            <span id='wProcessorArchitecture.v' class='invisible'>
-                           <code>wProcessorArchitecture: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.wReserved' class='structfield'>
+                           <code>wProcessorArchitecture: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.wReserved' class='structfield'>
                            <span id='wReserved.v' class='invisible'>
-                           <code>wReserved: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dwPageSize' class='structfield'>
+                           <code>wReserved: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.dwPageSize' class='structfield'>
                            <span id='dwPageSize.v' class='invisible'>
-                           <code>dwPageSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpMinimumApplicationAddress' class='structfield'>
+                           <code>dwPageSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lpMinimumApplicationAddress' class='structfield'>
                            <span id='lpMinimumApplicationAddress.v' class='invisible'>
-                           <code>lpMinimumApplicationAddress: <a class='type' href='../../winapi/minwindef/type.LPVOID.html' title='winapi::minwindef::LPVOID'>LPVOID</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpMaximumApplicationAddress' class='structfield'>
+                           <code>lpMinimumApplicationAddress: <a class='type' href='../../winapi/minwindef/type.LPVOID.html' title='type winapi::minwindef::LPVOID'>LPVOID</a></code>
+                           </span></span><span id='structfield.lpMaximumApplicationAddress' class='structfield'>
                            <span id='lpMaximumApplicationAddress.v' class='invisible'>
-                           <code>lpMaximumApplicationAddress: <a class='type' href='../../winapi/minwindef/type.LPVOID.html' title='winapi::minwindef::LPVOID'>LPVOID</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dwActiveProcessorMask' class='structfield'>
+                           <code>lpMaximumApplicationAddress: <a class='type' href='../../winapi/minwindef/type.LPVOID.html' title='type winapi::minwindef::LPVOID'>LPVOID</a></code>
+                           </span></span><span id='structfield.dwActiveProcessorMask' class='structfield'>
                            <span id='dwActiveProcessorMask.v' class='invisible'>
-                           <code>dwActiveProcessorMask: <a class='type' href='../../winapi/basetsd/type.DWORD_PTR.html' title='winapi::basetsd::DWORD_PTR'>DWORD_PTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dwNumberOfProcessors' class='structfield'>
+                           <code>dwActiveProcessorMask: <a class='type' href='../../winapi/basetsd/type.DWORD_PTR.html' title='type winapi::basetsd::DWORD_PTR'>DWORD_PTR</a></code>
+                           </span></span><span id='structfield.dwNumberOfProcessors' class='structfield'>
                            <span id='dwNumberOfProcessors.v' class='invisible'>
-                           <code>dwNumberOfProcessors: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dwProcessorType' class='structfield'>
+                           <code>dwNumberOfProcessors: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dwProcessorType' class='structfield'>
                            <span id='dwProcessorType.v' class='invisible'>
-                           <code>dwProcessorType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dwAllocationGranularity' class='structfield'>
+                           <code>dwProcessorType: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.dwAllocationGranularity' class='structfield'>
                            <span id='dwAllocationGranularity.v' class='invisible'>
-                           <code>dwAllocationGranularity: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.wProcessorLevel' class='structfield'>
+                           <code>dwAllocationGranularity: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.wProcessorLevel' class='structfield'>
                            <span id='wProcessorLevel.v' class='invisible'>
-                           <code>wProcessorLevel: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.wProcessorRevision' class='structfield'>
+                           <code>wProcessorLevel: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><span id='structfield.wProcessorRevision' class='structfield'>
                            <span id='wProcessorRevision.v' class='invisible'>
-                           <code>wProcessorRevision: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='winapi::minwindef::WORD'>WORD</a></code>
-                           </span></span><span class='stab '></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../winapi/sysinfoapi/struct.SYSTEM_INFO.html' title='winapi::sysinfoapi::SYSTEM_INFO'>SYSTEM_INFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104454' class='srclink' href='../../src/winapi/macros.rs.html#173-182' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.dwOemId' class='method'><span id='dwOemId.v' class='invisible'><code>unsafe fn <a href='#method.dwOemId' class='fnname'>dwOemId</a>(&amp;self) -&gt; &amp;<a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code></span></h4>
-<h4 id='method.dwOemId_mut' class='method'><span id='dwOemId_mut.v' class='invisible'><code>unsafe fn <a href='#method.dwOemId_mut' class='fnname'>dwOemId_mut</a>(&amp;mut self) -&gt; &amp;mut <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code></span></h4>
-</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/sysinfoapi/struct.SYSTEM_INFO.html' title='winapi::sysinfoapi::SYSTEM_INFO'>SYSTEM_INFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104438' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>wProcessorRevision: <a class='type' href='../../winapi/minwindef/type.WORD.html' title='type winapi::minwindef::WORD'>WORD</a></code>
+                           </span></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../winapi/sysinfoapi/struct.SYSTEM_INFO.html' title='struct winapi::sysinfoapi::SYSTEM_INFO'>SYSTEM_INFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#173-182' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.dwOemId' class='method'><span id='dwOemId.v' class='invisible'><code>unsafe fn <a href='#method.dwOemId' class='fnname'>dwOemId</a>(&amp;self) -&gt; &amp;<a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code></span></h4>
+<h4 id='method.dwOemId_mut' class='method'><span id='dwOemId_mut.v' class='invisible'><code>unsafe fn <a href='#method.dwOemId_mut' class='fnname'>dwOemId_mut</a>(&amp;mut self) -&gt; &amp;mut <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code></span></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/sysinfoapi/struct.SYSTEM_INFO.html' title='struct winapi::sysinfoapi::SYSTEM_INFO'>SYSTEM_INFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/sysinfoapi/struct.SYSTEM_INFO.html' title='winapi::sysinfoapi::SYSTEM_INFO'>SYSTEM_INFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104422' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/sysinfoapi/struct.SYSTEM_INFO.html' title='winapi::sysinfoapi::SYSTEM_INFO'>SYSTEM_INFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104423' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/sysinfoapi/struct.SYSTEM_INFO.html' title='winapi::sysinfoapi::SYSTEM_INFO'>SYSTEM_INFO</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/sysinfoapi/struct.SYSTEM_INFO.html' title='struct winapi::sysinfoapi::SYSTEM_INFO'>SYSTEM_INFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/sysinfoapi/struct.SYSTEM_INFO.html' title='struct winapi::sysinfoapi::SYSTEM_INFO'>SYSTEM_INFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/sysinfoapi/struct.SYSTEM_INFO.html' title='struct winapi::sysinfoapi::SYSTEM_INFO'>SYSTEM_INFO</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -161,11 +163,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

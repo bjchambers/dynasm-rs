@@ -9,6 +9,7 @@
 
     <title>winapi::commctrl::DATETIMEPICKERINFO - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,46 +48,47 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-31783' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct DATETIMEPICKERINFO {
-    pub cbSize: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub rcCheck: <a class='struct' href='../../winapi/windef/struct.RECT.html' title='winapi::windef::RECT'>RECT</a>,
-    pub stateCheck: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub rcButton: <a class='struct' href='../../winapi/windef/struct.RECT.html' title='winapi::windef::RECT'>RECT</a>,
-    pub stateButton: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub hwndEdit: <a class='type' href='../../winapi/windef/type.HWND.html' title='winapi::windef::HWND'>HWND</a>,
-    pub hwndUD: <a class='type' href='../../winapi/windef/type.HWND.html' title='winapi::windef::HWND'>HWND</a>,
-    pub hwndDropDown: <a class='type' href='../../winapi/windef/type.HWND.html' title='winapi::windef::HWND'>HWND</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct DATETIMEPICKERINFO {
+    pub cbSize: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub rcCheck: <a class='struct' href='../../winapi/windef/struct.RECT.html' title='struct winapi::windef::RECT'>RECT</a>,
+    pub stateCheck: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub rcButton: <a class='struct' href='../../winapi/windef/struct.RECT.html' title='struct winapi::windef::RECT'>RECT</a>,
+    pub stateButton: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub hwndEdit: <a class='type' href='../../winapi/windef/type.HWND.html' title='type winapi::windef::HWND'>HWND</a>,
+    pub hwndUD: <a class='type' href='../../winapi/windef/type.HWND.html' title='type winapi::windef::HWND'>HWND</a>,
+    pub hwndDropDown: <a class='type' href='../../winapi/windef/type.HWND.html' title='type winapi::windef::HWND'>HWND</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.cbSize' class='structfield'>
                            <span id='cbSize.v' class='invisible'>
-                           <code>cbSize: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.rcCheck' class='structfield'>
+                           <code>cbSize: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.rcCheck' class='structfield'>
                            <span id='rcCheck.v' class='invisible'>
-                           <code>rcCheck: <a class='struct' href='../../winapi/windef/struct.RECT.html' title='winapi::windef::RECT'>RECT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.stateCheck' class='structfield'>
+                           <code>rcCheck: <a class='struct' href='../../winapi/windef/struct.RECT.html' title='struct winapi::windef::RECT'>RECT</a></code>
+                           </span></span><span id='structfield.stateCheck' class='structfield'>
                            <span id='stateCheck.v' class='invisible'>
-                           <code>stateCheck: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.rcButton' class='structfield'>
+                           <code>stateCheck: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.rcButton' class='structfield'>
                            <span id='rcButton.v' class='invisible'>
-                           <code>rcButton: <a class='struct' href='../../winapi/windef/struct.RECT.html' title='winapi::windef::RECT'>RECT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.stateButton' class='structfield'>
+                           <code>rcButton: <a class='struct' href='../../winapi/windef/struct.RECT.html' title='struct winapi::windef::RECT'>RECT</a></code>
+                           </span></span><span id='structfield.stateButton' class='structfield'>
                            <span id='stateButton.v' class='invisible'>
-                           <code>stateButton: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.hwndEdit' class='structfield'>
+                           <code>stateButton: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.hwndEdit' class='structfield'>
                            <span id='hwndEdit.v' class='invisible'>
-                           <code>hwndEdit: <a class='type' href='../../winapi/windef/type.HWND.html' title='winapi::windef::HWND'>HWND</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.hwndUD' class='structfield'>
+                           <code>hwndEdit: <a class='type' href='../../winapi/windef/type.HWND.html' title='type winapi::windef::HWND'>HWND</a></code>
+                           </span></span><span id='structfield.hwndUD' class='structfield'>
                            <span id='hwndUD.v' class='invisible'>
-                           <code>hwndUD: <a class='type' href='../../winapi/windef/type.HWND.html' title='winapi::windef::HWND'>HWND</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.hwndDropDown' class='structfield'>
+                           <code>hwndUD: <a class='type' href='../../winapi/windef/type.HWND.html' title='type winapi::windef::HWND'>HWND</a></code>
+                           </span></span><span id='structfield.hwndDropDown' class='structfield'>
                            <span id='hwndDropDown.v' class='invisible'>
-                           <code>hwndDropDown: <a class='type' href='../../winapi/windef/type.HWND.html' title='winapi::windef::HWND'>HWND</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/commctrl/struct.DATETIMEPICKERINFO.html' title='winapi::commctrl::DATETIMEPICKERINFO'>DATETIMEPICKERINFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-31792' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>hwndDropDown: <a class='type' href='../../winapi/windef/type.HWND.html' title='type winapi::windef::HWND'>HWND</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/commctrl/struct.DATETIMEPICKERINFO.html' title='struct winapi::commctrl::DATETIMEPICKERINFO'>DATETIMEPICKERINFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/commctrl/struct.DATETIMEPICKERINFO.html' title='winapi::commctrl::DATETIMEPICKERINFO'>DATETIMEPICKERINFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-31779' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/commctrl/struct.DATETIMEPICKERINFO.html' title='winapi::commctrl::DATETIMEPICKERINFO'>DATETIMEPICKERINFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-31780' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/commctrl/struct.DATETIMEPICKERINFO.html' title='winapi::commctrl::DATETIMEPICKERINFO'>DATETIMEPICKERINFO</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/commctrl/struct.DATETIMEPICKERINFO.html' title='struct winapi::commctrl::DATETIMEPICKERINFO'>DATETIMEPICKERINFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/commctrl/struct.DATETIMEPICKERINFO.html' title='struct winapi::commctrl::DATETIMEPICKERINFO'>DATETIMEPICKERINFO</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/commctrl/struct.DATETIMEPICKERINFO.html' title='struct winapi::commctrl::DATETIMEPICKERINFO'>DATETIMEPICKERINFO</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -146,11 +148,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

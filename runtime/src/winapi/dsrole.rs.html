@@ -9,6 +9,7 @@
 
     <title>dsrole.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -109,7 +110,7 @@
     <span class='ident'>DsRoleServerPrimary</span>,
     <span class='ident'>DsRoleServerBackup</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDSROLE_SERVER_STATE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DSROLE_SERVER_STATE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDSROLE_SERVER_STATE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DSROLE_SERVER_STATE</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>DSROLE_PRIMARY_DOMAIN_INFO_LEVEL</span> {
     <span class='ident'>DsRolePrimaryDomainInfoBasic</span> <span class='op'>=</span> <span class='number'>1</span>,
     <span class='ident'>DsRoleUpgradeStatus</span>,
@@ -128,12 +129,12 @@
     <span class='ident'>DomainForestName</span>: ::<span class='ident'>LPWSTR</span>,
     <span class='ident'>DomainGuid</span>: ::<span class='ident'>GUID</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDSROLE_PRIMARY_DOMAIN_INFO_BASIC</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DSROLE_PRIMARY_DOMAIN_INFO_BASIC</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDSROLE_PRIMARY_DOMAIN_INFO_BASIC</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DSROLE_PRIMARY_DOMAIN_INFO_BASIC</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DSROLE_UPGRADE_STATUS_INFO</span> {
     <span class='ident'>OperationState</span>: ::<span class='ident'>ULONG</span>,
     <span class='ident'>PreviousServerState</span>: <span class='ident'>DSROLE_SERVER_STATE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDSROLE_UPGRADE_STATUS_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DSROLE_UPGRADE_STATUS_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDSROLE_UPGRADE_STATUS_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DSROLE_UPGRADE_STATUS_INFO</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>DSROLE_OPERATION_STATE</span> {
     <span class='ident'>DsRoleOperationIdle</span> <span class='op'>=</span> <span class='number'>0</span>,
     <span class='ident'>DsRoleOperationActive</span>,
@@ -142,7 +143,7 @@
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DSROLE_OPERATION_STATE_INFO</span> {
     <span class='ident'>OperationState</span>: <span class='ident'>DSROLE_OPERATION_STATE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDSROLE_OPERATION_STATE_INFO</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>DSROLE_OPERATION_STATE_INFO</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PDSROLE_OPERATION_STATE_INFO</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>DSROLE_OPERATION_STATE_INFO</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -200,11 +201,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

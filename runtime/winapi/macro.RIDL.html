@@ -9,6 +9,7 @@
 
     <title>winapi::RIDL - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
     
@@ -47,19 +48,19 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-123348' class='srclink' href='../src/winapi/macros.rs.html#85-170' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/winapi/macros.rs.html#85-170' title='goto source code'>[src]</a></span></h1>
 <pre class='rust macro'>
 <span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>RIDL</span> {
     (<span class='ident'>interface</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>interface</span>:<span class='ident'>ident</span> (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>vtbl</span>:<span class='ident'>ident</span>)
         {$(
-            <span class='kw'>fn</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>method</span>:<span class='ident'>ident</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span> $(,<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>p</span>:<span class='ident'>ident</span> : <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ty</span>)<span class='op'>*</span>) <span class='op'>-&gt;</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>rtr</span>:<span class='ident'>ty</span>
+            <span class='kw'>fn</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>method</span>:<span class='ident'>ident</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span> $(,<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>p</span>:<span class='ident'>ident</span> : <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ty</span>)<span class='kw-2'>*</span>) <span class='op'>-&gt;</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>rtr</span>:<span class='ident'>ty</span>
         ),<span class='op'>+</span>}
     ) <span class='op'>=&gt;</span> { ... };
     (<span class='ident'>interface</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>interface</span>:<span class='ident'>ident</span> (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>vtbl</span>:<span class='ident'>ident</span>) : <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>pinterface</span>:<span class='ident'>ident</span> (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>pvtbl</span>:<span class='ident'>ident</span>) {
     }) <span class='op'>=&gt;</span> { ... };
     (<span class='ident'>interface</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>interface</span>:<span class='ident'>ident</span> (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>vtbl</span>:<span class='ident'>ident</span>) : <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>pinterface</span>:<span class='ident'>ident</span> (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>pvtbl</span>:<span class='ident'>ident</span>)
         {$(
-            <span class='kw'>fn</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>method</span>:<span class='ident'>ident</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span> $(,<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>p</span>:<span class='ident'>ident</span> : <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ty</span>)<span class='op'>*</span>) <span class='op'>-&gt;</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>rtr</span>:<span class='ident'>ty</span>
+            <span class='kw'>fn</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>method</span>:<span class='ident'>ident</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span> $(,<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>p</span>:<span class='ident'>ident</span> : <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ty</span>)<span class='kw-2'>*</span>) <span class='op'>-&gt;</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>rtr</span>:<span class='ident'>ty</span>
         ),<span class='op'>+</span>}
     ) <span class='op'>=&gt;</span> { ... };
 }</pre>
@@ -119,11 +120,9 @@
     <script>
         window.rootPath = "../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
-    <script src="../extra.js"></script>
     <script defer src="../search-index.js"></script>
 </body>
 </html>

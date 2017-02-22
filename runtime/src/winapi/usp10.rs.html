@@ -9,6 +9,7 @@
 
     <title>usp10.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -401,7 +402,7 @@
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>SCRIPT_TABDEF</span> {
     <span class='ident'>cTabStops</span>: ::<span class='ident'>c_int</span>,
     <span class='ident'>iScale</span>: ::<span class='ident'>c_int</span>,
-    <span class='ident'>pTabStops</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_int</span>,
+    <span class='ident'>pTabStops</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_int</span>,
     <span class='ident'>iTabOrigin</span>: ::<span class='ident'>c_int</span>,
 }}
 <span class='macro'>DECLARE_HANDLE</span><span class='macro'>!</span>(<span class='ident'>SCRIPT_STRING_ANALYSIS</span>, <span class='ident'>SCRIPT_STRING_ANALYSIS__</span>);
@@ -431,7 +432,7 @@
     <span class='ident'>lParameter</span>: ::<span class='ident'>LONG</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>TEXTRANGE_PROPERTIES</span> {
-    <span class='ident'>potfRecords</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENTYPE_FEATURE_RECORD</span>,
+    <span class='ident'>potfRecords</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>OPENTYPE_FEATURE_RECORD</span>,
     <span class='ident'>cotfRecords</span>: ::<span class='ident'>c_int</span>,
 }}
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>SCRIPT_CHARPROP</span> {
@@ -502,11 +503,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

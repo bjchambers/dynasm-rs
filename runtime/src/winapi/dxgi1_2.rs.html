@@ -9,6 +9,7 @@
 
     <title>dxgi1_2.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -439,9 +440,9 @@
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DXGI_PRESENT_PARAMETERS</span> {
     <span class='ident'>DirtyRectsCount</span>: ::<span class='ident'>UINT</span>,
-    <span class='ident'>pDirtyRects</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>RECT</span>,
-    <span class='ident'>pScrollRect</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>RECT</span>,
-    <span class='ident'>pScrollOffset</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>POINT</span>,
+    <span class='ident'>pDirtyRects</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>RECT</span>,
+    <span class='ident'>pScrollRect</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>RECT</span>,
+    <span class='ident'>pScrollOffset</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>POINT</span>,
 }}
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>DXGI_SWAP_CHAIN_DESC1</span> {
@@ -467,18 +468,18 @@
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IDXGIAdapter2</span>(<span class='ident'>IDXGIAdapter2Vtbl</span>): <span class='ident'>IDXGIAdapter1</span>(<span class='ident'>IDXGIAdapter1Vtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetDesc2</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_ADAPTER_DESC2</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>GetDesc2</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_ADAPTER_DESC2</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IDXGIDevice2</span>(<span class='ident'>IDXGIDevice2Vtbl</span>): <span class='ident'>IDXGIDevice1</span>(<span class='ident'>IDXGIDevice1Vtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>OfferResources</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumResources</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppResources</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIResource</span>,
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumResources</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppResources</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIResource</span>,
         <span class='ident'>Priority</span>: ::<span class='ident'>DXGI_OFFER_RESOURCE_PRIORITY</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>ReclaimResources</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumResources</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppResources</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIResource</span>,
-        <span class='ident'>pDiscarded</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>NumResources</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppResources</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIResource</span>,
+        <span class='ident'>pDiscarded</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>BOOL</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>EnqueueSetEvent</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hEvent</span>: ::<span class='ident'>HANDLE</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
@@ -493,79 +494,79 @@
 <span class='ident'>interface</span> <span class='ident'>IDXGIFactory2</span>(<span class='ident'>IDXGIFactory2Vtbl</span>): <span class='ident'>IDXGIFactory1</span>(<span class='ident'>IDXGIFactory1Vtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>IsWindowedStereoEnabled</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateSwapChainForHwnd</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDevice</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>hWnd</span>: ::<span class='ident'>HWND</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_SWAP_CHAIN_DESC1</span>,
-        <span class='ident'>pFullscreenDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_SWAP_CHAIN_FULLSCREEN_DESC</span>,
-        <span class='ident'>pRestrictToOutput</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIOutput</span>, <span class='ident'>ppSwapChain</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGISwapChain1</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDevice</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>hWnd</span>: ::<span class='ident'>HWND</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_SWAP_CHAIN_DESC1</span>,
+        <span class='ident'>pFullscreenDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_SWAP_CHAIN_FULLSCREEN_DESC</span>,
+        <span class='ident'>pRestrictToOutput</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIOutput</span>, <span class='ident'>ppSwapChain</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGISwapChain1</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateSwapChainForCoreWindow</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDevice</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>pWindow</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>,
-        <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_SWAP_CHAIN_DESC1</span>, <span class='ident'>pRestrictToOutput</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIOutput</span>,
-        <span class='ident'>ppSwapChain</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGISwapChain1</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDevice</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>pWindow</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>,
+        <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_SWAP_CHAIN_DESC1</span>, <span class='ident'>pRestrictToOutput</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIOutput</span>,
+        <span class='ident'>ppSwapChain</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGISwapChain1</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetSharedResourceAdapterLuid</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hResource</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>pLuid</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LUID</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hResource</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>pLuid</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LUID</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>RegisterStereoStatusWindow</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>WindowHandle</span>: ::<span class='ident'>HWND</span>, <span class='ident'>wMsg</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pdwCookie</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>WindowHandle</span>: ::<span class='ident'>HWND</span>, <span class='ident'>wMsg</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pdwCookie</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>RegisterStereoStatusEvent</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hEvent</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>pdwCookie</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hEvent</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>pdwCookie</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>UnregisterStereoStatus</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dwCookie</span>: ::<span class='ident'>DWORD</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>RegisterOcclusionStatusWindow</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>WindowHandle</span>: ::<span class='ident'>HWND</span>, <span class='ident'>wMsg</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pdwCookie</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>WindowHandle</span>: ::<span class='ident'>HWND</span>, <span class='ident'>wMsg</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pdwCookie</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>RegisterOcclusionStatusEvent</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hEvent</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>pdwCookie</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>hEvent</span>: ::<span class='ident'>HANDLE</span>, <span class='ident'>pdwCookie</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>UnregisterOcclusionStatus</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dwCookie</span>: ::<span class='ident'>DWORD</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>CreateSwapChainForComposition</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDevice</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_SWAP_CHAIN_DESC1</span>,
-        <span class='ident'>pRestrictToOutput</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIOutput</span>, <span class='ident'>ppSwapChain</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGISwapChain1</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDevice</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_SWAP_CHAIN_DESC1</span>,
+        <span class='ident'>pRestrictToOutput</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIOutput</span>, <span class='ident'>ppSwapChain</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGISwapChain1</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IDXGIOutput1</span>(<span class='ident'>IDXGIOutput1Vtbl</span>): <span class='ident'>IDXGIOutput</span>(<span class='ident'>IDXGIOutputVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetDisplayModeList1</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>EnumFormat</span>: ::<span class='ident'>DXGI_FORMAT</span>, <span class='ident'>Flags</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pNumModes</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>,
-        <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_MODE_DESC1</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>EnumFormat</span>: ::<span class='ident'>DXGI_FORMAT</span>, <span class='ident'>Flags</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pNumModes</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>,
+        <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_MODE_DESC1</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>FindClosestMatchingMode1</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pModeToMatch</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_MODE_DESC1</span>, <span class='ident'>pClosestMatch</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_MODE_DESC1</span>,
-        <span class='ident'>pConcernedDevice</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pModeToMatch</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_MODE_DESC1</span>, <span class='ident'>pClosestMatch</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_MODE_DESC1</span>,
+        <span class='ident'>pConcernedDevice</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetDisplaySurfaceData1</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDestination</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIResource</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDestination</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIResource</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>DuplicateOutput</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDevice</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>,
-        <span class='ident'>ppOutputDuplication</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIOutputDuplication</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDevice</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>,
+        <span class='ident'>ppOutputDuplication</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIOutputDuplication</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IDXGIOutputDuplication</span>(<span class='ident'>IDXGIOutputDuplicationVtbl</span>): <span class='ident'>IDXGIObject</span>(<span class='ident'>IDXGIObjectVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_OUTDUPL_DESC</span>) <span class='op'>-&gt;</span> (),
+    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_OUTDUPL_DESC</span>) <span class='op'>-&gt;</span> (),
     <span class='kw'>fn</span> <span class='ident'>AcquireNextFrame</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>TimeoutInMilliseconds</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pFrameInfo</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_OUTDUPL_FRAME_INFO</span>,
-        <span class='ident'>ppDesktopResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIResource</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>TimeoutInMilliseconds</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pFrameInfo</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_OUTDUPL_FRAME_INFO</span>,
+        <span class='ident'>ppDesktopResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIResource</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetFrameDirtyRects</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>DirtyRectsBufferSize</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDirtyRectsBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>RECT</span>,
-        <span class='ident'>pDirtyRectsBufferSizeRequired</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>DirtyRectsBufferSize</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDirtyRectsBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>RECT</span>,
+        <span class='ident'>pDirtyRectsBufferSizeRequired</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetFrameMoveRects</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>MoveRectsBufferSize</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pMoveRectBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_OUTDUPL_MOVE_RECT</span>,
-        <span class='ident'>pMoveRectsBufferSizeRequired</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>MoveRectsBufferSize</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pMoveRectBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_OUTDUPL_MOVE_RECT</span>,
+        <span class='ident'>pMoveRectsBufferSizeRequired</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetFramePointerShape</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>PointerShapeBufferSize</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pPointerShapeBuffer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
-        <span class='ident'>pPointerShapeBufferSizeRequired</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>,
-        <span class='ident'>pPointerShapeInfo</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_OUTDUPL_POINTER_SHAPE_INFO</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>PointerShapeBufferSize</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pPointerShapeBuffer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+        <span class='ident'>pPointerShapeBufferSizeRequired</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>,
+        <span class='ident'>pPointerShapeInfo</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_OUTDUPL_POINTER_SHAPE_INFO</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>MapDesktopSurface</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pLockedRect</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_MAPPED_RECT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pLockedRect</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_MAPPED_RECT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>UnMapDesktopSurface</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>ReleaseFrame</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
@@ -574,44 +575,44 @@
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IDXGIResource1</span>(<span class='ident'>IDXGIResource1Vtbl</span>): <span class='ident'>IDXGIResource</span>(<span class='ident'>IDXGIResourceVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>CreateSubresourceSurface</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>index</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppSurface</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGISurface2</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>index</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppSurface</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGISurface2</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>CreateSharedHandle</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pAttributes</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>SECURITY_ATTRIBUTES</span>, <span class='ident'>dwAccess</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>lpName</span>: ::<span class='ident'>LPCWSTR</span>,
-        <span class='ident'>pHandle</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>HANDLE</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pAttributes</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>SECURITY_ATTRIBUTES</span>, <span class='ident'>dwAccess</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>lpName</span>: ::<span class='ident'>LPCWSTR</span>,
+        <span class='ident'>pHandle</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>HANDLE</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IDXGISurface2</span>(<span class='ident'>IDXGISurface2Vtbl</span>): <span class='ident'>IDXGISurface1</span>(<span class='ident'>IDXGISurface1Vtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetResource</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppParentResource</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
-        <span class='ident'>pSubresourceIndex</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>riid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppParentResource</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>,
+        <span class='ident'>pSubresourceIndex</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IDXGISwapChain1</span>(<span class='ident'>IDXGISwapChain1Vtbl</span>): <span class='ident'>IDXGISwapChain</span>(<span class='ident'>IDXGISwapChainVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetDesc1</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_SWAP_CHAIN_DESC1</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetDesc1</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_SWAP_CHAIN_DESC1</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetFullscreenDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_SWAP_CHAIN_FULLSCREEN_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_SWAP_CHAIN_FULLSCREEN_DESC</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetHwnd</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pHwnd</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>HWND</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetHwnd</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pHwnd</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>HWND</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetCoreWindow</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>refiid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppUnk</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>refiid</span>: ::<span class='ident'>REFGUID</span>, <span class='ident'>ppUnk</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>c_void</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>Present1</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>SyncInterval</span>: ::<span class='ident'>UINT</span>, <span class='ident'>PresentFlags</span>: ::<span class='ident'>UINT</span>,
-        <span class='ident'>pPresentParameters</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_PRESENT_PARAMETERS</span>
+        <span class='ident'>pPresentParameters</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_PRESENT_PARAMETERS</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>IsTemporaryMonoSupported</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span>,
     <span class='kw'>fn</span> <span class='ident'>GetRestrictToOutput</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppRestrictToOutput</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIOutput</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppRestrictToOutput</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IDXGIOutput</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>SetBackgroundColor</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pColor</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_RGBA</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetBackgroundColor</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pColor</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_RGBA</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>SetBackgroundColor</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pColor</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>DXGI_RGBA</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetBackgroundColor</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pColor</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_RGBA</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>SetRotation</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Rotation</span>: ::<span class='ident'>DXGI_MODE_ROTATION</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetRotation</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pRotation</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_MODE_ROTATION</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>GetRotation</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pRotation</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DXGI_MODE_ROTATION</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>DXGI_OFFER_RESOURCE_PRIORITY</span> <span class='op'>=</span> ::<span class='ident'>_DXGI_OFFER_RESOURCE_PRIORITY</span>;
@@ -676,11 +677,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

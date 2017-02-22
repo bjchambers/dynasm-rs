@@ -9,6 +9,7 @@
 
     <title>winapi::winnt::PEXCEPTION_ROUTINE - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,8 +48,8 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-23092' class='srclink' href='../../src/winapi/winnt.rs.html#168-171' title='goto source code'>[src]</a></span></h1>
-<pre class='rust typedef'>type PEXCEPTION_ROUTINE = <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;unsafe extern &quot;system&quot; fn(ExceptionRecord: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/winnt/struct.EXCEPTION_RECORD.html' title='winapi::winnt::EXCEPTION_RECORD'>EXCEPTION_RECORD</a>, EstablisherFrame: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='winapi::winnt::PVOID'>PVOID</a>, ContextRecord: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/winnt/struct.CONTEXT.html' title='winapi::winnt::CONTEXT'>CONTEXT</a>, DispatcherContext: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='winapi::winnt::PVOID'>PVOID</a>) -&gt; <a class='struct' href='../../winapi/excpt/struct.EXCEPTION_DISPOSITION.html' title='winapi::excpt::EXCEPTION_DISPOSITION'>EXCEPTION_DISPOSITION</a>&gt;;</pre></section>
+               </span><a class='srclink' href='../../src/winapi/winnt.rs.html#168-171' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type PEXCEPTION_ROUTINE = <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='enum core::option::Option'>Option</a>&lt;unsafe extern &quot;system&quot; fn(_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/winnt/struct.EXCEPTION_RECORD.html' title='struct winapi::winnt::EXCEPTION_RECORD'>EXCEPTION_RECORD</a>, _: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='type winapi::winnt::PVOID'>PVOID</a>, _: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../winapi/winnt/struct.CONTEXT.html' title='struct winapi::winnt::CONTEXT'>CONTEXT</a>, _: <a class='type' href='../../winapi/winnt/type.PVOID.html' title='type winapi::winnt::PVOID'>PVOID</a>) -&gt; <a class='struct' href='../../winapi/excpt/struct.EXCEPTION_DISPOSITION.html' title='struct winapi::excpt::EXCEPTION_DISPOSITION'>EXCEPTION_DISPOSITION</a>&gt;;</pre></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -104,11 +105,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

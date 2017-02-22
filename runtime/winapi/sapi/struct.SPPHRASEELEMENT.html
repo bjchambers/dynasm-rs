@@ -9,6 +9,7 @@
 
     <title>winapi::sapi::SPPHRASEELEMENT - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,70 +48,71 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-89446' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct SPPHRASEELEMENT {
-    pub ulAudioTimeOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a>,
-    pub ulAudioSizeTime: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a>,
-    pub ulAudioStreamOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a>,
-    pub ulAudioSizeBytes: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a>,
-    pub ulRetainedStreamOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a>,
-    pub ulRetainedSizeBytes: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a>,
-    pub pszDisplayText: <a class='type' href='../../winapi/winnt/type.LPCWSTR.html' title='winapi::winnt::LPCWSTR'>LPCWSTR</a>,
-    pub pszLexicalForm: <a class='type' href='../../winapi/winnt/type.LPCWSTR.html' title='winapi::winnt::LPCWSTR'>LPCWSTR</a>,
-    pub pszPronunciation: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../winapi/sapi/type.SPPHONEID.html' title='winapi::sapi::SPPHONEID'>SPPHONEID</a>,
-    pub bDisplayAttributes: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='winapi::minwindef::BYTE'>BYTE</a>,
-    pub RequiredConfidence: <a class='type' href='../../winapi/type.c_char.html' title='winapi::c_char'>c_char</a>,
-    pub ActualConfidence: <a class='type' href='../../winapi/type.c_char.html' title='winapi::c_char'>c_char</a>,
-    pub Reserved: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='winapi::minwindef::BYTE'>BYTE</a>,
-    pub SREngineConfidence: <a class='type' href='../../winapi/type.c_float.html' title='winapi::c_float'>c_float</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct SPPHRASEELEMENT {
+    pub ulAudioTimeOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a>,
+    pub ulAudioSizeTime: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a>,
+    pub ulAudioStreamOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a>,
+    pub ulAudioSizeBytes: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a>,
+    pub ulRetainedStreamOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a>,
+    pub ulRetainedSizeBytes: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a>,
+    pub pszDisplayText: <a class='type' href='../../winapi/winnt/type.LPCWSTR.html' title='type winapi::winnt::LPCWSTR'>LPCWSTR</a>,
+    pub pszLexicalForm: <a class='type' href='../../winapi/winnt/type.LPCWSTR.html' title='type winapi::winnt::LPCWSTR'>LPCWSTR</a>,
+    pub pszPronunciation: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../winapi/sapi/type.SPPHONEID.html' title='type winapi::sapi::SPPHONEID'>SPPHONEID</a>,
+    pub bDisplayAttributes: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='type winapi::minwindef::BYTE'>BYTE</a>,
+    pub RequiredConfidence: <a class='type' href='../../winapi/type.c_char.html' title='type winapi::c_char'>c_char</a>,
+    pub ActualConfidence: <a class='type' href='../../winapi/type.c_char.html' title='type winapi::c_char'>c_char</a>,
+    pub Reserved: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='type winapi::minwindef::BYTE'>BYTE</a>,
+    pub SREngineConfidence: <a class='type' href='../../winapi/type.c_float.html' title='type winapi::c_float'>c_float</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.ulAudioTimeOffset' class='structfield'>
                            <span id='ulAudioTimeOffset.v' class='invisible'>
-                           <code>ulAudioTimeOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ulAudioSizeTime' class='structfield'>
+                           <code>ulAudioTimeOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a></code>
+                           </span></span><span id='structfield.ulAudioSizeTime' class='structfield'>
                            <span id='ulAudioSizeTime.v' class='invisible'>
-                           <code>ulAudioSizeTime: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ulAudioStreamOffset' class='structfield'>
+                           <code>ulAudioSizeTime: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a></code>
+                           </span></span><span id='structfield.ulAudioStreamOffset' class='structfield'>
                            <span id='ulAudioStreamOffset.v' class='invisible'>
-                           <code>ulAudioStreamOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ulAudioSizeBytes' class='structfield'>
+                           <code>ulAudioStreamOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a></code>
+                           </span></span><span id='structfield.ulAudioSizeBytes' class='structfield'>
                            <span id='ulAudioSizeBytes.v' class='invisible'>
-                           <code>ulAudioSizeBytes: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ulRetainedStreamOffset' class='structfield'>
+                           <code>ulAudioSizeBytes: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a></code>
+                           </span></span><span id='structfield.ulRetainedStreamOffset' class='structfield'>
                            <span id='ulRetainedStreamOffset.v' class='invisible'>
-                           <code>ulRetainedStreamOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ulRetainedSizeBytes' class='structfield'>
+                           <code>ulRetainedStreamOffset: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a></code>
+                           </span></span><span id='structfield.ulRetainedSizeBytes' class='structfield'>
                            <span id='ulRetainedSizeBytes.v' class='invisible'>
-                           <code>ulRetainedSizeBytes: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='winapi::minwindef::ULONG'>ULONG</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pszDisplayText' class='structfield'>
+                           <code>ulRetainedSizeBytes: <a class='type' href='../../winapi/minwindef/type.ULONG.html' title='type winapi::minwindef::ULONG'>ULONG</a></code>
+                           </span></span><span id='structfield.pszDisplayText' class='structfield'>
                            <span id='pszDisplayText.v' class='invisible'>
-                           <code>pszDisplayText: <a class='type' href='../../winapi/winnt/type.LPCWSTR.html' title='winapi::winnt::LPCWSTR'>LPCWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pszLexicalForm' class='structfield'>
+                           <code>pszDisplayText: <a class='type' href='../../winapi/winnt/type.LPCWSTR.html' title='type winapi::winnt::LPCWSTR'>LPCWSTR</a></code>
+                           </span></span><span id='structfield.pszLexicalForm' class='structfield'>
                            <span id='pszLexicalForm.v' class='invisible'>
-                           <code>pszLexicalForm: <a class='type' href='../../winapi/winnt/type.LPCWSTR.html' title='winapi::winnt::LPCWSTR'>LPCWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pszPronunciation' class='structfield'>
+                           <code>pszLexicalForm: <a class='type' href='../../winapi/winnt/type.LPCWSTR.html' title='type winapi::winnt::LPCWSTR'>LPCWSTR</a></code>
+                           </span></span><span id='structfield.pszPronunciation' class='structfield'>
                            <span id='pszPronunciation.v' class='invisible'>
-                           <code>pszPronunciation: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../winapi/sapi/type.SPPHONEID.html' title='winapi::sapi::SPPHONEID'>SPPHONEID</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.bDisplayAttributes' class='structfield'>
+                           <code>pszPronunciation: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../winapi/sapi/type.SPPHONEID.html' title='type winapi::sapi::SPPHONEID'>SPPHONEID</a></code>
+                           </span></span><span id='structfield.bDisplayAttributes' class='structfield'>
                            <span id='bDisplayAttributes.v' class='invisible'>
-                           <code>bDisplayAttributes: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='winapi::minwindef::BYTE'>BYTE</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.RequiredConfidence' class='structfield'>
+                           <code>bDisplayAttributes: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='type winapi::minwindef::BYTE'>BYTE</a></code>
+                           </span></span><span id='structfield.RequiredConfidence' class='structfield'>
                            <span id='RequiredConfidence.v' class='invisible'>
-                           <code>RequiredConfidence: <a class='type' href='../../winapi/type.c_char.html' title='winapi::c_char'>c_char</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.ActualConfidence' class='structfield'>
+                           <code>RequiredConfidence: <a class='type' href='../../winapi/type.c_char.html' title='type winapi::c_char'>c_char</a></code>
+                           </span></span><span id='structfield.ActualConfidence' class='structfield'>
                            <span id='ActualConfidence.v' class='invisible'>
-                           <code>ActualConfidence: <a class='type' href='../../winapi/type.c_char.html' title='winapi::c_char'>c_char</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Reserved' class='structfield'>
+                           <code>ActualConfidence: <a class='type' href='../../winapi/type.c_char.html' title='type winapi::c_char'>c_char</a></code>
+                           </span></span><span id='structfield.Reserved' class='structfield'>
                            <span id='Reserved.v' class='invisible'>
-                           <code>Reserved: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='winapi::minwindef::BYTE'>BYTE</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SREngineConfidence' class='structfield'>
+                           <code>Reserved: <a class='type' href='../../winapi/minwindef/type.BYTE.html' title='type winapi::minwindef::BYTE'>BYTE</a></code>
+                           </span></span><span id='structfield.SREngineConfidence' class='structfield'>
                            <span id='SREngineConfidence.v' class='invisible'>
-                           <code>SREngineConfidence: <a class='type' href='../../winapi/type.c_float.html' title='winapi::c_float'>c_float</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/sapi/struct.SPPHRASEELEMENT.html' title='winapi::sapi::SPPHRASEELEMENT'>SPPHRASEELEMENT</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-89461' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>SREngineConfidence: <a class='type' href='../../winapi/type.c_float.html' title='type winapi::c_float'>c_float</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/sapi/struct.SPPHRASEELEMENT.html' title='struct winapi::sapi::SPPHRASEELEMENT'>SPPHRASEELEMENT</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/sapi/struct.SPPHRASEELEMENT.html' title='winapi::sapi::SPPHRASEELEMENT'>SPPHRASEELEMENT</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-89442' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/sapi/struct.SPPHRASEELEMENT.html' title='winapi::sapi::SPPHRASEELEMENT'>SPPHRASEELEMENT</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-89443' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/sapi/struct.SPPHRASEELEMENT.html' title='winapi::sapi::SPPHRASEELEMENT'>SPPHRASEELEMENT</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/sapi/struct.SPPHRASEELEMENT.html' title='struct winapi::sapi::SPPHRASEELEMENT'>SPPHRASEELEMENT</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/sapi/struct.SPPHRASEELEMENT.html' title='struct winapi::sapi::SPPHRASEELEMENT'>SPPHRASEELEMENT</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/sapi/struct.SPPHRASEELEMENT.html' title='struct winapi::sapi::SPPHRASEELEMENT'>SPPHRASEELEMENT</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -170,11 +172,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

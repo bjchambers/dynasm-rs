@@ -9,6 +9,7 @@
 
     <title>d3d12shader.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -531,124 +532,124 @@
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12FunctionParameterReflection</span>(<span class='ident'>ID3D12FunctionParameterReflectionVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_PARAMETER_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_PARAMETER_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12FunctionReflection</span>(<span class='ident'>ID3D12FunctionReflectionVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_FUNCTION_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_FUNCTION_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetConstantBufferByIndex</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>BufferIndex</span>: ::<span class='ident'>UINT</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>,
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>,
     <span class='kw'>fn</span> <span class='ident'>GetConstantBufferByName</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>,
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>,
     <span class='kw'>fn</span> <span class='ident'>GetResourceBindingDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ResourceIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_INPUT_BIND_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ResourceIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_INPUT_BIND_DESC</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetVariableByName</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionVariable</span>,
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionVariable</span>,
     <span class='kw'>fn</span> <span class='ident'>GetResourceBindingDescByName</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_INPUT_BIND_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_INPUT_BIND_DESC</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetFunctionParameter</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ParameterIndex</span>: ::<span class='ident'>INT</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12FunctionParameterReflection</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12FunctionParameterReflection</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12LibraryReflection</span>(<span class='ident'>ID3D12LibraryReflectionVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>QueryInterface</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>iid</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>IID</span>, <span class='ident'>ppv</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPVOID</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>iid</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>IID</span>, <span class='ident'>ppv</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPVOID</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>AddRef</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>ULONG</span>,
     <span class='kw'>fn</span> <span class='ident'>Release</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>ULONG</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_LIBRARY_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_LIBRARY_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetFunctionByIndex</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>FunctionIndex</span>: ::<span class='ident'>INT</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12FunctionReflection</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12FunctionReflection</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>(<span class='ident'>ID3D12ShaderReflectionConstantBufferVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_BUFFER_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_BUFFER_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetVariableByIndex</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Index</span>: ::<span class='ident'>UINT</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionVariable</span>,
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionVariable</span>,
     <span class='kw'>fn</span> <span class='ident'>GetVariableByName</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionVariable</span>
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionVariable</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12ShaderReflectionType</span>(<span class='ident'>ID3D12ShaderReflectionTypeVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_TYPE_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_TYPE_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetMemberTypeByIndex</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Index</span>: ::<span class='ident'>UINT</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
     <span class='kw'>fn</span> <span class='ident'>GetMemberTypeByName</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
     <span class='kw'>fn</span> <span class='ident'>GetMemberTypeName</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Index</span>: ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>LPCSTR</span>,
     <span class='kw'>fn</span> <span class='ident'>IsEqual</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pType</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pType</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetSubType</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetBaseClass</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetSubType</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetBaseClass</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
     <span class='kw'>fn</span> <span class='ident'>GetNumInterfaces</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetInterfaceByIndex</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>uIndex</span>: ::<span class='ident'>UINT</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
     <span class='kw'>fn</span> <span class='ident'>IsOfType</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pType</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pType</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>ImplementsInterface</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pBase</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pBase</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12ShaderReflectionVariable</span>(<span class='ident'>ID3D12ShaderReflectionVariableVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_VARIABLE_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_VARIABLE_DESC</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetType</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetBuffer</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetType</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetBuffer</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>,
     <span class='kw'>fn</span> <span class='ident'>GetInterfaceSlot</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>uArrayIndex</span>: ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>
 });
 
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ID3D12ShaderReflection</span>(<span class='ident'>ID3D12ShaderReflectionVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>QueryInterface</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>iid</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>IID</span>, <span class='ident'>ppv</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPVOID</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>iid</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>IID</span>, <span class='ident'>ppv</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPVOID</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>AddRef</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>ULONG</span>,
     <span class='kw'>fn</span> <span class='ident'>Release</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>ULONG</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetDesc</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_DESC</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetConstantBufferByIndex</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Index</span>: ::<span class='ident'>UINT</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>,
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>,
     <span class='kw'>fn</span> <span class='ident'>GetConstantBufferByName</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>,
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>,
     <span class='kw'>fn</span> <span class='ident'>GetResourceBindingDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ResourceIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_INPUT_BIND_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ResourceIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_INPUT_BIND_DESC</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetInputParameterDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SIGNATURE_PARAMETER_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SIGNATURE_PARAMETER_DESC</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetOutputParameterDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SIGNATURE_PARAMETER_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SIGNATURE_PARAMETER_DESC</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetPatchConstantParameterDesc</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SIGNATURE_PARAMETER_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ParameterIndex</span>: ::<span class='ident'>UINT</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SIGNATURE_PARAMETER_DESC</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetVariableByName</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>
-    ) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionVariable</span>,
+    ) <span class='op'>-&gt;</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionVariable</span>,
     <span class='kw'>fn</span> <span class='ident'>GetResourceBindingDescByName</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>, <span class='ident'>pDesc</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_INPUT_BIND_DESC</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>Name</span>: ::<span class='ident'>LPCSTR</span>, <span class='ident'>pDesc</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D12_SHADER_INPUT_BIND_DESC</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetMovInstructionCount</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetMovcInstructionCount</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>,
@@ -658,10 +659,10 @@
     <span class='kw'>fn</span> <span class='ident'>IsSampleFrequencyShader</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span>,
     <span class='kw'>fn</span> <span class='ident'>GetNumInterfaceSlots</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetMinFeatureLevel</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pLevel</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D_FEATURE_LEVEL</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pLevel</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>D3D_FEATURE_LEVEL</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetThreadGroupSize</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pSizeX</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>pSizeY</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>pSizeZ</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pSizeX</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>pSizeY</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>, <span class='ident'>pSizeZ</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>UINT</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>UINT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetRequiresFlags</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> ::<span class='ident'>UINT64</span>
 });
@@ -671,13 +672,13 @@
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>D3D12_TESSELLATOR_DOMAIN</span> <span class='op'>=</span> ::<span class='ident'>D3D_TESSELLATOR_DOMAIN</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>D3D12_TESSELLATOR_OUTPUT_PRIMITIVE</span> <span class='op'>=</span> ::<span class='ident'>D3D_TESSELLATOR_OUTPUT_PRIMITIVE</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>D3D12_TESSELLATOR_PARTITIONING</span> <span class='op'>=</span> ::<span class='ident'>D3D_TESSELLATOR_PARTITIONING</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12FUNCTIONPARAMETERREFLECTION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12FunctionParameterReflection</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12FUNCTIONREFLECTION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12FunctionReflection</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12LIBRARYREFLECTION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12LibraryReflection</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12SHADERREFLECTION</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflection</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12SHADERREFLECTIONCONSTANTBUFFER</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12SHADERREFLECTIONTYPE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12SHADERREFLECTIONVARIABLE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionVariable</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12FUNCTIONPARAMETERREFLECTION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12FunctionParameterReflection</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12FUNCTIONREFLECTION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12FunctionReflection</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12LIBRARYREFLECTION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12LibraryReflection</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12SHADERREFLECTION</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflection</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12SHADERREFLECTIONCONSTANTBUFFER</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionConstantBuffer</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12SHADERREFLECTIONTYPE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionType</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPD3D12SHADERREFLECTIONVARIABLE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>ID3D12ShaderReflectionVariable</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>D3D_SHADER_REQUIRES_INNER_COVERAGE</span>: ::<span class='ident'>UINT64</span> <span class='op'>=</span> <span class='number'>0x00000400</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>D3D_SHADER_REQUIRES_ROVS</span>: ::<span class='ident'>UINT64</span> <span class='op'>=</span> <span class='number'>0x00001000</span>;
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>D3D_SHADER_REQUIRES_STENCIL_REF</span>: ::<span class='ident'>UINT64</span> <span class='op'>=</span> <span class='number'>0x00000200</span>;
@@ -740,11 +741,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

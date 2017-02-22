@@ -9,6 +9,7 @@
 
     <title>synchapi.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -61,12 +62,12 @@
 <span class='comment'>// Licensed under the MIT License &lt;LICENSE.md&gt;</span>
 <span class='doccomment'>//! ApiSet Contract for api-ms-win-core-synch-l1</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SRWLOCK</span> <span class='op'>=</span> ::<span class='ident'>RTL_SRWLOCK</span>;
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSRWLOCK</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>RTL_SRWLOCK</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSRWLOCK</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>RTL_SRWLOCK</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>SYNCHRONIZATION_BARRIER</span> <span class='op'>=</span> ::<span class='ident'>RTL_BARRIER</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PSYNCHRONIZATION_BARRIER</span> <span class='op'>=</span> ::<span class='ident'>PRTL_BARRIER</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>LPSYNCHRONIZATION_BARRIER</span> <span class='op'>=</span> ::<span class='ident'>PRTL_BARRIER</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PINIT_ONCE_FN</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
-    <span class='ident'>InitOnce</span>: ::<span class='ident'>PINIT_ONCE</span>, <span class='ident'>Parameter</span>: ::<span class='ident'>PVOID</span>, <span class='ident'>Context</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>PVOID</span>,
+    <span class='ident'>InitOnce</span>: ::<span class='ident'>PINIT_ONCE</span>, <span class='ident'>Parameter</span>: ::<span class='ident'>PVOID</span>, <span class='ident'>Context</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>PVOID</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOL</span><span class='op'>&gt;</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PTIMERAPCROUTINE</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;system&quot;</span> <span class='kw'>fn</span>(
     <span class='ident'>lpArgToCompletionRoutine</span>: ::<span class='ident'>LPVOID</span>, <span class='ident'>dwTimerLowValue</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>dwTimerHighValue</span>: ::<span class='ident'>DWORD</span>,
@@ -128,11 +129,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>winapi::winsock2::WSAQUERYSET2W - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,70 +48,71 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-120895' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct WSAQUERYSET2W {
-    pub dwSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lpszServiceInstanceName: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='winapi::winnt::LPWSTR'>LPWSTR</a>,
-    pub lpVersion: <a class='type' href='../../winapi/winsock2/type.LPWSAVERSION.html' title='winapi::winsock2::LPWSAVERSION'>LPWSAVERSION</a>,
-    pub lpszComment: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='winapi::winnt::LPWSTR'>LPWSTR</a>,
-    pub dwNameSpace: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lpNSProviderId: <a class='type' href='../../winapi/guiddef/type.LPGUID.html' title='winapi::guiddef::LPGUID'>LPGUID</a>,
-    pub lpszContext: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='winapi::winnt::LPWSTR'>LPWSTR</a>,
-    pub dwNumberOfProtocols: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lpafpProtocols: <a class='type' href='../../winapi/winsock2/type.LPAFPROTOCOLS.html' title='winapi::winsock2::LPAFPROTOCOLS'>LPAFPROTOCOLS</a>,
-    pub lpszQueryString: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='winapi::winnt::LPWSTR'>LPWSTR</a>,
-    pub dwNumberOfCsAddrs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lpcsaBuffer: <a class='type' href='../../winapi/ws2def/type.LPCSADDR_INFO.html' title='winapi::ws2def::LPCSADDR_INFO'>LPCSADDR_INFO</a>,
-    pub dwOutputFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub lpBlob: <a class='type' href='../../winapi/wtypesbase/type.LPBLOB.html' title='winapi::wtypesbase::LPBLOB'>LPBLOB</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct WSAQUERYSET2W {
+    pub dwSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lpszServiceInstanceName: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='type winapi::winnt::LPWSTR'>LPWSTR</a>,
+    pub lpVersion: <a class='type' href='../../winapi/winsock2/type.LPWSAVERSION.html' title='type winapi::winsock2::LPWSAVERSION'>LPWSAVERSION</a>,
+    pub lpszComment: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='type winapi::winnt::LPWSTR'>LPWSTR</a>,
+    pub dwNameSpace: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lpNSProviderId: <a class='type' href='../../winapi/guiddef/type.LPGUID.html' title='type winapi::guiddef::LPGUID'>LPGUID</a>,
+    pub lpszContext: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='type winapi::winnt::LPWSTR'>LPWSTR</a>,
+    pub dwNumberOfProtocols: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lpafpProtocols: <a class='type' href='../../winapi/winsock2/type.LPAFPROTOCOLS.html' title='type winapi::winsock2::LPAFPROTOCOLS'>LPAFPROTOCOLS</a>,
+    pub lpszQueryString: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='type winapi::winnt::LPWSTR'>LPWSTR</a>,
+    pub dwNumberOfCsAddrs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lpcsaBuffer: <a class='type' href='../../winapi/ws2def/type.LPCSADDR_INFO.html' title='type winapi::ws2def::LPCSADDR_INFO'>LPCSADDR_INFO</a>,
+    pub dwOutputFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub lpBlob: <a class='type' href='../../winapi/wtypesbase/type.LPBLOB.html' title='type winapi::wtypesbase::LPBLOB'>LPBLOB</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.dwSize' class='structfield'>
                            <span id='dwSize.v' class='invisible'>
-                           <code>dwSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpszServiceInstanceName' class='structfield'>
+                           <code>dwSize: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lpszServiceInstanceName' class='structfield'>
                            <span id='lpszServiceInstanceName.v' class='invisible'>
-                           <code>lpszServiceInstanceName: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='winapi::winnt::LPWSTR'>LPWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpVersion' class='structfield'>
+                           <code>lpszServiceInstanceName: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='type winapi::winnt::LPWSTR'>LPWSTR</a></code>
+                           </span></span><span id='structfield.lpVersion' class='structfield'>
                            <span id='lpVersion.v' class='invisible'>
-                           <code>lpVersion: <a class='type' href='../../winapi/winsock2/type.LPWSAVERSION.html' title='winapi::winsock2::LPWSAVERSION'>LPWSAVERSION</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpszComment' class='structfield'>
+                           <code>lpVersion: <a class='type' href='../../winapi/winsock2/type.LPWSAVERSION.html' title='type winapi::winsock2::LPWSAVERSION'>LPWSAVERSION</a></code>
+                           </span></span><span id='structfield.lpszComment' class='structfield'>
                            <span id='lpszComment.v' class='invisible'>
-                           <code>lpszComment: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='winapi::winnt::LPWSTR'>LPWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dwNameSpace' class='structfield'>
+                           <code>lpszComment: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='type winapi::winnt::LPWSTR'>LPWSTR</a></code>
+                           </span></span><span id='structfield.dwNameSpace' class='structfield'>
                            <span id='dwNameSpace.v' class='invisible'>
-                           <code>dwNameSpace: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpNSProviderId' class='structfield'>
+                           <code>dwNameSpace: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lpNSProviderId' class='structfield'>
                            <span id='lpNSProviderId.v' class='invisible'>
-                           <code>lpNSProviderId: <a class='type' href='../../winapi/guiddef/type.LPGUID.html' title='winapi::guiddef::LPGUID'>LPGUID</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpszContext' class='structfield'>
+                           <code>lpNSProviderId: <a class='type' href='../../winapi/guiddef/type.LPGUID.html' title='type winapi::guiddef::LPGUID'>LPGUID</a></code>
+                           </span></span><span id='structfield.lpszContext' class='structfield'>
                            <span id='lpszContext.v' class='invisible'>
-                           <code>lpszContext: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='winapi::winnt::LPWSTR'>LPWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dwNumberOfProtocols' class='structfield'>
+                           <code>lpszContext: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='type winapi::winnt::LPWSTR'>LPWSTR</a></code>
+                           </span></span><span id='structfield.dwNumberOfProtocols' class='structfield'>
                            <span id='dwNumberOfProtocols.v' class='invisible'>
-                           <code>dwNumberOfProtocols: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpafpProtocols' class='structfield'>
+                           <code>dwNumberOfProtocols: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lpafpProtocols' class='structfield'>
                            <span id='lpafpProtocols.v' class='invisible'>
-                           <code>lpafpProtocols: <a class='type' href='../../winapi/winsock2/type.LPAFPROTOCOLS.html' title='winapi::winsock2::LPAFPROTOCOLS'>LPAFPROTOCOLS</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpszQueryString' class='structfield'>
+                           <code>lpafpProtocols: <a class='type' href='../../winapi/winsock2/type.LPAFPROTOCOLS.html' title='type winapi::winsock2::LPAFPROTOCOLS'>LPAFPROTOCOLS</a></code>
+                           </span></span><span id='structfield.lpszQueryString' class='structfield'>
                            <span id='lpszQueryString.v' class='invisible'>
-                           <code>lpszQueryString: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='winapi::winnt::LPWSTR'>LPWSTR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dwNumberOfCsAddrs' class='structfield'>
+                           <code>lpszQueryString: <a class='type' href='../../winapi/winnt/type.LPWSTR.html' title='type winapi::winnt::LPWSTR'>LPWSTR</a></code>
+                           </span></span><span id='structfield.dwNumberOfCsAddrs' class='structfield'>
                            <span id='dwNumberOfCsAddrs.v' class='invisible'>
-                           <code>dwNumberOfCsAddrs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpcsaBuffer' class='structfield'>
+                           <code>dwNumberOfCsAddrs: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lpcsaBuffer' class='structfield'>
                            <span id='lpcsaBuffer.v' class='invisible'>
-                           <code>lpcsaBuffer: <a class='type' href='../../winapi/ws2def/type.LPCSADDR_INFO.html' title='winapi::ws2def::LPCSADDR_INFO'>LPCSADDR_INFO</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.dwOutputFlags' class='structfield'>
+                           <code>lpcsaBuffer: <a class='type' href='../../winapi/ws2def/type.LPCSADDR_INFO.html' title='type winapi::ws2def::LPCSADDR_INFO'>LPCSADDR_INFO</a></code>
+                           </span></span><span id='structfield.dwOutputFlags' class='structfield'>
                            <span id='dwOutputFlags.v' class='invisible'>
-                           <code>dwOutputFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.lpBlob' class='structfield'>
+                           <code>dwOutputFlags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.lpBlob' class='structfield'>
                            <span id='lpBlob.v' class='invisible'>
-                           <code>lpBlob: <a class='type' href='../../winapi/wtypesbase/type.LPBLOB.html' title='winapi::wtypesbase::LPBLOB'>LPBLOB</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/winsock2/struct.WSAQUERYSET2W.html' title='winapi::winsock2::WSAQUERYSET2W'>WSAQUERYSET2W</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-120910' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>lpBlob: <a class='type' href='../../winapi/wtypesbase/type.LPBLOB.html' title='type winapi::wtypesbase::LPBLOB'>LPBLOB</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/winsock2/struct.WSAQUERYSET2W.html' title='struct winapi::winsock2::WSAQUERYSET2W'>WSAQUERYSET2W</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/winsock2/struct.WSAQUERYSET2W.html' title='winapi::winsock2::WSAQUERYSET2W'>WSAQUERYSET2W</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-120891' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/winsock2/struct.WSAQUERYSET2W.html' title='winapi::winsock2::WSAQUERYSET2W'>WSAQUERYSET2W</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-120892' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/winsock2/struct.WSAQUERYSET2W.html' title='winapi::winsock2::WSAQUERYSET2W'>WSAQUERYSET2W</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/winsock2/struct.WSAQUERYSET2W.html' title='struct winapi::winsock2::WSAQUERYSET2W'>WSAQUERYSET2W</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/winsock2/struct.WSAQUERYSET2W.html' title='struct winapi::winsock2::WSAQUERYSET2W'>WSAQUERYSET2W</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/winsock2/struct.WSAQUERYSET2W.html' title='struct winapi::winsock2::WSAQUERYSET2W'>WSAQUERYSET2W</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -170,11 +172,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

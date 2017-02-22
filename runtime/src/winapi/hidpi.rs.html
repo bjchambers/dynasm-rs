@@ -9,6 +9,7 @@
 
     <title>hidpi.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -238,7 +239,7 @@
     <span class='ident'>Usage</span>: ::<span class='ident'>USAGE</span>,
     <span class='ident'>UsagePage</span>: ::<span class='ident'>USAGE</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUSAGE_AND_PAGE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>USAGE_AND_PAGE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PUSAGE_AND_PAGE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>USAGE_AND_PAGE</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>HIDP_BUTTON_CAPS</span> {
     <span class='ident'>UsagePage</span>: ::<span class='ident'>USAGE</span>,
     <span class='ident'>ReportID</span>: ::<span class='ident'>UCHAR</span>,
@@ -256,7 +257,7 @@
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>{<span class='ident'>HIDP_BUTTON_CAPS</span>, <span class='ident'>S_un</span>, <span class='ident'>Range</span>, <span class='ident'>Range_mut</span>, <span class='ident'>HIDP_RANGE_STRUCT</span>}
 <span class='macro'>UNION</span><span class='macro'>!</span>{<span class='ident'>HIDP_BUTTON_CAPS</span>, <span class='ident'>S_un</span>, <span class='ident'>NotRange</span>, <span class='ident'>NotRange_mut</span>, <span class='ident'>HIDP_NOTRANGE_STRUCT</span>}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_BUTTON_CAPS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_BUTTON_CAPS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_BUTTON_CAPS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_BUTTON_CAPS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>HIDP_RANGE_STRUCT</span> {
     <span class='ident'>UsageMin</span>: ::<span class='ident'>USAGE</span>,
     <span class='ident'>UsageMax</span>: ::<span class='ident'>USAGE</span>,
@@ -304,7 +305,7 @@
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>{<span class='ident'>HIDP_VALUE_CAPS</span>, <span class='ident'>S_un</span>, <span class='ident'>Range</span>, <span class='ident'>Range_mut</span>, <span class='ident'>HIDP_RANGE_STRUCT</span>}
 <span class='macro'>UNION</span><span class='macro'>!</span>{<span class='ident'>HIDP_VALUE_CAPS</span>, <span class='ident'>S_un</span>, <span class='ident'>NotRange</span>, <span class='ident'>NotRange_mut</span>, <span class='ident'>HIDP_NOTRANGE_STRUCT</span>}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_VALUE_CAPS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_VALUE_CAPS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_VALUE_CAPS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_VALUE_CAPS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>HIDP_LINK_COLLECTION_NODE</span> {
     <span class='ident'>LinkUsage</span>: ::<span class='ident'>USAGE</span>,
     <span class='ident'>LinkUsagePage</span>: ::<span class='ident'>USAGE</span>,
@@ -319,10 +320,10 @@
     <span class='ident'>CollectionType</span> <span class='ident'>set_CollectionType</span>[<span class='number'>0</span>..<span class='number'>8</span>],
     <span class='ident'>IsAlias</span> <span class='ident'>set_IsAlias</span>[<span class='number'>8</span>..<span class='number'>9</span>],
 ]}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_LINK_COLLECTION_NODE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_LINK_COLLECTION_NODE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_LINK_COLLECTION_NODE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_LINK_COLLECTION_NODE</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_REPORT_DESCRIPTOR</span> <span class='op'>=</span> ::<span class='ident'>PUCHAR</span>;
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>HIDP_PREPARSED_DATA</span>{}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_PREPARSED_DATA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_PREPARSED_DATA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_PREPARSED_DATA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_PREPARSED_DATA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>HIDP_CAPS</span> {
     <span class='ident'>Usage</span>: ::<span class='ident'>USAGE</span>,
     <span class='ident'>UsagePage</span>: ::<span class='ident'>USAGE</span>,
@@ -341,7 +342,7 @@
     <span class='ident'>NumberFeatureValueCaps</span>: ::<span class='ident'>USHORT</span>,
     <span class='ident'>NumberFeatureDataIndices</span>: ::<span class='ident'>USHORT</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_CAPS</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_CAPS</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_CAPS</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_CAPS</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>HIDP_DATA</span> {
     <span class='ident'>DataIndex</span>: ::<span class='ident'>USHORT</span>,
     <span class='ident'>Reserved</span>: ::<span class='ident'>USHORT</span>,
@@ -349,20 +350,20 @@
 }}
 <span class='macro'>UNION</span><span class='macro'>!</span>{<span class='ident'>HIDP_DATA</span>, <span class='ident'>S_un</span>, <span class='ident'>RawValue</span>, <span class='ident'>RawValue_mut</span>, ::<span class='ident'>ULONG</span>}
 <span class='macro'>UNION</span><span class='macro'>!</span>{<span class='ident'>HIDP_DATA</span>, <span class='ident'>S_un</span>, <span class='ident'>On</span>, <span class='ident'>On_mut</span>, ::<span class='ident'>BOOLEAN</span>}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_DATA</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_DATA</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_DATA</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_DATA</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>HIDP_UNKNOWN_TOKEN</span> {
     <span class='ident'>Token</span>: ::<span class='ident'>UCHAR</span>,
     <span class='ident'>Reserved</span>: [::<span class='ident'>UCHAR</span>; <span class='number'>3</span>],
     <span class='ident'>BitField</span>: ::<span class='ident'>ULONG</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_UNKNOWN_TOKEN</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_UNKNOWN_TOKEN</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_UNKNOWN_TOKEN</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_UNKNOWN_TOKEN</span>;
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>HIDP_EXTENDED_ATTRIBUTES</span> {
     <span class='ident'>NumGlobalUnknowns</span>: ::<span class='ident'>UCHAR</span>,
     <span class='ident'>Reserved</span>: [::<span class='ident'>UCHAR</span>; <span class='number'>3</span>],
     <span class='ident'>GlobalUnknowns</span>: <span class='ident'>PHIDP_UNKNOWN_TOKEN</span>,
     <span class='ident'>Data</span>: [::<span class='ident'>ULONG</span>; <span class='number'>1</span>],
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_EXTENDED_ATTRIBUTES</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_EXTENDED_ATTRIBUTES</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_EXTENDED_ATTRIBUTES</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_EXTENDED_ATTRIBUTES</span>;
 <span class='macro'>ENUM</span><span class='macro'>!</span>{<span class='kw'>enum</span> <span class='ident'>HIDP_KEYBOARD_DIRECTION</span> {
     <span class='ident'>HidP_Keyboard_Break</span>,
     <span class='ident'>HidP_Keyboard_Make</span>,
@@ -383,7 +384,7 @@
     <span class='ident'>ScollLock</span> <span class='ident'>set_ScollLock</span>[<span class='number'>9</span>..<span class='number'>10</span>],
     <span class='ident'>NumLock</span> <span class='ident'>set_NumLock</span>[<span class='number'>10</span>..<span class='number'>11</span>],
 ]}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_KEYBOARD_MODIFIER_STATE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_KEYBOARD_MODIFIER_STATE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_KEYBOARD_MODIFIER_STATE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>HIDP_KEYBOARD_MODIFIER_STATE</span>;
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PHIDP_INSERT_SCANCODES</span> <span class='op'>=</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw'>unsafe</span> <span class='kw'>extern</span> <span class='string'>&quot;C&quot;</span> <span class='kw'>fn</span>(
     <span class='ident'>Context</span>: ::<span class='ident'>PVOID</span>, <span class='ident'>NewScanCodes</span>: ::<span class='ident'>PCHAR</span>, <span class='ident'>Length</span>: ::<span class='ident'>ULONG</span>,
 ) <span class='op'>-&gt;</span> ::<span class='ident'>BOOLEAN</span><span class='op'>&gt;</span>;
@@ -464,11 +465,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

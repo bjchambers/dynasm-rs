@@ -9,6 +9,7 @@
 
     <title>winapi::d3d9types::D3DPRESENT_PARAMETERS - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,70 +48,71 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-41678' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct D3DPRESENT_PARAMETERS {
-    pub BackBufferWidth: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub BackBufferHeight: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub BackBufferFormat: <a class='struct' href='../../winapi/d3d9types/struct.D3DFORMAT.html' title='winapi::d3d9types::D3DFORMAT'>D3DFORMAT</a>,
-    pub BackBufferCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub MultiSampleType: <a class='struct' href='../../winapi/d3d9types/struct.D3DMULTISAMPLE_TYPE.html' title='winapi::d3d9types::D3DMULTISAMPLE_TYPE'>D3DMULTISAMPLE_TYPE</a>,
-    pub MultiSampleQuality: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub SwapEffect: <a class='struct' href='../../winapi/d3d9types/struct.D3DSWAPEFFECT.html' title='winapi::d3d9types::D3DSWAPEFFECT'>D3DSWAPEFFECT</a>,
-    pub hDeviceWindow: <a class='type' href='../../winapi/windef/type.HWND.html' title='winapi::windef::HWND'>HWND</a>,
-    pub Windowed: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='winapi::minwindef::BOOL'>BOOL</a>,
-    pub EnableAutoDepthStencil: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='winapi::minwindef::BOOL'>BOOL</a>,
-    pub AutoDepthStencilFormat: <a class='struct' href='../../winapi/d3d9types/struct.D3DFORMAT.html' title='winapi::d3d9types::D3DFORMAT'>D3DFORMAT</a>,
-    pub Flags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub FullScreen_RefreshRateInHz: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub PresentationInterval: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct D3DPRESENT_PARAMETERS {
+    pub BackBufferWidth: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub BackBufferHeight: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub BackBufferFormat: <a class='struct' href='../../winapi/d3d9types/struct.D3DFORMAT.html' title='struct winapi::d3d9types::D3DFORMAT'>D3DFORMAT</a>,
+    pub BackBufferCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub MultiSampleType: <a class='struct' href='../../winapi/d3d9types/struct.D3DMULTISAMPLE_TYPE.html' title='struct winapi::d3d9types::D3DMULTISAMPLE_TYPE'>D3DMULTISAMPLE_TYPE</a>,
+    pub MultiSampleQuality: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub SwapEffect: <a class='struct' href='../../winapi/d3d9types/struct.D3DSWAPEFFECT.html' title='struct winapi::d3d9types::D3DSWAPEFFECT'>D3DSWAPEFFECT</a>,
+    pub hDeviceWindow: <a class='type' href='../../winapi/windef/type.HWND.html' title='type winapi::windef::HWND'>HWND</a>,
+    pub Windowed: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='type winapi::minwindef::BOOL'>BOOL</a>,
+    pub EnableAutoDepthStencil: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='type winapi::minwindef::BOOL'>BOOL</a>,
+    pub AutoDepthStencilFormat: <a class='struct' href='../../winapi/d3d9types/struct.D3DFORMAT.html' title='struct winapi::d3d9types::D3DFORMAT'>D3DFORMAT</a>,
+    pub Flags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub FullScreen_RefreshRateInHz: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub PresentationInterval: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.BackBufferWidth' class='structfield'>
                            <span id='BackBufferWidth.v' class='invisible'>
-                           <code>BackBufferWidth: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.BackBufferHeight' class='structfield'>
+                           <code>BackBufferWidth: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.BackBufferHeight' class='structfield'>
                            <span id='BackBufferHeight.v' class='invisible'>
-                           <code>BackBufferHeight: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.BackBufferFormat' class='structfield'>
+                           <code>BackBufferHeight: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.BackBufferFormat' class='structfield'>
                            <span id='BackBufferFormat.v' class='invisible'>
-                           <code>BackBufferFormat: <a class='struct' href='../../winapi/d3d9types/struct.D3DFORMAT.html' title='winapi::d3d9types::D3DFORMAT'>D3DFORMAT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.BackBufferCount' class='structfield'>
+                           <code>BackBufferFormat: <a class='struct' href='../../winapi/d3d9types/struct.D3DFORMAT.html' title='struct winapi::d3d9types::D3DFORMAT'>D3DFORMAT</a></code>
+                           </span></span><span id='structfield.BackBufferCount' class='structfield'>
                            <span id='BackBufferCount.v' class='invisible'>
-                           <code>BackBufferCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MultiSampleType' class='structfield'>
+                           <code>BackBufferCount: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.MultiSampleType' class='structfield'>
                            <span id='MultiSampleType.v' class='invisible'>
-                           <code>MultiSampleType: <a class='struct' href='../../winapi/d3d9types/struct.D3DMULTISAMPLE_TYPE.html' title='winapi::d3d9types::D3DMULTISAMPLE_TYPE'>D3DMULTISAMPLE_TYPE</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.MultiSampleQuality' class='structfield'>
+                           <code>MultiSampleType: <a class='struct' href='../../winapi/d3d9types/struct.D3DMULTISAMPLE_TYPE.html' title='struct winapi::d3d9types::D3DMULTISAMPLE_TYPE'>D3DMULTISAMPLE_TYPE</a></code>
+                           </span></span><span id='structfield.MultiSampleQuality' class='structfield'>
                            <span id='MultiSampleQuality.v' class='invisible'>
-                           <code>MultiSampleQuality: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.SwapEffect' class='structfield'>
+                           <code>MultiSampleQuality: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.SwapEffect' class='structfield'>
                            <span id='SwapEffect.v' class='invisible'>
-                           <code>SwapEffect: <a class='struct' href='../../winapi/d3d9types/struct.D3DSWAPEFFECT.html' title='winapi::d3d9types::D3DSWAPEFFECT'>D3DSWAPEFFECT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.hDeviceWindow' class='structfield'>
+                           <code>SwapEffect: <a class='struct' href='../../winapi/d3d9types/struct.D3DSWAPEFFECT.html' title='struct winapi::d3d9types::D3DSWAPEFFECT'>D3DSWAPEFFECT</a></code>
+                           </span></span><span id='structfield.hDeviceWindow' class='structfield'>
                            <span id='hDeviceWindow.v' class='invisible'>
-                           <code>hDeviceWindow: <a class='type' href='../../winapi/windef/type.HWND.html' title='winapi::windef::HWND'>HWND</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Windowed' class='structfield'>
+                           <code>hDeviceWindow: <a class='type' href='../../winapi/windef/type.HWND.html' title='type winapi::windef::HWND'>HWND</a></code>
+                           </span></span><span id='structfield.Windowed' class='structfield'>
                            <span id='Windowed.v' class='invisible'>
-                           <code>Windowed: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='winapi::minwindef::BOOL'>BOOL</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.EnableAutoDepthStencil' class='structfield'>
+                           <code>Windowed: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='type winapi::minwindef::BOOL'>BOOL</a></code>
+                           </span></span><span id='structfield.EnableAutoDepthStencil' class='structfield'>
                            <span id='EnableAutoDepthStencil.v' class='invisible'>
-                           <code>EnableAutoDepthStencil: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='winapi::minwindef::BOOL'>BOOL</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.AutoDepthStencilFormat' class='structfield'>
+                           <code>EnableAutoDepthStencil: <a class='type' href='../../winapi/minwindef/type.BOOL.html' title='type winapi::minwindef::BOOL'>BOOL</a></code>
+                           </span></span><span id='structfield.AutoDepthStencilFormat' class='structfield'>
                            <span id='AutoDepthStencilFormat.v' class='invisible'>
-                           <code>AutoDepthStencilFormat: <a class='struct' href='../../winapi/d3d9types/struct.D3DFORMAT.html' title='winapi::d3d9types::D3DFORMAT'>D3DFORMAT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.Flags' class='structfield'>
+                           <code>AutoDepthStencilFormat: <a class='struct' href='../../winapi/d3d9types/struct.D3DFORMAT.html' title='struct winapi::d3d9types::D3DFORMAT'>D3DFORMAT</a></code>
+                           </span></span><span id='structfield.Flags' class='structfield'>
                            <span id='Flags.v' class='invisible'>
-                           <code>Flags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.FullScreen_RefreshRateInHz' class='structfield'>
+                           <code>Flags: <a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.FullScreen_RefreshRateInHz' class='structfield'>
                            <span id='FullScreen_RefreshRateInHz.v' class='invisible'>
-                           <code>FullScreen_RefreshRateInHz: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.PresentationInterval' class='structfield'>
+                           <code>FullScreen_RefreshRateInHz: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.PresentationInterval' class='structfield'>
                            <span id='PresentationInterval.v' class='invisible'>
-                           <code>PresentationInterval: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/d3d9types/struct.D3DPRESENT_PARAMETERS.html' title='winapi::d3d9types::D3DPRESENT_PARAMETERS'>D3DPRESENT_PARAMETERS</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-41693' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>PresentationInterval: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/d3d9types/struct.D3DPRESENT_PARAMETERS.html' title='struct winapi::d3d9types::D3DPRESENT_PARAMETERS'>D3DPRESENT_PARAMETERS</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/d3d9types/struct.D3DPRESENT_PARAMETERS.html' title='winapi::d3d9types::D3DPRESENT_PARAMETERS'>D3DPRESENT_PARAMETERS</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-41674' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/d3d9types/struct.D3DPRESENT_PARAMETERS.html' title='winapi::d3d9types::D3DPRESENT_PARAMETERS'>D3DPRESENT_PARAMETERS</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-41675' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/d3d9types/struct.D3DPRESENT_PARAMETERS.html' title='winapi::d3d9types::D3DPRESENT_PARAMETERS'>D3DPRESENT_PARAMETERS</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/d3d9types/struct.D3DPRESENT_PARAMETERS.html' title='struct winapi::d3d9types::D3DPRESENT_PARAMETERS'>D3DPRESENT_PARAMETERS</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/d3d9types/struct.D3DPRESENT_PARAMETERS.html' title='struct winapi::d3d9types::D3DPRESENT_PARAMETERS'>D3DPRESENT_PARAMETERS</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/d3d9types/struct.D3DPRESENT_PARAMETERS.html' title='struct winapi::d3d9types::D3DPRESENT_PARAMETERS'>D3DPRESENT_PARAMETERS</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -170,11 +172,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>mmdeviceapi.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -133,38 +134,38 @@
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IMMDevice</span>(<span class='ident'>IMMDeviceVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>Activate</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>iid</span>: ::<span class='ident'>REFIID</span>, <span class='ident'>dwClsCtx</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pActivationParams</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>PROPVARIANT</span>,
-        <span class='ident'>ppInterface</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPVOID</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>iid</span>: ::<span class='ident'>REFIID</span>, <span class='ident'>dwClsCtx</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>pActivationParams</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>PROPVARIANT</span>,
+        <span class='ident'>ppInterface</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPVOID</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>OpenPropertyStore</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>stgmAccess</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>ppProperties</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IPropertyStore</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>stgmAccess</span>: ::<span class='ident'>DWORD</span>, <span class='ident'>ppProperties</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IPropertyStore</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetId</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppstrId</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPWSTR</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetState</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pdwState</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>GetId</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>ppstrId</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>LPWSTR</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetState</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pdwState</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>DWORD</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }
 );
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IMMDeviceEnumerator</span>(<span class='ident'>IMMDeviceEnumeratorVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>EnumAudioEndpoints</span>(
         <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dataFlow</span>: <span class='ident'>EDataFlow</span>, <span class='ident'>dwStateMask</span>: ::<span class='ident'>DWORD</span>,
-        <span class='ident'>ppDevices</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMDeviceCollection</span>
+        <span class='ident'>ppDevices</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMDeviceCollection</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetDefaultAudioEndpoint</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dataFlow</span>: <span class='ident'>EDataFlow</span>, <span class='ident'>role</span>: <span class='ident'>ERole</span>, <span class='ident'>ppEndpoint</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMDevice</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>dataFlow</span>: <span class='ident'>EDataFlow</span>, <span class='ident'>role</span>: <span class='ident'>ERole</span>, <span class='ident'>ppEndpoint</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMDevice</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>GetDevice</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pwstrId</span>: ::<span class='ident'>LPCWSTR</span>, <span class='ident'>ppDevices</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMDevice</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>GetDevice</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pwstrId</span>: ::<span class='ident'>LPCWSTR</span>, <span class='ident'>ppDevices</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMDevice</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>RegisterEndpointNotificationCallback</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pClient</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMNotificationClient</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pClient</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMNotificationClient</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>UnregisterEndpointNotificationCallback</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pClient</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMNotificationClient</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pClient</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMNotificationClient</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }
 );
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>IMMDeviceCollection</span>(<span class='ident'>IMMDeviceCollectionVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
-    <span class='kw'>fn</span> <span class='ident'>GetCount</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pcDevices</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
-    <span class='kw'>fn</span> <span class='ident'>Item</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>nDevice</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppDevice</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMDevice</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
+    <span class='kw'>fn</span> <span class='ident'>GetCount</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>pcDevices</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>UINT</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
+    <span class='kw'>fn</span> <span class='ident'>Item</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>nDevice</span>: ::<span class='ident'>UINT</span>, <span class='ident'>ppDevice</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>IMMDevice</span>) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }
 );
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span> <span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Clone</span>, <span class='ident'>Copy</span>, <span class='ident'>Debug</span>)]</span>
@@ -226,11 +227,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

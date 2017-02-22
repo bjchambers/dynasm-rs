@@ -9,6 +9,7 @@
 
     <title>owning_ref::StableAddress - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
     
@@ -47,22 +48,22 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-4' class='srclink' href='../src/owning_ref/lib.rs.html#181' title='goto source code'>[src]</a></span></h1>
-<pre class='rust trait'>pub unsafe trait StableAddress: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a> { }</pre><div class='docblock'><p>Marker trait for expressing that the memory address of the value
+               </span><a class='srclink' href='../src/owning_ref/lib.rs.html#181' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub unsafe trait StableAddress: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='trait core::ops::Deref'>Deref</a> { }</pre><div class='docblock'><p>Marker trait for expressing that the memory address of the value
 reachable via a dereference remains identical even if <code>self</code> gets moved.</p>
 </div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;T&gt;</code></li>
-<li><code>impl&lt;T&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;T&gt;</code></li>
-<li><code>impl StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></li>
-<li><code>impl&lt;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html' title='alloc::rc::Rc'>Rc</a>&lt;T&gt;</code></li>
-<li><code>impl&lt;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;T&gt;</code></li>
-<li><code>impl&lt;'a,&nbsp;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html' title='core::cell::Ref'>Ref</a>&lt;'a,&nbsp;T&gt;</code></li>
-<li><code>impl&lt;'a,&nbsp;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/core/cell/struct.RefMut.html' title='core::cell::RefMut'>RefMut</a>&lt;'a,&nbsp;T&gt;</code></li>
-<li><code>impl&lt;'a,&nbsp;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/mutex/struct.MutexGuard.html' title='std::sync::mutex::MutexGuard'>MutexGuard</a>&lt;'a,&nbsp;T&gt;</code></li>
-<li><code>impl&lt;'a,&nbsp;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLockReadGuard.html' title='std::sync::rwlock::RwLockReadGuard'>RwLockReadGuard</a>&lt;'a,&nbsp;T&gt;</code></li>
-<li><code>impl&lt;'a,&nbsp;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLockWriteGuard.html' title='std::sync::rwlock::RwLockWriteGuard'>RwLockWriteGuard</a>&lt;'a,&nbsp;T&gt;</code></li>
+    <li><code>impl&lt;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='trait core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='struct alloc::boxed::Box'>Box</a>&lt;T&gt;</code></li>
+<li><code>impl&lt;T&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='struct collections::vec::Vec'>Vec</a>&lt;T&gt;</code></li>
+<li><code>impl StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='struct collections::string::String'>String</a></code></li>
+<li><code>impl&lt;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='trait core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html' title='struct alloc::rc::Rc'>Rc</a>&lt;T&gt;</code></li>
+<li><code>impl&lt;T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='trait core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='struct alloc::arc::Arc'>Arc</a>&lt;T&gt;</code></li>
+<li><code>impl&lt;'a, T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='trait core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html' title='struct core::cell::Ref'>Ref</a>&lt;'a, T&gt;</code></li>
+<li><code>impl&lt;'a, T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='trait core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/core/cell/struct.RefMut.html' title='struct core::cell::RefMut'>RefMut</a>&lt;'a, T&gt;</code></li>
+<li><code>impl&lt;'a, T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='trait core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/mutex/struct.MutexGuard.html' title='struct std::sync::mutex::MutexGuard'>MutexGuard</a>&lt;'a, T&gt;</code></li>
+<li><code>impl&lt;'a, T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='trait core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLockReadGuard.html' title='struct std::sync::rwlock::RwLockReadGuard'>RwLockReadGuard</a>&lt;'a, T&gt;</code></li>
+<li><code>impl&lt;'a, T:&nbsp;?<a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='trait core::marker::Sized'>Sized</a>&gt; StableAddress for <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLockWriteGuard.html' title='struct std::sync::rwlock::RwLockWriteGuard'>RwLockWriteGuard</a>&lt;'a, T&gt;</code></li>
 </ul><script type="text/javascript" async
                          src="../implementors/owning_ref/trait.StableAddress.js">
                  </script></section>
@@ -121,11 +122,9 @@ reachable via a dereference remains identical even if <code>self</code> gets mov
     <script>
         window.rootPath = "../";
         window.currentCrate = "owning_ref";
-        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
-    <script src="../extra.js"></script>
     <script defer src="../search-index.js"></script>
 </body>
 </html>

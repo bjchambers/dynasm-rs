@@ -9,6 +9,7 @@
 
     <title>corsym.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -175,12 +176,12 @@
 <span class='macro'>RIDL</span><span class='macro'>!</span>(
 <span class='ident'>interface</span> <span class='ident'>ISymUnmanagedBinder</span>(<span class='ident'>ISymUnmanagedBinderVtbl</span>): <span class='ident'>IUnknown</span>(<span class='ident'>IUnknownVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetReaderForFile</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>importer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>fileName</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>WCHAR</span>, <span class='ident'>searchPath</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>WCHAR</span>,
-        <span class='ident'>pRetVal</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ISymUnmanagedReader</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>importer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>fileName</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>WCHAR</span>, <span class='ident'>searchPath</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>WCHAR</span>,
+        <span class='ident'>pRetVal</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ISymUnmanagedReader</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>,
     <span class='kw'>fn</span> <span class='ident'>GetReaderFromStream</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>importer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>pstream</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IStream</span>,
-        <span class='ident'>pRetVal</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ISymUnmanagedReader</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>importer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>pstream</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IStream</span>,
+        <span class='ident'>pRetVal</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ISymUnmanagedReader</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }
 );
@@ -194,8 +195,8 @@
 <span class='ident'>interface</span> <span class='ident'>ISymUnmanagedBinder2</span>(<span class='ident'>ISymUnmanagedBinder2Vtbl</span>):
     <span class='ident'>ISymUnmanagedBinder</span>(<span class='ident'>ISymUnmanagedBinderVtbl</span>) {
     <span class='kw'>fn</span> <span class='ident'>GetReaderForFile2</span>(
-        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>importer</span>: <span class='op'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>fileName</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>WCHAR</span>, <span class='ident'>searchPath</span>: <span class='op'>*</span><span class='kw'>const</span> ::<span class='ident'>WCHAR</span>,
-        <span class='ident'>searchPolicy</span>: ::<span class='ident'>ULONG32</span>, <span class='ident'>pRetVal</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>ISymUnmanagedReader</span>
+        <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>importer</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> ::<span class='ident'>IUnknown</span>, <span class='ident'>fileName</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>WCHAR</span>, <span class='ident'>searchPath</span>: <span class='kw-2'>*</span><span class='kw'>const</span> ::<span class='ident'>WCHAR</span>,
+        <span class='ident'>searchPolicy</span>: ::<span class='ident'>ULONG32</span>, <span class='ident'>pRetVal</span>: <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>ISymUnmanagedReader</span>
     ) <span class='op'>-&gt;</span> ::<span class='ident'>HRESULT</span>
 }
 );
@@ -258,11 +259,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

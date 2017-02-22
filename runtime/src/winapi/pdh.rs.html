@@ -9,6 +9,7 @@
 
     <title>pdh.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -126,7 +127,7 @@
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>PDH_FMT_COUNTERVALUE</span>, <span class='ident'>largeValue</span>, <span class='ident'>doubleValue</span>, <span class='ident'>doubleValue_mut</span>, ::<span class='ident'>DOUBLE</span>); 
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>PDH_FMT_COUNTERVALUE</span>, <span class='ident'>largeValue</span>, <span class='ident'>AnsiStringValue</span>, <span class='ident'>AnsiStringValue_mut</span>, ::<span class='ident'>LPCSTR</span>);
 <span class='macro'>UNION</span><span class='macro'>!</span>(<span class='ident'>PDH_FMT_COUNTERVALUE</span>, <span class='ident'>largeValue</span>, <span class='ident'>WideStringValue</span>, <span class='ident'>WideStringValue_mut</span>, ::<span class='ident'>LPCWSTR</span>);
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPDH_FMT_COUNTERVALUE</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PDH_FMT_COUNTERVALUE</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPDH_FMT_COUNTERVALUE</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PDH_FMT_COUNTERVALUE</span>;
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>PDH_COUNTER_PATH_ELEMENTS_A</span> {
     <span class='ident'>szMachineName</span>: ::<span class='ident'>LPSTR</span>,
@@ -136,7 +137,7 @@
     <span class='ident'>dwInstanceIndex</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>szCounterName</span>: ::<span class='ident'>LPSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPDH_COUNTER_PATH_ELEMENTS_A</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PDH_COUNTER_PATH_ELEMENTS_A</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPDH_COUNTER_PATH_ELEMENTS_A</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PDH_COUNTER_PATH_ELEMENTS_A</span>;
 
 <span class='macro'>STRUCT</span><span class='macro'>!</span>{<span class='kw'>struct</span> <span class='ident'>PDH_COUNTER_PATH_ELEMENTS_W</span> {
     <span class='ident'>szMachineName</span>: ::<span class='ident'>LPWSTR</span>,
@@ -146,7 +147,7 @@
     <span class='ident'>dwInstanceIndex</span>: ::<span class='ident'>DWORD</span>,
     <span class='ident'>szCounterName</span>: ::<span class='ident'>LPWSTR</span>,
 }}
-<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPDH_COUNTER_PATH_ELEMENTS_W</span> <span class='op'>=</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>PDH_COUNTER_PATH_ELEMENTS_W</span>;
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>PPDH_COUNTER_PATH_ELEMENTS_W</span> <span class='op'>=</span> <span class='kw-2'>*</span><span class='kw-2'>mut</span> <span class='ident'>PDH_COUNTER_PATH_ELEMENTS_W</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -204,11 +205,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>

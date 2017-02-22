@@ -9,6 +9,7 @@
 
     <title>winapi::commctrl::NMTBSAVE - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
     
@@ -47,42 +48,43 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-29498' class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct NMTBSAVE {
-    pub hdr: <a class='struct' href='../../winapi/winuser/struct.NMHDR.html' title='winapi::winuser::NMHDR'>NMHDR</a>,
-    pub pData: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub pCurrent: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a>,
-    pub cbData: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a>,
-    pub iItem: <a class='type' href='../../winapi/type.c_int.html' title='winapi::c_int'>c_int</a>,
-    pub cButtons: <a class='type' href='../../winapi/type.c_int.html' title='winapi::c_int'>c_int</a>,
-    pub tbButton: <a class='struct' href='../../winapi/commctrl/struct.TBBUTTON.html' title='winapi::commctrl::TBBUTTON'>TBBUTTON</a>,
+               </span><a class='srclink' href='../../src/winapi/macros.rs.html#264-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct NMTBSAVE {
+    pub hdr: <a class='struct' href='../../winapi/winuser/struct.NMHDR.html' title='struct winapi::winuser::NMHDR'>NMHDR</a>,
+    pub pData: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub pCurrent: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a>,
+    pub cbData: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a>,
+    pub iItem: <a class='type' href='../../winapi/type.c_int.html' title='type winapi::c_int'>c_int</a>,
+    pub cButtons: <a class='type' href='../../winapi/type.c_int.html' title='type winapi::c_int'>c_int</a>,
+    pub tbButton: <a class='struct' href='../../winapi/commctrl/struct.TBBUTTON.html' title='struct winapi::commctrl::TBBUTTON'>TBBUTTON</a>,
 }</pre><h2 class='fields'>Fields</h2><span id='structfield.hdr' class='structfield'>
                            <span id='hdr.v' class='invisible'>
-                           <code>hdr: <a class='struct' href='../../winapi/winuser/struct.NMHDR.html' title='winapi::winuser::NMHDR'>NMHDR</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pData' class='structfield'>
+                           <code>hdr: <a class='struct' href='../../winapi/winuser/struct.NMHDR.html' title='struct winapi::winuser::NMHDR'>NMHDR</a></code>
+                           </span></span><span id='structfield.pData' class='structfield'>
                            <span id='pData.v' class='invisible'>
-                           <code>pData: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.pCurrent' class='structfield'>
+                           <code>pData: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.pCurrent' class='structfield'>
                            <span id='pCurrent.v' class='invisible'>
-                           <code>pCurrent: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/minwindef/type.DWORD.html' title='winapi::minwindef::DWORD'>DWORD</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.cbData' class='structfield'>
+                           <code>pCurrent: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../winapi/minwindef/type.DWORD.html' title='type winapi::minwindef::DWORD'>DWORD</a></code>
+                           </span></span><span id='structfield.cbData' class='structfield'>
                            <span id='cbData.v' class='invisible'>
-                           <code>cbData: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='winapi::minwindef::UINT'>UINT</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.iItem' class='structfield'>
+                           <code>cbData: <a class='type' href='../../winapi/minwindef/type.UINT.html' title='type winapi::minwindef::UINT'>UINT</a></code>
+                           </span></span><span id='structfield.iItem' class='structfield'>
                            <span id='iItem.v' class='invisible'>
-                           <code>iItem: <a class='type' href='../../winapi/type.c_int.html' title='winapi::c_int'>c_int</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.cButtons' class='structfield'>
+                           <code>iItem: <a class='type' href='../../winapi/type.c_int.html' title='type winapi::c_int'>c_int</a></code>
+                           </span></span><span id='structfield.cButtons' class='structfield'>
                            <span id='cButtons.v' class='invisible'>
-                           <code>cButtons: <a class='type' href='../../winapi/type.c_int.html' title='winapi::c_int'>c_int</a></code>
-                           </span></span><span class='stab '></span><span id='structfield.tbButton' class='structfield'>
+                           <code>cButtons: <a class='type' href='../../winapi/type.c_int.html' title='type winapi::c_int'>c_int</a></code>
+                           </span></span><span id='structfield.tbButton' class='structfield'>
                            <span id='tbButton.v' class='invisible'>
-                           <code>tbButton: <a class='struct' href='../../winapi/commctrl/struct.TBBUTTON.html' title='winapi::commctrl::TBBUTTON'>TBBUTTON</a></code>
-                           </span></span><span class='stab '></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/commctrl/struct.NMTBSAVE.html' title='winapi::commctrl::NMTBSAVE'>NMTBSAVE</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-29506' class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+                           <code>tbButton: <a class='struct' href='../../winapi/commctrl/struct.TBBUTTON.html' title='struct winapi::commctrl::TBBUTTON'>TBBUTTON</a></code>
+                           </span></span><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='trait core::fmt::Debug'>Debug</a> for <a class='struct' href='../../winapi/commctrl/struct.NMTBSAVE.html' title='struct winapi::commctrl::NMTBSAVE'>NMTBSAVE</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#263' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='struct core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='type core::fmt::Result'>Result</a></code></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
-</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/commctrl/struct.NMTBSAVE.html' title='winapi::commctrl::NMTBSAVE'>NMTBSAVE</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-29494' class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/commctrl/struct.NMTBSAVE.html' title='winapi::commctrl::NMTBSAVE'>NMTBSAVE</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-29495' class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/commctrl/struct.NMTBSAVE.html' title='winapi::commctrl::NMTBSAVE'>NMTBSAVE</a></code></span></h4>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='trait core::marker::Copy'>Copy</a> for <a class='struct' href='../../winapi/commctrl/struct.NMTBSAVE.html' title='struct winapi::commctrl::NMTBSAVE'>NMTBSAVE</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#267' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='trait core::clone::Clone'>Clone</a> for <a class='struct' href='../../winapi/commctrl/struct.NMTBSAVE.html' title='struct winapi::commctrl::NMTBSAVE'>NMTBSAVE</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/winapi/macros.rs.html#268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../winapi/commctrl/struct.NMTBSAVE.html' title='struct winapi::commctrl::NMTBSAVE'>NMTBSAVE</a></code></span></h4>
 <div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
 </div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
 <div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
@@ -142,11 +144,9 @@
     <script>
         window.rootPath = "../../";
         window.currentCrate = "winapi";
-        window.playgroundUrl = "";
     </script>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
-    <script src="../../extra.js"></script>
     <script defer src="../../search-index.js"></script>
 </body>
 </html>
